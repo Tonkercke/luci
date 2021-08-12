@@ -13,12 +13,8 @@ PKG_DATE:=20210810
 include $(INCLUDE_DIR)/package.mk
 
 PKG_CONFIG_DEPENDS:= \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Brook \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Dns2socks \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Kcptun \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_PDNSD \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_Libev_Client \
@@ -29,7 +25,6 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_Libev_Server \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Simple_Obfs \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_GO \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_Plus \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_V2ray \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_V2ray_Plugin \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Xray
@@ -40,12 +35,8 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 	+dnsmasq-full +ipset +ip-full +ipt2socks +iptables-mod-tproxy \
 	+libuci-lua +lua +luci-lib-jsonc +microsocks +tcping +resolveip \
 	+unzip \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_Brook:brook \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG:chinadns-ng \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_Dns2socks:dns2socks \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy:haproxy \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria:hysteria \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_Kcptun:kcptun-client \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy:naiveproxy \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_PDNSD:pdnsd-alt \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Shadowsocks_Libev_Client:shadowsocks-libev-ss-local \
@@ -57,7 +48,6 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_ShadowsocksR_Libev_Server:shadowsocksr-libev-ssr-server \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Simple_Obfs:simple-obfs \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_GO:trojan-go \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_Plus:trojan-plus \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_V2ray_Plugin:v2ray-plugin \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Xray:xray-core
@@ -65,28 +55,12 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 define Package/luci-app-passwall/config
 menu "Configuration"
 
-config PACKAGE_$(PKG_NAME)_INCLUDE_Brook
-	bool "Include Brook"
-	default n
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG
-	bool "Include ChinaDNS-NG"
-	default y
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_Dns2socks
-	bool "Include Dns2socks"
-	default y
-
 config PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy
 	bool "Include Haproxy"
 	default y if aarch64||arm||i386||x86_64
 	
 config PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria
 	bool "Include Hysteria"
-	default n
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_Kcptun
-	bool "Include Kcptun"
 	default n
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy
@@ -126,10 +100,6 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_Simple_Obfs
 config PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_GO
 	bool "Include Trojan-GO"
 	default n
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_Plus
-	bool "Include Trojan-Plus"
-	default y
 	
 config PACKAGE_$(PKG_NAME)_INCLUDE_V2ray
 	bool "Include V2ray"
