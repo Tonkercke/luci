@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-03-14 05:18+0000\n"
+"PO-Revision-Date: 2021-01-20 10:36+0000\n"
 "Last-Translator: Eric <spice2wolf@gmail.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationshttps-dns-proxy/zh_Hans/>\n"
@@ -14,11 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.5.2-dev\n"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:92
-msgid "%s DoH at %s:%s"
-msgstr "%s DoH ， 地址是 %s:%s"
+"X-Generator: Weblate 4.5-dev\n"
 
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:73
 msgid "%s is not installed or not found"
@@ -72,7 +68,7 @@ msgstr "Cloudflare (家庭保护)"
 msgid "Cloudflare (Security Protection)"
 msgstr "Cloudflare (安全防护)"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:122
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:126
 msgid "Configuration"
 msgstr "配置"
 
@@ -80,11 +76,11 @@ msgstr "配置"
 msgid "DNS HTTPS Proxy"
 msgstr "DNS HTTPS 代理"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:110
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:107
 msgid "DNS HTTPS Proxy Settings"
 msgstr "DNS HTTPS 代理设置"
 
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/sb.dns.lua:3
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers.disabled/sb.dns.lua:3
 msgid "DNS.SB"
 msgstr "DNS.SB"
 
@@ -100,11 +96,11 @@ msgstr "DNSCrypt.ca (DNS2)"
 msgid "DNSPod.cn Public DNS"
 msgstr "DNSPod.cn 公共DNS"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:195
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:189
 msgid "DSCP Codepoint"
 msgstr "DSCP 代码点"
 
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/ch.digitale-gesellschaft.dns.lua:3
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers.disabled/ch.digitale-gesellschaft.dns.lua:3
 msgid "Digitale Gesellschaft"
 msgstr "数字社会"
 
@@ -112,7 +108,7 @@ msgstr "数字社会"
 msgid "Disable"
 msgstr "禁用"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:130
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:134
 msgid "Do not update configs"
 msgstr "不更新配置"
 
@@ -120,46 +116,26 @@ msgstr "不更新配置"
 msgid "Enable"
 msgstr "启用"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:29
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:28
 msgid "For more information on different options check"
 msgstr "有关不同选项的更多信息，请检查"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:132
-msgid "Force Router DNS"
-msgstr "强制使用路由器 DNS"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:134
-msgid "Force Router DNS server to all local devices"
-msgstr "强制所有本地设备使用路由器 DNS"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:132
-msgid "Forces Router DNS use on local devices, also known as DNS Hijacking."
-msgstr "强制在本地设备上使用路由器 DNS，也称为 DNS 劫持。"
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/google.dns.lua:3
 msgid "Google"
 msgstr "谷歌"
 
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.idnet.doh.lua:3
-msgid "IDNet.net (UK)"
-msgstr "IDNet.net (UK)"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:123
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:126
 msgid ""
-"If update option is selected, the 'DNS forwardings' section of %sDHCP and DNS"
-"%s will be automatically updated to use selected DoH providers (%smore "
-"information%s)."
+"If update DNSMASQ config is selected, when you add/remove any instances "
+"below, they will be used to override the 'DNS forwardings' section of %sDHCP "
+"and DNS%s (%smore information%s)."
 msgstr ""
-"如果选择了“更新”选项，则 %sDHCP and DNS%s 的 'DNS转发'部分会自动更新到使用选"
-"定的 DoH 供应商 (%s更多信息%s)。"
+"如果选择了更新DNSMASQ配置，则当您添加/删除下面的任何实例时，它们将用于覆"
+"盖%sDHCP和DNS%s（%s更多信息%s）的“ DNS转发”部分。"
 
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:138
 msgid "Instances"
 msgstr "实例"
-
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:133
-msgid "Let local devices use their own DNS servers if set"
-msgstr "如果进行了设置，允许本地设备使用自己的 DNS 服务器"
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/gr.libredns.doh.lua:3
 msgid "LibreDNS"
@@ -169,29 +145,21 @@ msgstr "LibreDNS"
 msgid "LibreDNS (No Ads)"
 msgstr "LibreDNS（无广告）"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:178
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:172
 msgid "Listen Address"
-msgstr "监听地址"
+msgstr ""
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:191
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:185
 msgid "Listen Port"
-msgstr "监听端口"
+msgstr ""
 
 #: applications/luci-app-https-dns-proxy/luasrc/view/https-dns-proxy/js.htm:52
 msgid "Loading"
 msgstr "加载中"
 
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.mullvad.doh.lua:3
-msgid "Mullvad"
-msgstr ""
-
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.mullvad.doh.adblocker.lua:3
-msgid "Mullvad (AdBlock)"
-msgstr ""
-
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/io.nextdns.dns.lua:3
 msgid "NextDNS.io"
-msgstr "NextDNS.io"
+msgstr ""
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/cz.nic.odvr.lua:3
 msgid "ODVR (nic.cz)"
@@ -205,13 +173,13 @@ msgstr "OpenDNS"
 msgid "OpenDNS (Family Shield)"
 msgstr "OpenDNS (家庭护盾)"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:199
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:193
 msgid "Proxy Server"
-msgstr "代理服务器"
+msgstr ""
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/tw.twnic.dns.lua:3
 msgid "Quad 101 (Taiwan)"
-msgstr "Quad 101 (台湾地区)"
+msgstr ""
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.quad9.dns.lua:3
 msgid "Quad 9 (Recommended)"
@@ -231,21 +199,21 @@ msgstr "Quad 9（不安全）"
 
 #: applications/luci-app-https-dns-proxy/luasrc/view/https-dns-proxy/buttons.htm:44
 msgid "Reload"
-msgstr "重新加载"
+msgstr "重新载入"
 
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:145
 msgid "Resolver"
 msgstr "解析器"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:118
-msgid "Service Control"
-msgstr "服务控制"
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:99
+msgid "Running: %s DoH at %s:%s"
+msgstr "运行中：%s DoH 于 %s:%s"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:114
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:111
 msgid "Service Status"
 msgstr "服务状态"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:112
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:109
 msgid "Service Status [%s %s]"
 msgstr "服务状态 [%s %s]"
 
@@ -257,34 +225,34 @@ msgstr "启动"
 msgid "Stop"
 msgstr "停止"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:99
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:77
 msgid "Stopped"
 msgstr "已停止"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:65
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:64
 msgid "Unknown Provider"
 msgstr "未知的提供商"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:127
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:131
 msgid "Update %s config"
 msgstr "更新%s配置"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:123
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:127
 msgid "Update DNSMASQ Config on Start/Stop"
 msgstr "在开始/停止时更新DNSMASQ配置"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:124
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:128
 msgid "Update all configs"
 msgstr "更新所有配置"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:50
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:49
 msgid "and"
 msgstr "和"
 
-#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:101
+#: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:79
 msgid "disabled"
 msgstr "已禁用"
 
-#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/cn.rubyfish.dns.lua:3
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers.disabled/cn.rubyfish.dns.lua:3
 msgid "rubyfish.cn"
 msgstr "rubyfish.cn"
