@@ -69,35 +69,37 @@ local ubusStatus = util.ubus("service", "list", { name = packageName })
 local packageVersion = getPackageVersion()
 
 if packageVersion == "" then
-	packageStatusCode, packageStatus = -1, translatef("%s is not installed or not found", packageName)
+	packageStatusCode = -1
+	packageStatus = translatef("%s is not installed or not found", packageName)
 else  
-	packageStatusCode, packageStatus = 1, ""
-	for n = 1,20 do
-		if ubusStatus and ubusStatus[packageName] and 
-			 ubusStatus[packageName]["instances"] and 
-			 ubusStatus[packageName]["instances"]["instance" .. n] and 
-			 ubusStatus[packageName]["instances"]["instance" .. n]["running"] then
-			local value, k, v, url, url_flag, la, la_flag, lp, lp_flag
-			for k, v in pairs(ubusStatus[packageName]["instances"]["instance" .. n]["command"]) do
-				if la_flag then la, la_flag = v, false end
-				if lp_flag then lp, lp_flag = v, false end
-				if url_flag then url, url_flag = v, false end
-				if v == "-a" then la_flag = true end
-				if v == "-p" then lp_flag = true end
-				if v == "-r" then url_flag = true end
-			end
-			la = la or "127.0.0.1"
-			lp = lp or n + 5053
-			packageStatus = packageStatus .. translatef("%s DoH at %s:%s", getProviderName(url), la, lp) .. "\n"
-		else
-			break
-		end
-	end
-	if packageStatus == "" then
+	if not ubusStatus or not ubusStatus[packageName] then
 		packageStatusCode = 0
 		packageStatus = translate("Stopped")
 		if not sys.init.enabled(packageName) then
 			packageStatus = packageStatus .. " (" .. translate("disabled") .. ")"
+		end
+	else
+		packageStatusCode, packageStatus = 1, ""
+		for n = 1,1000 do
+			if ubusStatus and ubusStatus[packageName] and 
+				 ubusStatus[packageName]["instances"] and 
+				 ubusStatus[packageName]["instances"]["instance" .. n] and 
+				 ubusStatus[packageName]["instances"]["instance" .. n]["running"] then
+				local value, k, v, url, url_flag, la, la_flag, lp, lp_flag
+				for k, v in pairs(ubusStatus[packageName]["instances"]["instance" .. n]["command"]) do
+					if la_flag then la, la_flag = v, false end
+					if lp_flag then lp, lp_flag = v, false end
+					if url_flag then url, url_flag = v, false end
+					if v == "-a" then la_flag = true end
+					if v == "-p" then lp_flag = true end
+					if v == "-r" then url_flag = true end
+				end
+				la = la or "127.0.0.1"
+				lp = lp or n + 5053
+				packageStatus = packageStatus .. translatef("Running: %s DoH at %s:%s", getProviderName(url), la, lp) .. "\n"
+			else
+				break
+			end
 		end
 	end
 end
@@ -107,15 +109,22 @@ m = Map("https-dns-proxy", translate("DNS HTTPS Proxy Settings"))
 h = m:section(TypedSection, "_dummy", translatef("Service Status [%s %s]", packageName, packageVersion))
 h.template = "cbi/nullsection"
 ss = h:option(DummyValue, "_dummy", translate("Service Status"))
-ss.template = packageName .. "/status"
-ss.value = packageStatus
-if packageStatusCode ~= -1 then
-	buttons = h:option(DummyValue, "_dummy", translate("Service Control"))
+if packageStatusCode == -1 then
+	ss.template = packageName .. "/status"
+	ss.value = packageStatus
+else
+		if packageStatusCode == 0 then
+			ss.template = packageName .. "/status"
+		else
+			ss.template = packageName .. "/status-textarea"
+		end
+	ss.value = packageStatus
+	buttons = h:option(DummyValue, "_dummy")
 	buttons.template = packageName .. "/buttons"
 end
 
-c = m:section(NamedSection, "config", "https-dns-proxy", translate("Configuration"))
-d1 = c:option(ListValue, "update_dnsmasq_config", translate("Update DNSMASQ Config on Start/Stop"), translatef("If update option is selected, the 'DNS forwardings' section of %sDHCP and DNS%s will be automatically updated to use selected DoH providers (%smore information%s).", "<a href=\"" .. dispatcher.build_url("admin/network/dhcp") .. "\">", "</a>", "<a href=\"" .. readmeURL .. "#default-settings" .. "\" target=\"_blank\">", "</a>"))
+c = m:section(NamedSection, "config", "https-dns-proxy", translate("Configuration"), translatef("If update DNSMASQ config is selected, when you add/remove any instances below, they will be used to override the 'DNS forwardings' section of %sDHCP and DNS%s (%smore information%s).", "<a href=\"" .. dispatcher.build_url("admin/network/dhcp") .. "\">", "</a>", "<a href=\"" .. readmeURL .. "#default-settings" .. "\" target=\"_blank\">", "</a>"))
+d1 = c:option(ListValue, "update_dnsmasq_config", translate("Update DNSMASQ Config on Start/Stop"))
 d1:value('*', translate("Update all configs"))
 local dnsmasq_num = 0
 uci:foreach("dhcp", "dnsmasq", function(s)
@@ -124,10 +133,6 @@ dnsmasq_num = dnsmasq_num + 1
 end)
 d1:value('-', translate("Do not update configs"))
 d1.default = '*'
-f1 = c:option(ListValue, "force_dns", translate("Force Router DNS"), translate("Forces Router DNS use on local devices, also known as DNS Hijacking."))
-f1:value("0", translate("Let local devices use their own DNS servers if set"))
-f1:value("1", translate("Force Router DNS server to all local devices"))
-f1.default = '1'
 
 createHelperText()
 s3 = m:section(TypedSection, "https-dns-proxy", translate("Instances"), 
