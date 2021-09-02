@@ -15,12 +15,12 @@ msgstr ""
 msgid "Allowed IPs"
 msgstr "כתובות IP מורשות"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:225
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:259
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:236
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:270
 msgid "Collecting data..."
 msgstr "נאספים נתונים…"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:220
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:231
 msgid "Configuration"
 msgstr "הגדרות"
 
@@ -40,7 +40,7 @@ msgstr "נקודת קצה"
 msgid "Firewall Mark"
 msgstr "סימן חומת אש"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:189
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:200
 msgid "Interface"
 msgstr "מנשק"
 
@@ -60,7 +60,7 @@ msgstr "פתחת האזנה"
 msgid "Never"
 msgstr "אף פעם"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:251
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:262
 msgid "Peer"
 msgstr "עמית"
 
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Public Key"
 msgstr "מפתח ציבורי"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:191
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:202
 msgid "Show/Hide QR-Code"
 msgstr "הצגת/הסתרת קוד QR"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:211
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:222
 msgid ""
 "The QR-Code works per wg interface, it will be refreshed with every manual "
 "page reload and transfers the following information:"
@@ -85,17 +85,25 @@ msgstr ""
 "קוד ה־QR עובד לפי מנשק wg, הוא ירוענן עם כל רענון ידני של העמוד ומעביר את "
 "המידע הבא:"
 
-#: applications/luci-app-wireguard/luasrc/controller/wireguard.lua:7
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:190
+msgid "This section contains no values yet"
+msgstr "סעיף זה לא מכיל ערכים עדיין"
+
+#: applications/luci-app-wireguard/root/usr/share/luci/menu.d/luci-app-wireguard.json:3
+msgid "WireGuard"
+msgstr "WireGuard"
+
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:182
 msgid "WireGuard Status"
 msgstr "מצב WireGuard"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:212
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:223
 msgid ""
 "[Interface] A random, on the fly generated 'PrivateKey', the key will not be "
 "saved on the router"
 msgstr ""
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:213
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:224
 msgid ""
 "[Peer] The 'PublicKey' of that wg interface and the 'AllowedIPs' with the "
 "default of '0.0.0.0/0, ::/0' to allow sending traffic to any IPv4 and IPv6 "

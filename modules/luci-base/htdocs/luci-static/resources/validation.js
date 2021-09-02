@@ -1,6 +1,10 @@
 'use strict';
 'require baseclass';
 
+function bytelen(x) {
+	return new Blob([x]).size;
+}
+
 var Validator = baseclass.extend({
 	__name__: 'Validation',
 
@@ -334,13 +338,14 @@ var ValidatorFactory = baseclass.extend({
 			return this.assert(this.apply('port'), _('valid port or port range (port1-port2)'));
 		},
 
-		macaddr: function() {
-			return this.assert(this.value.match(/^([a-fA-F0-9]{2}:){5}[a-fA-F0-9]{2}$/) != null,
-				_('valid MAC address'));
+		macaddr: function(multicast) {
+			var m = this.value.match(/^([a-fA-F0-9]{2}):([a-fA-F0-9]{2}:){4}[a-fA-F0-9]{2}$/);
+			return this.assert(m != null && !(+m[1] & 1) == !multicast,
+				multicast ? _('valid multicast MAC address') : _('valid MAC address'));
 		},
 
 		host: function(ipv4only) {
-			return this.assert(this.apply('hostname') || this.apply(ipv4only == 1 ? 'ip4addr' : 'ipaddr'),
+			return this.assert(this.apply('hostname') || this.apply(ipv4only == 1 ? 'ip4addr' : 'ipaddr', null, ['nomask']),
 				_('valid hostname or IP address'));
 		},
 
@@ -357,8 +362,8 @@ var ValidatorFactory = baseclass.extend({
 		},
 
 		network: function() {
-			return this.assert(this.apply('uciname') || this.apply('host'),
-				_('valid UCI identifier, hostname or IP address'));
+			return this.assert(this.apply('uciname') || this.apply('hostname') || this.apply('ip4addr') || this.apply('ip6addr'),
+				_('valid UCI identifier, hostname or IP address range'));
 		},
 
 		hostport: function(ipv4only) {
@@ -424,24 +429,23 @@ var ValidatorFactory = baseclass.extend({
 		},
 
 		length: function(len) {
-			var val = '' + this.value;
-			return this.assert(val.length == +len,
+			return this.assert(bytelen(this.value) == +len,
 				_('value with %d characters').format(len));
 		},
 
 		rangelength: function(min, max) {
-			var val = '' + this.value;
-			return this.assert((val.length >= +min) && (val.length <= +max),
+			var len = bytelen(this.value);
+			return this.assert((len >= +min) && (len <= +max),
 				_('value between %d and %d characters').format(min, max));
 		},
 
 		minlength: function(min) {
-			return this.assert((''+this.value).length >= +min,
+			return this.assert(bytelen(this.value) >= +min,
 				_('value with at least %d characters').format(min));
 		},
 
 		maxlength: function(max) {
-			return this.assert((''+this.value).length <= +max,
+			return this.assert(bytelen(this.value) <= +max,
 				_('value with at most %d characters').format(max));
 		},
 

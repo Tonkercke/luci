@@ -30,7 +30,7 @@ msgstr "Tous les proxys"
 msgid "Append HEADERs to HTTP request header."
 msgstr "Ajouter les HEADERs aux entêtes de requêtes HTTP."
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:18
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:17
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:35
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/files.lua:14
 #: applications/luci-app-aria2/luasrc/view/aria2/log_template.htm:45
@@ -75,8 +75,8 @@ msgstr "Vérifier le certificat"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:242
 msgid ""
-"Close connection if download speed is lower than or equal to this "
-"value(bytes per sec). 0 means has no lowest speed limit."
+"Close connection if download speed is lower than or equal to this value "
+"(bytes per sec). 0 means has no lowest speed limit."
 msgstr ""
 "Ferme la connexion si la vitesse de téléchargement est inférieure ou égale à "
 "cette valeur (en bits par seconde). 0 signifie qu'il n'y a pas de limite de "
@@ -91,7 +91,7 @@ msgstr "Récupération des données…"
 msgid "Config file directory"
 msgstr "Dossier du fichier de configuration"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:21
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:22
 msgid "Configuration"
 msgstr "Configuration"
 
@@ -214,7 +214,7 @@ msgstr "Attribution de l'espace pour les fichiers"
 msgid "File does not exist."
 msgstr "Le fichier n'existe pas."
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:24
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:25
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/files.lua:14
 msgid "Files"
 msgstr "Fichiers"
@@ -234,6 +234,10 @@ msgstr "Forcer l'enregistrement"
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:129
 msgid "Generate Randomly"
 msgstr "Générer aléatoirement"
+
+#: applications/luci-app-aria2/root/usr/share/rpcd/acl.d/luci-app-aria2.json:3
+msgid "Grant UCI access for luci-app-aria2"
+msgstr "Accorder tout accès UCI pour luci-app-arias2"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:210
 msgid "HTTP accept gzip"
@@ -324,7 +328,7 @@ msgstr ""
 msgid "Loading"
 msgstr "Chargement"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:27
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:28
 msgid "Log"
 msgstr "Journal"
 
@@ -517,13 +521,9 @@ msgstr "Attente avant nouvel essai"
 msgid "Run daemon as user"
 msgstr "Exécuter le démon en tant qu'utilisateur"
 
-#: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:315
-msgid "Sava metadata"
-msgstr "Enregistrer les métadonnées"
-
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:429
 msgid ""
-"Save a control file(*.aria2) every N seconds. If 0 is given, a control file "
+"Save a control file (*.aria2) every N seconds. If 0 is given, a control file "
 "is not saved during download."
 msgstr ""
 "Enregistre un fichier de contrôle (*.aria2) toutes les N secondes. Si défini "
@@ -558,6 +558,10 @@ msgstr ""
 "Enregistrez les métadonnées dans un fichier \".torrent\". Cette option n'a "
 "d'effet que lorsque BitTorrent Magnet URI est utilisé. Le nom du fichier est "
 "un hachage d'informations au format hexadécimal avec le suffixe \".torrent\"."
+
+#: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:315
+msgid "Save metadata"
+msgstr "Enregistrer les métadonnées"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:434
 msgid "Save session interval"
@@ -615,9 +619,12 @@ msgstr ""
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:342
 msgid ""
-"Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Make sure "
+"Set UDP listening port used by DHT (IPv4, IPv6) and UDP tracker. Make sure "
 "that the specified ports are open for incoming UDP traffic."
 msgstr ""
+"Définissez le port d'écoute UDP utilisé par DHT (IPv4, IPv6) et le tracker "
+"UDP. Assurez-vous que les ports spécifiés sont ouverts pour le trafic UDP "
+"entrant."
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:477
 msgid ""
@@ -683,13 +690,22 @@ msgstr "Afficher l'URL"
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:448
 msgid ""
 "Specify file allocation method. If you are using newer file systems such as "
-"ext4 (with extents support), btrfs, xfs or NTFS(MinGW build only), \"falloc"
+"ext4 (with extents support), btrfs, xfs or NTFS (MinGW build only), \"falloc"
 "\" is your best choice. It allocates large(few GiB) files almost instantly, "
 "but it may not be available if your system doesn't have posix_fallocate(3) "
 "function. Don't use \"falloc\" with legacy file systems such as ext3 and "
 "FAT32 because it takes almost same time as \"prealloc\" and it blocks aria2 "
 "entirely until allocation finishes."
 msgstr ""
+"Spécifiez la méthode d'allocation des fichiers. Si vous utilisez des "
+"systèmes de fichiers plus récents tels que ext4 (avec prise en charge des "
+"extensions), btrfs, xfs ou NTFS (build MinGW uniquement), \"falloc\" est "
+"votre meilleur choix. Il alloue des fichiers volumineux (quelques Gio) "
+"presque instantanément, mais il peut ne pas être disponible si votre système "
+"n'a pas la fonction posix_fallocate(3). N'utilisez pas \"falloc\" avec les "
+"systèmes de fichiers hérités tels que ext3 et FAT32 car cela prend presque "
+"le même temps que \"prealloc\" et il bloque entièrement aria2 jusqu'à la fin "
+"de l'allocation."
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:368
 msgid ""
@@ -765,10 +781,12 @@ msgstr ""
 "session et le fichier DHT."
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:70
-msgid "The directory to store the downloaded file. eg. <code>/mnt/sda1</code>"
+msgid ""
+"The directory to store the downloaded file. For example <code>/mnt/sda1</"
+"code>."
 msgstr ""
-"Répertoire dans lequel télécharger le fichier télécharger. Par ex. <code>/"
-"mnt/sda1</code>"
+"Le répertoire pour stocker le fichier téléchargé. Par exemple <code>/mnt/"
+"sda1</code>."
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:81
 msgid "The file name of the log file."

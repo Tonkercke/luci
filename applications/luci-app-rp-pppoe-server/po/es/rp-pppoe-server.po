@@ -21,6 +21,10 @@ msgstr "Nombre del concentrador de acceso"
 msgid "First remote IP"
 msgstr "Primera IP remota"
 
+#: applications/luci-app-rp-pppoe-server/root/usr/share/rpcd/acl.d/luci-app-rp-pppoe-server.json:3
+msgid "Grant UCI access for luci-app-rp-pppoe-server"
+msgstr "Conceder acceso UCI para luci-app-rp-pppoe-server"
+
 #: applications/luci-app-rp-pppoe-server/luasrc/model/cbi/rp-pppoe-server.lua:29
 msgid "IP of listening side"
 msgstr "IP del lado que escucha"
@@ -73,7 +77,7 @@ msgstr "Número de unidad de PPP"
 msgid "PPPoE Server Configuration"
 msgstr "Configuración del servidor PPPoE"
 
-#: applications/luci-app-rp-pppoe-server/luasrc/controller/rp-pppoe-server.lua:11
+#: applications/luci-app-rp-pppoe-server/root/usr/share/luci/menu.d/luci-app-rp-pppoe-server.json:3
 msgid "RP PPPoE Server"
 msgstr "Servidor RP PPPoE"
 

@@ -197,6 +197,10 @@ msgstr "全ローカル デバイスにルーター DNSサーバーの使用を�
 msgid "Forces Router DNS use on local devices, also known as DNS Hijacking."
 msgstr ""
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI and file access for luci-app-simple-adblock"
+msgstr ""
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:297
 msgid "IPv6 Support"
 msgstr "IPv6 サポート"
@@ -292,6 +296,7 @@ msgid "Service Status [%s %s]"
 msgstr "サービス・ステータス [%s %s]"
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Simple AdBlock"
 

@@ -28,6 +28,10 @@ msgstr ""
 "Önce USB (kmod-usb-printer) veya paralel bağlantı noktası (kmod-lp) desteği "
 "almak için paketleri kurmanız gerekir."
 
+#: applications/luci-app-p910nd/root/usr/share/rpcd/acl.d/luci-app-p910nd.json:3
+msgid "Grant UCI access for luci-app-p910nd"
+msgstr "luci-app-p910nd için UCI erişimi verin"
+
 #: applications/luci-app-p910nd/luasrc/model/cbi/p910nd.lua:22
 msgid "Interface"
 msgstr "Arayüz"
@@ -52,7 +56,7 @@ msgstr "TCP dinleyici bağlantı noktası."
 msgid "enable"
 msgstr "etkinleştir"
 
-#: applications/luci-app-p910nd/luasrc/controller/p910nd.lua:13
 #: applications/luci-app-p910nd/luasrc/model/cbi/p910nd.lua:9
+#: applications/luci-app-p910nd/root/usr/share/luci/menu.d/luci-app-p910nd.json:3
 msgid "p910nd - Printer server"
 msgstr "P910nd_Yazıcı Sunucusu"

@@ -116,6 +116,10 @@ msgstr "Зона брандмауэра"
 msgid "General Settings"
 msgstr "Общие настройки"
 
+#: applications/luci-app-ocserv/root/usr/share/rpcd/acl.d/luci-app-ocserv.json:3
+msgid "Grant UCI access for luci-app-ocserv"
+msgstr "Предоставить UCI доступ для luci-app-ocserv"
+
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/users.lua:23
 #: applications/luci-app-ocserv/luasrc/model/cbi/ocserv/users.lua:67
 #: applications/luci-app-ocserv/luasrc/view/ocserv_status.htm:52
@@ -197,7 +201,7 @@ msgstr ""
 msgid "Routing table"
 msgstr "Таблица маршрутизации"
 
-#: applications/luci-app-ocserv/luasrc/controller/ocserv.lua:19
+#: applications/luci-app-ocserv/luasrc/controller/ocserv.lua:20
 msgid "Server Settings"
 msgstr "Настройки сервера"
 
@@ -303,7 +307,7 @@ msgstr "Пользователь"
 msgid "User Authentication"
 msgstr "Аутентификация пользователя"
 
-#: applications/luci-app-ocserv/luasrc/controller/ocserv.lua:24
+#: applications/luci-app-ocserv/luasrc/controller/ocserv.lua:25
 msgid "User Settings"
 msgstr "Пользовательские настройки"
 

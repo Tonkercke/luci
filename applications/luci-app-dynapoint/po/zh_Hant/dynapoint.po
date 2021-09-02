@@ -46,7 +46,7 @@ msgstr "裝置"
 msgid "Disabled"
 msgstr "已停用"
 
-#: applications/luci-app-dynapoint/luasrc/controller/dynapoint.lua:7
+#: applications/luci-app-dynapoint/root/usr/share/luci/menu.d/luci-app-dynapoint.json:3
 msgid "DynaPoint"
 msgstr "DynaPoint"
 
@@ -63,6 +63,10 @@ msgid ""
 "Failure counter after how many failed download attempts, the state is "
 "considered as offline"
 msgstr "下載嘗試失敗幾次後，將視為離線狀態"
+
+#: applications/luci-app-dynapoint/root/usr/share/rpcd/acl.d/luci-app-dynapoint.json:3
+msgid "Grant UCI access for luci-app-dynapoint"
+msgstr "授予 luci-app-dynapoint 擁有 UCI 存取的權限"
 
 #: applications/luci-app-dynapoint/luasrc/model/cbi/dynapoint.lua:56
 msgid "List of Wireless Virtual Interfaces (wVIF)"

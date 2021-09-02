@@ -28,7 +28,7 @@ return view.extend({
 	handlePing: function(ev, cmd) {
 		var exec = cmd || 'ping',
 		    addr = ev.currentTarget.parentNode.previousSibling.value,
-		    args = (exec == 'ping') ? [ '-c', '5', '-W', '1', addr ] : [ '-c', '5', addr ];
+		    args = (exec == 'ping') ? [ '-4', '-c', '5', '-W', '1', addr ] : [ '-6', '-c', '5', addr ];
 
 		return this.handleCommand(exec, args);
 	},
@@ -36,7 +36,7 @@ return view.extend({
 	handleTraceroute: function(ev, cmd) {
 		var exec = cmd || 'traceroute',
 		    addr = ev.currentTarget.parentNode.previousSibling.value,
-		    args = (exec == 'traceroute') ? [ '-q', '1', '-w', '1', '-n', addr ] : [ '-q', '1', '-w', '2', '-n', addr ];
+		    args = (exec == 'traceroute') ? [ '-4', '-q', '1', '-w', '1', '-n', addr ] : [ '-q', '1', '-w', '2', '-n', addr ];
 
 		return this.handleCommand(exec, args);
 	},
@@ -66,9 +66,9 @@ return view.extend({
 
 		return E([], [
 			E('h2', {}, [ _('Network Utilities') ]),
-			E('div', { 'class': 'table' }, [
-				E('div', { 'class': 'tr' }, [
-					E('div', { 'class': 'td left' }, [
+			E('table', { 'class': 'table' }, [
+				E('tr', { 'class': 'tr' }, [
+					E('td', { 'class': 'td left' }, [
 						E('input', {
 							'style': 'margin:5px 0',
 							'type': 'text',
@@ -91,7 +91,7 @@ return view.extend({
 						])
 					]),
 
-					E('div', { 'class': 'td left' }, [
+					E('td', { 'class': 'td left' }, [
 						E('input', {
 							'style': 'margin:5px 0',
 							'type': 'text',
@@ -114,7 +114,7 @@ return view.extend({
 						])
 					]),
 
-					E('div', { 'class': 'td left' }, [
+					E('td', { 'class': 'td left' }, [
 						E('input', {
 							'style': 'margin:5px 0',
 							'type': 'text',

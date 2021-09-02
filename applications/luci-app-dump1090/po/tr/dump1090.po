@@ -105,6 +105,10 @@ msgstr "Frekans"
 msgid "Gain (-10 for auto-gain)"
 msgstr "Kazanç (otomatik kazanç için -10)"
 
+#: applications/luci-app-dump1090/root/usr/share/rpcd/acl.d/luci-app-dump1090.json:3
+msgid "Grant UCI access for luci-app-dump1090"
+msgstr "luci-app-dump1090 için UCI erişimi verin"
+
 #: applications/luci-app-dump1090/luasrc/model/cbi/dump1090.lua:65
 msgid "HTTP server port"
 msgstr "HTTP sunucusu bağlantı noktası"
@@ -225,7 +229,7 @@ msgstr "Bir dosyadan okurken maksimum hızda değil gerçek zamanlı olarak oyna
 msgid "Write json output every t seconds"
 msgstr "Her t saniyede bir json çıktısı yaz"
 
-#: applications/luci-app-dump1090/luasrc/controller/dump1090.lua:11
+#: applications/luci-app-dump1090/root/usr/share/luci/menu.d/luci-app-dump1090.json:3
 msgid "dump1090"
 msgstr "dump1090"
 

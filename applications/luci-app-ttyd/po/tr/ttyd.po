@@ -38,11 +38,11 @@ msgstr "Menşeini kontrol et"
 msgid "Client option"
 msgstr "İstemci seçeneği"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:80
 msgid "Command"
 msgstr "Komut"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:12
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
 msgstr "Yapılandırma"
 
@@ -82,6 +82,14 @@ msgstr "IPv6 desteğini etkinleştir"
 msgid "Enable SSL"
 msgstr "SSL'yi etkinleştir"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:74
+msgid "Error"
+msgstr "Hata"
+
+#: applications/luci-app-ttyd/root/usr/share/rpcd/acl.d/luci-app-ttyd.json:3
+msgid "Grant UCI access for luci-app-ttyd"
+msgstr "luci-app-ttyd için UCI erişimi verin"
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:34
 msgid "Group ID"
 msgstr "Grup kimliği"
@@ -97,6 +105,10 @@ msgstr "IPv6"
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:58
 msgid "Index"
 msgstr "Dizin"
+
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:77
+msgid "Info"
+msgstr "Bilgi"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:24
 msgid "Interface"
@@ -118,6 +130,10 @@ msgstr ""
 "Bağlanacak ağ arabirimi (ör. eth0) veya UNIX etki alanı soket yolu (ör. /Var/"
 "run/ttyd.sock)"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+msgid "Notice"
+msgstr "Uyarı"
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Once"
 msgstr "Bir kere"
@@ -132,7 +148,7 @@ msgstr ""
 "Dinlemek için bağlantı noktası (varsayılan: 7681, rastgele bağlantı noktası "
 "için \"0\" kullanın)"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:13
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
 "Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
@@ -188,7 +204,8 @@ msgstr "Sinyal"
 msgid "Signal to send to the command when exit it (default: 1, SIGHUP)"
 msgstr "Komuttan çıkarken komuta gönderilecek sinyal (varsayılan: 1, SIGHUP)"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:11
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:3
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:14
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -208,9 +225,9 @@ msgstr "Kullanıcı kimliği"
 msgid "User id to run with"
 msgstr "Çalıştırılacak kullanıcı kimliği"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:10
-msgid "ttyd"
-msgstr ""
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:75
+msgid "Warning"
+msgstr "Uyarı"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:12
 msgid "ttyd Instance"

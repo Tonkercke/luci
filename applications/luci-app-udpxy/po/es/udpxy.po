@@ -33,6 +33,10 @@ msgstr "Tiempo del búfer"
 msgid "Enabled"
 msgstr "Activado"
 
+#: applications/luci-app-udpxy/root/usr/share/rpcd/acl.d/luci-app-udpxy.json:3
+msgid "Grant UCI access for luci-app-udpxy"
+msgstr "Conceder acceso UCI para luci-app-udpxy"
+
 #: applications/luci-app-udpxy/luasrc/model/cbi/udpxy.lua:39
 msgid "Log file"
 msgstr "Archivo de registro"
@@ -69,7 +73,7 @@ msgstr "Estado"
 msgid "Verbose"
 msgstr "Verbosidad"
 
-#: applications/luci-app-udpxy/luasrc/controller/udpxy.lua:11
+#: applications/luci-app-udpxy/root/usr/share/luci/menu.d/luci-app-udpxy.json:3
 msgid "udpxy"
 msgstr "udpxy"
 

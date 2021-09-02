@@ -34,22 +34,6 @@ msgstr ""
 msgid "AUTO"
 msgstr "АВТО"
 
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:734
-msgid "Access-Control-Allow-Headers"
-msgstr "Доступ-Контроль<br />-Разрешить-Заголовки"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:726
-msgid "Access-Control-Allow-Methods"
-msgstr "Доступ-Контроль<br />-Разрешить-Методы"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:718
-msgid "Access-Control-Allow-Origin"
-msgstr "Доступ-Контроль<br />-Разрешить-Источник"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:742
-msgid "Access-Control-Expose-Headers"
-msgstr "Доступ-Контроль<br />-Подвергать-Заголовки"
-
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:706
 msgid "Additional HTTP headers"
 msgstr "Дополнительные заголовки HTTP"
@@ -243,6 +227,10 @@ msgstr "Полный путь и имя файла сертификата"
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:310
 msgid "Full path and file name of private key"
 msgstr "Полный путь и имя файла Приватного ключа"
+
+#: applications/luci-app-radicale/root/usr/share/rpcd/acl.d/luci-app-radicale.json:3
+msgid "Grant UCI access for luci-app-radicale"
+msgstr "Предоставить UCI доступ для luci-app-radicale"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:549
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:571

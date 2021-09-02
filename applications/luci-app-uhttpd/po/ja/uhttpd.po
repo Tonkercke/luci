@@ -111,17 +111,21 @@ msgstr "Lua スクリプト用ハンドラへの絶対パス"
 msgid "General Settings"
 msgstr "一般設定"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "luci-app-uhttpdにUCIアクセスを許可"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "HTTP リッスン（アドレス:ポート）"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr "HTTPS 証明書（DER エンコード）"
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "HTTPS 証明書（DER または PEM 形式）"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr "HTTPS 秘密鍵（DER エンコード）"
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "HTTPS 秘密鍵（DER または PEM 形式）"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -248,8 +252,8 @@ msgstr "指定しない場合、HTTP 認証は使用されません。"
 msgid "a.k.a CommonName"
 msgstr "共通名"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd"
 

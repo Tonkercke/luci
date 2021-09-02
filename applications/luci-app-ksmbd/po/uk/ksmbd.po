@@ -64,6 +64,10 @@ msgstr "Примусово Root"
 msgid "General Settings"
 msgstr "Загальні налаштування"
 
+#: applications/luci-app-ksmbd/root/usr/share/rpcd/acl.d/luci-app-ksmbd.json:3
+msgid "Grant access to LuCI app ksmbd"
+msgstr "Надати доступ LuCI до застосунку ksmbd"
+
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:97
 msgid "Hide dot files"
 msgstr "Приховати файли з крапкою"
@@ -87,7 +91,7 @@ msgid "Name"
 msgstr "Назва"
 
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:20
-#: applications/luci-app-ksmbd/luasrc/controller/ksmbd.lua:10
+#: applications/luci-app-ksmbd/root/usr/share/luci/menu.d/luci-app-ksmbd.json:3
 msgid "Network Shares"
 msgstr "Спільні мережеві ресурси"
 

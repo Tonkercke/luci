@@ -117,17 +117,21 @@ msgstr "Полный путь<br />к обработчику<br />скрипто
 msgid "General Settings"
 msgstr "Общие настройки"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "Предоставить UCI доступ для luci-app-uhttpd"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "Входящие HTTP<br />(адрес:порт)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr "Сертификат HTTPS (кодировка DER)"
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "Сертификат HTTPS (в DER или PEM формате)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr "Приватный ключ HTTPS (кодировка DER)"
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "Приватный ключ HTTPS (в DER или PEM формате)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -258,8 +262,8 @@ msgstr ""
 msgid "a.k.a CommonName"
 msgstr "Имя хоста сервера, так называемое - 'CommonName'"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd"
 

@@ -16,6 +16,10 @@ msgstr ""
 "Project-Info: Это технический перевод, не дословный. Главное-удобный русский "
 "интерфейс, все проверялось в графическом режиме, совместим с другими apps\n"
 
+#: applications/luci-app-splash/luasrc/view/splash/splash.htm:53
+msgid "%s with the operator of this access point."
+msgstr "%s с оператором данной точки доступа."
+
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:65
 #: applications/luci-app-splash/luasrc/view/splash_splash/splash.htm:13
 msgid "Accept"
@@ -138,9 +142,8 @@ msgid "Clients upload speed is limited to this value (kbyte/s)"
 msgstr "Скорость загрузки для клиентов ограничена этим значением (КБ/c)"
 
 #: applications/luci-app-splash/luasrc/view/splash/blocked.htm:15
-#: applications/luci-app-splash/luasrc/view/splash/splash.htm:54
-msgid "Contact"
-msgstr "Контакты для связи"
+msgid "Contact the owner"
+msgstr "Связаться с владельцем"
 
 #: applications/luci-app-splash/luasrc/view/splash_splash/splash.htm:12
 msgid "Decline"
@@ -178,9 +181,13 @@ msgstr "Зона межсетевого экрана"
 msgid "General"
 msgstr "Главный"
 
-#: applications/luci-app-splash/luasrc/view/splash/splash.htm:53
-msgid "Get in %s with the operator of this access point."
-msgstr "Получить в% s с оператором этой точки доступа."
+#: applications/luci-app-splash/luasrc/view/splash/splash.htm:54
+msgid "Get in contact"
+msgstr "Свяжитесь с нами"
+
+#: applications/luci-app-splash/root/usr/share/rpcd/acl.d/luci-app-splash.json:3
+msgid "Grant UCI access for luci-app-splash"
+msgstr "Предоставить UCI доступ для luci-app-splash"
 
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:205
 msgid "Hostname"

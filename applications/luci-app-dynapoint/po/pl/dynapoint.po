@@ -46,7 +46,7 @@ msgstr "Urządzenie"
 msgid "Disabled"
 msgstr "Wyłączone"
 
-#: applications/luci-app-dynapoint/luasrc/controller/dynapoint.lua:7
+#: applications/luci-app-dynapoint/root/usr/share/luci/menu.d/luci-app-dynapoint.json:3
 msgid "DynaPoint"
 msgstr "DynaPoint"
 
@@ -65,6 +65,10 @@ msgid ""
 msgstr ""
 "Licznik awarii po ilu nieudanych próbach pobrania stan jest uważany za "
 "nieaktywny"
+
+#: applications/luci-app-dynapoint/root/usr/share/rpcd/acl.d/luci-app-dynapoint.json:3
+msgid "Grant UCI access for luci-app-dynapoint"
+msgstr "Udziel dostępu UCI do luci-app-dynapoint"
 
 #: applications/luci-app-dynapoint/luasrc/model/cbi/dynapoint.lua:56
 msgid "List of Wireless Virtual Interfaces (wVIF)"

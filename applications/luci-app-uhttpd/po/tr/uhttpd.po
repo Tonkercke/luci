@@ -112,17 +112,21 @@ msgstr "Lua betikleri için işleyiciye tam gerçek yol"
 msgid "General Settings"
 msgstr "Genel Ayarlar"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "luci-app-uhttpd için UCI erişimi verin"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "HTTP dinleyicileri (address:port)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr ""
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "HTTPS Sertifikası (DER ya da PEM formatı)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr ""
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "HTTPS Özel Anahtar (DER ya da PEM formatı)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -251,8 +255,8 @@ msgstr "Mevcut değilse HTTP kimlik doğrulamasını kullanmayacak"
 msgid "a.k.a CommonName"
 msgstr "diğer adıyla Ortak Ad"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd"
 

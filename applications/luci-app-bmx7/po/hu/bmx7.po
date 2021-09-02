@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2019-12-21 21:43+0000\n"
-"Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
+"PO-Revision-Date: 2021-08-12 12:55+0000\n"
+"Last-Translator: Tudós Péter <tudi.sk@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsbmx7/hu/>\n"
 "Language: hu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/tunnels_j.htm:33
 msgid "Announcements"
@@ -19,8 +19,8 @@ msgid "BMX7 revision"
 msgstr "BMX7 revíziók"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/tunnels_j.htm:41
-msgid "Bandwith"
-msgstr ""
+msgid "Bandwidth"
+msgstr "Sávszélesség"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/admin_status/index/bmx7_nodes.htm:3
 msgid "Bmx7 mesh nodes"
@@ -53,8 +53,8 @@ msgid "Link key"
 msgstr "Hivatkozás kulcsa"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:61
-msgid "LinkLocal Ipv6"
-msgstr ""
+msgid "Link-local IPv6"
+msgstr "Kapcsolatszintű IPv6"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:71
 msgid "Links"
@@ -150,8 +150,8 @@ msgid "Rating"
 msgstr "Értékelés"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:78
-msgid "Remote linklocal IPv6"
-msgstr ""
+msgid "Remote link-local IPv6"
+msgstr "Távoli kapcsolatszintű IPv6"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:82
 msgid "Routes"
@@ -211,7 +211,7 @@ msgstr "Típus"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/status_j.htm:43
 msgid "Uptime"
-msgstr "Működési idő"
+msgstr "Futási idő"
 
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/admin_status/index/bmx7_nodes.htm:11
 #: applications/luci-app-bmx7/root/usr/lib/lua/luci/view/bmx7/nodes_j.htm:79

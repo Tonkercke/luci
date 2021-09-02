@@ -14,12 +14,12 @@ msgstr ""
 msgid "Allowed IPs"
 msgstr "IP permessi"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:225
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:259
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:236
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:270
 msgid "Collecting data..."
 msgstr "Raccolta dati..."
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:220
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:231
 msgid "Configuration"
 msgstr "Configurazione"
 
@@ -39,7 +39,7 @@ msgstr "Punto finale"
 msgid "Firewall Mark"
 msgstr "Marcatore firewall"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:189
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:200
 msgid "Interface"
 msgstr "Interfaccia"
 
@@ -59,7 +59,7 @@ msgstr "Porta in ascolto"
 msgid "Never"
 msgstr "Mai"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:251
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:262
 msgid "Peer"
 msgstr "Peer"
 
@@ -72,11 +72,11 @@ msgstr "KeepAlive persistente"
 msgid "Public Key"
 msgstr "Chiave pubblica"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:191
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:202
 msgid "Show/Hide QR-Code"
 msgstr "Visualizza/nascondi codice QR"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:211
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:222
 msgid ""
 "The QR-Code works per wg interface, it will be refreshed with every manual "
 "page reload and transfers the following information:"
@@ -84,11 +84,19 @@ msgstr ""
 "Il codice QR funziona per l'interfaccia wg, verrà aggiornato ad ogni "
 "ricarica manuale della pagina e trasferirà le seguenti informazioni:"
 
-#: applications/luci-app-wireguard/luasrc/controller/wireguard.lua:7
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:190
+msgid "This section contains no values yet"
+msgstr "Questa sezione non contiene ancora valori"
+
+#: applications/luci-app-wireguard/root/usr/share/luci/menu.d/luci-app-wireguard.json:3
+msgid "WireGuard"
+msgstr "WireGuard"
+
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:182
 msgid "WireGuard Status"
 msgstr "Stato WireGuard"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:212
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:223
 msgid ""
 "[Interface] A random, on the fly generated 'PrivateKey', the key will not be "
 "saved on the router"
@@ -96,7 +104,7 @@ msgstr ""
 "[Interfaccia] Una 'ChiavePrivata' generata in modo casuale e al volo, la "
 "chiave non verrà salvata sul router"
 
-#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:213
+#: applications/luci-app-wireguard/luasrc/view/wireguard.htm:224
 msgid ""
 "[Peer] The 'PublicKey' of that wg interface and the 'AllowedIPs' with the "
 "default of '0.0.0.0/0, ::/0' to allow sending traffic to any IPv4 and IPv6 "

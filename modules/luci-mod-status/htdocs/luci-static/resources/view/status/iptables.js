@@ -58,18 +58,18 @@ return view.extend({
 		if (!cdiv) {
 			cdiv = E('div', { 'data-chain': chain }, [
 				E('h4', { 'id': 'rule_%s-%s_%s'.format(is_ipv6 ? 'ipv6' : 'ipv4', table.toLowerCase(), chain) }, title),
-				E('div', { 'class': 'table' }, [
-					E('div', { 'class': 'tr table-titles' }, [
-						E('div', { 'class': 'th center' }, _('Pkts.')),
-						E('div', { 'class': 'th center' }, _('Traffic')),
-						E('div', { 'class': 'th' }, _('Target')),
-						E('div', { 'class': 'th' }, _('Prot.')),
-						E('div', { 'class': 'th' }, _('In')),
-						E('div', { 'class': 'th' }, _('Out')),
-						E('div', { 'class': 'th' }, _('Source')),
-						E('div', { 'class': 'th' }, _('Destination')),
-						E('div', { 'class': 'th' }, _('Options')),
-						E('div', { 'class': 'th' }, _('Comment'))
+				E('table', { 'class': 'table' }, [
+					E('tr', { 'class': 'tr table-titles' }, [
+						E('th', { 'class': 'th center' }, _('Pkts.')),
+						E('th', { 'class': 'th center' }, _('Traffic')),
+						E('th', { 'class': 'th' }, _('Target')),
+						E('th', { 'class': 'th' }, _('Prot.')),
+						E('th', { 'class': 'th' }, _('In')),
+						E('th', { 'class': 'th' }, _('Out')),
+						E('th', { 'class': 'th' }, _('Source')),
+						E('th', { 'class': 'th' }, _('Destination')),
+						E('th', { 'class': 'th' }, _('Options')),
+						E('th', { 'class': 'th' }, _('Comment'))
 					])
 				])
 			]);
@@ -313,7 +313,7 @@ return view.extend({
 				}, [ _('Restart Firewall') ])
 			]),
 			E('div', {}, [
-				E('div', { 'data-tab': 'iptables', 'data-tab-title': has_ip6tables ? _('IPv4 Firewall') : null }, [
+				E('div', { 'data-tab': 'iptables', 'data-tab-title': has_ip6tables ? _('IPv4 Firewall') : null, 'data-tab-active': has_ip6tables ? null : true }, [
 					E('p', {}, E('em', { 'class': 'spinning' }, [ _('Collecting data...') ]))
 				]),
 				has_ip6tables ? E('div', { 'data-tab': 'ip6tables', 'data-tab-title': _('IPv6 Firewall') }, [

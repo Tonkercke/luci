@@ -10,7 +10,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.5-dev\n"
 
-#: applications/luci-app-ltqtapi/luasrc/controller/ltqtapi.lua:16
+#: applications/luci-app-ltqtapi/luasrc/controller/ltqtapi.lua:17
 #: applications/luci-app-ltqtapi/luasrc/model/cbi/luci_ltqtapi/account.lua:7
 msgid "Account"
 msgstr "帳號"
@@ -23,7 +23,7 @@ msgstr "正在收集資料中…"
 msgid "Contact"
 msgstr "聯繫"
 
-#: applications/luci-app-ltqtapi/luasrc/controller/ltqtapi.lua:17
+#: applications/luci-app-ltqtapi/luasrc/controller/ltqtapi.lua:18
 msgid "Contacts"
 msgstr "聯絡人"
 
@@ -38,6 +38,10 @@ msgstr "撥號"
 #: applications/luci-app-ltqtapi/luasrc/model/cbi/luci_ltqtapi/account.lua:14
 msgid "Disabled"
 msgstr "已停用"
+
+#: applications/luci-app-ltqtapi/root/usr/share/rpcd/acl.d/luci-app-ltqtapi.json:3
+msgid "Grant UCI access for luci-app-ltqtapi"
+msgstr "授予 luci-app-ltqtapi 擁有 UCI 存取的權限"
 
 #: applications/luci-app-ltqtapi/luasrc/model/cbi/luci_ltqtapi/account.lua:7
 msgid "Here You can specify the SIP account that you want to use."

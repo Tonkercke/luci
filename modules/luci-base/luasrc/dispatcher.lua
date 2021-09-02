@@ -5,6 +5,7 @@
 local fs = require "nixio.fs"
 local sys = require "luci.sys"
 local util = require "luci.util"
+local xml = require "luci.xml"
 local http = require "luci.http"
 local nixio = require "nixio", require "nixio.util"
 
@@ -276,7 +277,7 @@ local function tree_to_json(node, json)
 	if type(node.nodes) == "table" then
 		for subname, subnode in pairs(node.nodes) do
 			local spec = {
-				title = util.striptags(subnode.title),
+				title = xml.striptags(subnode.title),
 				order = subnode.order
 			}
 
@@ -394,7 +395,7 @@ function error404(message)
 
 	local function render()
 		local template = require "luci.template"
-		template.render("error404")
+		template.render("error404", {message=message})
 	end
 
 	if not util.copcall(render) then
@@ -741,7 +742,7 @@ local function init_template_engine(ctx)
 				(scope and type(scope[key]) ~= "function" and scope[key]) or "")
 
 			if noescape ~= true then
-				val = util.pcdata(val)
+				val = xml.pcdata(val)
 			end
 
 			return string.format(' %s="%s"', tostring(key), val)
@@ -756,8 +757,8 @@ local function init_template_engine(ctx)
 		translate   = i18n.translate;
 		translatef  = i18n.translatef;
 		export      = function(k, v) if tpl.context.viewns[k] == nil then tpl.context.viewns[k] = v end end;
-		striptags   = util.striptags;
-		pcdata      = util.pcdata;
+		striptags   = xml.striptags;
+		pcdata      = xml.pcdata;
 		media       = media;
 		theme       = fs.basename(media);
 		resource    = luci.config.main.resourcebase;
@@ -1039,6 +1040,35 @@ function dispatch(request)
 	end
 end
 
+local function hash_filelist(files)
+	local fprint = {}
+	local n = 0
+
+	for i, file in ipairs(files) do
+		local st = fs.stat(file)
+		if st then
+			fprint[n + 1] = '%x' % st.ino
+			fprint[n + 2] = '%x' % st.mtime
+			fprint[n + 3] = '%x' % st.size
+			n = n + 3
+		end
+	end
+
+	return nixio.crypt(table.concat(fprint, "|"), "$1$"):sub(5):gsub("/", ".")
+end
+
+local function read_cachefile(file, reader)
+	local euid = sys.process.info("uid")
+	local fuid = fs.stat(file, "uid")
+	local mode = fs.stat(file, "modestr")
+
+	if euid ~= fuid or mode ~= "rw-------" then
+		return nil
+	end
+
+	return reader(file)
+end
+
 function createindex()
 	local controllers = { }
 	local base = "%s/controller/" % util.libpath()
@@ -1052,25 +1082,19 @@ function createindex()
 		controllers[#controllers+1] = path
 	end
 
+	local cachefile
+
 	if indexcache then
-		local cachedate = fs.stat(indexcache, "mtime")
-		if cachedate then
-			local realdate = 0
-			for _, obj in ipairs(controllers) do
-				local omtime = fs.stat(obj, "mtime")
-				realdate = (omtime and omtime > realdate) and omtime or realdate
-			end
+		cachefile = "%s.%s.lua" %{ indexcache, hash_filelist(controllers) }
 
-			if cachedate > realdate and sys.process.info("uid") == 0 then
-				assert(
-					sys.process.info("uid") == fs.stat(indexcache, "uid")
-					and fs.stat(indexcache, "modestr") == "rw-------",
-					"Fatal: Indexcache is not sane!"
-				)
+		local res = read_cachefile(cachefile, function(path) return loadfile(path)() end)
+		if res then
+			index = res
+			return res
+		end
 
-				index = loadfile(indexcache)()
-				return index
-			end
+		for file in (fs.glob("%s.*.lua" % indexcache) or function() end) do
+			fs.unlink(file)
 		end
 	end
 
@@ -1091,8 +1115,8 @@ function createindex()
 		end
 	end
 
-	if indexcache then
-		local f = nixio.open(indexcache, "w", 600)
+	if cachefile then
+		local f = nixio.open(cachefile, "w", 600)
 		f:writeall(util.get_bytecode(index))
 		f:close()
 	end
@@ -1115,29 +1139,16 @@ function createtree_json()
 	}
 
 	local files = {}
-	local fprint = {}
 	local cachefile
 
 	for file in (fs.glob("/usr/share/luci/menu.d/*.json") or function() end) do
 		files[#files+1] = file
-
-		if indexcache then
-			local st = fs.stat(file)
-			if st then
-				fprint[#fprint+1] = '%x' % st.ino
-				fprint[#fprint+1] = '%x' % st.mtime
-				fprint[#fprint+1] = '%x' % st.size
-			end
-		end
 	end
 
 	if indexcache then
-		cachefile = "%s.%s.json" %{
-			indexcache,
-			nixio.crypt(table.concat(fprint, "|"), "$1$"):sub(5):gsub("/", ".")
-		}
+		cachefile = "%s.%s.json" %{ indexcache, hash_filelist(files) }
 
-		local res = json.parse(fs.readfile(cachefile) or "")
+		local res = read_cachefile(cachefile, function(path) return json.parse(fs.readfile(path) or "") end)
 		if res then
 			return res
 		end
@@ -1180,7 +1191,9 @@ function createtree_json()
 	end
 
 	if cachefile then
-		fs.writefile(cachefile, json.stringify(tree))
+		local f = nixio.open(cachefile, "w", 600)
+		f:writeall(json.stringify(tree))
+		f:close()
 	end
 
 	return tree

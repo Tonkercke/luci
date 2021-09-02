@@ -20,6 +20,10 @@ msgstr "存取集訊器名稱"
 msgid "First remote IP"
 msgstr "第一個遠端 IP"
 
+#: applications/luci-app-rp-pppoe-server/root/usr/share/rpcd/acl.d/luci-app-rp-pppoe-server.json:3
+msgid "Grant UCI access for luci-app-rp-pppoe-server"
+msgstr "授予 luci-app-rp-pppoe-server 擁有 UCI 存取的權限"
+
 #: applications/luci-app-rp-pppoe-server/luasrc/model/cbi/rp-pppoe-server.lua:29
 msgid "IP of listening side"
 msgstr "監聽側 IP"
@@ -69,7 +73,7 @@ msgstr "PPP 單元編號"
 msgid "PPPoE Server Configuration"
 msgstr "PPPoE 伺服器設定"
 
-#: applications/luci-app-rp-pppoe-server/luasrc/controller/rp-pppoe-server.lua:11
+#: applications/luci-app-rp-pppoe-server/root/usr/share/luci/menu.d/luci-app-rp-pppoe-server.json:3
 msgid "RP PPPoE Server"
 msgstr "RP PPPoE 伺服器"
 

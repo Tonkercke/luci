@@ -64,6 +64,10 @@ msgstr "Rendszergazda kényszerítése"
 msgid "General Settings"
 msgstr "Általános Beállítások"
 
+#: applications/luci-app-ksmbd/root/usr/share/rpcd/acl.d/luci-app-ksmbd.json:3
+msgid "Grant access to LuCI app ksmbd"
+msgstr ""
+
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:97
 msgid "Hide dot files"
 msgstr "Rejtett fájlok elrejtése"
@@ -86,7 +90,7 @@ msgid "Name"
 msgstr "Név"
 
 #: applications/luci-app-ksmbd/htdocs/luci-static/resources/view/ksmbd.js:20
-#: applications/luci-app-ksmbd/luasrc/controller/ksmbd.lua:10
+#: applications/luci-app-ksmbd/root/usr/share/luci/menu.d/luci-app-ksmbd.json:3
 msgid "Network Shares"
 msgstr "Hálózati megosztások"
 

@@ -33,7 +33,7 @@ msgstr "全部代理"
 msgid "Append HEADERs to HTTP request header."
 msgstr "附加該值到 HTTP 請求頭。"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:18
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:17
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:35
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/files.lua:14
 #: applications/luci-app-aria2/luasrc/view/aria2/log_template.htm:45
@@ -76,9 +76,9 @@ msgstr "檢查憑證"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:242
 msgid ""
-"Close connection if download speed is lower than or equal to this "
-"value(bytes per sec). 0 means has no lowest speed limit."
-msgstr ""
+"Close connection if download speed is lower than or equal to this value "
+"(bytes per sec). 0 means has no lowest speed limit."
+msgstr "下載速度小於或等於該值（單位：B/s）時關閉連線，輸入 0 則表示不限速。"
 
 #: applications/luci-app-aria2/luasrc/view/aria2/log_template.htm:49
 #: applications/luci-app-aria2/luasrc/view/aria2/settings_header.htm:29
@@ -89,7 +89,7 @@ msgstr "正在收集資料中…"
 msgid "Config file directory"
 msgstr "組態檔目錄"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:21
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:22
 msgid "Configuration"
 msgstr "組態"
 
@@ -210,7 +210,7 @@ msgstr "檔案分配"
 msgid "File does not exist."
 msgstr "檔案不存在。"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:24
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:25
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/files.lua:14
 msgid "Files"
 msgstr "檔案"
@@ -230,6 +230,10 @@ msgstr "強制儲存"
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:129
 msgid "Generate Randomly"
 msgstr "隨機產生"
+
+#: applications/luci-app-aria2/root/usr/share/rpcd/acl.d/luci-app-aria2.json:3
+msgid "Grant UCI access for luci-app-aria2"
+msgstr "授予 luci-app-aria2 擁有 UCI 存取的權限"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:210
 msgid "HTTP accept gzip"
@@ -317,7 +321,7 @@ msgstr ""
 msgid "Loading"
 msgstr "正在載入中"
 
-#: applications/luci-app-aria2/luasrc/controller/aria2.lua:27
+#: applications/luci-app-aria2/luasrc/controller/aria2.lua:28
 msgid "Log"
 msgstr "日誌"
 
@@ -507,15 +511,12 @@ msgstr "重試等待"
 msgid "Run daemon as user"
 msgstr "執行守護行程的使用者"
 
-#: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:315
-msgid "Sava metadata"
-msgstr ""
-
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:429
 msgid ""
-"Save a control file(*.aria2) every N seconds. If 0 is given, a control file "
+"Save a control file (*.aria2) every N seconds. If 0 is given, a control file "
 "is not saved during download."
 msgstr ""
+"每 N 秒儲存下載「控制檔案」(*.aria2)。設定 0 表示在下載過程中不儲存控制檔案。"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:461
 msgid ""
@@ -543,6 +544,10 @@ msgid ""
 msgstr ""
 "儲存元資料為 \".torrent\" 檔案；此選項僅在使用 BitTorrent 磁力連結下載時生"
 "效。檔案名稱（包含字尾 \".torrent\"）為十六進位編碼的雜湊值。"
+
+#: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:315
+msgid "Save metadata"
+msgstr "儲存元資料"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:434
 msgid "Save session interval"
@@ -596,9 +601,11 @@ msgstr ""
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:342
 msgid ""
-"Set UDP listening port used by DHT(IPv4, IPv6) and UDP tracker. Make sure "
+"Set UDP listening port used by DHT (IPv4, IPv6) and UDP tracker. Make sure "
 "that the specified ports are open for incoming UDP traffic."
 msgstr ""
+"設定用於 DHT (IPv4, IPv6) 和 UDP tracker 協定的 UDP 監聽埠；請確保指定的通訊"
+"埠允許 UDP 傳入流量。"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:477
 msgid ""
@@ -654,13 +661,18 @@ msgstr "顯示 URL"
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:448
 msgid ""
 "Specify file allocation method. If you are using newer file systems such as "
-"ext4 (with extents support), btrfs, xfs or NTFS(MinGW build only), \"falloc"
+"ext4 (with extents support), btrfs, xfs or NTFS (MinGW build only), \"falloc"
 "\" is your best choice. It allocates large(few GiB) files almost instantly, "
 "but it may not be available if your system doesn't have posix_fallocate(3) "
 "function. Don't use \"falloc\" with legacy file systems such as ext3 and "
 "FAT32 because it takes almost same time as \"prealloc\" and it blocks aria2 "
 "entirely until allocation finishes."
 msgstr ""
+"指定檔案分配方式。如果您使用的檔案系統較新，例如：ext4 (支援擴展分區)、"
+"btrfs、xfs 或者 NTFS (僅限 MinGW 版本)，強烈推薦「falloc」，這種方式幾乎能立"
+"即分配比較大的檔案 (GB)，但是它要求您的系統必須支援 posix_fallocate(3) 函數。"
+"不要在 ext3 或者 FAT32 這些舊檔案系統中使用「falloc」，因為它花費的時間和"
+"「prealloc」幾乎一樣多，而且在檔案分配過程中會阻塞整個 Aria2 處理程序。"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:368
 msgid ""
@@ -725,8 +737,10 @@ msgid "The directory to store the config file, session file and DHT file."
 msgstr "儲存設定檔、工作階段檔和 DHT 檔案的目錄。"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:70
-msgid "The directory to store the downloaded file. eg. <code>/mnt/sda1</code>"
-msgstr ""
+msgid ""
+"The directory to store the downloaded file. For example <code>/mnt/sda1</"
+"code>."
+msgstr "儲存下載檔案的目錄（例如：<code>/mnt/sda1</code>）。"
 
 #: applications/luci-app-aria2/luasrc/model/cbi/aria2/config.lua:81
 msgid "The file name of the log file."

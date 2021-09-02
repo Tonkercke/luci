@@ -38,11 +38,11 @@ msgstr "Kontrolovat původ"
 msgid "Client option"
 msgstr "Klientská volba"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:80
 msgid "Command"
 msgstr "Příkaz"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:12
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
 msgstr "Nastavení"
 
@@ -82,6 +82,14 @@ msgstr "Zapnout podporu pro IPv6"
 msgid "Enable SSL"
 msgstr "Šifrovat spojení (TLS)"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:74
+msgid "Error"
+msgstr ""
+
+#: applications/luci-app-ttyd/root/usr/share/rpcd/acl.d/luci-app-ttyd.json:3
+msgid "Grant UCI access for luci-app-ttyd"
+msgstr ""
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:34
 msgid "Group ID"
 msgstr "Identif. skupiny"
@@ -97,6 +105,10 @@ msgstr "IPv6"
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:58
 msgid "Index"
 msgstr "Index"
+
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:77
+msgid "Info"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:24
 msgid "Interface"
@@ -119,6 +131,10 @@ msgstr ""
 "Síťové rozhraní, na které navázat (např.: eth0), nebo popis umístění UNIX "
 "socketu (např.: /var/run/ttyd.sock)"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+msgid "Notice"
+msgstr ""
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Once"
 msgstr "Jednou"
@@ -133,7 +149,7 @@ msgstr ""
 "Port na kterém očekávat spojení (výchozí: 7681, pro náhodný port zadejte "
 "nulu „0“)"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:13
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
 "Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
@@ -191,7 +207,8 @@ msgstr "Signál"
 msgid "Signal to send to the command when exit it (default: 1, SIGHUP)"
 msgstr "Signál, který se odešle příkazu při ukončení (výchozí: 1, SIGHUP)"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:11
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:3
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:14
 msgid "Terminal"
 msgstr "Terminál"
 
@@ -211,9 +228,9 @@ msgstr "Identif. uživatele"
 msgid "User id to run with"
 msgstr "Identif. uživatele, pod kterým spustit"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:10
-msgid "ttyd"
-msgstr "ttyd"
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:75
+msgid "Warning"
+msgstr ""
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:12
 msgid "ttyd Instance"

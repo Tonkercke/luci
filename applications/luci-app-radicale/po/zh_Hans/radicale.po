@@ -27,22 +27,6 @@ msgstr "Radicale 应监听的“主机名:端口”或“IPv4:端口”或“[IP
 msgid "AUTO"
 msgstr "自动"
 
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:734
-msgid "Access-Control-Allow-Headers"
-msgstr "Access-Control-Allow-Headers"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:726
-msgid "Access-Control-Allow-Methods"
-msgstr "Access-Control-Allow-Methods"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:718
-msgid "Access-Control-Allow-Origin"
-msgstr "Access-Control-Allow-Origin"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:742
-msgid "Access-Control-Expose-Headers"
-msgstr "Access-Control-Expose-Headers"
-
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:706
 msgid "Additional HTTP headers"
 msgstr "其他 HTTP 标头"
@@ -228,6 +212,10 @@ msgstr "证书的完整路径和文件名"
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:310
 msgid "Full path and file name of private key"
 msgstr "私钥的完整路径和文件名"
+
+#: applications/luci-app-radicale/root/usr/share/rpcd/acl.d/luci-app-radicale.json:3
+msgid "Grant UCI access for luci-app-radicale"
+msgstr "授予UCI访问luci-app-radiicale的权限"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:549
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:571

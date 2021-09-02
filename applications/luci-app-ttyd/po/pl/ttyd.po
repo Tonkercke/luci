@@ -39,11 +39,11 @@ msgstr "Sprawdź pochodzenie"
 msgid "Client option"
 msgstr "Opcja klienta"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:80
 msgid "Command"
 msgstr "Polecenie"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:12
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:23
 msgid "Config"
 msgstr "Konfiguracja"
 
@@ -83,6 +83,14 @@ msgstr "Włącz obsługę IPv6"
 msgid "Enable SSL"
 msgstr "Włącz SSL"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:74
+msgid "Error"
+msgstr "Błąd"
+
+#: applications/luci-app-ttyd/root/usr/share/rpcd/acl.d/luci-app-ttyd.json:3
+msgid "Grant UCI access for luci-app-ttyd"
+msgstr "Udziel dostępu UCI do luci-app-ttyd"
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:34
 msgid "Group ID"
 msgstr "ID grupy"
@@ -98,6 +106,10 @@ msgstr "IPv6"
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:58
 msgid "Index"
 msgstr "Indeks"
+
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:77
+msgid "Info"
+msgstr "Informacja"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:24
 msgid "Interface"
@@ -119,6 +131,10 @@ msgstr ""
 "Interfejs sieciowy do powiązania (np: eth0) lub ścieżka gniazda domeny UNIX "
 "(np.:/var/run/ttyd.sock)"
 
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:76
+msgid "Notice"
+msgstr "Spostrzeżenie"
+
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:56
 msgid "Once"
 msgstr "Raz"
@@ -131,7 +147,7 @@ msgstr "Port"
 msgid "Port to listen (default: 7681, use `0` for random port)"
 msgstr "Port do nasłuchiwania (domyślnie: 7681, użyj `0`dla losowego portu)"
 
-#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:13
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
 "Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
 "try again."
@@ -188,7 +204,8 @@ msgid "Signal to send to the command when exit it (default: 1, SIGHUP)"
 msgstr ""
 "Sygnał wysłania do polecenia po jego zakończeniu (domyślnie: 1, SIGHUP)"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:11
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:3
+#: applications/luci-app-ttyd/root/usr/share/luci/menu.d/luci-app-ttyd.json:14
 msgid "Terminal"
 msgstr "Terminal"
 
@@ -208,9 +225,9 @@ msgstr "ID użytkownika"
 msgid "User id to run with"
 msgstr "Identyfikator użytkownika do uruchomienia"
 
-#: applications/luci-app-ttyd/luasrc/controller/ttyd.lua:10
-msgid "ttyd"
-msgstr "ttyd"
+#: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:75
+msgid "Warning"
+msgstr "Ostrzeżenie"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:12
 msgid "ttyd Instance"

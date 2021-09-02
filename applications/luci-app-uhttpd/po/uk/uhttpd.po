@@ -112,17 +112,21 @@ msgstr "Повний реальний шлях до обробника сцен�
 msgid "General Settings"
 msgstr "Загальні налаштування"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "Надати доступ до UCI для luci-app-uhttpd"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "Прослуховувачі HTTP (адреса:порт)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr ""
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "Сертифікат HTTPS (формат DER або PEM)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr ""
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "Приватний ключ HTTPS (формат DER або PEM)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -252,8 +256,8 @@ msgstr "Не використовуватиметься автентифікац
 msgid "a.k.a CommonName"
 msgstr "Також відоме як CommonName"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd"
 

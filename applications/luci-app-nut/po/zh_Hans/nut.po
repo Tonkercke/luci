@@ -154,6 +154,10 @@ msgstr "全局设置"
 msgid "Go to NUT CGI"
 msgstr "前往 NUT CGI"
 
+#: applications/luci-app-nut/root/usr/share/rpcd/acl.d/luci-app-nut.json:3
+msgid "Grant UCI access for luci-app-nut"
+msgstr "授予UCI访问luci-app-nut的权限"
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:16
 msgid "Host"
 msgstr "主机"
@@ -224,7 +228,12 @@ msgstr "报告的最大 USB HID 长度"
 msgid "Maximum Age of Data"
 msgstr "最大数据年龄"
 
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
+msgid "Maximum Retries"
+msgstr "最大重试次数"
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:87
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
 msgid "Maximum Start Delay"
 msgstr "最大启动延迟"
 
@@ -239,14 +248,6 @@ msgstr "尝试启动驱动程序的最大次数。"
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:101
 msgid "Maximum time in seconds between refresh of UPS status"
 msgstr "刷新 UPS 状态之间的最长时间（秒）"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
-msgid "Maxium Retries"
-msgstr "最大重试次数"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
-msgid "Maxium Start Delay"
-msgstr "最大启动延迟"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:17
 msgid "Minimum required number or power supplies"
@@ -269,22 +270,22 @@ msgstr "NUT 用户"
 msgid "Name of UPS"
 msgstr "UPS 的名称"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:11
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:3
 msgid "Network UPS Tools"
 msgstr "网络 UPS 工具"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:22
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:6
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:44
 msgid "Network UPS Tools (CGI)"
 msgstr "网络 UPS 工具（CGI）"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:18
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:7
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:31
 msgid "Network UPS Tools (Monitor)"
 msgstr "网络 UPS 工具（监控）"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:14
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:9
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:18
 msgid "Network UPS Tools (Server)"
 msgstr "网络 UPS 工具（服务器）"
 

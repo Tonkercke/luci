@@ -83,7 +83,7 @@ msgstr ""
 "Bir IP adresi veya aralığı, bir alan adı veya etki alanı olmayan herhangi "
 "bir ana bilgisayar için \".\" olabilir"
 
-#: applications/luci-app-tinyproxy/luasrc/controller/tinyproxy.lua:14
+#: applications/luci-app-tinyproxy/root/usr/share/luci/menu.d/luci-app-tinyproxy.json:23
 msgid "Configuration"
 msgstr "Yapılandırma"
 
@@ -130,6 +130,10 @@ msgstr "Filtreleme ve ACL'ler"
 #: applications/luci-app-tinyproxy/luasrc/model/cbi/tinyproxy.lua:11
 msgid "General settings"
 msgstr "Genel Ayarlar"
+
+#: applications/luci-app-tinyproxy/root/usr/share/rpcd/acl.d/luci-app-tinyproxy.json:3
+msgid "Grant UCI access for luci-app-tinyproxy"
+msgstr "luci-app-tinyproxy için UCI erişimi verin"
 
 #: applications/luci-app-tinyproxy/luasrc/model/cbi/tinyproxy.lua:97
 msgid "Group"
@@ -307,7 +311,7 @@ msgstr "Yedek sunucuları başlat"
 msgid "Statistics page"
 msgstr "İstatistikler sayfası"
 
-#: applications/luci-app-tinyproxy/luasrc/controller/tinyproxy.lua:13
+#: applications/luci-app-tinyproxy/root/usr/share/luci/menu.d/luci-app-tinyproxy.json:14
 msgid "Status"
 msgstr "Durum"
 
@@ -315,8 +319,8 @@ msgstr "Durum"
 msgid "Target host"
 msgstr "Hedef ana bilgisayar"
 
-#: applications/luci-app-tinyproxy/luasrc/controller/tinyproxy.lua:12
 #: applications/luci-app-tinyproxy/luasrc/model/cbi/tinyproxy.lua:5
+#: applications/luci-app-tinyproxy/root/usr/share/luci/menu.d/luci-app-tinyproxy.json:3
 msgid "Tinyproxy"
 msgstr "Tinyproxy"
 

@@ -28,22 +28,6 @@ msgstr ""
 msgid "AUTO"
 msgstr "AUTO"
 
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:734
-msgid "Access-Control-Allow-Headers"
-msgstr "Acceso-Control-Permitir-Encabezados"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:726
-msgid "Access-Control-Allow-Methods"
-msgstr "Acceso-Control-Permitir-Métodos"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:718
-msgid "Access-Control-Allow-Origin"
-msgstr "Acceso-Control-Permitir-Origen"
-
-#: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:742
-msgid "Access-Control-Expose-Headers"
-msgstr "Acceso-Control-Exponer-Encabezados"
-
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:706
 msgid "Additional HTTP headers"
 msgstr "Encabezados HTTP adicionales"
@@ -240,6 +224,10 @@ msgstr "Ruta completa y nombre de archivo del certificado"
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:310
 msgid "Full path and file name of private key"
 msgstr "Ruta completa y nombre de archivo de clave privada"
+
+#: applications/luci-app-radicale/root/usr/share/rpcd/acl.d/luci-app-radicale.json:3
+msgid "Grant UCI access for luci-app-radicale"
+msgstr "Conceder acceso a UCI para luci-app-radicale"
 
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:549
 #: applications/luci-app-radicale/luasrc/model/cbi/radicale.lua:571

@@ -108,17 +108,21 @@ msgstr "Lua 指令碼處理程式的完整真實路徑"
 msgid "General Settings"
 msgstr "一般設定"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "授予 luci-app-uhttpd 擁有 UCI 存取的權限"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "HTTP 監聽（位址:埠）"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr "HTTPS 證書（DER 編碼）"
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "HTTPS數位簽證(DER 或 PEM格式)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr "HTTPS 私鑰（DER 編碼）"
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "HTTPS 私人金鑰(DER或PEM格式)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -239,8 +243,8 @@ msgstr "如果不存在，將不使用 HTTP 身份驗證"
 msgid "a.k.a CommonName"
 msgstr "又名 CommonName"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd精簡http伺服器"
 

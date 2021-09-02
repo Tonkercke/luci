@@ -110,17 +110,21 @@ msgstr "Caminho completo para o interpretador de scripts Lua"
 msgid "General Settings"
 msgstr "Configurações gerais"
 
+#: applications/luci-app-uhttpd/root/usr/share/rpcd/acl.d/luci-app-uhttpd.json:3
+msgid "Grant UCI access for luci-app-uhttpd"
+msgstr "Conceda acesso UCI ao luci-app-uhttpd"
+
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:22
 msgid "HTTP listeners (address:port)"
 msgstr "Escutas do HTTP (endereço:porta)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:94
-msgid "HTTPS Certificate (DER Encoded)"
-msgstr "Certificado do HTTPS (codificado em formato PEM)"
+msgid "HTTPS Certificate (DER or PEM format)"
+msgstr "Certificado HTTPS (em formato DER ou PEM)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:96
-msgid "HTTPS Private Key (DER Encoded)"
-msgstr "Chave Privada do HTTPS (codificado como DER)"
+msgid "HTTPS Private Key (DER or PEM format)"
+msgstr "Chave Privada do HTTPS (em formato DER ou PEM)"
 
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:50
 msgid "HTTPS listener (address:port)"
@@ -249,8 +253,8 @@ msgstr "Não usar autenticação HTTP se não presente"
 msgid "a.k.a CommonName"
 msgstr "também conhecido como Nome Comum"
 
-#: applications/luci-app-uhttpd/luasrc/controller/uhttpd/uhttpd.lua:13
 #: applications/luci-app-uhttpd/luasrc/model/cbi/uhttpd/uhttpd.lua:6
+#: applications/luci-app-uhttpd/root/usr/share/luci/menu.d/luci-app-uhttpd.json:3
 msgid "uHTTPd"
 msgstr "uHTTPd"
 

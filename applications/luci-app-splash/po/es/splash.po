@@ -14,6 +14,10 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 4.6-dev\n"
 
+#: applications/luci-app-splash/luasrc/view/splash/splash.htm:53
+msgid "%s with the operator of this access point."
+msgstr "%s con el operador de este punto de acceso."
+
 #: applications/luci-app-splash/luasrc/view/splash/splash.htm:65
 #: applications/luci-app-splash/luasrc/view/splash_splash/splash.htm:13
 msgid "Accept"
@@ -131,9 +135,8 @@ msgid "Clients upload speed is limited to this value (kbyte/s)"
 msgstr "La velocidad de subida de los clientes está limitada a (Kbytes/s)"
 
 #: applications/luci-app-splash/luasrc/view/splash/blocked.htm:15
-#: applications/luci-app-splash/luasrc/view/splash/splash.htm:54
-msgid "Contact"
-msgstr "Contacto"
+msgid "Contact the owner"
+msgstr "Contacta al dueño"
 
 #: applications/luci-app-splash/luasrc/view/splash_splash/splash.htm:12
 msgid "Decline"
@@ -171,9 +174,13 @@ msgstr "Zona del cortafuegos"
 msgid "General"
 msgstr "General"
 
-#: applications/luci-app-splash/luasrc/view/splash/splash.htm:53
-msgid "Get in %s with the operator of this access point."
-msgstr "Conecte %s con el operador de este punto de acceso."
+#: applications/luci-app-splash/luasrc/view/splash/splash.htm:54
+msgid "Get in contact"
+msgstr "Ponerse en contacto"
+
+#: applications/luci-app-splash/root/usr/share/rpcd/acl.d/luci-app-splash.json:3
+msgid "Grant UCI access for luci-app-splash"
+msgstr "Conceder acceso a UCI para luci-app-splash"
 
 #: applications/luci-app-splash/luasrc/view/admin_status/splash.htm:205
 msgid "Hostname"

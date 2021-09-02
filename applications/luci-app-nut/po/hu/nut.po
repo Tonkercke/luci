@@ -1,10 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: https://github.com/openwrt/luci/issues\n"
-"POT-Creation-Date: 2020-01-05 23:41+0000\n"
-"PO-Revision-Date: 2019-12-28 22:27+0000\n"
-"Last-Translator: Balázs Úr <balazs@urbalazs.hu>\n"
+"PO-Revision-Date: 2021-08-12 12:55+0000\n"
+"Last-Translator: Tudós Péter <tudi.sk@gmail.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsnut/hu/>\n"
 "Language: hu\n"
@@ -12,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 3.10\n"
+"X-Generator: Weblate 4.8-dev\n"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:216
 msgid "Additional Shutdown Time(s)"
@@ -159,6 +157,10 @@ msgstr "Globális beállítások"
 msgid "Go to NUT CGI"
 msgstr "Ugrás a NUT CGI-hez"
 
+#: applications/luci-app-nut/root/usr/share/rpcd/acl.d/luci-app-nut.json:3
+msgid "Grant UCI access for luci-app-nut"
+msgstr ""
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:16
 msgid "Host"
 msgstr "Gép"
@@ -178,7 +180,7 @@ msgstr "Forró szinkronizálás"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:41
 msgid "IP Address"
-msgstr "IP-cím"
+msgstr "IP cím"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:95
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:104
@@ -229,7 +231,12 @@ msgstr "Legnagyobb USB HID hossz jelentve"
 msgid "Maximum Age of Data"
 msgstr "Adatok legnagyobb életkora"
 
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
+msgid "Maximum Retries"
+msgstr "Legtöbb újrapróbálás"
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:87
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
 msgid "Maximum Start Delay"
 msgstr "Legnagyobb indítási késleltetés"
 
@@ -244,15 +251,6 @@ msgstr "Egy illesztőprogram indítási kísérleteinek legnagyobb száma."
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:101
 msgid "Maximum time in seconds between refresh of UPS status"
 msgstr "Legnagyobb idő másodpercben az UPS állapot frissítése között"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
-msgid "Maxium Retries"
-msgstr "Legtöbb újrapróbálás"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
-#, fuzzy
-msgid "Maxium Start Delay"
-msgstr "Legnagyobb indítási késleltetés"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:17
 msgid "Minimum required number or power supplies"
@@ -275,22 +273,22 @@ msgstr "NUT felhasználók"
 msgid "Name of UPS"
 msgstr "Az UPS neve"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:11
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:3
 msgid "Network UPS Tools"
 msgstr "Hálózati UPS eszközök"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:22
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:6
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:44
 msgid "Network UPS Tools (CGI)"
 msgstr "Hálózati UPS eszközök (CGI)"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:18
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:7
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:31
 msgid "Network UPS Tools (Monitor)"
 msgstr "Hálózati UPS eszközök (megfigyelő)"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:14
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:9
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:18
 msgid "Network UPS Tools (Server)"
 msgstr "Hálózati UPS eszközök (kiszolgáló)"
 

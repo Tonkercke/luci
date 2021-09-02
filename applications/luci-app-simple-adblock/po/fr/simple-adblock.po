@@ -201,6 +201,10 @@ msgstr ""
 "Routage forcé du serveur DNS sur les appareils locaux, également connu sous "
 "le nom de détournement de DNS."
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI and file access for luci-app-simple-adblock"
+msgstr ""
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:297
 msgid "IPv6 Support"
 msgstr "Support IPv6"
@@ -305,6 +309,7 @@ msgid "Service Status [%s %s]"
 msgstr ""
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "Adblock Simple"
 

@@ -200,6 +200,10 @@ msgstr "强制所有本地设备使用路由器 DNS"
 msgid "Forces Router DNS use on local devices, also known as DNS Hijacking."
 msgstr "强制在本地设备上使用路由器 DNS，也称为 DNS 劫持。"
 
+#: applications/luci-app-simple-adblock/root/usr/share/rpcd/acl.d/luci-app-simple-adblock.json:3
+msgid "Grant UCI and file access for luci-app-simple-adblock"
+msgstr "为luci-app-simple-adblock授予UCI和文件访问权限"
+
 #: applications/luci-app-simple-adblock/luasrc/model/cbi/simple-adblock.lua:297
 msgid "IPv6 Support"
 msgstr "IPv6 支持"
@@ -296,6 +300,7 @@ msgid "Service Status [%s %s]"
 msgstr "服务状态 [%s %s]"
 
 #: applications/luci-app-simple-adblock/luasrc/controller/simple-adblock.lua:4
+#: applications/luci-app-simple-adblock/root/usr/share/luci/menu.d/luci-app-simple-adblock.json:3
 msgid "Simple AdBlock"
 msgstr "简易 AdBlock"
 

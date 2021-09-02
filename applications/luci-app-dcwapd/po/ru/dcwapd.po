@@ -52,7 +52,7 @@ msgstr "Порт назначения"
 msgid "Dual Channel Wi-Fi AP Daemon"
 msgstr "Демон двухканальной точки доступа WiFi"
 
-#: applications/luci-app-dcwapd/luasrc/controller/dcwapd.lua:11
+#: applications/luci-app-dcwapd/root/usr/share/luci/menu.d/luci-app-dcwapd.json:3
 msgid "Dual Channel WiFi"
 msgstr "Двухканальный Wi-Fi"
 
@@ -77,6 +77,10 @@ msgstr "Главный"
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:27
 msgid "General Settings"
 msgstr "Общие настройки"
+
+#: applications/luci-app-dcwapd/root/usr/share/rpcd/acl.d/luci-app-dcwapd.json:3
+msgid "Grant UCI access for luci-app-dcwapd"
+msgstr "Предоставить UCI доступ для luci-app-dcwapd"
 
 #: applications/luci-app-dcwapd/luasrc/model/cbi/dcwapd/dcwapd.lua:138
 msgid "Interfaces"

@@ -75,6 +75,10 @@ msgstr "轉發器"
 msgid "General Setup"
 msgstr "一般設定"
 
+#: applications/luci-app-ahcp/root/usr/share/rpcd/acl.d/luci-app-ahcp.json:3
+msgid "Grant UCI access for luci-app-ahcp"
+msgstr "授予 luci-app-ahcp 擁有 UCI 存取的權限"
+
 #: applications/luci-app-ahcp/luasrc/model/cbi/admin_network/proto_ahcp.lua:24
 #: applications/luci-app-ahcp/luasrc/model/cbi/ahcp.lua:61
 msgid "IPv4 and IPv6"

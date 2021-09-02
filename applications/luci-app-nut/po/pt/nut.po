@@ -156,6 +156,10 @@ msgstr "Configurações Globais"
 msgid "Go to NUT CGI"
 msgstr "Ir para o NUT CGI"
 
+#: applications/luci-app-nut/root/usr/share/rpcd/acl.d/luci-app-nut.json:3
+msgid "Grant UCI access for luci-app-nut"
+msgstr "Conceder acesso UCI ao luci-app-nut"
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:16
 msgid "Host"
 msgstr "Host"
@@ -226,7 +230,12 @@ msgstr "Relatório de comprimento máximo do USB HID"
 msgid "Maximum Age of Data"
 msgstr "Idade Máxima dos Dados"
 
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
+msgid "Maximum Retries"
+msgstr "Quantidade Máxima de Tentativas"
+
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:87
+#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
 msgid "Maximum Start Delay"
 msgstr "Atraso Máximo de Arranque"
 
@@ -241,14 +250,6 @@ msgstr "Quantidade máxima de vezes para tentar iniciar o driver."
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:101
 msgid "Maximum time in seconds between refresh of UPS status"
 msgstr "Tempo máximo em segundos para atualizar a condição do estado do UPS"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:91
-msgid "Maxium Retries"
-msgstr "Quantidade Máxima de Tentativas"
-
-#: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:158
-msgid "Maxium Start Delay"
-msgstr "Atraso Máximo de Arranque"
 
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:17
 msgid "Minimum required number or power supplies"
@@ -271,22 +272,22 @@ msgstr "Utilizadores NUT"
 msgid "Name of UPS"
 msgstr "Nome do UPS"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:11
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:3
 msgid "Network UPS Tools"
 msgstr "Ferramentas de Rede do UPS"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:22
 #: applications/luci-app-nut/luasrc/model/cbi/nut_cgi.lua:6
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:44
 msgid "Network UPS Tools (CGI)"
 msgstr "Ferramentas de Rede do UPS (CGI)"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:18
 #: applications/luci-app-nut/luasrc/model/cbi/nut_monitor.lua:7
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:31
 msgid "Network UPS Tools (Monitor)"
 msgstr "Ferramentas de Rede do UPS (Monitoramento)"
 
-#: applications/luci-app-nut/luasrc/controller/nut.lua:14
 #: applications/luci-app-nut/luasrc/model/cbi/nut_server.lua:9
+#: applications/luci-app-nut/root/usr/share/luci/menu.d/luci-app-nut.json:18
 msgid "Network UPS Tools (Server)"
 msgstr "Ferramentas de Rede do UPS (Servidor)"
 

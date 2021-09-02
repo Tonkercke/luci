@@ -13,15 +13,21 @@ msgstr ""
 
 #: applications/luci-app-lxc/luasrc/model/cbi/lxc.lua:18
 msgid ""
-"<b>Please note:</b> For LXC Containers you need a custom OpenWrt image.<br />"
+"<b>Please note:</b> LXC Containers require features not available on OpenWrt "
+"images for devices with small flash.<br />"
 msgstr ""
-"<b>Uwaga:</b>Dla kontenerów LXC potrzebny jest niestandardowy obraz OpenWrt."
-"<br />"
+"<b>Proszę zauważyć:</b>Kontenery LXC wymagają funkcji niedostępnych w "
+"OpenWrt dla urządzeń z małą pamięcią flash.<br />"
 
 #: applications/luci-app-lxc/luasrc/view/lxc.htm:29
 #: applications/luci-app-lxc/luasrc/view/lxc.htm:47
 msgid "Actions"
 msgstr "Akcje"
+
+#: applications/luci-app-lxc/luasrc/model/cbi/lxc.lua:19
+msgid "Also you may want to install 'kmod-veth' for optional network support."
+msgstr ""
+"Możesz również zainstalować 'kmod-veth' dla opcjonalnego wsparcia sieciowego."
 
 #: applications/luci-app-lxc/luasrc/view/lxc.htm:23
 msgid "Available Containers"
@@ -67,6 +73,10 @@ msgstr "Próg wolnego miejsca"
 msgid "Free Temp Threshold"
 msgstr "Próg wolnej pamięci tymczasowej"
 
+#: applications/luci-app-lxc/root/usr/share/rpcd/acl.d/luci-app-lxc.json:3
+msgid "Grant UCI access for luci-app-lxc"
+msgstr "Udziel dostępu UCI do luci-app-lxc"
+
 #: applications/luci-app-lxc/luasrc/controller/lxc.lua:31
 #: applications/luci-app-lxc/luasrc/model/cbi/lxc.lua:17
 msgid "LXC Containers"
@@ -111,13 +121,3 @@ msgstr "Zatrzymaj"
 #: applications/luci-app-lxc/luasrc/view/lxc.htm:46
 msgid "Template"
 msgstr "Szablon"
-
-#: applications/luci-app-lxc/luasrc/model/cbi/lxc.lua:19
-msgid ""
-"The image should include at least support for 'kernel cgroups', 'kernel "
-"namespaces' and 'miscellaneous LXC related options' plus 'kmod-veth' for "
-"optional network support."
-msgstr ""
-"Obraz powinien zawierać co najmniej obsługę dla 'kernel cgroups', 'kernel "
-"namespaces' i 'miscellaneous LXC related options' plus 'kmod-veth' dla "
-"opcjonalnego wsparcia sieci."

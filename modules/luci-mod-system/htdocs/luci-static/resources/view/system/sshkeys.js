@@ -1,9 +1,12 @@
 'use strict';
+'require baseclass';
 'require view';
 'require fs';
 'require ui';
 
-var SSHPubkeyDecoder = L.Class.singleton({
+var isReadonlyView = !L.hasViewPermission() || null;
+
+var SSHPubkeyDecoder = baseclass.singleton({
 	lengthDecode: function(s, off)
 	{
 		var l = (s.charCodeAt(off++) << 24) |
@@ -106,7 +109,7 @@ var SSHPubkeyDecoder = L.Class.singleton({
 function renderKeyItem(pubkey) {
 	return E('div', {
 		class: 'item',
-		click: removeKey,
+		click: isReadonlyView ? null : removeKey,
 		'data-key': pubkey.src
 	}, [
 		E('strong', pubkey.comment || _('Unnamed key')), E('br'),
@@ -245,17 +248,23 @@ return view.extend({
 	},
 
 	render: function(keys) {
-		var list = E('div', { 'class': 'cbi-dynlist', 'dragover': dragKey, 'drop': dropKey }, [
+		var list = E('div', {
+			'class': 'cbi-dynlist',
+			'dragover': isReadonlyView ? null : dragKey,
+			'drop': isReadonlyView ? null : dropKey
+		}, [
 			E('div', { 'class': 'add-item' }, [
 				E('input', {
 					'class': 'cbi-input-text',
 					'type': 'text',
 					'placeholder': _('Paste or drag SSH key file…') ,
-					'keydown': function(ev) { if (ev.keyCode === 13) addKey(ev) }
+					'keydown': function(ev) { if (ev.keyCode === 13) addKey(ev) },
+					'disabled': isReadonlyView
 				}),
 				E('button', {
 					'class': 'cbi-button',
-					'click': ui.createHandlerFn(this, addKey)
+					'click': ui.createHandlerFn(this, addKey),
+					'disabled': isReadonlyView
 				}, _('Add key'))
 			])
 		]);
