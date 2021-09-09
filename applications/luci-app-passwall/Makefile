@@ -10,8 +10,6 @@ PKG_VERSION:=4.34
 PKG_RELEASE:=1
 #20210818
 
-include $(INCLUDE_DIR)/package.mk
-
 PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria \
@@ -32,7 +30,7 @@ PKG_CONFIG_DEPENDS:= \
 LUCI_TITLE:=LuCI support for PassWall
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
-	+dnsmasq-full +ipset +ip-full +ipt2socks +iptables-mod-tproxy \
+	+dnsmasq-full +dns2socks +ipset +ip-full +ipt2socks +iptables-mod-tproxy \
 	+libuci-lua +lua +luci-lib-jsonc +microsocks +tcping +resolveip \
 	+unzip \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy:haproxy \
@@ -52,13 +50,13 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_V2ray_Plugin:v2ray-plugin \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Xray:xray-core
 
-define Package/luci-app-passwall/config
+define Package/$(PKG_NAME)/config
 menu "Configuration"
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy
 	bool "Include Haproxy"
 	default y if aarch64||arm||i386||x86_64
-	
+
 config PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria
 	bool "Include Hysteria"
 	default n
@@ -100,7 +98,7 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_Simple_Obfs
 config PACKAGE_$(PKG_NAME)_INCLUDE_Trojan_GO
 	bool "Include Trojan-GO"
 	default n
-	
+
 config PACKAGE_$(PKG_NAME)_INCLUDE_V2ray
 	bool "Include V2ray"
 	default y if aarch64||arm||i386||x86_64
@@ -116,7 +114,7 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_Xray
 endmenu
 endef
 
-define Package/luci-app-passwall/conffiles
+define Package/$(PKG_NAME)/conffiles
 /etc/config/passwall
 /etc/config/passwall_server
 /usr/share/passwall/rules/direct_host
