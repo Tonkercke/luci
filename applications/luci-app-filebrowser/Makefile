@@ -8,9 +8,9 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for FileBrowser
-LUCI_PKGARCH:=all
+LUCI_DEPENDS:=+luci-compat
 
 
-include $(TOPDIR)/feeds/luci/luci.mk
+include ../../luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
