@@ -8,7 +8,8 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI support for FileBrowser
-LUCI_DEPENDS:=+luci-compat
+LUCI_DEPENDS:=+luci-compat +filebrowser
+LUCI_PKGARCH:=all
 
 
 include ../../luci.mk
