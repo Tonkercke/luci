@@ -643,7 +643,7 @@ return view.extend({
 							E('p', _('No DHCP Server configured for this interface') + ' &#160; '),
 							E('button', {
 								'class': 'cbi-button cbi-button-add',
-								'title': _('Setup DHCP Server'),
+								'title': _('Set up DHCP Server'),
 								'click': ui.createHandlerFn(this, function(section_id, ev) {
 									this.map.save(function() {
 										uci.add('dhcp', 'dhcp', section_id);
@@ -659,7 +659,7 @@ return view.extend({
 										}
 									});
 								}, ifc.getName())
-							}, _('Setup DHCP Server'))
+							}, _('Set up DHCP Server'))
 						]);
 					};
 
@@ -950,7 +950,7 @@ return view.extend({
 				o = nettools.replaceOption(s, 'advanced', form.Value, 'ip6table', _('Override IPv6 routing table'));
 				o.datatype = 'or(uinteger, string)';
 				for (var i = 0; i < rtTables.length; i++)
-					o.value(rtTables[i][1], '%s (%d)'.format(rtTables[i][0], rtTables[i][1]));
+					o.value(rtTables[i][1], '%s (%d)'.format(rtTables[i][1], rtTables[i][0]));
 
 				o = nettools.replaceOption(s, 'advanced', form.Flag, 'delegate', _('Delegate IPv6 prefixes'), _('Enable downstream delegation of IPv6 prefixes available on this interface'));
 				o.default = o.enabled;
@@ -1307,6 +1307,20 @@ return view.extend({
 					uci.remove('network', map.addedVLANs[i]);
 
 			return form.GridSection.prototype.handleModalCancel.apply(this, arguments);
+		};
+
+		s.handleRemove = function(section_id /*, ... */) {
+			var name = uci.get('network', section_id, 'name'),
+			    type = uci.get('network', section_id, 'type');
+
+			if (name != null && type == 'bridge') {
+				uci.sections('network', 'bridge-vlan', function(bvs) {
+					if (bvs.device == name)
+						uci.remove('network', bvs['.name']);
+				});
+			}
+
+			return form.GridSection.prototype.handleRemove.apply(this, arguments);
 		};
 
 		function getDevice(section_id) {

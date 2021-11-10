@@ -65,7 +65,7 @@ local log = function(...)
 	if debug == true then
 		print(result)
 	else
-		local f, err = io.open("/var/log/" .. appname .. ".log", "a")
+		local f, err = io.open("/tmp/log/" .. appname .. ".log", "a")
 		if f and err == nil then
 			f:write(result .. "\n")
 			f:close()
@@ -422,7 +422,7 @@ local function processData(szType, content, add_mode, add_from)
 		if not info.security then result.security = "auto" end
 		if info.tls == "tls" or info.tls == "1" then
 			result.tls = "1"
-			result.tls_serverName = info.sni
+			result.tls_serverName = (info.sni and info.sni ~= "") and info.sni or info.host
 			result.tls_allowInsecure = allowInsecure_default and "1" or "0"
 		else
 			result.tls = "0"
@@ -735,9 +735,7 @@ local function processData(szType, content, add_mode, add_from)
 					result.xtls = "1"
 					result.flow = params.flow or "xtls-rprx-direct"
 				end
-				if params.sni then
-					result.tls_serverName = params.sni
-				end
+				result.tls_serverName = (params.sni and params.sni ~= "") and params.sni or params.host
 			end
 
 			result.port = port
@@ -1075,7 +1073,13 @@ local execute = function()
 		local subscribe_list = {}
 		local retry = {}
 		if arg[2] then
-			subscribe_list[#subscribe_list + 1] = uci:get_all(appname, arg[2]) or {}
+			string.gsub(arg[2], '[^' .. "," .. ']+', function(w)
+				subscribe_list[#subscribe_list + 1] = uci:get_all(appname, w) or {}
+			end)
+		else
+			uci:foreach(appname, "subscribe_list", function(o)
+				subscribe_list[#subscribe_list + 1] = o
+			end)
 		end
 
 		for index, value in ipairs(subscribe_list) do

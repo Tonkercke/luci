@@ -25,6 +25,7 @@ function gen_config(user)
         end
     elseif user.protocol == "socks" then
         settings = {
+            udp = ("1" == user.udp_forward) and true or false,
             auth = ("1" == user.auth) and "password" or "noauth",
             accounts = ("1" == user.auth) and {
                 {
@@ -137,7 +138,7 @@ function gen_config(user)
 
     local config = {
         log = {
-            -- error = "/var/etc/passwall_server/log/" .. user[".name"] .. ".log",
+            -- error = "/tmp/etc/passwall_server/log/" .. user[".name"] .. ".log",
             loglevel = ("1" == user.log) and user.loglevel or "none"
         },
         -- 传入连接

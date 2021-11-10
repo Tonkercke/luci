@@ -20,6 +20,8 @@ local dns_tcp_server = var["-dns_tcp_server"]
 local dns_cache = var["-dns_cache"]
 local doh_url = var["-doh_url"]
 local doh_host = var["-doh_host"]
+local dns_client_ip = var["-dns_client_ip"]
+local dns_query_strategy = var["-dns_query_strategy"]
 local dns_socks_address = var["-dns_socks_address"]
 local dns_socks_port = var["-dns_socks_port"]
 local loglevel = var["-loglevel"] or "warning"
@@ -84,7 +86,7 @@ function gen_outbound(node, tag, proxy_table)
                         node_id, --node
                         "127.0.0.1", --bind
                         new_port, --socks port
-                        string.format("/var/etc/%s/v2_%s_%s_%s.json", appname, node_type, node_id, new_port), --config file
+                        string.format("/tmp/etc/%s/v2_%s_%s_%s.json", appname, node_type, node_id, new_port), --config file
                         (proxy == 1 and proxy_tag ~= "nil" and relay_port) and tostring(relay_port) or "" --relay port
                         )
                     )
@@ -125,7 +127,7 @@ function gen_outbound(node, tag, proxy_table)
                 tlsSettings = (node.stream_security == "tls") and {
                     serverName = node.tls_serverName,
                     allowInsecure = (node.tls_allowInsecure == "1") and true or false,
-                    fingerprint = (node.fingerprint and node.fingerprint ~= "disable") and node.fingerprint or nil
+                    fingerprint = (node.type == "Xray" and node.fingerprint and node.fingerprint ~= "disable") and node.fingerprint or nil
                 } or nil,
                 tcpSettings = (node.transport == "tcp" and node.protocol ~= "socks") and {
                     header = {
@@ -152,11 +154,15 @@ function gen_outbound(node, tag, proxy_table)
                 wsSettings = (node.transport == "ws") and {
                     path = node.ws_path or "",
                     headers = (node.ws_host ~= nil) and
-                        {Host = node.ws_host} or nil
+                        {Host = node.ws_host} or nil,
+                    maxEarlyData = tonumber(node.ws_maxEarlyData) or nil
                 } or nil,
-                httpSettings = (node.transport == "h2") and
-                    {path = node.h2_path, host = node.h2_host} or
-                    nil,
+                httpSettings = (node.transport == "h2") and {
+                    path = node.h2_path,
+                    host = node.h2_host,
+                    read_idle_timeout = tonumber(node.h2_read_idle_timeout) or nil,
+                    health_check_timeout = tonumber(node.h2_health_check_timeout) or nil
+                } or nil,
                 dsSettings = (node.transport == "ds") and
                     {path = node.ds_path} or nil,
                 quicSettings = (node.transport == "quic") and {
@@ -166,7 +172,10 @@ function gen_outbound(node, tag, proxy_table)
                 } or nil,
                 grpcSettings = (node.transport == "grpc") and {
                     serviceName = node.grpc_serviceName,
-                    multiMode = (node.grpc_mode == "multi") and true or false
+                    multiMode = (node.grpc_mode == "multi") and true or nil,
+                    idle_timeout = tonumber(node.grpc_idle_timeout) or nil,
+                    health_check_timeout = tonumber(node.grpc_health_check_timeout) or nil,
+                    permit_without_stream = (node.grpc_permit_without_stream == "1") and true or nil
                 } or nil
             } or nil,
             settings = {
@@ -284,6 +293,22 @@ if node_section then
     end
 
     if node.protocol == "_shunt" then
+        table.insert(outbounds, {
+            protocol = "freedom",
+            tag = "direct",
+            settings = {
+                domainStrategy = "UseIPv4"
+            },
+            streamSettings = {
+                sockopt = {
+                    mark = 255
+                }
+            }
+        })
+        table.insert(outbounds, {
+            protocol = "blackhole",
+            tag = "blackhole"
+        })
         local rules = {}
 
         local default_node_id = node.default_node or "_direct"
@@ -451,7 +476,7 @@ if node_section then
 
         routing = {
             domainStrategy = node.domainStrategy or "AsIs",
-            domainMatcher = "hybrid",
+            domainMatcher = node.domainMatcher or "hybrid",
             rules = rules
         }
     elseif node.protocol == "_balancing" then
@@ -465,7 +490,7 @@ if node_section then
             end
             routing = {
                 domainStrategy = node.domainStrategy or "AsIs",
-                domainMatcher = "hybrid",
+                domainMatcher = node.domainMatcher or "hybrid",
                 balancers = {{tag = "balancer", selector = nodes}},
                 rules = {
                     {type = "field", network = "tcp,udp", balancerTag = "balancer"}
@@ -484,6 +509,10 @@ if node_section then
 end
 
 if dns_server then
+    table.insert(outbounds, {
+        protocol = "dns",
+        tag = "dns-out"
+    })
     local rules = {}
 
     dns = {
@@ -491,18 +520,26 @@ if dns_server then
         disableCache = (dns_cache and dns_cache == "0") and true or false,
         servers = {
             dns_server
-        }
+        },
+        clientIp = (dns_client_ip and dns_client_ip ~= "") and dns_client_ip or nil,
+        queryStrategy = (dns_query_strategy and dns_query_strategy ~= "") and dns_query_strategy or nil
     }
     if doh_url and doh_host then
         dns.hosts = {
             [doh_host] = dns_server
         }
+        if not redir_port and not dns_socks_port then
+            doh_url = doh_url:gsub("https://", "https+local://")
+        end
         dns.servers = {
             doh_url
         }
     end
 
     if dns_tcp_server then
+        if not redir_port and not dns_socks_port then
+            dns_tcp_server = dns_tcp_server:gsub("tcp://", "tcp+local://")
+        end
         dns.servers = {
             dns_tcp_server
         }
@@ -517,7 +554,7 @@ if dns_server then
             settings = {
                 address = dns_server,
                 port = 53,
-                network = "udp"
+                network = "tcp,udp"
             }
         })
     end
@@ -530,7 +567,6 @@ if dns_server then
         outboundTag = "dns-out"
     })
 
-    local outboundTag = "direct"
     if dns_socks_address and dns_socks_port then
         table.insert(outbounds, 1, {
             tag = "out",
@@ -548,47 +584,47 @@ if dns_server then
                 }
             }
         })
-        outboundTag = "out"
+        local outboundTag = "out"
+        table.insert(rules, {
+            type = "field",
+            inboundTag = {
+                "dns-in1"
+            },
+            outboundTag = outboundTag
+        })
     end
-    table.insert(rules, {
-        type = "field",
-        inboundTag = {
-            "dns-in1"
-        },
-        outboundTag = outboundTag
-    })
+
+    if node_section and (proto and proto:find("tcp")) and redir_port then
+        local outboundTag = node_section
+        local node = uci:get_all(appname, node_section)
+        if node.protocol == "_shunt" then
+            outboundTag = "default"
+        end
+        table.insert(rules, {
+            type = "field",
+            inboundTag = {
+                "dns-in1"
+            },
+            outboundTag = outboundTag
+        })
+    end
     
-    routing = {
-        domainStrategy = "IPOnDemand",
-        rules = rules
-    }
+    if not routing then
+        routing = {
+            domainStrategy = "IPOnDemand",
+            rules = rules
+        }
+    else
+        for index, value in ipairs(rules) do
+            table.insert(routing.rules, 1, value)
+        end
+    end
 end
 
 if inbounds or outbounds then
-    table.insert(outbounds, {
-        protocol = "freedom",
-        tag = "direct",
-        settings = {
-            domainStrategy = "UseIPv4"
-        },
-        streamSettings = {
-            sockopt = {
-                mark = 255
-            }
-        }
-    })
-    table.insert(outbounds, {
-        protocol = "blackhole",
-        tag = "blackhole"
-    })
-    table.insert(outbounds, {
-        protocol = "dns",
-        tag = "dns-out"
-    })
-
     local config = {
         log = {
-            -- error = string.format("/var/etc/%s/%s.log", appname, node[".name"]),
+            -- error = string.format("/tmp/etc/%s/%s.log", appname, node[".name"]),
             loglevel = loglevel
         },
         -- DNS

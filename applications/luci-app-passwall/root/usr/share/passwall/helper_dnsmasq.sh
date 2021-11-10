@@ -107,6 +107,11 @@ gen_dnsmasq_address_items() {
 	'
 }
 
+ipset_merge() {
+	awk '{gsub(/ipset=\//,""); gsub(/\//," ");key=$1;value=$2;if (sum[key] != "") {sum[key]=sum[key]","value} else {sum[key]=sum[key]value}} END{for(i in sum) print "ipset=/"i"/"sum[i]}' "${1}/ipset.conf" > "${1}/ipset.conf2"
+	mv -f "${1}/ipset.conf2" "${1}/ipset.conf"
+}
+
 add() {
 	local fwd_dns item servers msg
 	local DNS_MODE TMP_DNSMASQ_PATH DNSMASQ_CONF_FILE DEFAULT_DNS LOCAL_DNS TUN_DNS CHINADNS_DNS TCP_NODE PROXY_MODE NO_LOGIC_LOG
@@ -117,7 +122,7 @@ add() {
 	returnhome=$(echo "${PROXY_MODE}" | grep "returnhome")
 	chnlist=$(echo "${PROXY_MODE}" | grep "chnroute")
 	gfwlist=$(echo "${PROXY_MODE}" | grep "gfwlist")
-	mkdir -p "${TMP_DNSMASQ_PATH}" "${DNSMASQ_PATH}" "/var/dnsmasq.d"
+	mkdir -p "${TMP_DNSMASQ_PATH}" "${DNSMASQ_PATH}" "/tmp/dnsmasq.d"
 
 	if [ "${DNS_MODE}" = "nonuse" ]; then
 		echolog "  - 不对域名进行分流解析"
@@ -226,8 +231,7 @@ add() {
 			}
 		fi
 		
-		awk '{gsub(/ipset=\//,""); gsub(/\//," ");key=$1;value=$2;if (sum[key] != "") {sum[key]=sum[key]","value} else {sum[key]=sum[key]value}} END{for(i in sum) print "ipset=/"i"/"sum[i]}' "${TMP_DNSMASQ_PATH}/ipset.conf" > "${TMP_DNSMASQ_PATH}/ipset.conf2"
-		mv -f "${TMP_DNSMASQ_PATH}/ipset.conf2" "${TMP_DNSMASQ_PATH}/ipset.conf"
+		ipset_merge ${TMP_DNSMASQ_PATH}
 	fi
 	
 	echo "conf-dir=${TMP_DNSMASQ_PATH}" > $DNSMASQ_CONF_FILE
@@ -245,7 +249,7 @@ add() {
 }
 
 del() {
-	rm -rf /var/dnsmasq.d/dnsmasq-$CONFIG.conf
+	rm -rf /tmp/dnsmasq.d/dnsmasq-$CONFIG.conf
 	rm -rf $DNSMASQ_PATH/dnsmasq-$CONFIG.conf
 	rm -rf $TMP_DNSMASQ_PATH
 }

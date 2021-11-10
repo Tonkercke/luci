@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-05-07 11:32+0000\n"
-"Last-Translator: Omar Destefani <omar.destefani@gmail.com>\n"
+"PO-Revision-Date: 2021-10-09 20:31+0000\n"
+"Last-Translator: Gerardo <gerardo.zinno@aol.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock/it/>\n"
 "Language: it\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.7-dev\n"
+"X-Generator: Weblate 4.9-dev\n"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:258
 msgid "Action"
@@ -24,11 +24,11 @@ msgstr "Sorgenti attive"
 #: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
-msgstr "Adblock"
+msgstr "Blocco pubblicità"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:40
 msgid "Adblock action"
-msgstr ""
+msgstr "Adblock azione"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:11
 msgid "Add Blacklist Domain"
@@ -48,7 +48,7 @@ msgstr "Aggiungi questo (sotto)dominio alla tua lista bianca locale."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:478
 msgid "Additional Jail Blocklist"
-msgstr ""
+msgstr "Jail Blocklist aggiuntivo"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:300
 msgid "Additional Settings"
@@ -115,7 +115,7 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:282
 msgid "Blacklist..."
-msgstr "Blacklist..."
+msgstr "Lista nera..."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:466
 msgid "Block Local Client IPs"
@@ -162,6 +162,10 @@ msgid ""
 "those listed in the whitelist. Please note: You can use this restrictive "
 "blocklist e.g. for guest wifi or kidsafe configurations."
 msgstr ""
+"Crea una lista di blocco (blacklist) DNS aggiuntiva per bloccare l'accesso a "
+"tutti i domini ad eccezzione di quelli presenti nella whitelist. NB: Puoi "
+"usare questa lista di blocco (Blocklist) p.e per wifi ospite oppure "
+"configurazioni per la protezione dei bambini."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:22
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:57
@@ -221,7 +225,7 @@ msgstr "Directory DNS"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:440
 msgid "DNS Instance"
-msgstr ""
+msgstr "Istanza DNS"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:355
 #: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
@@ -250,6 +254,8 @@ msgid ""
 "Disable adblock triggered restarts for dns backends with autoload/inotify "
 "functions."
 msgstr ""
+"Disattiva il riavvio innescato dal blocco pubblicità per i backend DNS con "
+"funzionalità di autoload/inotify."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:463
 msgid "Disable selective DNS whitelisting (RPZ-PASSTHRU)."
@@ -265,11 +271,11 @@ msgstr "Domini"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:415
 msgid "Don't check SSL server certificates during download."
-msgstr ""
+msgstr "Non controllare i certificati del server SSL durante il download."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:415
 msgid "Download Insecure"
-msgstr ""
+msgstr "Download non sicuro"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:419
 msgid "Download Parameters"
@@ -365,11 +371,11 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:445
 msgid "Fifth instance"
-msgstr ""
+msgstr "Quinta istanza"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:157
 msgid "Filter criteria like date, domain or client (optional)"
-msgstr ""
+msgstr "Criteri del  filtro, come date, domini o client (opzionale)"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:328
 msgid "Firewall ports that should be forced locally."
@@ -381,7 +387,7 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:441
 msgid "First instance (default)"
-msgstr ""
+msgstr "Prima istanza (default)"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:460
 msgid "Flush DNS Cache"
@@ -424,7 +430,7 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:223
 msgid "Information"
-msgstr ""
+msgstr "Informazioni"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:482
 msgid "Jail Directory"
@@ -497,7 +503,7 @@ msgstr ""
 #: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
-msgstr "Riassunto"
+msgstr "Riepilogo"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:535
 msgid "Profile used by 'msmtp' for adblock notification E-Mails."
@@ -605,7 +611,7 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:288
 msgid "Restart"
-msgstr ""
+msgstr "Riavvia"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:96
 msgid "Result"
