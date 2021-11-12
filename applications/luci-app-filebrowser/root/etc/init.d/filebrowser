@@ -26,8 +26,8 @@ start() {
 	PASSWORD=$(config_t_get global password admin)
 	SSL_CERT=$(config_t_get global ssl_cert)
 	SSL_KEY=$(config_t_get global ssl_key)
-	ROOT_PATH=$(config_t_get global root_path /root)
-	executable_directory=$(config_t_get global executable_directory /tmp)
+	ROOT_PATH=$(config_t_get global root_path /)
+	executable_directory=$(config_t_get global executable_directory /usr/bin/)
 	[ ! -f "$executable_directory/filebrowser" ] && echolog "$executable_directory/filebrowser not exists, please download first" && exit
 	
 	SSL_PARAMS=""
