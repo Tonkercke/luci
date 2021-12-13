@@ -14,7 +14,7 @@ s.anonymous = true
 s:tab("direct_list", translate("Direct List"))
 s:tab("proxy_list", translate("Proxy List"))
 s:tab("block_list", translate("Block List"))
-s:tab("lan_ip_list", translate("Lan Ip List"))
+s:tab("lan_ip_list", translate("Lan IP List"))
 s:tab("route_hosts", translate("Route Hosts"))
 
 ---- Direct Hosts
@@ -143,8 +143,8 @@ o.validate = function(self, value)
     local ipmasks= {}
     string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
     for index, ipmask in ipairs(ipmasks) do
-        if not ( datatypes.ipmask4(ipmask) or datatypes.ipmask6(ipmask) ) then
-            return nil, ipmask .. " " .. translate("Not valid IP format, please re-enter!")
+        if not datatypes.ipmask4(ipmask) then
+            return nil, ipmask .. " " .. translate("Not valid IPv4 format, please re-enter!")
         end
     end
     return value
@@ -162,8 +162,8 @@ o.validate = function(self, value)
     local ipmasks= {}
     string.gsub(value, '[^' .. "\r\n" .. ']+', function(w) table.insert(ipmasks, w) end)
     for index, ipmask in ipairs(ipmasks) do
-        if not ( datatypes.ipmask4(ipmask) or datatypes.ipmask6(ipmask) ) then
-            return nil, ipmask .. " " .. translate("Not valid IP format, please re-enter!")
+        if not datatypes.ipmask6(ipmask) then
+            return nil, ipmask .. " " .. translate("Not valid IPv6 format, please re-enter!")
         end
     end
     return value
@@ -177,6 +177,5 @@ o.wrap = "off"
 o.cfgvalue = function(self, section) return fs.readfile(hosts) or "" end
 o.write = function(self, section, value) fs.writefile(hosts, value:gsub("\r\n", "\n")) end
 o.remove = function(self, section, value) fs.writefile(hosts, "") end
-
 
 return m
