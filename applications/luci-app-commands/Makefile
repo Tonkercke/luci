@@ -7,7 +7,7 @@
 include $(TOPDIR)/rules.mk
 
 LUCI_TITLE:=LuCI Shell Command Module
-LUCI_DEPENDS:=+luci-compat +command
+LUCI_DEPENDS:=+luci-compat
 
 PKG_LICENSE:=Apache-2.0
 
