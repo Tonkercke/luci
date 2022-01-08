@@ -3,8 +3,8 @@
 if [ "$PKG_UPGRADE" != 1 ]; then
 	uci get luci.app.commands >/dev/null 2>&1 || \
 	uci batch <<-EOF
-		set luci.command.name=change mac
-		set luci.command.command=sh /etc/config/scp/ch_mac.sh
+		set luci.command.name=Change Client Mod Mac
+		set luci.command.command=sh /etc/config/shell/ch_mac.sh
 		set luci.command.param=1
 		commit luci
 	EOF
