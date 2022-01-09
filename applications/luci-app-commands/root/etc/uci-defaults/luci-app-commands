@@ -1,11 +1,13 @@
 #!/bin/sh
 
 uci -q batch <<-EOF >/dev/null
-		set luci.command.name=Change Client Mod Mac
-		set luci.command.command=sh /etc/config/shell/ch_mac.sh
-		set luci.command.param=1
-		commit luci
-	EOF
+	delete luci.@filebrowser[-1]
+	add luci filebrowser
+	set luci.command.name=Change Client Mod Mac
+	set luci.command.command=sh /etc/config/shell/ch_mac.sh
+	set luci.command.param=1
+	commit luci
+EOF
 fi
 
 exit 0
