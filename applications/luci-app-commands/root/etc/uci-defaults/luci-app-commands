@@ -3,7 +3,7 @@
 uci -q batch <<-EOF >/dev/null
 	delete luci.@command[-1]
 	add luci command
-	set luci.@command[-1].name=Change_Client_Mod_Mac
+	set luci.@command[-1].name='Change Mac'
 	set luci.@command[-1].command='sh /etc/config/shell/ch_mac.sh'
 	set luci.@command[-1].param=1
 	set luci.@command[-1].public=1
