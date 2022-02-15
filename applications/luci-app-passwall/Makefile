@@ -6,12 +6,11 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
-PKG_VERSION:=4.49
+PKG_VERSION:=4.45
 PKG_RELEASE:=1
-#20220207
+#20211228
 
 PKG_CONFIG_DEPENDS:= \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy \
@@ -27,8 +26,7 @@ PKG_CONFIG_DEPENDS:= \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_V2ray \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_V2ray_Plugin \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Xray \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Xray_Plugin \
-	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_IPv6_Nat
+	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Xray_Plugin
 
 LUCI_TITLE:=LuCI support for PassWall
 LUCI_PKGARCH:=all
@@ -36,7 +34,6 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 	+dnsmasq-full +luci-compat +dns2socks +ipset +ip-full +ipt2socks +iptables-mod-tproxy +iptables-mod-iprange \
 	+libuci-lua +lua +luci-lib-jsonc +microsocks +tcping +resolveip \
 	+unzip \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG:chinadns-ng \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy:haproxy \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria:hysteria \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy:naiveproxy \
@@ -53,15 +50,10 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_V2ray:v2ray-core \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_V2ray_Plugin:v2ray-plugin \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Xray:xray-core \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_Xray_Plugin:xray-plugin \
-	+PACKAGE_$(PKG_NAME)_INCLUDE_IPv6_Nat:ip6tables-mod-nat
+	+PACKAGE_$(PKG_NAME)_INCLUDE_Xray_Plugin:xray-plugin
 
 define Package/$(PKG_NAME)/config
 menu "Configuration"
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_ChinaDNS_NG
-	bool "Include ChinaDNS-NG"
-	default y
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy
 	bool "Include Haproxy"
@@ -123,10 +115,6 @@ config PACKAGE_$(PKG_NAME)_INCLUDE_Xray
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_Xray_Plugin
 	bool "Include Xray-Plugin (Shadowsocks Plugin)"
-	default n
-
-config PACKAGE_$(PKG_NAME)_INCLUDE_IPv6_Nat
-	bool "Include IPv6 Nat"
 	default n
 
 endmenu
