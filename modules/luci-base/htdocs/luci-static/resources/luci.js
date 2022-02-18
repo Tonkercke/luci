@@ -655,7 +655,7 @@
 		 * Provides a password for HTTP basic authentication.
 		 *
 		 * @property {number} [timeout]
-		 * Specifies the request timeout in seconds.
+		 * Specifies the request timeout in milliseconds.
 		 *
 		 * @property {boolean} [credentials=false]
 		 * Whether to include credentials such as cookies in the request.
@@ -764,7 +764,7 @@
 				if (opt.content != null) {
 					switch (typeof(opt.content)) {
 					case 'function':
-						content = opt.content(xhr);
+						content = opt.content(opt.xhr);
 						break;
 
 					case 'object':
@@ -1248,7 +1248,7 @@
 		 * `null` on parsing failures or if no element could be found.
 		 */
 		parse: function(s) {
-			var elem;
+			var elem = null;
 
 			try {
 				domParser = domParser || new DOMParser();
@@ -1256,16 +1256,7 @@
 			}
 			catch(e) {}
 
-			if (!elem) {
-				try {
-					dummyElem = dummyElem || document.createElement('div');
-					dummyElem.innerHTML = s;
-					elem = dummyElem.firstChild;
-				}
-				catch (e) {}
-			}
-
-			return elem || null;
+			return elem;
 		},
 
 		/**

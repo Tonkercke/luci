@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2021-09-26 19:44+0000\n"
-"Last-Translator: Eric <spice2wolf@gmail.com>\n"
+"PO-Revision-Date: 2022-01-11 05:19+0000\n"
+"Last-Translator: stoodvolleyball <stoodvolleyball@mailfence.com>\n"
 "Language-Team: Chinese (Simplified) <https://hosted.weblate.org/projects/"
 "openwrt/luciapplicationshttps-dns-proxy/zh_Hans/>\n"
 "Language: zh_Hans\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Weblate 4.9-dev\n"
+"X-Generator: Weblate 4.10.1\n"
 
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:92
 msgid "%s DoH at %s:%s"
@@ -31,6 +31,46 @@ msgstr "AdGuard（家庭保护）"
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/com.adguard.dns.lua:3
 msgid "AdGuard (Standard)"
 msgstr "AdGuard（标准）"
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.au.doh.lua:3
+msgid "AhaDNS.com - Australia (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.in.doh.lua:3
+msgid "AhaDNS.com - India (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.it.doh.lua:3
+msgid "AhaDNS.com - Italy (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.nl.doh.lua:3
+msgid "AhaDNS.com - Netherlands (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.no.doh.lua:3
+msgid "AhaDNS.com - Norway (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.pl.doh.lua:3
+msgid "AhaDNS.com - Poland (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.es.doh.lua:3
+msgid "AhaDNS.com - Spain (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.chi.doh.lua:3
+msgid "AhaDNS.com - US/Chicago (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.la.doh.lua:3
+msgid "AhaDNS.com - US/Los Angeles (Block Malware + Ads)"
+msgstr ""
+
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.ahadns.ny.doh.lua:3
+msgid "AhaDNS.com - US/New York (Block Malware + Ads)"
+msgstr ""
 
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/com.alidns.dns.lua:3
 msgid "AliDNS"
@@ -164,14 +204,18 @@ msgstr "谷歌"
 msgid "Grant UCI and file access for luci-app-https-dns-proxy"
 msgstr "为luci-app-https-dns-proxy授予UCI和文件访问权限"
 
+#: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.he.ordns.lua:3
+msgid "Hurricane Electric"
+msgstr "Hurricane Electric"
+
 #: applications/luci-app-https-dns-proxy/luasrc/https-dns-proxy/providers/net.idnet.doh.lua:3
 msgid "IDNet.net (UK)"
 msgstr "IDNet.net (UK)"
 
 #: applications/luci-app-https-dns-proxy/luasrc/model/cbi/https-dns-proxy.lua:123
 msgid ""
-"If update option is selected, the 'DNS forwardings' section of %sDHCP and DNS"
-"%s will be automatically updated to use selected DoH providers (%smore "
+"If update option is selected, the 'DNS forwardings' section of %sDHCP and "
+"DNS%s will be automatically updated to use selected DoH providers (%smore "
 "information%s)."
 msgstr ""
 "如果选择了“更新”选项，则 %sDHCP and DNS%s 的 'DNS转发'部分会自动更新到使用选"
