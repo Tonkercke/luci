@@ -647,15 +647,18 @@ run_redir() {
 				UDP_NODE="nil"
 			}
 			_extra_param="${_extra_param} ${proto}"
-			local route_only=$(config_t_get global_forwarding route_only 1)
-			[ "${route_only}" = "1" ] && _extra_param="${_extra_param} -route_only 1"
+			local sniffing=$(config_t_get global_forwarding sniffing 1)
+			[ "${sniffing}" = "1" ] && {
+				_extra_param="${_extra_param} -sniffing 1"
+				local route_only=$(config_t_get global_forwarding route_only 0)
+				[ "${route_only}" = "1" ] && _extra_param="${_extra_param} -route_only 1"
+			}
 			[ "${DNS_MODE}" = "v2ray" -o "${DNS_MODE}" = "xray" ] && {
 				local v2ray_dns_mode=$(config_t_get global v2ray_dns_mode tcp)
 				[ "$(config_t_get global dns_by)" = "tcp" -o "${v2ray_dns_mode}" = "fakedns" ] && {
 					config_file=$(echo $config_file | sed "s/.json/_DNS.json/g")
 					resolve_dns=1
-					local dns_query_strategy=$(config_t_get global dns_query_strategy UseIPv4)
-					_extra_param="${_extra_param} -dns_query_strategy ${dns_query_strategy}"
+					_extra_param="${_extra_param} -dns_query_strategy ${DNS_QUERY_STRATEGY}"
 					local _dns_client_ip=$(config_t_get global dns_client_ip)
 					[ -n "${_dns_client_ip}" ] && _extra_param="${_extra_param} -dns_client_ip ${_dns_client_ip}"
 					[ "${DNS_CACHE}" == "0" ] && _extra_param="${_extra_param} -dns_cache 0"
@@ -1060,8 +1063,7 @@ start_dns() {
 	xray)
 		[ "${resolve_dns}" == "0" ] && {
 			[ "${DNS_CACHE}" == "0" ] && local _extra_param="-dns_cache 0"
-			local dns_query_strategy=$(config_t_get global dns_query_strategy UseIPv4)
-			_extra_param="${_extra_param} -dns_query_strategy ${dns_query_strategy}"
+			_extra_param="${_extra_param} -dns_query_strategy ${DNS_QUERY_STRATEGY}"
 			local _dns_client_ip=$(config_t_get global dns_client_ip)
 			[ -n "${_dns_client_ip}" ] && _extra_param="${_extra_param} -dns_client_ip ${_dns_client_ip}"
 			local dns_by=$(config_t_get global dns_by "tcp")
@@ -1451,6 +1453,8 @@ TCP_REDIR_PORTS=$(config_t_get global_forwarding tcp_redir_ports '80,443')
 UDP_REDIR_PORTS=$(config_t_get global_forwarding udp_redir_ports '1:65535')
 TCP_NO_REDIR_PORTS=$(config_t_get global_forwarding tcp_no_redir_ports 'disable')
 UDP_NO_REDIR_PORTS=$(config_t_get global_forwarding udp_no_redir_ports 'disable')
+TCP_PROXY_DROP_PORTS=$(config_t_get global_forwarding tcp_proxy_drop_ports 'disable')
+UDP_PROXY_DROP_PORTS=$(config_t_get global_forwarding udp_proxy_drop_ports '80,443')
 TCP_PROXY_MODE=$(config_t_get global tcp_proxy_mode chnroute)
 UDP_PROXY_MODE=$(config_t_get global udp_proxy_mode chnroute)
 LOCALHOST_TCP_PROXY_MODE=$(config_t_get global localhost_tcp_proxy_mode default)
@@ -1475,6 +1479,8 @@ DEFAULT_DNS=$(uci show dhcp | grep "@dnsmasq" | grep "\.server=" | awk -F '=' '{
 LOCAL_DNS="${DEFAULT_DNS:-119.29.29.29}"
 
 PROXY_IPV6=$(config_t_get global_forwarding ipv6_tproxy 0)
+DNS_QUERY_STRATEGY="UseIPv4"
+[ "$PROXY_IPV6" = "1" ] && DNS_QUERY_STRATEGY="UseIP"
 
 export V2RAY_LOCATION_ASSET=$(config_t_get global_rules v2ray_location_asset "/usr/share/v2ray/")
 export XRAY_LOCATION_ASSET=$V2RAY_LOCATION_ASSET
