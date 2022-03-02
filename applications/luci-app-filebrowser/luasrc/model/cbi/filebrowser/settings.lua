@@ -47,13 +47,6 @@ o = s:option(Value, "executable_directory", translate("Executable directory"),
 o.default = "/tmp"
 o.rmempty = false
 
-o = s:option(Button, "_download", translate("Manually download"), translate(
-                 "Make sure you have enough space. <br /><font style='color:red'>Be sure to fill out the executable storage directory the first time you run it, and then save the application. Then manually download, otherwise can not use!</font>"))
-o.template = "filebrowser/download"
-o.inputstyle = "apply"
-o.btnclick = "downloadClick(this);"
-o.id = "download_btn"
-
 m:append(Template("filebrowser/log"))
 
 return m

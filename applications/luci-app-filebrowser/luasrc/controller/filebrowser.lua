@@ -14,8 +14,6 @@ function index()
 
     entry({"admin", "services", "filebrowser", "check"}, call("action_check")).leaf =
         true
-    entry({"admin", "services", "filebrowser", "download"}, call("action_download")).leaf =
-        true
     entry({"admin", "services", "filebrowser", "status"}, call("act_status")).leaf =
         true
     entry({"admin", "services", "filebrowser", "get_log"}, call("get_log")).leaf =
@@ -37,19 +35,6 @@ end
 
 function action_check()
     local json = api.to_check()
-    http_write_json(json)
-end
-
-function action_download()
-    local json = nil
-    local task = http.formvalue("task")
-    if task == "extract" then
-        json = api.to_extract(http.formvalue("file"))
-    elseif task == "move" then
-        json = api.to_move(http.formvalue("file"))
-    else
-        json = api.to_download(http.formvalue("url"))
-    end
     http_write_json(json)
 end
 
