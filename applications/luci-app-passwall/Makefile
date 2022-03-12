@@ -7,10 +7,10 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=luci-app-passwall
 PKG_VERSION:=4.51
-PKG_RELEASE:=2
-#20220228
+PKG_RELEASE:=3
 
 PKG_CONFIG_DEPENDS:= \
+	CONFIG_PACKAGE_$(PKG_NAME)_Transparent_Proxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria \
 	CONFIG_PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy \
@@ -31,9 +31,8 @@ PKG_CONFIG_DEPENDS:= \
 LUCI_TITLE:=LuCI support for PassWall
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
-	+dnsmasq-full +dns2socks +ip-full +ipset +ipt2socks +iptables +iptables-mod-tproxy +iptables-mod-iprange \
-	+kmod-ipt-nat +libuci-lua +lua +luci-compat +luci-lib-jsonc +microsocks +resolveip +tcping \
-	+unzip \
+	+dns2socks +ip-full +libuci-lua +lua +luci-compat +luci-lib-jsonc \
+	+microsocks +resolveip +tcping +unzip \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy:haproxy \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_Hysteria:hysteria \
 	+PACKAGE_$(PKG_NAME)_INCLUDE_NaiveProxy:naiveproxy \
@@ -54,6 +53,19 @@ LUCI_DEPENDS:=+coreutils +coreutils-base64 +coreutils-nohup +curl \
 
 define Package/$(PKG_NAME)/config
 menu "Configuration"
+
+config PACKAGE_$(PKG_NAME)_Transparent_Proxy
+	bool "Transparent Proxy"
+	select PACKAGE_dnsmasq-full
+	select PACKAGE_ipset
+	select PACKAGE_ipt2socks
+	select PACKAGE_iptables
+	select PACKAGE_iptables-legacy
+	select PACKAGE_iptables-mod-iprange
+	select PACKAGE_iptables-mod-socket
+	select PACKAGE_iptables-mod-tproxy
+	select PACKAGE_kmod-ipt-nat
+	default y
 
 config PACKAGE_$(PKG_NAME)_INCLUDE_Haproxy
 	bool "Include Haproxy"
