@@ -1,6 +1,5 @@
 local api = require "luci.model.cbi.passwall.api.api"
 local appname = api.appname
-local fs = api.fs
 
 m = Map(appname)
 
@@ -110,15 +109,13 @@ if os.execute("lsmod | grep -i REDIRECT >/dev/null") == 0 and os.execute("lsmod 
         return self.map:set(section, "tcp_proxy_way", value)
     end
 
-    if os.execute("lsmod | grep -i ip6table_mangle >/dev/null") == 0 then
-        ---- IPv6 TProxy
-        o = s:option(Flag, "ipv6_tproxy", translate("IPv6 TProxy"),
-                    "<font color='red'>" .. translate(
-                        "Experimental feature. Make sure that your node supports IPv6.") ..
-                        "</font>")
-        o.default = 0
-        o.rmempty = false
-    end
+    ---- IPv6 TProxy
+    o = s:option(Flag, "ipv6_tproxy", translate("IPv6 TProxy"),
+                 "<font color='red'>" .. translate(
+                     "Experimental feature. Make sure that your node supports IPv6.") ..
+                     "</font>")
+    o.default = 0
+    o.rmempty = false
 end
 
 o = s:option(Flag, "accept_icmp", translate("Hijacking ICMP (PING)"))
@@ -135,14 +132,5 @@ o.rmempty = false
 o = s:option(Flag, "route_only", translate("Sniffing Route Only (Xray)"), translate("When enabled, the server not will resolve the domain name again."))
 o.default = 0
 o:depends("sniffing", true)
-
-local domains_excluded = string.format("/usr/share/%s/rules/domains_excluded", appname)
-o = s:option(TextValue, "no_sniffing_hosts", translate("No Sniffing Lists"), translate("Hosts added into No Sniffing Lists will not resolve again on server (Xray only)."))
-o.rows = 15
-o.wrap = "off"
-o.cfgvalue = function(self, section) return fs.readfile(domains_excluded) or "" end
-o.write = function(self, section, value) fs.writefile(domains_excluded, value:gsub("\r\n", "\n")) end
-o.remove = function(self, section, value) fs.writefile(domains_excluded, "") end
-o:depends({sniffing = true, route_only = false})
 
 return m
