@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:40+0200\n"
-"PO-Revision-Date: 2022-02-27 04:55+0000\n"
+"PO-Revision-Date: 2022-02-12 20:10+0000\n"
 "Last-Translator: MarioK239 <marios.k239@gmail.com>\n"
 "Language-Team: Greek <https://hosted.weblate.org/projects/openwrt/luci/el/>\n"
 "Language: el\n"
@@ -11,9 +11,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11.1-dev\n"
+"X-Generator: Weblate 4.11-dev\n"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1513
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1508
 msgid "%.1f dB"
 msgstr "%.1f dB"
 
@@ -21,7 +21,7 @@ msgstr "%.1f dB"
 msgid "%d Bit"
 msgstr "%d Bit"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3721
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3712
 msgid "%d invalid field(s)"
 msgstr "%d μη έγκυρο/α πεδίο/α"
 
@@ -39,14 +39,14 @@ msgstr "(παράθυρο %d λεπτών, διάστημα %d δευτερολ�
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:118
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:124
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:259
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:283
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:258
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:282
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:88
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:91
 msgid "(empty)"
 msgstr "(κενό)"
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:352
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:351
 #: modules/luci-compat/luasrc/view/cbi/network_netinfo.htm:23
 #: modules/luci-compat/luasrc/view/cbi/network_netlist.htm:58
 msgid "(no interfaces attached)"
@@ -93,18 +93,16 @@ msgstr "-- παρακαλώ επιλέξτε --"
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:55
 msgctxt "sstp log level value"
 msgid "0"
-msgstr "0"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1003
 msgid "0 = not using RSSI threshold, 1 = do not change driver default"
 msgstr ""
-"0 = μη χρήση ορίου RSSI, 1 = μη αλλαγή της προεπιλογής του προγράμματος "
-"οδήγησης"
 
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:56
 msgctxt "sstp log level value"
 msgid "1"
-msgstr "1"
+msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/load.js:233
 msgid "1 Minute Load:"
@@ -117,21 +115,21 @@ msgstr "Φορτίο 15 λεπτών:"
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:57
 msgctxt "sstp log level value"
 msgid "2"
-msgstr "2"
+msgstr ""
 
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:58
 msgctxt "sstp log level value"
 msgid "3"
-msgstr "3"
+msgstr ""
 
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:59
 msgctxt "sstp log level value"
 msgid "4"
-msgstr "4"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1515
 msgid "4-character hexadecimal ID"
-msgstr "Δεκαεξαδικό αναγνωριστικό 4 χαρακτήρων"
+msgstr ""
 
 #: modules/luci-compat/luasrc/model/network/proto_4x6.lua:18
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/464xlat.js:11
@@ -145,32 +143,30 @@ msgstr "Φορτίο 5 λεπτών:"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1544
 msgid "6-octet identifier as a hex string - no colons"
 msgstr ""
-"Αναγνωριστικό 6 οκτάδων ως δεκαεξαδική συμβολοσειρά - χωρίς άνω και κάτω "
-"τελείες"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1504
 msgid "802.11r Fast Transition"
-msgstr "802.11r Γρήγορη μετάβαση"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1698
 msgid "802.11w Association SA Query maximum timeout"
-msgstr "802.11w Association SA Μέγιστο χρονικό όριο ερωτήματος"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1705
 msgid "802.11w Association SA Query retry timeout"
-msgstr "802.11w Association SA Λήξη χρόνου επανάληψης ερωτήματος"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1679
 msgid "802.11w Management Frame Protection"
-msgstr "802.11w Προστασία πακέτων διαχείρισης"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1698
 msgid "802.11w maximum timeout"
-msgstr "Μέγιστο χρονικό όριο 802,11 w"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1705
 msgid "802.11w retry timeout"
-msgstr "Χρονικό όριο επανάληψης 802.11w"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1020
 msgid "<abbr title=\"Basic Service Set Identifier\">BSSID</abbr>"
@@ -239,11 +235,11 @@ msgstr "Διεύθυνση <abbr title=\"Media Access Control\">MAC</abbr>"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:907
 msgid "<abbr title=\"Neighbour Discovery Protocol\">NDP</abbr>-Proxy"
-msgstr "<abbr title=\"Neighbour Discovery Protocol\">NDP</abbr>-Μεσολαβητής"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:791
 msgid "<abbr title=\"Router Advertisement\">RA</abbr> Flags"
-msgstr "<abbr title=\"Router Advertisement\">RA</abbr>  Αναγνωριστικά"
+msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:851
 msgid "<abbr title=\"Router Advertisement\">RA</abbr> Hop Limit"
@@ -293,23 +289,23 @@ msgstr ""
 msgid "A directory with the same name already exists."
 msgstr "Ένας φάκελος με το ίδιο όνομα υπάρχει ήδη."
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2664
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2662
 msgid "A new login is required since the authentication session expired."
 msgstr "Απαιτείται νέα σύνδεση καθώς η συνεδρία ελέγχου ταυτότητας έληξε."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1493
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1488
 msgid "A43C + J43 + A43"
 msgstr "A43C + J43 + A43"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1494
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1489
 msgid "A43C + J43 + A43 + V43"
 msgstr "A43C + J43 + A43 + V43"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1506
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1501
 msgid "ADSL"
 msgstr "ADSL"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1482
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1477
 msgid "ANSI T1.413"
 msgstr "ANSI T1.413"
 
@@ -349,25 +345,25 @@ msgstr ""
 msgid "ARP retry threshold"
 msgstr "Όριο επαναδοκιμών ARP"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1501
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1496
 msgid "ATM (Asynchronous Transfer Mode)"
 msgstr "ATM (Λειτουργία ασύγχρονης μεταφοράς)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1522
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1517
 msgid "ATM Bridges"
 msgstr "Γέφυρες ΑΤΜ"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1554
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1549
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:66
 msgid "ATM Virtual Channel Identifier (VCI)"
 msgstr "ATM Εικονικό Κανάλι Αναγνωριστή (VCI)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1555
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1550
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:70
 msgid "ATM Virtual Path Identifier (VPI)"
 msgstr "ATM Εικονικό μονοπάτι Αναγνωριστή (VPI)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1522
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1517
 msgid ""
 "ATM bridges expose encapsulated ethernet in AAL5 connections as virtual "
 "Linux network interfaces which can be used in conjunction with DHCP or PPP "
@@ -377,7 +373,7 @@ msgstr ""
 "εικονικές διεπαφές δικτύου Linux, οι οποίες μπορούν να χρησιμοποιηθούν σε "
 "συνδυασμό με DHCP ή PPP για την κλήση προς τον παροχέα δικτύου."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1561
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1556
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:62
 msgid "ATM device number"
 msgstr "Αριθμός συσκευής ATM"
@@ -386,9 +382,9 @@ msgstr "Αριθμός συσκευής ATM"
 msgid "ATU-C System Vendor ID"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:266
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:548
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:552
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:265
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:547
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:551
 msgid "Absent Interface"
 msgstr ""
 
@@ -474,7 +470,7 @@ msgstr ""
 msgid "Add"
 msgstr "Προσθήκη"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1526
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1521
 msgid "Add ATM Bridge"
 msgstr ""
 
@@ -494,11 +490,11 @@ msgstr ""
 msgid "Add VLAN"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1302
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1297
 msgid "Add device configuration"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1242
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1237
 msgid "Add device configuration…"
 msgstr ""
 
@@ -518,7 +514,7 @@ msgstr ""
 "Προσθήκη κατάληξης τοπικού τομέα για ονόματα εξυπηρετούμενα από αρχεία hosts"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:465
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1129
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1124
 msgid "Add new interface..."
 msgstr "Προσθήκη νέας διεπαφής..."
 
@@ -571,7 +567,7 @@ msgstr "Διαχείριση"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:253
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:478
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:633
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1552
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1547
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:26
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:924
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:988
@@ -731,64 +727,64 @@ msgstr ""
 msgid "An optional, short description for this device"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1474
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1469
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
 msgid "Annex"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1475
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1470
 msgid "Annex A + L + M (all)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1483
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1478
 msgid "Annex A G.992.1"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1484
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1479
 msgid "Annex A G.992.2"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1485
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1480
 msgid "Annex A G.992.3"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1486
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1481
 msgid "Annex A G.992.5"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1476
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1471
 msgid "Annex B (all)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1479
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1474
 msgid "Annex B G.992.1"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1480
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1475
 msgid "Annex B G.992.3"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1481
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1476
 msgid "Annex B G.992.5"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1477
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1472
 msgid "Annex J (all)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1487
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1482
 msgid "Annex L G.992.3 POTS 1"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1478
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1473
 msgid "Annex M (all)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1488
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1483
 msgid "Annex M G.992.3"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1489
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1484
 msgid "Annex M G.992.5"
 msgstr ""
 
@@ -836,7 +832,7 @@ msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:84
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:174
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:196
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:195
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:60
 msgid "Any zone"
 msgstr "Οιαδήποτε ζώνη"
@@ -845,16 +841,16 @@ msgstr "Οιαδήποτε ζώνη"
 msgid "Apply backup?"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4308
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4299
 msgid "Apply request failed with status <code>%h</code>"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2175
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4174
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2173
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4165
 msgid "Apply unchecked"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4247
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4238
 msgid "Applying configuration changes… %ds"
 msgstr ""
 
@@ -862,12 +858,12 @@ msgstr ""
 msgid "Architecture"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:973
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:968
 msgid ""
 "Assign a part of given length of every public IPv6-prefix to this interface"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:978
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:973
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:27
 msgid ""
 "Assign prefix parts using this hexadecimal subprefix ID for this interface."
@@ -895,8 +891,8 @@ msgstr ""
 msgid "Authentication"
 msgstr "Εξουσιοδότηση"
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:108
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:82
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:97
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:71
 msgid "Authentication Type"
 msgstr ""
 
@@ -905,14 +901,13 @@ msgid "Authoritative"
 msgstr "Κύριος"
 
 #: modules/luci-base/luasrc/view/sysauth.htm:17
-#: themes/luci-theme-bootstrap/htdocs/luci-static/resources/view/bootstrap/sysauth.js:11
 msgid "Authorization Required"
 msgstr "Απαιτείται Εξουσιοδότηση"
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:120
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:108
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:18
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/dhcpv6.js:24
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:112
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:100
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:51
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:96
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:82
@@ -928,12 +923,6 @@ msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:174
 msgid "Automatically check filesystem for errors before mounting"
-msgstr ""
-
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:966
-msgid ""
-"Automatically handle multiple uplink interfaces using source-based policy "
-"routing."
 msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:170
@@ -970,11 +959,11 @@ msgstr "Διαθέσιμο"
 msgid "Average:"
 msgstr "Μέσος Όρος:"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1495
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1490
 msgid "B43 + B43C"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1496
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1491
 msgid "B43 + B43C + V43"
 msgstr "B43 + B43C + V43"
 
@@ -1095,7 +1084,7 @@ msgid "Bridge VLAN filtering"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:344
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1397
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1392
 msgid "Bridge device"
 msgstr ""
 
@@ -1108,7 +1097,7 @@ msgstr ""
 msgid "Bridge ports"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1562
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1557
 msgid "Bridge unit number"
 msgstr "Αριθμός μονάδας γέφυρας"
 
@@ -1129,7 +1118,7 @@ msgid "Broadcast policy (broadcast, 3)"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2831
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3831
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3822
 msgid "Browse…"
 msgstr ""
 
@@ -1160,11 +1149,11 @@ msgid "Call failed"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2924
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3840
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3831
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:14
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:52
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:188
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1135
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1130
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2040
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:128
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:295
@@ -1220,17 +1209,17 @@ msgid ""
 "attributes: EMAIL, DNS, URI) - e.g. DNS:wifi.mycompany.com"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:54
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:57
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:212
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:53
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:56
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:200
 msgid "Chain"
 msgstr "Αλυσίδα"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4060
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4051
 msgid "Changes"
 msgstr "Αλλαγές"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4343
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4334
 msgid "Changes have been reverted."
 msgstr ""
 
@@ -1329,13 +1318,13 @@ msgstr "πελάτης"
 msgid "Client ID to send when requesting DHCP"
 msgstr "Αναγνωριστικό πελάτη που αποστέλλετε κατά την αίτηση DHCP"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4077
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4068
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:167
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:173
 msgid "Close"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:156
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:144
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:128
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:114
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:92
@@ -1357,8 +1346,8 @@ msgstr "Κλείσιμο λίστας..."
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:62
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2164
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:391
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:352
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:355
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:317
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:320
 #: themes/luci-theme-material/luasrc/view/themes/material/header.htm:72
 msgid "Collecting data..."
 msgstr "Συλλογή δεδομένων..."
@@ -1375,7 +1364,7 @@ msgstr ""
 msgid "Command failed"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:73
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:72
 msgid "Comment"
 msgstr ""
 
@@ -1394,16 +1383,16 @@ msgstr ""
 msgid "Compute outgoing checksum (optional)."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4060
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4051
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
 msgid "Configuration"
 msgstr "Διαμόρφωση"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4222
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4213
 msgid "Configuration changes applied."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4160
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4151
 msgid "Configuration changes have been rolled back!"
 msgstr ""
 
@@ -1430,8 +1419,8 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:764
 msgid ""
-"Configures the operation mode of the <abbr title=\"Router Advertisement"
-"\">RA</abbr> service on this interface."
+"Configures the operation mode of the <abbr title=\"Router "
+"Advertisement\">RA</abbr> service on this interface."
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:872
@@ -1443,7 +1432,7 @@ msgid ""
 "Configures the operation mode of the NDP proxy service on this interface."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1288
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1283
 msgid "Configure…"
 msgstr ""
 
@@ -1501,7 +1490,7 @@ msgstr ""
 msgid "Continue"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4196
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4187
 msgid ""
 "Could not regain access to the device after applying the configuration "
 "changes. You might need to reconnect if you modified network related "
@@ -1525,7 +1514,7 @@ msgstr ""
 msgid "Create / Assign firewall-zone"
 msgstr "Δημιουργία / Ανάθεση ζώνης τείχους προστασίας"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1164
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1159
 msgid "Create interface"
 msgstr ""
 
@@ -1541,8 +1530,8 @@ msgstr "Επίπεδο Καταγραφής Cron"
 msgid "Current power"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:573
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:575
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:572
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:574
 #: modules/luci-compat/luasrc/view/cbi/network_ifacelist.htm:51
 #: modules/luci-compat/luasrc/view/cbi/network_ifacelist.htm:53
 #: modules/luci-compat/luasrc/view/cbi/network_ifacelist.htm:82
@@ -1562,8 +1551,8 @@ msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:59
 msgid ""
-"Customizes the behaviour of the device <abbr title=\"Light Emitting Diode"
-"\">LED</abbr>s if possible."
+"Customizes the behaviour of the device <abbr title=\"Light Emitting "
+"Diode\">LED</abbr>s if possible."
 msgstr ""
 "Ρυθμίζει, αν είναι δυνατόν, την συμπεριφορά των <abbr title=\"Light Emitting "
 "Diode\">LED</abbr> της συσκευής."
@@ -1652,7 +1641,7 @@ msgstr ""
 msgid "DS-Lite AFTR address"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1471
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1466
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:44
 msgid "DSL"
 msgstr "DSL"
@@ -1661,7 +1650,7 @@ msgstr "DSL"
 msgid "DSL Status"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1504
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1499
 msgid "DSL line mode"
 msgstr ""
 
@@ -1718,7 +1707,7 @@ msgid ""
 "priority on incoming frames"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:970
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:965
 msgid "Delegate IPv6 prefixes"
 msgstr ""
 
@@ -1769,7 +1758,7 @@ msgid "Designated master"
 msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:386
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:71
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:70
 msgid "Destination"
 msgstr "Προορισμός"
 
@@ -1783,13 +1772,13 @@ msgid "Destination zone"
 msgstr "Ζώνη προορισμού"
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:67
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:192
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:191
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:43
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:46
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:81
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:569
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1117
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1413
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1112
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1408
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:55
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/led-trigger/netdev.js:12
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:247
@@ -1820,7 +1809,7 @@ msgstr ""
 msgid "Device not managed by ModemManager."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1388
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1383
 msgid "Device not present"
 msgstr ""
 
@@ -1828,7 +1817,7 @@ msgstr ""
 msgid "Device type"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4195
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4186
 msgid "Device unreachable!"
 msgstr ""
 
@@ -1836,7 +1825,7 @@ msgstr ""
 msgid "Device unreachable! Still waiting for device..."
 msgstr "Αποτυχία σύνδεσης με συσκευή! Παραμονή για συσκευή..."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1239
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1234
 msgid "Devices"
 msgstr ""
 
@@ -1844,8 +1833,8 @@ msgstr ""
 msgid "Diagnostics"
 msgstr "Διαγνωστικά"
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:114
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:106
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:102
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:94
 msgid "Dial number"
 msgstr ""
 
@@ -1864,8 +1853,8 @@ msgid ""
 "Disable <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</abbr> for "
 "this interface."
 msgstr ""
-"Απενεργοποίηση <abbr title=\"Πρωτόκολλο Δυναμικής Απόδοσης Διεύθυνσης"
-"\">DHCP</abbr> για αυτή τη διεπαφή."
+"Απενεργοποίηση <abbr title=\"Πρωτόκολλο Δυναμικής Απόδοσης "
+"Διεύθυνσης\">DHCP</abbr> για αυτή τη διεπαφή."
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:174
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:375
@@ -1892,8 +1881,8 @@ msgstr ""
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1680
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:13
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/startup.js:66
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:121
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:113
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:109
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:101
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:52
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:97
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:83
@@ -1928,8 +1917,8 @@ msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:607
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3055
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3339
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4166
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3330
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4157
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1766
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:358
 msgid "Dismiss"
@@ -1945,15 +1934,15 @@ msgstr "Απόσταση σε μέτρα από το πιο απομακρυσμ
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:244
 msgid ""
-"Dnsmasq is a combined <abbr title=\"Dynamic Host Configuration Protocol"
-"\">DHCP</abbr>-Server and <abbr title=\"Domain Name System\">DNS</abbr>-"
-"Forwarder for <abbr title=\"Network Address Translation\">NAT</abbr> "
+"Dnsmasq is a combined <abbr title=\"Dynamic Host Configuration "
+"Protocol\">DHCP</abbr>-Server and <abbr title=\"Domain Name System\">DNS</"
+"abbr>-Forwarder for <abbr title=\"Network Address Translation\">NAT</abbr> "
 "firewalls"
 msgstr ""
 "Ο Dnsmasq είναι ένας συνδυασμός εξυπηρετητή <abbr title=\"Πρωτόκολλο "
 "Δυναμικής Απόδοσης Παραμέτρων Συστήματος\">DHCP</abbr> και προωθητή<abbr "
-"title=\"Σύστημα Ονόματος Τομέα\">DNS</abbr> για τείχη προστασίας <abbr title="
-"\"Μεταφραστή Διεύθυνσης Δικτύου\">NAT</abbr>"
+"title=\"Σύστημα Ονόματος Τομέα\">DNS</abbr> για τείχη προστασίας <abbr "
+"title=\"Μεταφραστή Διεύθυνσης Δικτύου\">NAT</abbr>"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:341
 msgid "Do not cache negative replies, e.g. for not existing domains"
@@ -2057,7 +2046,7 @@ msgstr "Κατέβασμα αντιγράφου ασφαλείας"
 msgid "Download mtdblock"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1509
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1504
 msgid "Downstream SNR offset"
 msgstr ""
 
@@ -2191,7 +2180,7 @@ msgstr "Ενεργοποίηση ενημέρωσης δυναμικού τερ�
 msgid "Enable IPv6"
 msgstr ""
 
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:101
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:90
 msgid "Enable IPv6 negotiation"
 msgstr ""
 
@@ -2236,7 +2225,7 @@ msgstr "Ενεργοποίηση λειτουργίας VLAN"
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK/WPA3-SAE"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:970
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:965
 msgid ""
 "Enable downstream delegation of IPv6 prefixes available on this interface"
 msgstr ""
@@ -2269,7 +2258,7 @@ msgstr ""
 msgid "Enable multicast support"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1466
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1461
 msgid ""
 "Enable packet steering across all CPUs. May help or hinder network speed."
 msgstr ""
@@ -2333,8 +2322,8 @@ msgstr ""
 msgid "Encapsulation limit"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1499
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1557
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1494
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1552
 msgid "Encapsulation mode"
 msgstr "Λειτουργία ενθυλάκωσης"
 
@@ -2429,7 +2418,7 @@ msgstr ""
 msgid "Expand hosts"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:987
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:982
 msgid "Expecting a hexadecimal assignment hint"
 msgstr ""
 
@@ -2526,7 +2515,7 @@ msgstr ""
 msgid "Failed to change the system password."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4154
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4145
 msgid "Failed to confirm apply within %ds, waiting for rollback…"
 msgstr ""
 
@@ -2606,15 +2595,15 @@ msgstr "Σημάδι τείχους προστασίας"
 msgid "Firewall Settings"
 msgstr "Ρυθμίσεις Τείχους Προστασίας"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:326
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:297
 msgid "Firewall Status"
 msgstr "Κατάσταση Τείχους Προστασίας"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1516
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1511
 msgid "Firmware File"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:58
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:57
 msgid "Firmware Version"
 msgstr "Έκδοση Υλικολογισμικού"
 
@@ -2678,7 +2667,7 @@ msgstr "Επιβολή TKIP"
 msgid "Force TKIP and CCMP (AES)"
 msgstr "Επιβολή TKIP και CCMP (AES)"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1230
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
 msgid "Force link"
 msgstr ""
 
@@ -2696,10 +2685,10 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:912
 msgid ""
-"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr title="
-"\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr title=\"Neighbour "
-"Advertisement, Type 136\">NA</abbr> messages between the designated master "
-"interface and downstream interfaces."
+"Forward <abbr title=\"Neighbour Discovery Protocol\">NDP</abbr> <abbr "
+"title=\"Neighbour Solicitation, Type 135\">NS</abbr> and <abbr "
+"title=\"Neighbour Advertisement, Type 136\">NA</abbr> messages between the "
+"designated master interface and downstream interfaces."
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:770
@@ -2739,7 +2728,7 @@ msgstr ""
 msgid "Forward multicast packets as unicast packets on this device."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1564
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1559
 msgid "Forwarding mode"
 msgstr "Μέθοδος προώθησης"
 
@@ -2802,7 +2791,7 @@ msgid "General Settings"
 msgstr "Γενικές ρυθμίσεις"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:632
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1551
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1546
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:923
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:985
 msgid "General Setup"
@@ -2836,11 +2825,11 @@ msgstr ""
 msgid "Global Settings"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1459
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1454
 msgid "Global network options"
 msgstr ""
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:72
+#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:71
 #: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:62
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:82
 msgid "Go to password configuration..."
@@ -2990,8 +2979,8 @@ msgstr ""
 msgid "Hide <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"
 msgstr "Κρυφό <abbr title=\"Extended Service Set Identifier\">ESSID</abbr>"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:293
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:332
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:264
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:303
 msgid "Hide empty chains"
 msgstr ""
 
@@ -3041,10 +3030,6 @@ msgstr ""
 msgid "Hostnames"
 msgstr "Ονόματα Υπολογιστών"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:276
-msgid "Human-readable counters"
-msgstr ""
-
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:24
 msgid "Hybrid"
 msgstr ""
@@ -3070,7 +3055,7 @@ msgstr ""
 msgid "IP Protocol"
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:126
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:115
 msgid "IP Type"
 msgstr ""
 
@@ -3099,7 +3084,7 @@ msgstr ""
 msgid "IPv4"
 msgstr "IPv4"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:351
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:316
 msgid "IPv4 Firewall"
 msgstr "IPv4 Τείχος Προστασίας"
 
@@ -3137,7 +3122,7 @@ msgstr "Μάσκα IPv4"
 msgid "IPv4 network in address/netmask notation"
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:128
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:117
 msgid "IPv4 only"
 msgstr "Μόνο IPv4"
 
@@ -3159,7 +3144,7 @@ msgstr ""
 msgid "IPv4-in-IPv4 (RFC2003)"
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:127
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:116
 msgid "IPv4/IPv6 (both - defaults to IPv4)"
 msgstr ""
 
@@ -3179,7 +3164,7 @@ msgstr ""
 msgid "IPv6"
 msgstr "IPv6"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:354
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:319
 msgid "IPv6 Firewall"
 msgstr "IPv6 Τείχος Προστασίας"
 
@@ -3199,7 +3184,7 @@ msgstr ""
 msgid "IPv6 Settings"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1463
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1458
 msgid "IPv6 ULA-Prefix"
 msgstr ""
 
@@ -3214,12 +3199,12 @@ msgstr ""
 msgid "IPv6 address"
 msgstr "Διεύθυνση IPv6"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:978
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:973
 #: protocols/luci-proto-hnet/htdocs/luci-static/resources/protocol/hnet.js:27
 msgid "IPv6 assignment hint"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:973
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:968
 msgid "IPv6 assignment length"
 msgstr ""
 
@@ -3231,11 +3216,11 @@ msgstr "Πύλη IPv6"
 msgid "IPv6 network in address/netmask notation"
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:129
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:118
 msgid "IPv6 only"
 msgstr "Μόνο IPv6"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1022
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1017
 msgid "IPv6 preference"
 msgstr ""
 
@@ -3244,7 +3229,7 @@ msgstr ""
 msgid "IPv6 prefix"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:995
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:990
 msgid "IPv6 prefix filter"
 msgstr ""
 
@@ -3258,11 +3243,7 @@ msgstr ""
 msgid "IPv6 routed prefix"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:966
-msgid "IPv6 source routing"
-msgstr ""
-
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1018
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1013
 msgid "IPv6 suffix"
 msgstr ""
 
@@ -3305,7 +3286,7 @@ msgstr ""
 msgid "If checked, encryption is disabled"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:995
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:990
 msgid ""
 "If set, downstream subnets are only allocated from the given IPv6 prefix "
 "classes."
@@ -3330,23 +3311,23 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:929
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:64
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:122
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:111
 msgid "If unchecked, no default route is configured"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:933
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:68
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:133
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:122
 msgid "If unchecked, the advertised DNS server addresses are ignored"
 msgstr ""
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:339
 msgid ""
 "If your physical memory is insufficient unused data can be temporarily "
-"swapped to a swap-device resulting in a higher amount of usable <abbr title="
-"\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a very "
-"slow process as the swap-device cannot be accessed with the high datarates "
-"of the <abbr title=\"Random Access Memory\">RAM</abbr>."
+"swapped to a swap-device resulting in a higher amount of usable <abbr "
+"title=\"Random Access Memory\">RAM</abbr>. Be aware that swapping data is a "
+"very slow process as the swap-device cannot be accessed with the high "
+"datarates of the <abbr title=\"Random Access Memory\">RAM</abbr>."
 msgstr ""
 "Αν η φυσική μνήμη δεν είναι αρκετή, μη-χρησιμοποιούμενα δεδομένα μπορούν "
 "προσωρινά να εναλλάσσονται σε μία συσκευή swap με αποτέλεσμα περισσότερη "
@@ -3375,7 +3356,7 @@ msgstr ""
 msgid "Image check failed:"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:68
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:67
 msgid "In"
 msgstr "Είσοδος"
 
@@ -3385,11 +3366,11 @@ msgid ""
 "blocked. Click \"Continue »\" below to return to the previous page."
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:136
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:125
 msgid "In seconds"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:156
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:144
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:128
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:114
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:92
@@ -3577,13 +3558,6 @@ msgstr ""
 msgid "Invalid"
 msgstr "Άκυρη τιμή εισόδου"
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:101
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:100
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:93
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:74
-msgid "Invalid APN provided"
-msgstr ""
-
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:19
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:22
 msgid "Invalid Base64 key string"
@@ -3626,7 +3600,6 @@ msgid "Invalid hexadecimal value"
 msgstr ""
 
 #: modules/luci-base/luasrc/view/sysauth.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:37
 msgid "Invalid username and/or password! Please try again."
 msgstr "Άκυρο όνομα χρήστη και/ή κωδικός πρόσβασης! Παρακαλώ προσπαθήστε ξανά."
 
@@ -3643,7 +3616,7 @@ msgstr ""
 "Φαίνεται πως προσπαθείτε να φλασάρετε μια εικόνα που δεν χωράει στην μνήμη "
 "flash, παρακαλώ επιβεβαιώστε το αρχείο εικόνας!"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:79
+#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:78
 #: themes/luci-theme-material/luasrc/view/themes/material/header.htm:86
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:72
 msgid "JavaScript required!"
@@ -3670,7 +3643,7 @@ msgstr ""
 msgid "Kernel Log"
 msgstr "Καταγραφή Πυρήνα"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:59
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:58
 msgid "Kernel Version"
 msgstr "Έκδοση Πυρήνα"
 
@@ -3717,7 +3690,7 @@ msgstr ""
 msgid "LACPDU Packets"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:130
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:118
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:102
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:88
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:62
@@ -3726,7 +3699,7 @@ msgstr ""
 msgid "LCP echo failure threshold"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:143
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:131
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:115
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:101
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:75
@@ -3739,7 +3712,7 @@ msgstr ""
 msgid "LED Configuration"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1558
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1553
 msgid "LLC"
 msgstr "LLC"
 
@@ -3812,7 +3785,7 @@ msgid ""
 "are used. It is recommended to not allow 802.11b rates where possible."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4062
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4053
 msgid "Legend:"
 msgstr "Υπόμνημα:"
 
@@ -3917,7 +3890,7 @@ msgstr ""
 msgid "Load"
 msgstr "Φόρτος"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:62
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:61
 msgid "Load Average"
 msgstr "Μέσος όρος φόρτου"
 
@@ -3925,10 +3898,9 @@ msgstr "Μέσος όρος φόρτου"
 msgid "Loading directory contents…"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:1942
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:1940
 #: modules/luci-base/luasrc/view/view.htm:4
 #: modules/luci-mod-status/luasrc/view/admin_status/index.htm:12
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:45
 msgid "Loading view…"
 msgstr ""
 
@@ -3980,12 +3952,12 @@ msgstr ""
 msgid "Local Startup"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:60
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:59
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:130
 msgid "Local Time"
 msgstr "Τοπική Ώρα"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:996
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:991
 msgid "Local ULA"
 msgstr ""
 
@@ -4033,10 +4005,6 @@ msgstr "Καταγραφή ερωτημάτων"
 msgid "Logging"
 msgstr "Καταγραφή"
 
-#: themes/luci-theme-bootstrap/htdocs/luci-static/resources/view/bootstrap/sysauth.js:23
-msgid "Logging in…"
-msgstr ""
-
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/grev6.js:57
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/grev6tap.js:57
 msgid ""
@@ -4050,7 +4018,6 @@ msgid "Logical network to which the tunnel will be added (bridged) (optional)."
 msgstr ""
 
 #: modules/luci-base/luasrc/view/sysauth.htm:38
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:41
 msgid "Login"
 msgstr "Σύνδεση"
 
@@ -4075,7 +4042,7 @@ msgstr ""
 msgid "MAC"
 msgstr "MAC"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1435
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1430
 msgid "MAC Address"
 msgstr ""
 
@@ -4088,7 +4055,7 @@ msgid "MAC Address For The Actor"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:347
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1403
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1398
 msgid "MAC VLAN"
 msgstr ""
 
@@ -4143,7 +4110,7 @@ msgid "MII Interval"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:580
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1447
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1442
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:59
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:53
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:92
@@ -4156,8 +4123,8 @@ msgid ""
 "below:"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:122
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:114
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:110
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:102
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:53
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:98
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:84
@@ -4198,9 +4165,9 @@ msgstr "Μέγιστος επιτρεπόμενος αριθμός ταυτόχ�
 msgid "Maximum allowed size of EDNS.0 UDP packets"
 msgstr "Μέγιστο επιτρεπόμενο μέγεθος EDNS.0 UDP πακέτων"
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:126
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:118
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:106
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:114
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:106
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:95
 msgid "Maximum amount of seconds to wait for the modem to become ready"
 msgstr ""
 "Μέγιστος αριθμός δευτερολέπτων αναμονής ώστε το modem να καταστεί έτοιμο"
@@ -4366,9 +4333,9 @@ msgstr ""
 msgid "Modem information query failed"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:126
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:118
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:106
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:114
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:106
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:95
 msgid "Modem init timeout"
 msgstr ""
 
@@ -4496,9 +4463,9 @@ msgid "NTP server candidates"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:2582
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3817
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3808
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:27
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1097
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1092
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:67
 msgid "Name"
 msgstr "Όνομα"
@@ -4544,7 +4511,7 @@ msgid "Network bridge configuration migration"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:343
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1409
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1404
 msgid "Network device"
 msgstr ""
 
@@ -4570,11 +4537,11 @@ msgstr ""
 msgid "Never"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1149
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1144
 msgid "New interface for \"%s\" can not be created: %s"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1100
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1095
 msgid "New interface name…"
 msgstr ""
 
@@ -4665,7 +4632,7 @@ msgstr ""
 msgid "No negative cache"
 msgstr ""
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:69
+#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:68
 #: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:59
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:79
 msgid "No password set!"
@@ -4680,7 +4647,7 @@ msgstr ""
 msgid "No public keys present yet."
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:91
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:90
 msgid "No rules in this chain."
 msgstr "Δεν υπάρχει κανόνας σε αυτή την αλυσίδα."
 
@@ -4689,7 +4656,7 @@ msgid "No validation or filtering"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:153
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1191
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1186
 msgid "No zone assigned"
 msgstr "Δεν έχει ανατεθεί ζώνη"
 
@@ -4719,7 +4686,7 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:159
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:183
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:112
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:101
 msgid "None"
 msgstr "Κανένα"
 
@@ -4794,8 +4761,8 @@ msgstr ""
 msgid "Obfuscated Password"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:118
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:110
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:106
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:98
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:49
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:94
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:80
@@ -4903,11 +4870,11 @@ msgstr ""
 msgid "Option \"%s\" must not be empty."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4069
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4060
 msgid "Option changed"
 msgstr "Η επιλογή άλλαξε"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4071
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4062
 msgid "Option removed"
 msgstr "Η επιλογή αφαιρέθηκε"
 
@@ -4925,7 +4892,7 @@ msgid ""
 "starting with <code>0x</code>."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1018
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1013
 msgid ""
 "Optional. Allowed values: 'eui64', 'random', fixed value like '::1' or "
 "'::1:2'. When IPv6 prefix (like 'a:b:c:d::') is received from a delegating "
@@ -4982,7 +4949,7 @@ msgstr ""
 msgid "Optional. UDP port used for outgoing and incoming packets."
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:72
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:71
 msgid "Options"
 msgstr "Επιλογές"
 
@@ -4994,7 +4961,7 @@ msgstr ""
 msgid "Other:"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:69
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:68
 msgid "Out"
 msgstr "Έξοδος"
 
@@ -5049,14 +5016,14 @@ msgstr ""
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/grev6.js:69
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/grev6tap.js:74
 #: protocols/luci-proto-ipip/htdocs/luci-static/resources/protocol/ipip.js:53
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:132
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:121
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:156
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:57
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:132
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:118
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:96
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pptp.js:105
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:110
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:99
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:62
 msgid "Override MTU"
 msgstr ""
@@ -5109,37 +5076,37 @@ msgstr ""
 msgid "Owner"
 msgstr "Κάτοχος"
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:109
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:98
 msgid "PAP/CHAP (both)"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:111
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:120
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:103
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:99
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:109
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:91
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:45
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:90
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:76
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:44
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pptp.js:63
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:94
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:83
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:46
 msgid "PAP/CHAP password"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:109
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:115
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:101
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:97
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:104
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:89
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/l2tp.js:43
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:88
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:74
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:42
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pptp.js:61
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:89
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:78
 #: protocols/luci-proto-sstp/htdocs/luci-static/resources/protocol/sstp.js:44
 msgid "PAP/CHAP username"
 msgstr ""
 
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:114
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:103
 msgid "PDP Type"
 msgstr ""
 
@@ -5147,10 +5114,10 @@ msgstr ""
 msgid "PID"
 msgstr "PID"
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:106
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:105
-#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:98
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:79
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:96
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:95
+#: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:88
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:69
 msgid "PIN"
 msgstr "PIN"
 
@@ -5200,15 +5167,15 @@ msgstr ""
 msgid "PSID-bits length"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1502
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1497
 msgid "PTM/EFM (Packet Transfer Mode)"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1466
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1461
 msgid "Packet Steering"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:54
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:53
 msgid "Packets"
 msgstr "Πακέτα"
 
@@ -5217,7 +5184,7 @@ msgid "Packets To Transmit Before Moving To Next Slave"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:153
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1191
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1186
 msgid "Part of zone %q"
 msgstr "Μέρος της ζώνης %q"
 
@@ -5232,7 +5199,6 @@ msgstr ""
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:114
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:52
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:58
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:24
 msgid "Password"
 msgstr "Κωδικός Πρόσβασης"
 
@@ -5287,7 +5253,7 @@ msgstr ""
 msgid "Path to inner Private Key"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2725
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2723
 msgid "Paused"
 msgstr ""
 
@@ -5372,7 +5338,7 @@ msgstr ""
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:84
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:85
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:138
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:64
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:63
 msgid "Pkts."
 msgstr "Πκτ."
 
@@ -5380,11 +5346,11 @@ msgstr "Πκτ."
 msgid "Please enter your username and password."
 msgstr "Παρακαλώ εισάγετε όνομα χρήστη και κωδικό πρόσβασης."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3800
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3791
 msgid "Please select the file to upload."
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:54
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:53
 msgid "Policy"
 msgstr "Πολιτική"
 
@@ -5428,7 +5394,7 @@ msgstr ""
 msgid "Preshared Key"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:130
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:118
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:102
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:88
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:62
@@ -5485,13 +5451,13 @@ msgstr ""
 msgid "Processes"
 msgstr "Εργασίες"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:67
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:66
 msgid "Prot."
 msgstr "Πρωτ."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:80
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:554
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1114
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1109
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:384
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:32
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:168
@@ -5669,11 +5635,11 @@ msgstr ""
 msgid "Reconnect this interface"
 msgstr "Επανασύνδεση της διεπαφής"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:57
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:56
 msgid "References"
 msgstr "Αναφορές"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2719
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2717
 msgid "Refreshing"
 msgstr ""
 
@@ -5721,7 +5687,7 @@ msgstr ""
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1292
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1287
 msgid "Remove related device settings from the configuration"
 msgstr ""
 
@@ -5845,16 +5811,16 @@ msgstr ""
 msgid "Reselection policy for primary slave"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2197
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2195
 #: modules/luci-base/luasrc/view/sysauth.htm:39
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:30
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:66
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1291
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1286
 msgid "Reset"
 msgstr "Αρχικοποίηση"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:343
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:308
 msgid "Reset Counters"
 msgstr "Αρχικοποίηση Μετρητών"
 
@@ -5880,7 +5846,7 @@ msgstr ""
 msgid "Restart"
 msgstr "Επανεκκίνηση"
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:348
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:313
 msgid "Restart Firewall"
 msgstr "Επανεκκίνηση Τείχους Προστασίας"
 
@@ -5905,19 +5871,19 @@ msgstr ""
 msgid "Reverse path filter"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4085
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4076
 msgid "Revert"
 msgstr "Αναίρεση"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4170
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4161
 msgid "Revert changes"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4352
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4343
 msgid "Revert request failed with status <code>%h</code>"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4332
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4323
 msgid "Reverting configuration…"
 msgstr ""
 
@@ -5975,7 +5941,7 @@ msgstr ""
 "Οι διαδρομές ορίζουν τη διεπαφή και πύλη από την οποία κάποιος υπολογιστής ή "
 "δίκτυο μπορεί να είναι προσβάσιμο/ς."
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:218
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:206
 msgid "Rule"
 msgstr ""
 
@@ -5987,7 +5953,7 @@ msgstr "Εκτέλεση ελέγχου του συστήματος αρχείω
 msgid "Run filesystem check"
 msgstr "Εκτέλεση ελέγχου συστήματος αρχείων"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2358
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2356
 msgid "Runtime error"
 msgstr ""
 
@@ -6043,7 +6009,7 @@ msgid "SWAP"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3060
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2192
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2190
 #: modules/luci-compat/luasrc/view/cbi/error.htm:17
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:26
 #: modules/luci-compat/luasrc/view/cbi/header.htm:20
@@ -6052,8 +6018,8 @@ msgstr ""
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2174
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4081
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2172
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4072
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:22
 msgid "Save & Apply"
 msgstr "Αποθήκευση & Εφαρμογή"
@@ -6079,11 +6045,11 @@ msgstr "Σάρωση"
 msgid "Scheduled Tasks"
 msgstr "Προγραμματισμένες Εργασίες"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4065
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4056
 msgid "Section added"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4067
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4058
 msgid "Section removed"
 msgstr ""
 
@@ -6118,7 +6084,7 @@ msgstr ""
 msgid "Send ICMP redirects"
 msgstr ""
 
-#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:143
+#: protocols/luci-proto-3g/htdocs/luci-static/resources/protocol/3g.js:131
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/ppp.js:115
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:101
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:75
@@ -6150,7 +6116,7 @@ msgstr "Είδος Υπηρεσίας"
 msgid "Services"
 msgstr "Υπηρεσίες"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2662
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2660
 msgid "Session expired"
 msgstr ""
 
@@ -6163,7 +6129,7 @@ msgstr ""
 msgid "Set interface as NDP-Proxy external slave. Default is off."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1230
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1225
 msgid ""
 "Set interface properties regardless of the link carrier (If set, carrier "
 "sense events do not invoke hotplug handlers)."
@@ -6232,13 +6198,8 @@ msgstr ""
 msgid "Show current backup file list"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:293
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:264
 msgid "Show empty chains"
-msgstr ""
-
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:276
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:338
-msgid "Show raw counters"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:510
@@ -6266,7 +6227,7 @@ msgstr ""
 msgid "Signal Attenuation (SATN)"
 msgstr ""
 
-#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:136
+#: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:125
 msgid "Signal Refresh Rate"
 msgstr ""
 
@@ -6274,7 +6235,7 @@ msgstr ""
 msgid "Signal:"
 msgstr "Σήμα:"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3818
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3809
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:222
 msgid "Size"
 msgstr "Μέγεθος"
@@ -6335,7 +6296,7 @@ msgid ""
 msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:385
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:70
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:69
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:184
 msgid "Source"
 msgstr "Πηγή"
@@ -6606,7 +6567,7 @@ msgstr "Προτεραιότητα εκκίνησης"
 msgid "Start refresh"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4285
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4276
 msgid "Starting configuration apply…"
 msgstr ""
 
@@ -6802,22 +6763,18 @@ msgstr ""
 msgid "TX queue length"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:18
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:17
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:167
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:186
 msgid "Table"
 msgstr "Πίνακας"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/routes.js:36
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:66
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:65
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:164
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:183
 msgid "Target"
 msgstr "Στόχος"
-
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:57
-msgid "Target Platform"
-msgstr ""
 
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:103
 msgid "Target network"
@@ -6935,7 +6892,7 @@ msgid ""
 "network"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4161
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4152
 msgid ""
 "The device could not be reached within %d seconds after applying the pending "
 "changes, which caused the configuration to be rolled back for safety "
@@ -6952,8 +6909,8 @@ msgid ""
 "The device file of the memory or partition (<abbr title=\"for example\">e.g."
 "</abbr> <code>/dev/sda1</code>)"
 msgstr ""
-"Το αρχείο συσκευής της μνήμης ή του διαμέρισματος (<abbr title="
-"\"παραδείγματος χάρην\">π.χ.</abbr> <code>/dev/sda1</code>)"
+"Το αρχείο συσκευής της μνήμης ή του διαμέρισματος (<abbr "
+"title=\"παραδείγματος χάρην\">π.χ.</abbr> <code>/dev/sda1</code>)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:450
 msgid "The device name \"%s\" is already taken"
@@ -6997,11 +6954,11 @@ msgid ""
 "ED25519 or ECDSA keys."
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1103
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1098
 msgid "The interface name is already used"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1109
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1104
 msgid "The interface name is too long"
 msgstr ""
 
@@ -7067,8 +7024,8 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/switch.js:139
 msgid ""
-"The network ports on this device can be combined to several <abbr title="
-"\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
+"The network ports on this device can be combined to several <abbr "
+"title=\"Virtual Local Area Network\">VLAN</abbr>s in which computers can "
 "communicate directly with each other. <abbr title=\"Virtual Local Area "
 "Network\">VLAN</abbr>s are often used to separate different network "
 "segments. Often there is by default one Uplink port for a connection to the "
@@ -7159,8 +7116,8 @@ msgstr ""
 "Η εικόνα που ανεβάσατε δεν περιέχει κάποια υποστηριζόμενη μορφή. Βεβαιωθείτε "
 "ότι επιλέξατε την γενική μορφή εικόνας για την πλατφόρμα σας."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1443
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1455
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1438
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1450
 msgid "The value is overridden by configuration. Original: %s"
 msgstr ""
 
@@ -7171,11 +7128,11 @@ msgstr ""
 msgid "There are no active leases"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4300
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4291
 msgid "There are no changes to apply"
 msgstr ""
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:70
+#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:69
 #: themes/luci-theme-openwrt-2020/luasrc/view/themes/openwrt2020/header.htm:60
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:80
 msgid ""
@@ -7233,8 +7190,8 @@ msgid ""
 "This is the only <abbr title=\"Dynamic Host Configuration Protocol\">DHCP</"
 "abbr> in the local network"
 msgstr ""
-"Αυτός είναι ο μόνος <abbr title=\"Dynamic Host Configuration Protocol"
-"\">DHCP</abbr> στο τοπικό δίκτυο"
+"Αυτός είναι ο μόνος <abbr title=\"Dynamic Host Configuration "
+"Protocol\">DHCP</abbr> στο τοπικό δίκτυο"
 
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/6in4.js:73
 msgid "This is the plain username for logging into the account"
@@ -7313,7 +7270,7 @@ msgstr ""
 msgid "Timezone"
 msgstr "Ζώνη ώρας"
 
-#: modules/luci-base/htdocs/luci-static/resources/luci.js:2672
+#: modules/luci-base/htdocs/luci-static/resources/luci.js:2670
 msgid "To login…"
 msgstr ""
 
@@ -7328,7 +7285,7 @@ msgstr ""
 "κατάσταση, κάντε κλικ στο \"Εκτέλεσε επαναφορά\" (δυνατό μόνο σε squashfs "
 "εικόνες)."
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1491
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1486
 msgid "Tone"
 msgstr ""
 
@@ -7342,8 +7299,8 @@ msgstr "Διαθέσιμο Συνολικά"
 msgid "Traceroute"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:54
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:65
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:53
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:64
 #: modules/luci-mod-status/root/usr/share/luci/menu.d/luci-mod-status.json:109
 msgid "Traffic"
 msgstr "Κίνηση"
@@ -7388,7 +7345,7 @@ msgstr "Διεπαφή Τούνελ"
 msgid "Tunnel Link"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1400
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1395
 msgid "Tunnel device"
 msgstr ""
 
@@ -7397,7 +7354,7 @@ msgid "Tx-Power"
 msgstr "Ισχύς Εκπομπής"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:45
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1431
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1426
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/60_wifi.js:160
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/map.js:43
 msgid "Type"
@@ -7457,11 +7414,11 @@ msgstr ""
 msgid "Unable to obtain mount information"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:307
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:278
 msgid "Unable to reset ip6tables counters: %s"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:305
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:276
 msgid "Unable to reset iptables counters: %s"
 msgstr ""
 
@@ -7475,7 +7432,7 @@ msgstr ""
 msgid "Unable to resolve peer host name"
 msgstr ""
 
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:313
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:284
 msgid "Unable to restart firewall: %s"
 msgstr ""
 
@@ -7493,7 +7450,7 @@ msgstr ""
 msgid "Unexpected reply data format"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1463
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1458
 msgid ""
 "Unique Local Address - in the range <code>fc00::/7</code>. Typically only "
 "within the &#8216;local&#8217; half <code>fd00::/8</code>. ULA for IPv6 is "
@@ -7535,7 +7492,7 @@ msgstr ""
 msgid "Unnamed key"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4005
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3996
 msgid "Unsaved Changes"
 msgstr "Μη-αποθηκευμένες Αλλαγές"
 
@@ -7565,7 +7522,7 @@ msgstr ""
 msgid "Up Delay"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3892
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3883
 msgid "Upload"
 msgstr ""
 
@@ -7589,12 +7546,12 @@ msgid "Upload file…"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2759
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3880
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3871
 msgid "Upload request failed: %s"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3799
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3853
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3790
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3844
 msgid "Uploading file…"
 msgstr ""
 
@@ -7618,7 +7575,7 @@ msgid ""
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:82
-#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:61
+#: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js:60
 msgid "Uptime"
 msgstr "Χρόνος εν λειτουργία"
 
@@ -7636,7 +7593,7 @@ msgstr "Χρήση πύλης DHCP"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:933
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:68
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:132
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:121
 msgid "Use DNS servers advertised by peer"
 msgstr ""
 
@@ -7686,7 +7643,7 @@ msgstr ""
 msgid "Use broadcast flag"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1226
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1221
 msgid "Use builtin IPv6-management"
 msgstr ""
 
@@ -7696,13 +7653,13 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:929
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:64
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:121
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:110
 msgid "Use default gateway"
 msgstr "Χρήση προεπιλεγμένης πύλης"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:951
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:72
-#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:126
+#: protocols/luci-proto-qmi/htdocs/luci-static/resources/protocol/qmi.js:115
 msgid "Use gateway metric"
 msgstr ""
 
@@ -7777,15 +7734,14 @@ msgstr ""
 #: protocols/luci-proto-openconnect/htdocs/luci-static/resources/protocol/openconnect.js:112
 #: protocols/luci-proto-openfortivpn/htdocs/luci-static/resources/protocol/openfortivpn.js:50
 #: protocols/luci-proto-vpnc/htdocs/luci-static/resources/protocol/vpnc.js:56
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/sysauth.htm:18
 msgid "Username"
 msgstr "Όνομα Χρήστη"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1559
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1554
 msgid "VC-Mux"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1507
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1502
 msgid "VDSL"
 msgstr ""
 
@@ -7795,12 +7751,12 @@ msgid "VEPA (Virtual Ethernet Port Aggregator)"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:346
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1394
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1389
 msgid "VLAN (802.1ad)"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:345
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1391
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1386
 msgid "VLAN (802.1q)"
 msgstr ""
 
@@ -7900,7 +7856,7 @@ msgid "Very High"
 msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:348
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1406
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1401
 msgid "Virtual Ethernet"
 msgstr ""
 
@@ -7962,7 +7918,7 @@ msgstr "Προσοχή: Οι μη αποθηκευμένες αλλαγές θα
 msgid "Weak"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1022
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1017
 msgid ""
 "When delegating prefixes to multiple downstreams, interfaces with a higher "
 "preference value are considered first when allocating subnets."
@@ -8086,7 +8042,7 @@ msgstr ""
 "><strong>Προειδοποίηση: Αν απενεργοποιήσετε απαραίτητα σενάρια εκκίνησης "
 "όπως το \"network\", η συσκευή σας μπορεί να καταστεί μη-προσβάσιμη!</strong>"
 
-#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:80
+#: themes/luci-theme-bootstrap/luasrc/view/themes/bootstrap/header.htm:79
 #: themes/luci-theme-material/luasrc/view/themes/material/header.htm:87
 #: themes/luci-theme-openwrt/luasrc/view/themes/openwrt.org/header.htm:73
 msgid ""
@@ -8120,9 +8076,9 @@ msgstr ""
 msgid "any"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1492
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1487
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1495
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1500
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1505
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1230
 #: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:79
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoe.js:48
@@ -8141,12 +8097,12 @@ msgstr "στατικό"
 msgid "baseT"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1565
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1560
 msgid "bridged"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:146
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:406
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:405
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:35
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:99
 #: modules/luci-compat/luasrc/view/cbi/network_netlist.htm:31
@@ -8201,7 +8157,7 @@ msgstr "ανενεργό"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:765
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:873
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:909
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:974
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:969
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:91
 #: protocols/luci-proto-ipv6/htdocs/luci-static/resources/protocol/dhcpv6.js:25
 msgid "disabled"
@@ -8240,7 +8196,7 @@ msgid "forced"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:85
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:196
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:195
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:61
 msgid "forward"
 msgstr "προώθηση"
@@ -8279,7 +8235,7 @@ msgid "ignore"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:69
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:192
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:191
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:46
 msgid "input"
 msgstr "είσοδος"
@@ -8382,7 +8338,7 @@ msgstr ""
 msgid "relay mode"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1566
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1561
 msgid "routed"
 msgstr ""
 
@@ -8416,8 +8372,8 @@ msgstr ""
 msgid "unique value"
 msgstr ""
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1443
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1455
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1438
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1450
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:592
 msgid "unknown"
 msgstr ""
@@ -8433,11 +8389,11 @@ msgstr "απεριόριστα"
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3566
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:76
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:138
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:370
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:397
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:433
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:470
-#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:566
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:369
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:396
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:432
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:469
+#: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:565
 #: modules/luci-compat/luasrc/view/cbi/firewall_zonelist.htm:53
 #: modules/luci-compat/luasrc/view/cbi/network_netlist.htm:38
 msgid "unspecified"
@@ -8635,11 +8591,11 @@ msgstr "ναι"
 msgid "« Back"
 msgstr "« Πίσω"
 
-#~ msgid "IPv4-Address"
-#~ msgstr "IPv4-Διεύθυνση"
+msgid "IPv4-Address"
+msgstr "IPv4-Διεύθυνση"
 
-#~ msgid "MAC-Address"
-#~ msgstr "MAC-Διεύθυνση"
+msgid "MAC-Address"
+msgstr "MAC-Διεύθυνση"
 
-#~ msgid "MAC-Address Filter"
-#~ msgstr "Φίλτρο MAC Διευθύνσεων"
+msgid "MAC-Address Filter"
+msgstr "Φίλτρο MAC Διευθύνσεων"
