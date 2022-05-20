@@ -6,7 +6,8 @@ local datatypes = api.datatypes
 local path = string.format("/usr/share/%s/rules/", appname)
 local route_hosts_path = "/etc/"
 
-m = Map(appname)
+m = SimpleForm(appname)
+m.uci = api.uci
 
 -- [[ Rule List Settings ]]--
 s = m:section(TypedSection, "global_rules")
