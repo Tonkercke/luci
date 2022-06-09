@@ -797,7 +797,7 @@ msgid "Moving..."
 msgstr "移动中"
 
 msgid "App Update"
-msgstr "组件更新"
+msgstr "组件版本"
 
 msgid "Please confirm that your firmware supports FPU."
 msgstr "请确认你的固件支持FPU。"
