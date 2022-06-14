@@ -1,11 +1,11 @@
 <%
 local api = require "luci.model.cbi.passwall.api.api"
-local xray_version = api.get_xray_version()
+local hysteria_version = api.get_hysteria_version()
 -%>
 
 <script type="text/javascript">
 	//<![CDATA[
-	var xrayInfo;
+	var hysteriaInfo;
 	var tokenStr = '<%=token%>';
 	var manuallyUpdateText = '<%:Manually update%>';
 	var noUpdateText = '<%:It is the latest version%>';
@@ -19,22 +19,22 @@ local xray_version = api.get_xray_version()
 	var movingText = '<%:Moving...%>';
 
 	window.onload = function () {
-		var xrayCheckBtn = document.getElementById('_xray-check_btn');
-		var xrayDetailElm = document.getElementById('_xray-check_btn-detail');
+		var hysteriaCheckBtn = document.getElementById('_hysteria-check_btn');
+		var hysteriaDetailElm = document.getElementById('_hysteria-check_btn-detail');
 	};
 
-	function addPageNotice_xray() {
+	function addPageNotice_hysteria() {
 		window.onbeforeunload = function (e) {
 			e.returnValue = updateInProgressNotice;
 			return updateInProgressNotice;
 		};
 	}
 
-	function removePageNotice_xray() {
+	function removePageNotice_hysteria() {
 		window.onbeforeunload = undefined;
 	}
 
-	function onUpdateSuccess_xray(btn) {
+	function onUpdateSuccess_hysteria(btn) {
 		alert(updateSuccessText);
 
 		if (btn) {
@@ -48,7 +48,7 @@ local xray_version = api.get_xray_version()
 		}, 1000);
 	}
 
-	function onRequestError_xray(btn, errorMessage) {
+	function onRequestError_hysteria(btn, errorMessage) {
 		btn.disabled = false;
 		btn.value = manuallyUpdateText;
 
@@ -57,34 +57,34 @@ local xray_version = api.get_xray_version()
 		}
 	}
 
-	function onBtnClick_xray(btn) {
-		if (xrayInfo === undefined) {
-			checkUpdate_xray(btn);
+	function onBtnClick_hysteria(btn) {
+		if (hysteriaInfo === undefined) {
+			checkUpdate_hysteria(btn);
 		} else {
-			doUpdate_xray(btn);
+			doUpdate_hysteria(btn);
 		}
 	}
 
-	function checkUpdate_xray(btn) {
+	function checkUpdate_hysteria(btn) {
 		btn.disabled = true;
 		btn.value = inProgressText;
 
-		addPageNotice_xray();
+		addPageNotice_hysteria();
 
 		var ckeckDetailElm = document.getElementById(btn.id + '-detail');
 
-		XHR.get('<%=api.url("xray_check")%>', {
+		XHR.get('<%=api.url("hysteria_check")%>', {
 			token: tokenStr,
 			arch: ''
 		}, function (x, json) {
-			removePageNotice_xray();
+			removePageNotice_hysteria();
 
 			if (json.code) {
-				xrayInfo = undefined;
-				onRequestError_xray(btn, json.error);
+				hysteriaInfo = undefined;
+				onRequestError_hysteria(btn, json.error);
 			} else {
 				if (json.has_update) {
-					xrayInfo = json;
+					hysteriaInfo = json;
 					btn.disabled = false;
 					btn.value = clickToUpdateText;
 					btn.placeholder = clickToUpdateText;
@@ -107,51 +107,35 @@ local xray_version = api.get_xray_version()
 		}, 300);
 	}
 
-	function doUpdate_xray(btn) {
+	function doUpdate_hysteria(btn) {
 		btn.disabled = true;
 		btn.value = downloadingText;
 
-		addPageNotice_xray();
+		addPageNotice_hysteria();
 
-		var xrayUpdateUrl = '<%=api.url("xray_update")%>';
+		var hysteriaUpdateUrl = '<%=api.url("hysteria_update")%>';
 		// Download file
-		XHR.get(xrayUpdateUrl, {
+		XHR.get(hysteriaUpdateUrl, {
 			token: tokenStr,
-			url: xrayInfo ? xrayInfo.data.browser_download_url : '',
-			size: xrayInfo ? xrayInfo.data.size / 1024 : null
+			url: hysteriaInfo ? hysteriaInfo.data.browser_download_url : '',
+			size: hysteriaInfo ? hysteriaInfo.data.size / 1024 : null
 		}, function (x, json) {
 			if (json.code) {
-				removePageNotice_xray();
-				onRequestError_xray(btn, json.error);
+				removePageNotice_hysteria();
+				onRequestError_hysteria(btn, json.error);
 			} else {
 				btn.value = decompressioningText;
-
-				// Extract file
-				XHR.get(xrayUpdateUrl, {
+				// Move file to target dir
+				XHR.get(hysteriaUpdateUrl, {
 					token: tokenStr,
-					task: 'extract',
-					file: json.file,
-					subfix: xrayInfo ? xrayInfo.type : ''
+					task: 'move',
+					file: json.file
 				}, function (x, json) {
+					removePageNotice_hysteria();
 					if (json.code) {
-						removePageNotice_xray();
-						onRequestError_xray(btn, json.error);
+						onRequestError_hysteria(btn, json.error);
 					} else {
-						btn.value = movingText;
-
-						// Move file to target dir
-						XHR.get(xrayUpdateUrl, {
-							token: tokenStr,
-							task: 'move',
-							file: json.file
-						}, function (x, json) {
-							removePageNotice_xray();
-							if (json.code) {
-								onRequestError_xray(btn, json.error);
-							} else {
-								onUpdateSuccess_xray(btn);
-							}
-						}, 300)
+						onUpdateSuccess_hysteria(btn);
 					}
 				}, 300)
 			}
@@ -161,15 +145,15 @@ local xray_version = api.get_xray_version()
 </script>
 
 <div class="cbi-value">
-	<label class="cbi-value-title">Xray
+	<label class="cbi-value-title">Hysteria
 		<%:Version%>
 	</label>
 	<div class="cbi-value-field">
 		<div class="cbi-value-description">
-			<span>【 <%=xray_version ~="" and xray_version or translate("Null") %> 】</span>
-			<input class="btn cbi-button cbi-button-apply" type="button" id="_xray-check_btn"
-				onclick="onBtnClick_xray(this);" value="<%:Manually update%>" />
-			<span id="_xray-check_btn-detail"></span>
+			<span>【 <%=hysteria_version ~="" and hysteria_version or translate("Null") %> 】</span>
+			<input class="btn cbi-button cbi-button-apply" type="button" id="_hysteria-check_btn"
+				onclick="onBtnClick_hysteria(this);" value="<%:Manually update%>" />
+			<span id="_hysteria-check_btn-detail"></span>
 		</div>
 	</div>
 </div>
