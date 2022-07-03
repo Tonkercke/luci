@@ -19,7 +19,7 @@ o.default = 8088
 o.rmempty = false
 
 o = s:option(Value, "database", translate("Database path"))
-o.default = "/etc/filebrowser.db"
+o.default = "/usr/filebrowser.db"
 o.rmempty = false
 
 o = s:option(Value, "username", translate("Initial username"))
