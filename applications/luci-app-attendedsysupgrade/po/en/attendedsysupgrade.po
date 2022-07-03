@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2020-11-04 00:27+0000\n"
-"Last-Translator: Igor Benek-Lins <beneklins@protonmail.ch>\n"
+"PO-Revision-Date: 2022-07-03 10:25+0000\n"
+"Last-Translator: Hannu Nyman <hannu.nyman@iki.fi>\n"
 "Language-Team: English <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsattendedsysupgrade/en/>\n"
 "Language: en\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.3.2-dev\n"
+"X-Generator: Weblate 4.13.1-dev\n"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:63
 msgid "10% Received build request"
@@ -46,7 +46,7 @@ msgstr ""
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:448
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
-msgstr "Attended system upgrade"
+msgstr ""
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:10
 msgid "Attendedsysupgrade Configuration."
