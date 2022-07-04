@@ -1,4 +1,4 @@
- #!/bin/bash
+#!/bin/sh
 red='\e[91m'
 green='\e[92m'
 yellow='\e[1;33m'
@@ -189,35 +189,36 @@ add_listen() {
         echo -e "${yellow}成功删除系统默认生成的wifi热点${none}"
     fi
     user_select="$1"
+    echo -e "你选择了 ${user_select}"
     [ -z ${user_select} ] && return 1
     if [ "${user_select}" == "2" ]
     then
-        test_drever=$(uci show | grep 11g | cut -d '.' -f 2)
+        test_drever=$(uci show | grep 2g | cut -d '.' -f 2)
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
         else
-            echo -e "${red}当前系统不是openwrt系统 !${none}" && exit
+            echo -e "${red}当前系统不是openwrt系统! ${none} -----> 111" && exit
         fi
     elif [ "${user_select}" == "5" ]
     then
-        test_drever=$(uci show | grep 11a | cut -d '.' -f 2 | sed -n "1p")
+        test_drever=$(uci show | grep 5g | cut -d '.' -f 2 | sed -n "1p")
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
             # test_name="_5G"
         else
-            echo -e "${red}当前系统不是openwrt系统 !${none}" && exit
+            echo -e "${red}当前系统不是openwrt系统! ${none} -----> 222" && exit
         fi
     elif [ "${user_select}" == "6" ]
     then
-        test_drever=$(uci show | grep 11a | cut -d '.' -f 2 | sed -n "2p")
+        test_drever=$(uci show | grep 5g | cut -d '.' -f 2 | sed -n "1p")
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
             # test_name="_5G"
         else
-            echo -e "${red}当前系统不是openwrt系统 !${none}" && exit
+            echo -e "${red}当前系统不是openwrt系统! ${none} -----> 111" && exit
         fi
     elif [ "${user_select}" == "4" ]
     then

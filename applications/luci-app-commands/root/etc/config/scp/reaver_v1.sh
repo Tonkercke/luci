@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 SCRIPT="WPSPinGeneratorMOD"
 VERSION=$(grep "# versión" $0 | tail -n 2 | head -n 1 | awk '{print $3}')
@@ -196,7 +196,7 @@ add_listen() {
     [ -z ${user_select} ] && return 1
     if [ "${user_select}" == "2" ]
     then
-        test_drever=$(uci show | grep 11g | cut -d '.' -f 2)
+        test_drever=$(uci show | grep 2g | cut -d '.' -f 2)
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
@@ -205,7 +205,7 @@ add_listen() {
         fi
     elif [ "${user_select}" == "5" ]
     then
-        test_drever=$(uci show | grep 11a | cut -d '.' -f 2 | sed -n "1p")
+        test_drever=$(uci show | grep 5g | cut -d '.' -f 2 | sed -n "1p")
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
@@ -215,7 +215,7 @@ add_listen() {
         fi
     elif [ "${user_select}" == "6" ]
     then
-        test_drever=$(uci show | grep 11a | cut -d '.' -f 2 | sed -n "2p")
+        test_drever=$(uci show | grep 5g | cut -d '.' -f 2 | sed -n "2p")
         if [ "$(echo ${test_drever} | grep 'radio')" != "" ]
         then
             drever=${test_drever}
