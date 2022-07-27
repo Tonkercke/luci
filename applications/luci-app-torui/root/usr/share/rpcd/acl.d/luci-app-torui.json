@@ -1,18 +1,18 @@
 {
-	"luci-app-torbp": {
-		"description": "Grant UCI luci-app-torbp",
+	"luci-app-torui": {
+		"description": "Grant UCI luci-app-torui",
 		"read": {
 			"cgi-io": [
 				"exec"
 			],
 
 			"uci": [
-			"torbp"
+			"torui"
 			]
 		},
 		"write": {
 			"uci": [
-				"torbp"
+				"torui"
 			]
 		}
 	}

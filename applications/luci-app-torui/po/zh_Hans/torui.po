@@ -1,0 +1,47 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "Tor UI"
+msgstr "Tor控制界面"
+
+msgid "More convenient management and setup of Tor."
+msgstr "更方便的管理和设置 Tor。"
+
+msgid "Tor configuration"
+msgstr "Tor配置"
+
+msgid "Stop"
+msgstr "停止"
+
+msgid "Start"
+msgstr "启动"
+
+msgid "Tor is Running"
+msgstr "Tor正在运行"
+
+msgid "Tor not Installed"
+msgstr "Tor未安装"
+
+msgid "Tor not Running"
+msgstr "Tor未运行"
+
+msgid "restore default configuration"
+msgstr "恢复默认配置"
+
+msgid "Modify torrc file to default configuration"
+msgstr "修改torrc文件为默认配置"
+
+msgid "Edit torrc file"
+msgstr "编辑 torrc 文件"
+
+msgid "Apply & Restart Tor"
+msgstr "应用并重启 Tor"
+
+msgid "Log"
+msgstr "日志"
+
+msgid "Tor log"
+msgstr "Tor 日志"
+
+msgid "show PID"
+msgstr "显示 PID"
