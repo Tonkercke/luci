@@ -6,15 +6,15 @@
 local torrc = "/etc/tor/torrc"
 local makeTorConfigButtonPressed = false
 local torrcSampleConfig = 'User tor\n' ..
-						  'HardwareAccel 1\n' ..
 						  'Log notice syslog\n' ..
-						  'SocksPort 0.0.0.0:9150\n' ..
+						  'SocksProxy 127.0.0.1:3090\n' ..
+						  'HttpsPort 0.0.0.0:9150\n' ..
 						  'DataDirectory /var/lib/tor\n' ..
-						  'ExcludeExitNodes {us},{ca},{cn},{hk},{jp},{kr},{tw},{ru},{ua},{by},{kz},{in},{af},{aq},{ar},{au},{bs},{bh},{bb},{bz},{bo},{bw},{br},{bn},{bf},{bi},{kh},{cm},{cv},{ky},{cf},{td},{cl},{co},{km},{cg},{cd},{ck},{cr},{ci},{cu},{dj},{dm},{do},{ec},{eg},{sv},{gq},{et},{fk},{fo},{fj},{ga},{gm},{gh},{gi},{gl},{gd},{gp},{gu},{gt},{gn},{gw},{gy},{ht},{hn},{id},{ir},{iq},{il},{jm},{jo},{ke},{ki},{kp},{kg},{lb},{ls},{lr},{ly},{mo},{mg},{mw},{my},{mv},{ml},{mt},{mh},{mq},{mr},{mu},{yt},{mx},{fm},{mn},{ms},{ma},{mz},{mm},{na},{nr},{np},{nc},{nz},{ni},{ne},{ng},{nu},{nf},{mp},{om},{pk},{pw},{ps},{pa},{pg},{py},{pe},{ph},{pr},{qa},{re},{rw},{ws},{st},{sa},{sn},{sc},{sl},{sb},{so},{as},{za},{lk},{kn},{lc},{pm},{vc},{sd},{sr},{sz},{sy},{tj},{tz},{th},{tg},{tk},{to},{tt},{tn},{tr},{tm},{tc},{tv},{ug},{ae},{uy},{vu},{vn},{vi},{wf},{ye},{zm},{zw},{??}\n' ..
-						  'StrictNodes 1\n' ..
-						  'UseBridges 1\n' ..
-						  'ClientTransportPlugin obfs4 exec /usr/bin/obfs4proxy\n' ..
-						  'Bridge '
+						  'GeoIPv6File /usr/share/tor/geoip6\n' ..
+						  'GeoIPExcludeUnknown 1\n' ..
+						  'ExcludeNodes {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
+						  'ExcludeExitNodes  {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
+						  'StrictNodes 1'
 
 local fontred = "<font color=\"red\">"
 local fontgreen = "<font color=\"green\">"
