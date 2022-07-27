@@ -7,25 +7,12 @@ include $(TOPDIR)/rules.mk
 PKG_NAME:=luci-app-torbp
 PKG_VERSION:=1.0
 PKG_RELEASE:=1
-PKG_MAINTAINER:=ZeroChaos <dev@null.la>
 
-include $(INCLUDE_DIR)/package.mk
+LUCI_DEPENDS:=+tor +tor-geoip +obfs4proxy
+LUCI_TITLE:=Tor bridges proxy
+LUCI_PKGARCH:=all
 
-define Package/luci-app-torbp
-	SECTION:=luci
-	CATEGORY:=LuCI
-	DEPENDS:=+tor +tor-geoip +obfs4proxy
-	TITLE:=Tor bridges proxy
-	MAINTAINER:=ZeroChaos <dev@null.la>
-	URL:=https://zerolab.net
-	PKGARCH:=all
-endef
-
-define Package/luci-app-torbp/description
-Tor with SOCKS 5 proxy with a UI for the ability to add bridges
-endef
-
-define Package/luci-app-torbp/conffiles
+define Package/$(PKG_NAME)/conffiles
 /etc/config/torbp
 endef
 
@@ -68,5 +55,7 @@ define Package/luci-app-torbp/postinst
 	fi
 	exit 0
 endef
+
+include $(TOPDIR)/feeds/luci/luci.mk
 
 $(eval $(call BuildPackage,luci-app-torbp))
