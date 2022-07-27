@@ -6,7 +6,7 @@
 
 include $(TOPDIR)/rules.mk
 
-LUCI_DEPENDS:=+tor +tor-geoip +obfs4proxy
+LUCI_DEPENDS:=+tor
 LUCI_TITLE:=Luci Tor bridges proxy
 LUCI_PKGARCH:=all
 
