@@ -9,7 +9,7 @@ PKG_VERSION:=1.0
 PKG_RELEASE:=1
 
 LUCI_DEPENDS:=+tor +tor-geoip +obfs4proxy
-LUCI_TITLE:=Tor bridges proxy
+LUCI_TITLE:=Luci Tor bridges proxy
 LUCI_PKGARCH:=all
 
 define Package/$(PKG_NAME)/conffiles
@@ -17,5 +17,3 @@ define Package/$(PKG_NAME)/conffiles
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
-
-$(eval $(call BuildPackage,luci-app-torbp))
