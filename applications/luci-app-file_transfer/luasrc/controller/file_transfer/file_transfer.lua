@@ -3,7 +3,7 @@ module("luci.controller.file_transfer.file_transfer", package.seeall)
 local http = luci.http
 function index()
     local i18n = luci.i18n.translate
-    local title  = i18n("File Transfer")
+    local title  = i18n("File Transfer") translate("File Transfer")
 
     page = entry({"admin", "system", "file_transfer"}, call("main"), title, 60)
     page = entry({"admin", "system", "file_transfer","cmd"}, call("cmd_post"), nil)
@@ -22,19 +22,19 @@ function cmd_post()
     if(cmd=="dir_show")
     then
         dir_show()
-    elseif(cmd=="download")
+    elseif(cmd=="download") translate("download")
     then
         download()
-    elseif(cmd=="remove")
+    elseif(cmd=="remove") translate("remove")
     then
         remove()
-    elseif(cmd=="copy")
+    elseif(cmd=="copy") translate("copy")
     then
         copy()
-    elseif(cmd=="rename")
+    elseif(cmd=="rename") translate("rename")
     then
         rename()
-    elseif(cmd=="create_dir")
+    elseif(cmd=="create_dir") translate("create dir")
     then
         create()
     end
@@ -89,7 +89,7 @@ function download()
         fd = nixio.open(sPath, "r")
     end
     if not fd then
-        local err = "Couldn't download this file: it's maybe a softlink.</br>You may see whether it's end with @"
+        local err = "Couldn't download this file: it's maybe a softlink.</br>You may see whether it's end with @" translate("Couldn't download this file: it's maybe a softlink, You may see whether it's end with @")
         http.write(err)
         return
     end
@@ -111,7 +111,7 @@ function upload_set()
     --local location=luci.http.formvalue("path")..'/'
     local location="/tmp/file_transfer/"
     nixio.fs.mkdir(location)
-    local input_name="upload_file"
+    local input_name="upload_file" translate("upload file")
     setFileHandler(location,input_name)
     local upload = luci.http.formvalue(input_name)
     if upload and #upload > 0 then

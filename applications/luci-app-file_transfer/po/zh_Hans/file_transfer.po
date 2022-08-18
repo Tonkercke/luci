@@ -1,0 +1,35 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "file transfer"
+msgstr "文件传输"
+
+msgid "download"
+msgstr "下载"
+
+msgid "removen"
+msgstr "删除"
+
+msgid "copy"
+msgstr "复制"
+
+msgid "rename"
+msgstr "重命名"
+
+msgid "create dir"
+msgstr "创建目录"
+
+msgid "Couldn't download this file: it's maybe a softlink. You may see whether it's end with @"
+msgstr "无法下载此文件：它可能是软链接, 你可能会看到它是否以@结尾。"
+
+msgid "Upload/Download"
+msgstr "上传/下载"
+
+msgid "Drag and Drop File for Upload"
+msgstr "拖放文件以进行上传"
+
+msgid "upload file"
+msgstr "上传文件"
+
+msgid "and"
+msgstr "和"
