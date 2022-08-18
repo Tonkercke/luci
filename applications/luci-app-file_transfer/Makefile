@@ -6,19 +6,9 @@
 
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=luci-app-file_transfer
+LUCI_TITLE:=file_transfer
 PKG_VERSION=1.0
 PKG_RELEASE:=1
-
-include $(INCLUDE_DIR)/package.mk
-
-define Package/luci-app-file_transfer
-	SECTION:=luci
-	CATEGORY:=LuCI
-	SUBMENU:=3. Applications
-	TITLE:=file transfer
-	PKGARCH:=all
-endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
