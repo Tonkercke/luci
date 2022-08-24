@@ -1,0 +1,59 @@
+msgid "File Browser"
+msgstr "文件浏览器"
+
+msgid "File explorer is software that creates your own cloud that you can install on a server, point it to a path, and then access your files through a beautiful web interface. You have many features available!"
+msgstr "文件浏览器是一种创建你自己的云的软件，你可以在服务器上安装它，将它指向一个路径，然后通过一个漂亮的web界面访问你的文件。您有许多可用的特性！"
+
+msgid "RUNNING"
+msgstr "运行中"
+
+msgid "NOT RUNNING"
+msgstr "未运行"
+
+msgid "Enter interface"
+msgstr "进入界面"
+
+msgid "Global Settings"
+msgstr "全局设置"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "Listen address"
+msgstr "监听地址"
+
+msgid "Listen port"
+msgstr "监听端口"
+
+msgid "Initial username"
+msgstr "初始账户"
+
+msgid "Initial password"
+msgstr "初始密码"
+
+msgid "SSL cert"
+msgstr "SSL 证书"
+
+msgid "SSL key"
+msgstr "SSL 私钥"
+
+msgid "Database path"
+msgstr "数据库路径"
+
+msgid "Root path"
+msgstr "指向路径"
+
+msgid "Point to a path to access your files in the web interface, default is /root"
+msgstr "指向一个路径，可在web界面访问你的文件，默认为 /root"
+
+msgid "Executable directory"
+msgstr "可执行文件存放目录"
+
+msgid "The file size is large, requiring at least 32M space. It is recommended to insert a usb flash drive or hard disk, or use it in the tmp directory<br />For example, /mnt/sda1<br />For example, /tmp"
+msgstr "文件较大，至少需要32M空间。建议插入U盘或硬盘，或放入tmp目录里使用<br />例如：/mnt/sda1<br />例如：/tmp"
+
+msgid "Logs"
+msgstr "日志"
+
+msgid "Clear logs"
+msgstr "清空日志"
