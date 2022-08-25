@@ -1,0 +1,20 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8\n"
+
+msgid "File Transfer"
+msgstr "文件传输"
+
+msgid "download"
+msgstr "下载"
+
+msgid "remove"
+msgstr "删除"
+
+msgid "copy"
+msgstr "复制"
+
+msgid "rename"
+msgstr "重命名"
+
+msgid "create dir"
+msgstr "创建目录"
