@@ -22,19 +22,19 @@ function cmd_post()
     if(cmd=="dir_show")
     then
         dir_show()
-    elseif(cmd=="download" (translate('download'))
+    elseif(cmd=="download")
     then
         download()
-    elseif(cmd=="remove" (translate('remove'))
+    elseif(cmd=="remove")
     then
         remove()
-    elseif(cmd=="copy" (translate('copy'))
+    elseif(cmd=="copy")
     then
         copy()
-    elseif(cmd=="rename" (translate('rename'))
+    elseif(cmd=="rename")
     then
         rename()
-    elseif(cmd=="create_dir" (translate('create dir'))
+    elseif(cmd=="create_dir")
     then
         create()
     end
