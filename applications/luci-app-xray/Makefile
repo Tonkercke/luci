@@ -4,9 +4,9 @@ PKG_NAME:=luci-app-xray
 PKG_VERSION:=1.16.1
 PKG_RELEASE:=1
 
-LUCI_TITLE:=SS/SSR/V2Ray/Trojan/NaiveProxy/Socks5/Tun LuCI interface
+LUCI_TITLE:=SS/SSR/V2Ray/Trojan/Socks5/Tun LuCI interface
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+luci-base +xray-core +dnsmasq +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
+LUCI_DEPENDS:=+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
 
 
 define Package/$(PKG_NAME)/description
