@@ -30,17 +30,6 @@ config PACKAGE_XRAY_RLIMIT_NOFILE_LARGE
 	bool "Increase Max Open Files Limit (recommended)"
 	default y
 
-choice
-	prompt "Limit memory use by setting rlimit_data (experimental)"
-	default PACKAGE_XRAY_RLIMIT_DATA_UNLIMITED
-	config PACKAGE_XRAY_RLIMIT_DATA_UNLIMITED
-		bool "Not limited"
-	config PACKAGE_XRAY_RLIMIT_DATA_SMALL
-		bool "Small limit (about 50MB)"
-	config PACKAGE_XRAY_RLIMIT_DATA_LARGE
-		bool "Large limit (about 210MB)"
-endchoice
-
 endmenu
 endef
 
