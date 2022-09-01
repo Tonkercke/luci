@@ -10,10 +10,6 @@ LUCI_DEPENDS:= \
 	+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall:ipset \
 	+PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
 
-define Package/$(PKG_NAME)/description
-	LuCI Support for Xray (Client-side Rendered).
-endef
-
 define Package/$(PKG_NAME)/config
 menu "luci-app-xray Configuration"
 	depends on PACKAGE_$(PKG_NAME)
