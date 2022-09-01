@@ -134,4 +134,6 @@ endif
 	$(INSTALL_BIN) ./root/usr/libexec/rpcd/xray $(1)/usr/libexec/rpcd/xray
 endef
 
+include ../../luci.mk
+
 $(eval $(call BuildPackage,$(PKG_NAME)))
