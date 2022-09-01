@@ -6,8 +6,9 @@ PKG_RELEASE:=1
 
 LUCI_TITLE:=SS/SSR/V2Ray/Trojan/Socks5
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall4:nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
-	PKGARCH:=all
+LUCI_DEPENDS:= \
+	+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset \
+	+PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
 
 define Package/$(PKG_NAME)/description
 	LuCI Support for Xray (Client-side Rendered).
