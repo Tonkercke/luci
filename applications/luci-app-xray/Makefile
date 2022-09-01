@@ -4,10 +4,21 @@ PKG_NAME:=luci-app-xray
 PKG_VERSION:=1.16.1
 PKG_RELEASE:=1
 
-LUCI_TITLE:=SS/SSR/V2Ray/Trojan/Socks5/Tun LuCI interface
-LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
+PKG_LICENSE:=MIT
+PKG_LICENSE_FILES:=LICENSE
 
+PKG_SOURCE_SUBDIR:=$(PKG_NAME)
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_SOURCE_SUBDIR)
+PKG_BUILD_PARALLEL:=1
+
+define Package/luci-app-xray
+	SECTION:=luci
+	CATEGORY:=LuCI
+	SUBMENU:=3. Applications
+	TITLE:=SS/SSR/V2Ray/Trojan/Socks5
+	DEPENDS:=+luci-base +xray-core +dnsmasq-full +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
+	PKGARCH:=all
+endef
 
 define Package/$(PKG_NAME)/description
 	LuCI Support for Xray (Client-side Rendered).
