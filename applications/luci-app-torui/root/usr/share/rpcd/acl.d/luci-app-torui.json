@@ -1,0 +1,19 @@
+{
+	"luci-app-torui": {
+		"description": "Grant UCI luci-app-torui",
+		"read": {
+			"cgi-io": [
+				"exec"
+			],
+
+			"uci": [
+			"torui"
+			]
+		},
+		"write": {
+			"uci": [
+				"torui"
+			]
+		}
+	}
+}

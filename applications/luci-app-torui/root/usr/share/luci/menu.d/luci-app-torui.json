@@ -1,0 +1,14 @@
+{
+	"admin/services/torui": {
+		"title": "Tor UI",
+		"action": {
+			"type": "cbi",
+			"path": "torui",
+			"post": { "cbi.submit": true }
+		},
+		"depends": {
+			"acl": [ "luci-app-torui" ],
+			"uci": { "torbp": true }
+		}
+	}
+}
