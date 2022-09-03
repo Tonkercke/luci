@@ -4,17 +4,22 @@ msgstr "Content-Type: text/plain; charset=UTF-8\n"
 msgid "File Transfer"
 msgstr "文件传输"
 
+#: /home/openwrt/Github/luci/applications/luci-app-file_transfer/luasrc/controller/file_transfer/file_transfer.lua:25
 msgid "download"
 msgstr "下载"
 
+#: /home/openwrt/Github/luci/applications/luci-app-file_transfer/luasrc/controller/file_transfer/file_transfer.lua:28
 msgid "remove"
 msgstr "删除"
 
+#: /home/openwrt/Github/luci/applications/luci-app-file_transfer/luasrc/controller/file_transfer/file_transfer.lua:31
 msgid "copy"
 msgstr "复制"
 
+#: /home/openwrt/Github/luci/applications/luci-app-file_transfer/luasrc/controller/file_transfer/file_transfer.lua:34
 msgid "rename"
 msgstr "重命名"
 
+#: /home/openwrt/Github/luci/applications/luci-app-file_transfer/luasrc/controller/file_transfer/file_transfer.lua:37
 msgid "create dir"
 msgstr "创建目录"

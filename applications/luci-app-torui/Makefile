@@ -8,10 +8,10 @@ LUCI_TITLE:=Luci Tor UI
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+tor
 
-define Package/$(PKG_NAME)/conffiles
+define Package/$(PKG_NAME)/config
 /etc/config/torui
 endef
 
-include $(TOPDIR)/feeds/luci/luci.mk
+include ../../luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
