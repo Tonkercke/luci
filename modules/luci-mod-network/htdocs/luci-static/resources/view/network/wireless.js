@@ -264,6 +264,28 @@ function network_updown(id, map, ev) {
 	});
 }
 
+function change_mac(id, ev) {
+	var radio = uci.get('wireless', id, 'device'),
+		disabled = (uci.get('wireless', id, 'disabled') == '1') ||
+		(uci.get('wireless', radio, 'disabled') == '1');
+
+	var wifiname = uci.get('wireless', id, 'ssid');
+	var args = ['/etc/config/scp/ch_mac.sh', ':', id ];
+
+	if (disabled || (id == 'all')) {
+		return fs.exec('sh', args).then(function(res) {
+			var psout = document.querySelector('.pseudo-output');
+			psout.style.display = '';
+			dom.content(psout, E('pre', [ res.stdout || '', res.stderr || '' ]));
+		}).catch(function(err) {
+			ui.addNotification(null, E('p', [ err ]))
+		});
+	} else {
+		ui.addNotification(null, E('p', {}, _('First, Please disable network') + ' "' + wifiname + '"'));
+		return '';
+	}
+}
+
 function next_free_sid(offset) {
 	var sid = 'wifinet' + offset;
 
@@ -889,6 +911,10 @@ return view.extend({
 				var isDisabled = (inst.get('disabled') == '1' ||
 					uci.get('wireless', inst.getWifiDeviceName(), 'disabled') == '1');
 
+				if (isDisabled && (uci.get('wireless', section_id, 'mode') == 'sta')) {
+					var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
+				}
+
 				btns = [
 					E('button', {
 						'class': 'cbi-button cbi-button-neutral enable-disable',
@@ -904,7 +930,13 @@ return view.extend({
 						'class': 'cbi-button cbi-button-negative remove',
 						'title': _('Delete this network'),
 						'click': ui.createHandlerFn(this, 'handleRemove', section_id)
-					}, _('Remove'))
+					}, _('Remove')),
+					E('button', {
+						'class': 'cbi-button cbi-button-neutral',
+						'style': isPseudo ? '' : 'display:none',
+						'title': _('Change MAC and Hostname'),
+						'click': ui.createHandlerFn(this, change_mac, section_id)
+					}, _('Pseudo'))
 				];
 			}
 
@@ -956,6 +988,9 @@ return view.extend({
 					o.value('2', _('High'));
 					o.value('3', _('Very High'));
 
+					o = ss.taboption('advanced', form.Flag, 'mu_beamformer', _('MU-MIMO'));
+					o.default = o.disabled;
+
 					o = ss.taboption('advanced', form.Value, 'distance', _('Distance Optimization'), _('Distance to farthest network member in meters.'));
 					o.datatype = 'or(range(0,114750),"auto")';
 					o.placeholder = 'auto';
@@ -970,6 +1005,9 @@ return view.extend({
 
 					o = ss.taboption('advanced', form.Flag, 'noscan', _('Force 40MHz mode'), _('Always use 40MHz channels even if the secondary channel overlaps. Using this option does not comply with IEEE 802.11n-2009!'));
 					o.rmempty = true;
+
+					o = ss.taboption('advanced', form.Flag, 'vendor_vht', _('Enable 256-QAM'), _('802.11n 2.4Ghz Only'));
+					o.default = o.disabled;
 
 					o = ss.taboption('advanced', form.Value, 'beacon_int', _('Beacon Interval'));
 					o.datatype = 'range(15,65535)';
@@ -1498,6 +1536,76 @@ return view.extend({
 
 
 				if (hwtype == 'mac80211') {
+
+					// Probe 802.11k support
+					o = ss.taboption('encryption', form.Flag, 'ieee80211k', _('802.11k'), _('Enables The 802.11k standard provides information to discover the best available access point'));
+					o.depends({ mode: 'ap', encryption: 'wpa' });
+					o.depends({ mode: 'ap', encryption: 'wpa2' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
+					o.depends({ mode: 'ap', encryption: 'psk' });
+					o.depends({ mode: 'ap', encryption: 'psk2' });
+					o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk2' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'sae' });
+					o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.Flag, 'rrm_neighbor_report', _('Enable neighbor report via radio measurements'));
+					o.default = o.enabled;
+					o.depends({ ieee80211k: '1' });
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.Flag, 'rrm_beacon_report', _('Enable beacon report via radio measurements'));
+					o.default = o.enabled;
+					o.depends({ ieee80211k: '1' });
+					o.rmempty = true;
+					// End of 802.11k options
+
+					// Probe 802.11v support
+					o = ss.taboption('encryption', form.Flag, 'ieee80211v', _('802.11v'), _('Enables 802.11v allows client devices to exchange information about the network topology,tating overall improvement of the wireless network.'));
+					o.depends({ mode: 'ap', encryption: 'wpa' });
+					o.depends({ mode: 'ap', encryption: 'wpa2' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa' });
+					o.depends({ mode: 'ap-wds', encryption: 'wpa2' });
+					o.depends({ mode: 'ap', encryption: 'psk' });
+					o.depends({ mode: 'ap', encryption: 'psk2' });
+					o.depends({ mode: 'ap', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk2' });
+					o.depends({ mode: 'ap-wds', encryption: 'psk-mixed' });
+					o.depends({ mode: 'ap', encryption: 'sae' });
+					o.depends({ mode: 'ap', encryption: 'sae-mixed' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae' });
+					o.depends({ mode: 'ap-wds', encryption: 'sae-mixed' });
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.Flag, 'wnm_sleep_mode', _('extended sleep mode for stations'));
+					o.default = o.enabled;
+					o.depends({ ieee80211v: '1' });
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.Flag, 'bss_transition', _('BSS Transition Management'));
+					o.default = o.enabled;
+					o.depends({ ieee80211v: '1' });
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.ListValue, 'time_advertisement', _('Time advertisement"'));
+					o.depends({ ieee80211v: '1' });
+					o.value('0', _('disabled'));
+					o.value('2', _('UTC time at which the TSF timer is 0'));
+					o.rmempty = true;
+
+					o = ss.taboption('encryption', form.Value, 'time_zone', _('Local time zone as specified in 8.3 of IEEE Std 1003.1-2004'));
+					o.depends({ time_advertisement: '2' });
+					o.placeholder = 'UTC8';
+					o.rmempty = true;
+					// End of 802.11v options
+
 					// Probe 802.11r support (and EAP support as a proxy for Openwrt)
 					var has_80211r = L.hasSystemFeature('hostapd', '11r') || L.hasSystemFeature('hostapd', 'eap');
 
@@ -1526,8 +1634,8 @@ return view.extend({
 
 					o = ss.taboption('encryption', form.ListValue, 'ft_over_ds', _('FT protocol'));
 					o.depends({ ieee80211r: '1' });
-					o.value('1', _('FT over DS'));
 					o.value('0', _('FT over the Air'));
+					o.value('1', _('FT over DS'));
 					o.rmempty = true;
 
 					o = ss.taboption('encryption', form.Flag, 'ft_psk_generate_local', _('Generate PMK locally'), _('When using a PSK, the PMK can be automatically generated. When enabled, the R0/R1 key options below are not applied. Disable this to use the R0 and R1 key options.'));
@@ -2163,7 +2271,29 @@ return view.extend({
 
 			cbi_update_table(table, [], E('em', { 'class': 'spinning' }, _('Collecting data...')))
 
-			return E([ nodes, E('h3', _('Associated Stations')), table ]);
+			var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
+
+			var psbtns = E('div', {'style': isPseudo ? 'padding-right:0px' : 'display:none' },
+				E('table', { 'class': 'table cbi-section-table' }, [
+					E('tr', { 'class': 'tr table-titles' }, [
+						E('td', { 'class': 'td cbi-value-field' }),
+						E('td', { 'class': 'td middle cbi-section-actions', 'width':'25%' },
+							E('div', {},
+								E('button', {
+									'class': 'cbi-button cbi-button-neutral fade-in',
+									'title': _('Change the mac and hostname of all wifinet'),
+									'click': ui.createHandlerFn(this, change_mac, 'all')
+								}, _('Pseudo all wifinet'))
+							)
+						)
+					]),
+					E('tr', { 'class': 'tr table-titles' },
+						E('td', { 'class': 'td cbi-value-field pseudo-output', 'colspan':'2', 'style': 'display:none' })
+					)
+				])
+			);
+
+			return E([ psbtns, nodes, E('h3', _('Associated Stations')), table ]);
 		}, this, m));
 	}
 });

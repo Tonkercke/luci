@@ -8751,14 +8751,35 @@ msgstr "« 后退"
 #~ msgid "Obtain IPv6-Address"
 #~ msgstr "获取 IPv6 地址"
 
-#~ msgid ""
-#~ "Use the <em>Add</em> Button to add a new lease entry. The <em>MAC-"
-#~ "Address</em> identifies the host, the <em>IPv4-Address</em> specifies the "
-#~ "fixed address to use, and the <em>Hostname</em> is assigned as a symbolic "
-#~ "name to the requesting host. The optional <em>Lease time</em> can be used "
-#~ "to set non-standard host-specific lease time, e.g. 12h, 3d or infinite."
-#~ msgstr ""
-#~ "使用<em>添加</em>按钮来增加新的租约条目。<em>IPv4 地址</em>和<em>主机名</"
-#~ "em>字段的值将被固定分配给 <em>MAC 地址</em>字段标识的主机，<em>租期</em>是"
-#~ "一个可选字段，可为每个主机单独设定 DHCP 租期的时长，例如：12h、3d、"
-#~ "infinite，分别表示 12 小时、3 天、永久。"
+msgid ""
+"Use the <em>Add</em> Button to add a new lease entry. The <em>MAC-Address</"
+"em> identifies the host, the <em>IPv4-Address</em> specifies the fixed "
+"address to use, and the <em>Hostname</em> is assigned as a symbolic name to "
+"the requesting host. The optional <em>Lease time</em> can be used to set non-"
+"standard host-specific lease time, e.g. 12h, 3d or infinite."
+msgstr ""
+"使用<em>添加</em>按钮来增加新的租约条目。<em>IPv4 地址</em>和<em>主机名</em>"
+"字段的值将被固定分配给 <em>MAC 地址</em>字段标识的主机，<em>租期</em>是一个可"
+"选字段，可为每个主机单独设定 DHCP 租期的时长，例如：12h、3d、infinite，分别表"
+"示 12 小时、3 天、永久。"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:284
+msgid "First, Please disable network"
+msgstr "首先，请关闭网络"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:939
+msgid "Change MAC and Hostname"
+msgstr "更改物理地址和主机名"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:941
+msgid "Pseudo"
+msgstr "伪装"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2208
+msgid "Change the mac and hostname of all wifinet"
+msgstr "更改所有无线网络的物理地址和主机名"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2210
+msgid "Pseudo all wifinet"
+msgstr "伪装所有无线网络"
+
