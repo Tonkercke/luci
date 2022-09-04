@@ -43,7 +43,7 @@ msgid "Advanced Mode"
 msgstr "Modalità avanzata"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:9
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:461
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:437
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
 msgstr "Sysupgrade Assistito"
@@ -89,7 +89,7 @@ msgid "Could not reach API at \"%s\". Please try again later."
 msgstr "Impossibile raggiungere l'API a \"%s\". Riprovare in seguito."
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:381
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:464
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:440
 msgid "Currently running: %s - %s"
 msgstr "Operazione in corso: %s - %s"
 
@@ -194,7 +194,7 @@ msgstr "Richiesta nella posizione %s della coda di creazione immagine"
 msgid "SHA256"
 msgstr "SHA256"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:468
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:444
 msgid "Search for firmware upgrade"
 msgstr "Ricerca di aggiornamenti per il firmware"
 
@@ -235,7 +235,7 @@ msgstr "Immagine firmware creata con successo"
 msgid "Target"
 msgstr "Destinazione"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:462
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:438
 msgid ""
 "The attended sysupgrade service allows to easily upgrade vanilla and custom "
 "firmware images."
@@ -247,7 +247,7 @@ msgstr ""
 msgid "The device runs the latest firmware version %s - %s"
 msgstr "Il dispositivo ha già la versione firmware più recente %s - %s"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:463
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:439
 msgid ""
 "This is done by building a new firmware on demand via an online service."
 msgstr ""

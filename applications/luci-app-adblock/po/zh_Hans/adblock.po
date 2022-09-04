@@ -408,8 +408,8 @@ msgstr "第四个实例"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
 "通过 tcpdump 收集与 DNS 相关的网络流量，并按需提供 DNS 报告。请注意：这需要额"
 "外的“tcpdump-mini”软件包，并重新启动完整的广告拦截服务才能生效。"
@@ -773,7 +773,7 @@ msgstr "等待成功的DNS后端重新启动的超时。"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr "为了使您的广告过滤列表保持最新，您应该为这些列表设置一个自动更新任务。"
 
@@ -841,6 +841,3 @@ msgstr "原始（/ tmp）"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "unbound (/var/lib/unbound)"
 msgstr "未绑定 (/var/lib/unbound)"
-
-#~ msgid "The day of the week (opt., values: 1-7 possibly sep. by , or -)"
-#~ msgstr "星期几（可选。取值范围：1-7，可用 , 或 - 分隔）"

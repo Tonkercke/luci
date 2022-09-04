@@ -743,8 +743,9 @@ msgid "There is no service configured."
 msgstr "Não há serviço configurado."
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1070
-msgid "This is the current content of the log file in"
-msgstr "Este é o conteúdo atual do arquivo de registro em"
+msgid "This is the current content of the log file in %h for this service."
+msgstr ""
+"Este é o conteúdo atual do arquivo de registro em %h para este serviço."
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:197
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:275

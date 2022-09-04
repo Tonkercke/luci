@@ -903,9 +903,11 @@ msgstr "Înregistrarea timpului"
 
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:16
 msgid ""
-"To keep your banIP lists up-to-date, you should setup an automatic update "
+"To keep your banIP lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
+"Pentru ca listele banIP să fie actualizate, trebuie să configurați o sarcină "
+"de actualizare automată pentru aceste liste."
 
 #: applications/luci-app-banip/htdocs/luci-static/resources/view/banip/overview.js:730
 msgid "Topic for banIP notification E-Mails."

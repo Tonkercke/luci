@@ -423,8 +423,8 @@ msgstr "Dördüncü örnek"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
 "DNS ile ilgili ağ trafiğini tcpdump aracılığıyla toplayın ve talep üzerine "
 "bir DNS Raporu oluşturun. Lütfen dikkat: etkili olması için ek olarak "
@@ -818,7 +818,7 @@ msgstr "Başarılı bir DNS arka uç yeniden başlatması için bekleme süresi.
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
 "Reklam engelleme listelerinizi güncel tutmak için, bu listeler için otomatik "
@@ -890,6 +890,3 @@ msgstr "raw (/tmp)"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "unbound (/var/lib/unbound)"
 msgstr "unbound (/var/lib/unbound)"
-
-#~ msgid "The day of the week (opt., values: 1-7 possibly sep. by , or -)"
-#~ msgstr "Haftanın günü (ops., Değerler: 1-7 muhtemelen or - ile ayrılmış)"

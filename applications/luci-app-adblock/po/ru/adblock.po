@@ -425,12 +425,12 @@ msgstr "Четвёртая инстанция"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
-"Сбор информации о трафике DNS через tcpdump и создание отчётов DNS. <br /> "
-"<i>Обратите внимание: для работы этой функции необходим пакет 'tcpdump-mini' "
-"и полная перезагрузка службы Adblock.</i>"
+"Сбор информации о трафике DNS через tcpdump и создание отчётов DNS. Обратите "
+"внимание: для работы этой функции необходим пакет 'tcpdump-mini' и полная "
+"перезагрузка службы блокировщика рекламы."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:299
 msgid "General Settings"
@@ -814,7 +814,7 @@ msgstr "Тайм-аут ожидания успешного перезапуск
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr "Чтобы списки были актуальны, настройте их автоматическое обновление."
 
@@ -884,6 +884,3 @@ msgstr "raw (/tmp)"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "unbound (/var/lib/unbound)"
 msgstr "unbound (/var/lib/unbound)"
-
-#~ msgid "The day of the week (opt., values: 1-7 possibly sep. by , or -)"
-#~ msgstr "День недели (необязательно, значения: 1–7, запятые или дефисы)"

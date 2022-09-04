@@ -251,10 +251,6 @@ msgstr "Abilita TLS e usa il ruolo client"
 msgid "Enable TLS and assume server role"
 msgstr "Abilita TLS e usa il ruolo server"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid "Enable a compression algorithm"
-msgstr ""
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
 msgstr "Abilita frammentazione interna dei datagram"
@@ -577,6 +573,23 @@ msgstr ""
 msgid "Section to modify the OVPN config file (%s)"
 msgstr "Sezione per la modifica del file di configurazione OVPN (%s)"
 
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `no`"
+msgstr ""
+"Raccomandazione di sicurezza: si consiglia di non abilitare la compressione "
+"e impostare questo parametro su 'no'"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `stub-v2`"
+msgstr ""
+"Raccomandazione di sicurezza: si consiglia di non abilitare la compressione "
+"e impostare questo parametro su 'stub-v2'"
+
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
 msgid "Select template ..."
 msgstr "Selezionare il modello ..."
@@ -782,11 +795,6 @@ msgstr "Carica"
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
 msgstr "Carica il file OVPN"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid "Use fast LZO compression"
-msgstr ""
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:97

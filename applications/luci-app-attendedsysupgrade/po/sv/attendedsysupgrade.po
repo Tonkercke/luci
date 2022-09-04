@@ -43,7 +43,7 @@ msgid "Advanced Mode"
 msgstr "Avancerat läge"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:9
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:461
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:437
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
 msgstr "Systemövervakad uppgradering"
@@ -89,7 +89,7 @@ msgid "Could not reach API at \"%s\". Please try again later."
 msgstr "Kunde inte nå API vid \"%s\". Vänligen försök igen senare."
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:381
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:464
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:440
 msgid "Currently running: %s - %s"
 msgstr ""
 
@@ -194,7 +194,7 @@ msgstr ""
 msgid "SHA256"
 msgstr "SHA256"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:468
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:444
 msgid "Search for firmware upgrade"
 msgstr ""
 
@@ -234,7 +234,7 @@ msgstr ""
 msgid "Target"
 msgstr "Mål"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:462
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:438
 msgid ""
 "The attended sysupgrade service allows to easily upgrade vanilla and custom "
 "firmware images."
@@ -244,7 +244,7 @@ msgstr ""
 msgid "The device runs the latest firmware version %s - %s"
 msgstr "Enheten kör den senaste mjukvaru-versionen %s - %s"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:463
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:439
 msgid ""
 "This is done by building a new firmware on demand via an online service."
 msgstr ""

@@ -718,8 +718,8 @@ msgid "There is no service configured."
 msgstr "尚未配置任何服務。"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:1070
-msgid "This is the current content of the log file in"
-msgstr "這是日誌文件的當前內容"
+msgid "This is the current content of the log file in %h for this service."
+msgstr "這是此服務 %h 中日誌檔案的目前內容。"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:197
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:275

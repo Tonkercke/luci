@@ -430,30 +430,6 @@ return view.extend({
 
 		this.data.efi = response[2];
 
-		if (response[1].rootfs_type) {
-			this.firmware.filesystem = response[1].rootfs_type;
-		} else {
-			L.resolveDefault(fs.read("/proc/mounts"), '')
-			.then(mounts => {
-				mounts = mounts.split(/\r?\n/);
-				var mount_point = '/';
-				for (var i = 0; i < mounts.length; i++) {
-					// /dev/root /rom squashfs ro,relatime 0 0
-					var [ ,path,type,,, ] = mounts[i].split(' ')
-					if (path == mount_point) {
-						if (type != 'overlay') {
-							this.firmware.filesystem = type;
-							break;
-						} else {
-							// restart search for root mountpoint
-							i = -1;
-							mount_point = '/rom';
-						}
-					}
-				}
-			});
-		}
-
 		this.data.url = uci.get_first('attendedsysupgrade', 'server', 'url');
 		this.data.advanced_mode = uci.get_first('attendedsysupgrade', 'client', 'advanced_mode') || 0
 

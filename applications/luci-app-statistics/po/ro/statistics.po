@@ -585,6 +585,10 @@ msgstr ""
 "Valorile maxime pentru o perioadă pot fi utilizate în locul mediilor atunci "
 "când nu se utilizează 'numai RRA medii'"
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
+msgid "Maximum Missed Packets"
+msgstr "Numărul maxim de pachete pierdute"
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
 msgstr "Numărul maxim de conexiuni permise"
@@ -795,7 +799,7 @@ msgstr[0] "Monitorizarea unui disc"
 msgstr[1] "Monitorizarea %d discuri"
 msgstr[2] "Monitorizarea %d de discuri"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "Monitorizarea unei singure gazde"
@@ -1611,6 +1615,15 @@ msgstr "Utilizator"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/netlink.js:21
 msgid "Verbose monitoring"
 msgstr "Monitorizarea verbală"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
+msgid ""
+"When a host has not replied to this number of packets in a row, re-resolve "
+"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
+msgstr ""
+"Atunci când o gazdă nu a răspuns la acest număr de pachete in mod repetat, "
+"reîncercați rezolvarea numelui de gazdă în DNS. Util pentru gazdele DNS "
+"dinamice. Valoarea implicită este -1 = dezactivat."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."

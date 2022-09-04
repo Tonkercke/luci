@@ -251,10 +251,6 @@ msgstr "允許 TLS 並偽裝為客戶端"
 msgid "Enable TLS and assume server role"
 msgstr "允許 TLS 並偽裝為伺服器"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid "Enable a compression algorithm"
-msgstr "啟用壓縮演算法"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
 msgstr "允許內部資料報分片"
@@ -571,6 +567,19 @@ msgstr "本節添加帶有您的憑據（％s）的可選“ auth-user-pass”�
 msgid "Section to modify the OVPN config file (%s)"
 msgstr "節錄OVPN設置文件（％s）的部分"
 
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `no`"
+msgstr "安全建議：建議不要啟用壓縮並將此參數設定為 `no`"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `stub-v2`"
+msgstr "安全建議：建議不要啟用壓縮並將此參數設定為 `stub-v2`"
+
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
 msgid "Select template ..."
 msgstr "選擇模板..."
@@ -773,11 +782,6 @@ msgstr "上傳"
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
 msgstr "上傳ovpn文件"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid "Use fast LZO compression"
-msgstr "使用快速 LZO 壓縮"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:97

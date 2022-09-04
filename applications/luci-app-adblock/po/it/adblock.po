@@ -421,9 +421,13 @@ msgstr "Quarta istanza"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
+"Raccoglie il traffico di rete attraverso il tcpdump e garantisce su "
+"richiesta il DNS Report. Da notare: questo richiede l'installazione dei "
+"pacchetti 'tcpdump' o 'tcpdump-mini' e un completo riavvio del servizio "
+"adblock per avere effetto."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:299
 msgid "General Settings"
@@ -809,9 +813,11 @@ msgstr "Timeout per attendere un riavvio del back-end DNS riuscito."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
+"Per mantenere aggiornati i tuoi elenchi di adblock, dovresti impostare un "
+"processo di aggiornamento automatico per questi elenchi."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:334
 msgid "Top 10 Statistics"

@@ -149,9 +149,11 @@ msgstr "Port til at lytte (standard: 7681, brug `0` for tilfældig port)"
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
-"Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
+"Random ttyd port (port=0) is not supported.<br />Change to a fixed port and "
 "try again."
 msgstr ""
+"Tilfældig ttyd-port (port=0) er ikke understøttet.<br />Skift til en fast "
+"port og prøv igen."
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42
 msgid "Read-only"

@@ -425,8 +425,8 @@ msgstr "A patra instanță"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
 "Adunare trafic de rețea aferent DNS prin tcpdump și realizare raport DNS la "
 "cerere. Vă rugăm să rețineți: aceasta necesită instalare suplimentară a "
@@ -817,9 +817,11 @@ msgstr "Timpul de așteptare pentru o repornire reușită a backend-ului DNS."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
+"Pentru a vă menține listele de adblock actualizate, ar trebui să configurați "
+"o sarcină de actualizare automată pentru aceste liste."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:334
 msgid "Top 10 Statistics"
@@ -887,6 +889,3 @@ msgstr "brut (/tmp)"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "unbound (/var/lib/unbound)"
 msgstr "fără legătură (/var/lib/unbound)"
-
-#~ msgid "The day of the week (opt., values: 1-7 possibly sep. by , or -)"
-#~ msgstr "Ziua săptămânii (opt., valori: 1-7, eventual separate prin , sau -)"

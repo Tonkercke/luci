@@ -580,6 +580,10 @@ msgstr ""
 "Bir dönem için maksimum değerler, 'yalnızca ortalama RRA'lar' "
 "kullanılmadığında ortalamalar yerine kullanılabilir"
 
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:36
+msgid "Maximum Missed Packets"
+msgstr "Maksimum Kaçırılan Paketler"
+
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/email.js:38
 msgid "Maximum allowed connections"
 msgstr "İzin verilen maksimum bağlantı"
@@ -773,7 +777,7 @@ msgid "Monitoring one disk"
 msgid_plural "Monitoring %d disks"
 msgstr[0] "%d diskleri izleniyor"
 
-#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:41
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:48
 msgid "Monitoring one host"
 msgid_plural "Monitoring %d hosts"
 msgstr[0] "%d ana bilgisayarları izleniyor"
@@ -1561,6 +1565,15 @@ msgstr "Kullanıcı"
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/netlink.js:21
 msgid "Verbose monitoring"
 msgstr "Ayrıntılı izleme"
+
+#: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/ping.js:37
+msgid ""
+"When a host has not replied to this number of packets in a row, re-resolve "
+"the hostname in DNS. Useful for dynamic DNS hosts. Default is -1 = disabled."
+msgstr ""
+"Bir ana makine arka arkaya bu sayıda pakete yanıt vermediğinde, ana makine "
+"adını DNS'de yeniden çözümle. Dinamik DNS ana makineleri için faydalıdır. "
+"Öntanımlı değer -1 = devre dışıdır."
 
 #: applications/luci-app-statistics/htdocs/luci-static/resources/view/statistics/plugins/disk.js:16
 msgid "When none selected, all disks will be monitored."

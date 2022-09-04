@@ -149,9 +149,11 @@ msgstr "Überwachter Port (Standard: 7681, nutze `0` für einen zufälligen Port
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/term.js:14
 msgid ""
-"Random ttyd port (port=0) is not supported.<br>Change to a fixed port and "
+"Random ttyd port (port=0) is not supported.<br />Change to a fixed port and "
 "try again."
 msgstr ""
+"Ein zufälliger ttyd-Port (Port=0) wird nicht unterstützt.<br />Wechseln Sie "
+"zu einem festen Port und versuchen Sie es erneut."
 
 #: applications/luci-app-ttyd/htdocs/luci-static/resources/view/ttyd/config.js:42
 msgid "Read-only"

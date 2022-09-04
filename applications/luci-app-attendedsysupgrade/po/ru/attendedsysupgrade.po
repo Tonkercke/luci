@@ -44,7 +44,7 @@ msgid "Advanced Mode"
 msgstr "Расширенный режим"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:9
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:461
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:437
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
 msgstr "Обновление Системы с участием"
@@ -90,7 +90,7 @@ msgid "Could not reach API at \"%s\". Please try again later."
 msgstr "API сервера \"%s\" недоступен. Пожалуйста, попробуйте позднее."
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:381
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:464
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:440
 msgid "Currently running: %s - %s"
 msgstr "Сейчас работает: %s - %s"
 
@@ -194,7 +194,7 @@ msgstr "Запрос в очереди сборки, позиция %s"
 msgid "SHA256"
 msgstr "SHA256"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:468
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:444
 msgid "Search for firmware upgrade"
 msgstr "Поиск обновлений прошивки"
 
@@ -234,7 +234,7 @@ msgstr "Образ прошивки создан успешно"
 msgid "Target"
 msgstr "Назначение"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:462
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:438
 msgid ""
 "The attended sysupgrade service allows to easily upgrade vanilla and custom "
 "firmware images."
@@ -246,7 +246,7 @@ msgstr ""
 msgid "The device runs the latest firmware version %s - %s"
 msgstr "На устройстве установлена последняя версия прошивки %s - %s"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:463
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:439
 msgid ""
 "This is done by building a new firmware on demand via an online service."
 msgstr ""

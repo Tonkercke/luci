@@ -424,8 +424,8 @@ msgstr "Quarta instância"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
 "Reúna o tráfego de rede relacionado ao DNS através do tcpdump e forneça um "
 "Relatório do DNS em tempo real. Nota: é necessário a instalação adicional do "
@@ -819,7 +819,7 @@ msgstr "Tempo limite para aguardar o reinício bem sucedido do DNS."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
 "Para manter as suas listas de adblock atualizadas, deve configurar uma "
@@ -892,6 +892,3 @@ msgstr "raw (/tmp)"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:430
 msgid "unbound (/var/lib/unbound)"
 msgstr "unbound (/var/lib/unbound)"
-
-#~ msgid "The day of the week (opt., values: 1-7 possibly sep. by , or -)"
-#~ msgstr "O dia da semana (valores opc.: 1-7 possivelmente sep. por , ou -)"

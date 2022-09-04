@@ -259,10 +259,6 @@ msgstr "Activer le TLS et prendre le rôle du client"
 msgid "Enable TLS and assume server role"
 msgstr "Activer le TLS et prendre le rôle du serveur"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
-msgid "Enable a compression algorithm"
-msgstr "Activer un algorithme de compression"
-
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:278
 msgid "Enable internal datagram fragmentation"
 msgstr "Autoriser la fragmentation des datagrammes en interne"
@@ -591,6 +587,23 @@ msgstr ""
 msgid "Section to modify the OVPN config file (%s)"
 msgstr "Section pour modifier le fichier de configuration de l'OVPN (%s)"
 
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `no`"
+msgstr ""
+"Recommandation de sécurité : Il est recommandé de ne pas activer la "
+"compression et définir ce paramètre à `non`"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:165
+msgid ""
+"Security recommendation: It is recommended to not enable compression and set "
+"this parameter to `stub-v2`"
+msgstr ""
+"Recommandation de sécurité : Il est recommandé de ne pas activer la "
+"compression et définir ce paramètre à `stub-v2`"
+
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:85
 msgid "Select template ..."
 msgstr "Sélectionner un modèle ..."
@@ -797,11 +810,6 @@ msgstr "Téléverser"
 #: applications/luci-app-openvpn/luasrc/view/openvpn/cbi-select-input-add.htm:104
 msgid "Upload ovpn file"
 msgstr "Téléverser un fichier ovpn"
-
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:257
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:45
-msgid "Use fast LZO compression"
-msgstr "Utiliser la compression LZO rapide"
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:510
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:97

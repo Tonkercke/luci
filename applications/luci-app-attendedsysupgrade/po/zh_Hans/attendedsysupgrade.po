@@ -43,7 +43,7 @@ msgid "Advanced Mode"
 msgstr "高级模式"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/configuration.js:9
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:461
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:437
 #: applications/luci-app-attendedsysupgrade/root/usr/share/luci/menu.d/luci-app-attendedsysupgrade.json:3
 msgid "Attended Sysupgrade"
 msgstr "参与式系统升级"
@@ -89,7 +89,7 @@ msgid "Could not reach API at \"%s\". Please try again later."
 msgstr "无法访问位于 “%s” 的 API。请稍后再试。"
 
 #: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:381
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:464
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:440
 msgid "Currently running: %s - %s"
 msgstr "当前运行中：%s - %s"
 
@@ -193,7 +193,7 @@ msgstr "构建队列位置 %s 中的请求"
 msgid "SHA256"
 msgstr "SHA256"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:468
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:444
 msgid "Search for firmware upgrade"
 msgstr "搜索固件升级"
 
@@ -233,7 +233,7 @@ msgstr "成功创建了固件镜像"
 msgid "Target"
 msgstr "目标"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:462
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:438
 msgid ""
 "The attended sysupgrade service allows to easily upgrade vanilla and custom "
 "firmware images."
@@ -243,7 +243,7 @@ msgstr "attended 系统升级服务允许轻松升级 vanilla 和自定义固件
 msgid "The device runs the latest firmware version %s - %s"
 msgstr "此设备运行最新的固件版本 %s - %s"
 
-#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:463
+#: applications/luci-app-attendedsysupgrade/htdocs/luci-static/resources/view/attendedsysupgrade/overview.js:439
 msgid ""
 "This is done by building a new firmware on demand via an online service."
 msgstr "这是通过在线服务按需构建新的固件来实现的。"

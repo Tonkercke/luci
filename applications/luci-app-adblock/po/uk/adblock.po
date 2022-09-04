@@ -424,9 +424,12 @@ msgstr "Четвертий екземпляр"
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
 msgid ""
 "Gather DNS related network traffic via tcpdump and provide a DNS Report on "
-"demand. Please note: this needs additional 'tcpdump-mini' package "
-"installation and a full adblock service restart to take effect."
+"demand. Please note: this needs additional 'tcpdump' or 'tcpdump-mini' "
+"package installation and a full adblock service restart to take effect."
 msgstr ""
+"Збір інформації щодо трафіку DNS через tcpdump і створення звітів DNS. Будь-"
+"ласка, запримітьте: для цього необхідне встановлення додаткового пакету "
+"'tcpdump' або 'tcpdump-mini' та повний перезапуск служби Adblock."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:299
 msgid "General Settings"
@@ -831,9 +834,11 @@ msgstr "Тайм-аут очікування успішного перезава
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:16
 msgid ""
-"To keep your adblock lists up-to-date, you should setup an automatic update "
+"To keep your adblock lists up-to-date, you should set up an automatic update "
 "job for these lists."
 msgstr ""
+"Щоб ваші списки блокування реклами залишалися актуальними, вам слід "
+"налаштувати завдання автоматичного оновлення для цих списків."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:334
 msgid "Top 10 Statistics"

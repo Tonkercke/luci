@@ -8,8 +8,7 @@
 				"/proc/sys/net/ipv6/conf/*/mtu": [ "read" ],
 				"/proc/sys/net/ipv6/conf/*/hop_limit": [ "read" ],
 				"/usr/libexec/luci-peeraddr": [ "exec" ],
-				"/usr/lib/opkg/info/netifd.control": [ "read" ],
-				"/bin/sh": ["exec"]
+				"/usr/lib/opkg/info/netifd.control": [ "read" ]
 			},
 			"ubus": {
 				"file": [ "exec" ],
@@ -59,7 +58,8 @@
 				"/usr/bin/ping": [ "exec" ],
 				"/usr/bin/ping6": [ "exec", "list" ],
 				"/usr/bin/traceroute": [ "exec" ],
-				"/usr/bin/traceroute6": [ "exec", "list" ]
+				"/usr/bin/traceroute6": [ "exec", "list" ],
+				"/usr/bin/arp-scan": [ "exec", "list" ]
 			},
 			"ubus": {
 				"file": [ "exec", "stat" ]
