@@ -32,23 +32,34 @@ function vmess_vless()
 end
 function trojan_shadowsocks()
 	outbound_settings = {
-		plugin = (server.v2ray_protocol == "shadowsocks") and server.plugin ~= "none" and server.plugin or nil,
+		plugin = ((server.v2ray_protocol == "shadowsocks") and server.plugin ~= "none" and server.plugin) or (server.v2ray_protocol == "shadowsocksr" and "shadowsocksr") or nil,
 		pluginOpts = (server.v2ray_protocol == "shadowsocks") and server.plugin_opts or nil,
+		pluginArgs = (server.v2ray_protocol == "shadowsocksr") and {
+			"--protocol=" .. server.protocol,
+			"--protocol-param=" .. (server.protocol_param or ""),
+			"--obfs=" .. server.obfs,
+			"--obfs-param=" .. (server.obfs_param or "")
+		} or nil,
 		servers = {
 			{
 				address = server.server,
 				port = tonumber(server.server_port),
 				password = server.password,
-				method = (server.v2ray_protocol == "shadowsocks") and server.encrypt_method_ss or nil,
+				method = ((server.v2ray_protocol == "shadowsocks") and server.encrypt_method_ss) or ((server.v2ray_protocol == "shadowsocksr") and server.encrypt_method) or nil,
 				uot = (server.v2ray_protocol == "shadowsocks") and (server.uot == '1') or nil,
 				ivCheck = (server.v2ray_protocol == "shadowsocks") and (server.ivCheck == '1') or nil,
 				flow = (server.v2ray_protocol == "trojan") and (server.xtls == '1') and (server.vless_flow and server.vless_flow or "xtls-rprx-splice") or nil
 			}
 		}
 	}
+
+	if server.v2ray_protocol == "shadowsocksr" then
+		server.v2ray_protocol = "shadowsocks"
+	end
 end
 function socks_http()
 	outbound_settings = {
+		version = server.socks_ver or nil,
 		servers = {
 			{
 				address = server.server,
@@ -93,6 +104,9 @@ function outbound:handleIndex(index)
 			trojan_shadowsocks()
 		end,
 		shadowsocks = function()
+			trojan_shadowsocks()
+		end,
+		shadowsocksr = function()
 			trojan_shadowsocks()
 		end,
 		socks = function()
@@ -150,7 +164,8 @@ local Xray = {
 			xtlsSettings = (server.xtls == '1' and (server.insecure == "1" or server.tls_host)) and {
 				-- xtls
 				allowInsecure = (server.insecure == "1") and true or nil,
-				serverName = server.tls_host
+				serverName = server.tls_host,
+				minVersion = "1.3"
 			} or nil,
 			tcpSettings = (server.transport == "tcp" and server.tcp_guise == "http") and {
 				-- tcp
@@ -176,11 +191,13 @@ local Xray = {
 			} or nil,
 			wsSettings = (server.transport == "ws") and (server.ws_path or server.ws_host or server.tls_host) and {
 				-- ws
-				path = server.ws_path,
 				headers = (server.ws_host or server.tls_host) and {
 					-- headers
 					Host = server.ws_host or server.tls_host
-				} or nil
+				} or nil,
+				path = server.ws_path,
+				maxEarlyData = tonumber(server.ws_ed) or nil,
+				earlyDataHeaderName = server.ws_ed_header or nil
 			} or nil,
 			httpSettings = (server.transport == "h2") and {
 				-- h2
@@ -198,7 +215,8 @@ local Xray = {
 			grpcSettings = (server.transport == "grpc") and {
 				-- grpc
 				serviceName = server.serviceName or "",
-				multiMode = (server.mux == "1") and true or false,
+				mode = (server.grpc_mode ~= "gun") and server.grpc_mode or nil,
+				multiMode = (server.grpc_mode == "multi") and true or false,
 				idle_timeout = tonumber(server.idle_timeout) or nil,
 				health_check_timeout = tonumber(server.health_check_timeout) or nil,
 				permit_without_stream = (server.permit_without_stream == "1") and true or nil,
@@ -265,6 +283,35 @@ local ss = {
 	fast_open = (server.fast_open == "1") and true or false,
 	reuse_port = true
 }
+local hysteria = {
+	server = server.server .. ":" .. server.server_port,
+	protocol = server.hysteria_protocol,
+	up_mbps = tonumber(server.uplink_capacity),
+	down_mbps = tonumber(server.downlink_capacity),
+	socks5 = (proto:find("tcp") and tonumber(socks_port) and tonumber(socks_port) ~= 0) and {
+		listen = "0.0.0.0:" .. tonumber(socks_port),
+		timeout = 300,
+		disable_udp = false
+	} or nil,
+	redirect_tcp = (proto:find("tcp") and local_port ~= "0") and {
+		listen = "0.0.0.0:" .. tonumber(local_port),
+		timeout = 300
+	} or nil,
+	tproxy_udp = (proto:find("udp") and local_port ~= "0") and {
+		listen = "0.0.0.0:" .. tonumber(local_port),
+		timeout = 60
+	} or nil,
+	obfs = server.seed,
+	auth = (server.auth_type == "1") and server.auth_payload or nil,
+	auth_str = (server.auth_type == "2") and server.auth_payload or nil,
+	alpn = server.quic_tls_alpn,
+	server_name = server.tls_host,
+	insecure = (server.insecure == "1") and true or false,
+	ca = (server.certificate) and server.certpath or nil,
+	recv_window_conn = tonumber(server.recv_window_conn),
+	recv_window = tonumber(server.recv_window),
+	disable_mtu_discovery = (server.disable_mtu_discovery == "1") and true or false
+}
 local config = {}
 function config:new(o)
 	o = o or {}
@@ -298,6 +345,9 @@ function config:handleIndex(index)
 		end,
 		naiveproxy = function()
 			print(json.stringify(naiveproxy, 1))
+		end,
+		hysteria = function()
+			print(json.stringify(hysteria, 1))
 		end
 	}
 	if switch[index] then
