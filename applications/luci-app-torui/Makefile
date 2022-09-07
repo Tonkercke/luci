@@ -6,7 +6,7 @@ PKG_RELEASE:=0
 
 LUCI_TITLE:=Luci Tor UI
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+tor
+LUCI_DEPENDS:=+tor +tor-geoip +tor-gencert +tor-resolve
 
 include ../../luci.mk
 
