@@ -12,7 +12,7 @@ define Package/$(PKG_NAME)/conffiles
 /etc/config/torui
 endef
 
-define Package/luci-app-torui/postinst
+define Package/$(PKG_NAME)/postinst
 	#!/bin/sh
 	if [ -z "$${IPKG_INSTROOT}" ]; then
 		rm -f /tmp/luci-indexcache* 2>/dev/null
@@ -20,6 +20,6 @@ define Package/luci-app-torui/postinst
 	exit 0
 endef
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature

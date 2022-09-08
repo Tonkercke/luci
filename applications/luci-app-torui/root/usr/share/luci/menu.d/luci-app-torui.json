@@ -8,7 +8,7 @@
 		},
 		"depends": {
 			"acl": [ "luci-app-torui" ],
-			"uci": { "torbp": true }
+			"uci": { "torui": true }
 		}
 	}
 }
