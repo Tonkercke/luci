@@ -12,7 +12,6 @@ PKG_BUILD_PARALLEL:=1
 LUCI_TITLE:=LuCI Support for Xray
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+luci-base +xray-core +dnsmasq +ca-bundle +PACKAGE_firewall4:kmod-nft-tproxy +PACKAGE_firewall:ipset +PACKAGE_firewall:iptables +PACKAGE_firewall:iptables-mod-tproxy
-	PKGARCH:=all
 
 define Package/$(PKG_NAME)/config
 menu "luci-app-xray Configuration"
