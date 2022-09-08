@@ -8,6 +8,18 @@ LUCI_TITLE:=Luci Tor UI
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+tor +tor-geoip +tor-gencert +tor-resolve
 
+define Package/luci-app-torui/config
+/etc/config/torui
+endef
+
+define Package/luci-app-torui/postinst
+	#!/bin/sh
+	if [ -z "$${IPKG_INSTROOT}" ]; then
+		rm -f /tmp/luci-indexcache* 2>/dev/null
+	fi
+	exit 0
+endef
+
 include ../../luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature

@@ -4,7 +4,7 @@ function index()
 	if not nixio.fs.access("/etc/config/torui") then
 		return
 	end
-	local page
-	page = entry({"admin", "services", "torui"}, cbi("torui"), _("Tor UI"))
-	page.dependent = true
+	
+	entry({"admin", "services"}, firstchild(), _("services")).dependent = true
+	entry({"admin", "services", "torui"}, cbi("torui"), _("Tor UI")).dependent = true
 end
