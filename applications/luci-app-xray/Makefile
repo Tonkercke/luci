@@ -69,55 +69,6 @@ define Package/$(PKG_NAME)/conffiles
 /etc/config/xray
 endef
 
-define Package/$(PKG_NAME)/install
-	$(INSTALL_DIR) $(1)/tmp
-	$(INSTALL_BIN) ./root/etc/init.d/xray $(1)/tmp/xray.init
-	$(INSTALL_DATA) ./root/etc/config/xray $(1)/tmp/xray.conf
-	$(INSTALL_DIR) $(1)/etc/luci-uploads/xray
-	$(INSTALL_DIR) $(1)/etc/hotplug.d/iface
-	$(INSTALL_DIR) $(1)/etc/ssl/certs
-ifdef CONFIG_PACKAGE_XRAY_INCLUDE_CLOUDFLARE_ORIGIN_ROOT_CA
-	$(INSTALL_DATA) ./root/etc/ssl/certs/origin_ca_ecc_root.pem $(1)/etc/ssl/certs/origin_ca_ecc_root.pem
-endif
-	$(INSTALL_DIR) $(1)/etc/uci-defaults
-	$(INSTALL_BIN) ./root/etc/uci-defaults/xray $(1)/etc/uci-defaults/xray
-	$(INSTALL_DIR) $(1)/www/luci-static/resources/view
-	$(INSTALL_DATA) ./root/www/luci-static/resources/view/xray.js $(1)/www/luci-static/resources/view/xray.js
-	$(INSTALL_DIR) $(1)/usr/share/luci/menu.d
-	$(INSTALL_DATA) ./root/usr/share/luci/menu.d/luci-app-xray.json $(1)/usr/share/luci/menu.d/luci-app-xray.json
-	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
-	$(INSTALL_DATA) ./root/usr/share/rpcd/acl.d/luci-app-xray.json $(1)/usr/share/rpcd/acl.d/luci-app-xray.json
-	$(INSTALL_DIR) $(1)/usr/share/xray
-ifdef CONFIG_PACKAGE_XRAY_INFINITE_RETRY_ON_STARTUP
-	$(INSTALL_DATA) ./root/usr/share/xray/infinite_retry $(1)/usr/share/xray/infinite_retry
-endif
-ifdef CONFIG_PACKAGE_XRAY_RLIMIT_NOFILE_LARGE
-	$(INSTALL_DATA) ./root/usr/share/xray/rlimit_nofile_large $(1)/usr/share/xray/rlimit_nofile
-endif
-ifdef CONFIG_PACKAGE_XRAY_RLIMIT_DATA_SMALL
-	$(INSTALL_DATA) ./root/usr/share/xray/rlimit_data_small $(1)/usr/share/xray/rlimit_data
-endif
-ifdef CONFIG_PACKAGE_XRAY_RLIMIT_DATA_LARGE
-	$(INSTALL_DATA) ./root/usr/share/xray/rlimit_data_large $(1)/usr/share/xray/rlimit_data
-endif
-ifdef CONFIG_PACKAGE_firewall
-	$(INSTALL_BIN) ./root/etc/hotplug.d/iface/01-transparent-proxy-ipset.fw3 $(1)/etc/hotplug.d/iface/01-transparent-proxy-ipset
-	$(INSTALL_BIN) ./root/usr/share/xray/gen_ipset_rules.lua $(1)/usr/share/xray/gen_ipset_rules.lua
-	$(INSTALL_BIN) ./root/usr/share/xray/gen_ipset_rules_extra_normal.lua $(1)/usr/share/xray/gen_ipset_rules_extra.lua
-	$(INSTALL_BIN) ./root/usr/share/xray/firewall_include.lua $(1)/usr/share/xray/firewall_include.lua
-	$(INSTALL_DATA) ./root/usr/share/xray/init.fw3 $(1)/usr/share/xray/init.firewall
-endif
-ifdef CONFIG_PACKAGE_firewall4
-	$(INSTALL_BIN) ./root/etc/hotplug.d/iface/01-transparent-proxy-ipset.fw4 $(1)/etc/hotplug.d/iface/01-transparent-proxy-ipset
-	$(INSTALL_DATA) ./root/usr/share/xray/include.nft $(1)/usr/share/xray/include.nft
-	$(INSTALL_DIR) $(1)/etc/nftables.d
-	$(LN) /usr/share/xray/include.nft $(1)/etc/nftables.d/99-xray.nft
-	$(INSTALL_BIN) ./root/usr/share/xray/firewall_include.uc $(1)/usr/share/xray/firewall_include.uc
-	$(INSTALL_DATA) ./root/usr/share/xray/init.fw4 $(1)/usr/share/xray/init.firewall
-endif
-	$(INSTALL_BIN) ./root/usr/share/xray/gen_config.lua $(1)/usr/share/xray/gen_config.lua
-	$(INSTALL_DIR) $(1)/usr/libexec/rpcd
-	$(INSTALL_BIN) ./root/usr/libexec/rpcd/xray $(1)/usr/libexec/rpcd/xray
-endef
+include $(TOPDIR)/feeds/luci/luci.mk
 
-$(eval $(call BuildPackage,$(PKG_NAME)))
+# call BuildPackage - OpenWrt buildroot signature
