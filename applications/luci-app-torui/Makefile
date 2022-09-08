@@ -8,7 +8,7 @@ LUCI_TITLE:=Luci Tor UI
 LUCI_PKGARCH:=all
 LUCI_DEPENDS:=+tor +tor-geoip +tor-gencert +tor-resolve
 
-define Package/luci-app-torui/config
+define Package/$(PKG_NAME)/conffiles
 /etc/config/torui
 endef
 
