@@ -20,8 +20,6 @@ define Package/$(PKG_NAME)/conffiles
 /etc/config/xray
 endef
 
-include $(TOPDIR)/feeds/luci/luci.mk
-
 define Package/$(PKG_NAME)/postinst
 #!/bin/sh
 if [ -z "$${IPKG_INSTROOT}" ]; then
@@ -33,5 +31,7 @@ if [ -z "$${IPKG_INSTROOT}" ]; then
 fi
 exit 0
 endef
+
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
