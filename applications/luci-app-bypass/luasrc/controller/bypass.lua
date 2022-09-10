@@ -210,7 +210,6 @@ function status()
 	e.socks5_status = luci.sys.call("ps -w | grep by- | grep socks5 | grep -v grep >/dev/null") == 0
 	e.tcp_node_status = luci.sys.call("ps -w | grep by-retcp | grep -v grep >/dev/null") == 0
 	e.udp_node_status = luci.sys.call("ps -w | grep by-reudp | grep -v grep >/dev/null") == 0
-	e.kcptun_tcp_node_status = luci.sys.call("pidof kcptun-client >/dev/null") == 0
 	e.nf_node_status = luci.sys.call("ps -w | grep by-nf | grep -v grep >/dev/null") == 0
 	e.server_status = luci.sys.call("ps -w | grep by-server | grep -v grep >/dev/null") == 0
 	e.chinadns_status = luci.sys.call("ps -w | grep chinadns-ng | grep -v grep >/dev/null") == 0

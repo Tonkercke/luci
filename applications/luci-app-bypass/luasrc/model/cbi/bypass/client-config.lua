@@ -775,28 +775,4 @@ o.datatype = "port"
 o.default = 1234
 o.rmempty = false
 
-if is_finded("kcptun-client") then
-	o = s:option(Flag, "kcp_enable", translate("KcpTun Enable"))
-	o.rmempty = true
-	o.default = "0"
-	o:depends("type", "ssr")
-	o:depends("type", "ss")
-
-	o = s:option(Value, "kcp_port", translate("KcpTun Port"))
-	o.datatype = "port"
-	o.default = 4000
-	o:depends("type", "ssr")
-	o:depends("type", "ss")
-
-	o = s:option(Value, "kcp_password", translate("KcpTun Password"))
-	o.password = true
-	o:depends("type", "ssr")
-	o:depends("type", "ss")
-
-	o = s:option(Value, "kcp_param", translate("KcpTun Param"))
-	o.default = "--nocomp"
-	o:depends("type", "ssr")
-	o:depends("type", "ss")
-end
-
 return m
