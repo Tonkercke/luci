@@ -91,7 +91,7 @@ endif
 	$(INSTALL_DIR) $(1)/usr/share/rpcd/acl.d
 	$(INSTALL_DATA) ./root/usr/share/rpcd/acl.d/luci-app-xray.json $(1)/usr/share/rpcd/acl.d/luci-app-xray.json
 	$(INSTALL_DIR) $(1)/usr/lib/lua/luci/i18n
-	$(INSTALL_DATA) ./po/zh_Hans/xray.po $(1)/usr/lib/lua/luci/i18n/xray.lmo
+	$(INSTALL_DATA) ./po/zh_Hans/xray.po $(1)/usr/lib/lua/luci/i18n/xray.zh-cn.lmo
 	$(INSTALL_DIR) $(1)/usr/share/xray
 ifdef CONFIG_PACKAGE_XRAY_INFINITE_RETRY_ON_STARTUP
 	$(INSTALL_DATA) ./root/usr/share/xray/infinite_retry $(1)/usr/share/xray/infinite_retry
