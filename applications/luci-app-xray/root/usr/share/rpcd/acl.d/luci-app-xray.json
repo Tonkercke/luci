@@ -1,11 +1,15 @@
 {
-	"luci-app-xray": {
-		"description": "Grant UCI access for luci-app-xray",
-		"read": {
-			"uci": [ "xray" ]
-		},
-		"write": {
-			"uci": [ "xray" ]
-		}
-	}
+    "luci-app-xray": {
+        "description": "Grant access to xray configurations",
+        "read": {
+            "uci": [
+                "xray"
+            ]
+        },
+        "write": {
+            "uci": [
+                "xray"
+            ]
+        }
+    }
 }
