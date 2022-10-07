@@ -24,9 +24,9 @@ local brtag ="<br />"
 
 -- [VARS INITIALIZATION] ------------------------------------------------------
 -- Detect TOR
-local torBinary = luci.util.exec("/usr/bin/which tor")
+local torui = luci.util.exec("/usr/bin/which tor")
 
-if torBinary ~= "" then
+if torui ~= "" then
 	local torPid = luci.util.exec("/usr/bin/pgrep tor")
 	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
 	if torPid ~= "" then
@@ -60,7 +60,7 @@ function torrcStatus.cfgvalue(self, section)
 	return torStatus
 end
 
-if torBinary ~= "" then
+if torui ~= "" then
 	if torServiceStatus ~= "" then
 		torrcButtonDisable = s:taboption("torConfig",Button,"Stop"," ")
 		torrcButtonDisable.inputtitle=translate("Stop")
