@@ -327,7 +327,7 @@ gen_server_shadowsocks_config() {
 			            "address": "$(uci_get_by_name $1 server)",
 			            "port": $(uci_get_by_name $1 server_port),
 			            "password": "$(uci_get_by_name $1 id)",
-			            "method": "$(uci_get_by_name $1 security)"
+			            "method": "$(uci_get_by_name $1 method)"
 			          }
 			        ]
 			      }
@@ -439,7 +439,9 @@ boot() {
 }
 
 kill_all() {
-	kill -9 $(pgrep -f $@) >/dev/null 2>&1
+	for it in $@; do
+		kill -9 $(pgrep -f $it) >/dev/null 2>&1
+	done
 }
 
 stop() {

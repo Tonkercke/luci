@@ -75,14 +75,17 @@ for _, v in ipairs(protocols) do o:value(v, v:upper()) end
 o.default = 'vless'
 o.rmempty = false
 
+-- [[ vless/trojan ]]--
 o = s:option(ListValue, "security", translate("Security"))
 for _, v in ipairs(securitys) do o:value(v, v:upper()) end
 o:depends('protocol', 'vless')
 o:depends('protocol', 'trojan')
 o.default = 'xtls-splice'
 o.rmempty = false
+-- [[ vless/trojan ]]--
 
-o = s:option(ListValue, "security", translate("Encrypt Method"))
+-- [[ shadowsocks ]]--
+o = s:option(ListValue, "method", translate("Encrypt Method"))
 for _, v in ipairs(encrypts) do o:value(v, v:upper()) end
 o:depends('protocol', 'shadowsocks')
 o.rmempty = false
@@ -94,5 +97,6 @@ o.placeholder = "eg: v2ray-plugin"
 o = s:option(Value, "plugin_opts", translate("Plugin Arguments"))
 o:depends('protocol', 'shadowsocks')
 o.placeholder = "eg: tls;host=www.bing.com;path=/websocket"
+-- [[ shadowsocks ]]--
 
 return m
