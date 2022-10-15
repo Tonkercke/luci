@@ -24,7 +24,6 @@
 'require view';
 'require poll';
 'require rpc';
-'require ui';
 
 var conf = 'smartdns';
 var callServiceList = rpc.declare({
@@ -33,7 +32,6 @@ var callServiceList = rpc.declare({
 	params: ['name'],
 	expect: { '': {} }
 });
-var pollAdded = false;
 
 function getServiceStatus() {
 	return L.resolveDefault(callServiceList(conf), {})
@@ -108,16 +106,14 @@ return view.extend({
 					view.innerHTML = smartdnsRenderStatus(res);
 				});
 			}
+			poll.add(renderStatus, 1);
 
-			if (pollAdded == false) {
-				poll.add(renderStatus, 1);
-				pollAdded = true;
-			}
-
-			return E('div', { class: 'cbi-section' }, [
-				E('div', { id: 'service_status' },
-					_('Collecting data ...'))
-			]);
+			return E('div', { class: 'cbi-map' },
+				E('div', { class: 'cbi-section' }, [
+					E('div', { id: 'service_status' },
+						_('Collecting data ...'))
+				])
+			);
 		}
 
 		// Basic;
@@ -300,12 +296,7 @@ return view.extend({
 			return fs.trimmed('/etc/smartdns/custom.conf');
 		};
 		o.write = function (section_id, formvalue) {
-			return this.cfgvalue(section_id).then(function (value) {
-				if (value == formvalue) {
-					return
-				}
-				return fs.write('/etc/smartdns/custom.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
-			});
+			return fs.write('/etc/smartdns/custom.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
 		};
 
 		o = s.taboption("custom", form.Flag, "coredump", _("Generate Coredump"),
@@ -444,12 +435,7 @@ return view.extend({
 			return fs.trimmed('/etc/smartdns/address.conf');
 		};
 		o.write = function (section_id, formvalue) {
-			return this.cfgvalue(section_id).then(function (value) {
-				if (value == formvalue) {
-					return
-				}
-				return fs.write('/etc/smartdns/address.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
-			});
+			return fs.write('/etc/smartdns/address.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
 		};
 
 		// IP Blacklist;
@@ -461,12 +447,7 @@ return view.extend({
 			return fs.trimmed('/etc/smartdns/blacklist-ip.conf');
 		};
 		o.write = function (section_id, formvalue) {
-			return this.cfgvalue(section_id).then(function (value) {
-				if (value == formvalue) {
-					return
-				}
-				return fs.write('/etc/smartdns/blacklist-ip.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
-			});
+			return fs.write('/etc/smartdns/blacklist-ip.conf', formvalue.trim().replace(/\r\n/g, '\n') + '\n');
 		};
 
 		// Doman addresss;
@@ -490,17 +471,6 @@ return view.extend({
 			window.open("https://pymumu.github.io/smartdns/#donate", '_blank');
 		};
 
-		o = s.option(form.DummyValue, "_restart", _("Restart Service"));
-		o.renderWidget = function () {
-			return E('button', {
-				'class': 'btn cbi-button cbi-button-apply',
-				'id': 'btn_restart',
-				'click': ui.createHandlerFn(this, function () {
-					return fs.exec('/etc/init.d/smartdns', ['restart'])
-						.catch(function (e) { ui.addNotification(null, E('p', e.message), 'error') });
-				})
-			}, [_("Restart")]);
-		}
 		return m.render();
 	}
 });
