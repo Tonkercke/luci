@@ -71,6 +71,17 @@ config global_subscribe
 	list filter_discard_list '剩余流量'
 	list filter_discard_list 'QQ群'
 	list filter_discard_list '官网'
+	list filter_discard_list '俄罗斯'
+	list filter_discard_list '意大利'
+	list filter_discard_list '移动'
+	list filter_discard_list '中移'
+	list filter_discard_list '新加坡'
+	list filter_discard_list '香港'
+	list filter_discard_list '台湾'
+	list filter_discard_list '中'
+	list filter_discard_list '广'
+	list filter_discard_list '电'
+	list filter_discard_list '联'
 
 config auto_switch
 	option enable '0'
