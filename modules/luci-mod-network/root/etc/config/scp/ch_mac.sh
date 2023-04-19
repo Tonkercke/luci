@@ -2,8 +2,8 @@
 mac_name() { 
     get_random_num=
     get_random_wei=                                                                                                                                                                                                                                                          
-    test ! -e /etc/config/shell/mac.txt && echo "no find mac.txt ,please check!" && exit
-    get_random_num=$(cat /etc/config/shell/mac.txt | wc -l)
+    test ! -e /etc/config/scp/mac.txt && echo "no find mac.txt ,please check!" && exit
+    get_random_num=$(cat /etc/config/scp/mac.txt | wc -l)
     if [ "${get_random_num}" == "0" ]
     then
         echo "list is null , please check list !" && exit
@@ -40,7 +40,7 @@ mac_name() {
         then
             host_name=
             wlan_mac=
-            tmp_name_mac="$(sed -n "${test_b}p" /etc/config/shell/mac.txt | sed -n "1p" )"
+            tmp_name_mac="$(sed -n "${test_b}p" /etc/config/scp/mac.txt | sed -n "1p" )"
             host_name=$(echo "${tmp_name_mac}" | cut -d '@' -f 1 | sed -n "1p")                                                                                                                                                                                                       
             wlan_mac="$(echo "${tmp_name_mac}" | cut -d '@' -f 2)$(hexdump -n 3 -e '/1 ":%02x"' /dev/urandom  | sed -n "1p")"
             if [ "${host_name}" != "" ] && [ "${wlan_mac}" != "" ] && [ "$(echo "${wlan_mac}" | wc -L)" == "17" ]

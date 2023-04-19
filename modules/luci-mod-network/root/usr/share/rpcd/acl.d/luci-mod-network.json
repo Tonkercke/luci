@@ -9,7 +9,7 @@
 				"/proc/sys/net/ipv6/conf/*/hop_limit": [ "read" ],
 				"/usr/libexec/luci-peeraddr": [ "exec" ],
 				"/usr/lib/opkg/info/netifd.control": [ "read" ],
-				"/bin/sh": ["exec"],
+				"/bin/sh": [ "exec" ],
 				"/proc/sys/net/ipv[46]/conf/*": [ "read" ],
 				"/sys/class/net/*/brport/*": [ "read" ]
 			},
