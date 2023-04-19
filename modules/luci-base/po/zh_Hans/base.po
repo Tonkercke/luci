@@ -47,11 +47,11 @@ msgstr "更改物理地址和主机名"
 msgid "Pseudo"
 msgstr "伪装"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2308
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2309
 msgid "Change the mac and hostname of all wifinet"
 msgstr "更改所有无线网络的物理地址和主机名"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2310
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2311
 msgid "Pseudo all wifinet"
 msgstr "伪装所有无线网络"
 
