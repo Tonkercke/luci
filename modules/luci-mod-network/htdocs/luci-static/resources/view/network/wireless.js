@@ -934,7 +934,6 @@ return view.extend({
 					}, _('Remove')),
 					E('button', {
 						'class': 'cbi-button cbi-button-neutral',
-						'style': isPseudo ? '' : 'display:none',
 						'title': _('Change MAC and Hostname'),
 						'click': ui.createHandlerFn(this, change_mac, section_id)
 					}, _('Pseudo'))
@@ -2299,22 +2298,21 @@ return view.extend({
 
 			var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
 
-			var psbtns = E('div', {'style': isPseudo ? 'padding-right:0px' : 'display:none' },
-				E('table', { 'class': 'table cbi-section-table' }, [
-					E('tr', { 'class': 'tr table-titles' }, [
-						E('td', { 'class': 'td cbi-value-field' }),
-						E('td', { 'class': 'td middle cbi-section-actions', 'width':'25%' },
-							E('div', {},
-								E('button', {
-									'class': 'cbi-button cbi-button-neutral fade-in',
-									'title': _('Change the mac and hostname of all wifinet'),
-									'click': ui.createHandlerFn(this, change_mac, 'all')
-								}, _('Pseudo all wifinet'))
-							)
-						)
-					]),
+			var psbtns = E('table', { 'class': 'table cbi-section-table' }, [
+				E('tr', { 'class': 'tr table-titles' }, [
+					E('td', { 'class': 'td cbi-value-field' }),
+					E('td', { 'class': 'td middle cbi-section-actions', 'width':'25%' },
+					E('div', {},
+					E('button', {
+					'class': 'cbi-button cbi-button-neutral',
+					'title': _('Change the mac and hostname of all wifinet'),
+					'click': ui.createHandlerFn(this, change_mac, 'all')
+					}, _('Pseudo all wifinet'))
+					)
+				)
+			]),
 					E('tr', { 'class': 'tr table-titles' },
-						E('td', { 'class': 'td cbi-value-field pseudo-output', 'colspan':'2', 'style': 'display:none' })
+					E('td', { 'class': 'td cbi-value-field pseudo-output', 'colspan':'2' })
 					)
 				])
 			);
