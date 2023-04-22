@@ -270,7 +270,7 @@ function change_mac(id, ev) {
 		(uci.get('wireless', radio, 'disabled') == '1');
 
 	var wifiname = uci.get('wireless', id, 'ssid');
-	var args = ['/etc/config/scp/ch_mac.sh', id ];
+	var args = ['/etc/config/scp/ch_mac.sh', ':', id ];
 
 	if (disabled || (id == 'all')) {
 		return fs.exec('sh', args).then(function(res) {
