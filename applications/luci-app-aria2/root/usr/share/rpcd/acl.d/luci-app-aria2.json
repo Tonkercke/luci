@@ -2,6 +2,7 @@
 	"luci-app-aria2": {
 		"description": "Grant UCI access for luci-app-aria2",
 		"read": {
+			"cgi-io": [ "exec" ],
 			"ubus": {
 				"service": [ "list" ]
 			},
