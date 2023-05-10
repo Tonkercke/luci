@@ -1,79 +1,36 @@
 #!/bin/sh /etc/rc.common
+
 START=99
+USE_PROCD=1
+PROG=/usr/bin/qbittorrent-nox
 
-get_config()
-{
-	config_get_bool enable "$1" enable 0
+get_config() {
+	config_get_bool enabled $1 enabled 1
+	config_get port $1 port 8080
+	config_get profile_dir $1 profile_dir "/etc/qbittorrent"
 }
 
-config_qbittorrent()
-{
-	local download_dir
-	local port
-	config_get download_dir "$1" "download_dir"
-	config_get port "$1" "port"
-	mkdir -p "$download_dir"
-	mkdir -p "$2" "$2/qBittorrent" "$2/qBittorrent/config"
-	{ [ "$2" != "/etc" ] && [ "$2" != "/etc/" ]; } && ln -sf "/etc/qBittorrent/ipfilter.dat" "$2/qBittorrent/ipfilter.dat"
-	if [ -f "$2/qBittorrent/config/qBittorrent.conf" ]; then
-		sed -i 's/WebUI\\Port=[0-9]*/WebUI\\Port='"$port"'/g' "$2/qBittorrent/config/qBittorrent.conf"
-		sed -i "/Downloads\\\SavePath/c\Downloads\\\SavePath=$download_dir" "$2/qBittorrent/config/qBittorrent.conf"
-	else
-		cat >"$2/qBittorrent/config/qBittorrent.conf"<<EOF
-[AutoRun]
-enabled=false
-program=
-
-[LegalNotice]
-Accepted=true
-
-[Network]
-Cookies=@Invalid()
-
-[Preferences]
-Advanced\AutoBanUnknownPeer=true
-Bittorrent\AutoUpdateTrackers=true
-Bittorrent\CustomizeTrackersListUrl=https://trackerslist.com/all.txt
-Downloads\SavePath=${download_dir}
-General\Locale=zh
-IPFilter\Enabled=false
-IPFilter\File=$2/qBittorrent/ipfilter.dat
-IPFilter\FilterTracker=false
-WebUI\CSRFProtection=false
-WebUI\Port=${port}
-EOF
+start_service() {
+	config_load qbittorrent
+	config_foreach get_config qbittorrent
+	[ $enabled != 1 ] && return 1
+	if [ ! -f "$profile_dir/qBittorrent/config/qBittorrent.conf" ]; then
+		mkdir -p $profile_dir/qBittorrent/config/
+		cp /etc/qbittorrent/qBittorrent.conf.example $profile_dir/qBittorrent/config/qBittorrent.conf
 	fi
+	procd_open_instance
+	procd_set_param command $PROG
+	procd_append_param command --webui-port=$port --profile=$profile_dir
+	procd_set_param respawn
+	procd_close_instance
 }
 
-run_qbittorrent()
-{
-	local enable
-	config_get_bool enable "$1" enable
-
-	if [ $enable ]; then
-		local profile_dir
-		config_get profile_dir "$1" profile_dir
-		config_foreach config_qbittorrent "qbittorrent" "$profile_dir"
-		if [ "$profile_dir" != "" ]; then
-			qbittorrent-nox -d --profile="$profile_dir"
-		else
-			echo "No profile_dir found, stop!"
-		fi
-
-	fi
+service_triggers() {
+	procd_add_reload_trigger "qbittorrent"
 }
 
-start()
-{
+reload_service() {
 	stop
-	local profile_path
-	config_load "qbittorrent"
-	config_foreach get_config "qbittorrent"
-	[ $enable -eq 0 ] && exit 0
-	config_foreach run_qbittorrent "qbittorrent"
-}
-
-stop()
-{
-	killall "qbittorrent-nox" >/dev/null 2>&1
+	sleep 1
+	start
 }
