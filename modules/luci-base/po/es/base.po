@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-06-10 03:41+0200\n"
-"PO-Revision-Date: 2023-08-05 15:49+0000\n"
-"Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
+"PO-Revision-Date: 2023-04-17 08:10+0000\n"
+"Last-Translator: Juan <benitesjn@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/luci/es/"
 ">\n"
 "Language: es\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 4.17-dev\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:649
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -1237,8 +1237,9 @@ msgstr ""
 "el usuario."
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/system.js:287
+#, fuzzy
 msgid "Bind NTP server"
-msgstr "Vincular a servidor NTP"
+msgstr "Vincular servidor NTP"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:336
 msgid "Bind dynamically to interfaces rather than wildcard address."
@@ -1257,18 +1258,20 @@ msgid "Bind interface"
 msgstr "Interfaz de enlace"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:671
+#, fuzzy
 msgid ""
 "Bind service records to a domain name: specify the location of services."
 msgstr ""
-"Vincular registros de servicios a un nombre de dominio: especifique la "
+"Vincular los registros de servicios a un nombre de dominio: especifique la "
 "ubicación de los servicios."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:632
+#, fuzzy
 msgid ""
 "Bind service records to a domain name: specify the location of services. See "
 "<a href=\"%s\">RFC2782</a>."
 msgstr ""
-"Vincular registros de servicios a un nombre de dominio: especifique la "
+"Vincular los registros de servicios a un nombre de dominio: especifique la "
 "ubicación de los servicios. Consulte <a href=\"%s\">RFC2782</a>."
 
 #: protocols/luci-proto-gre/htdocs/luci-static/resources/protocol/gre.js:59
@@ -1293,9 +1296,9 @@ msgid "Bonding Policy"
 msgstr "Política de vinculación"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:404
+#, fuzzy
 msgid "Both Listen addr and Relay To must be specified."
-msgstr ""
-"Se deben especificar tanto la `Dirección de escucha` como el como `Relé a`."
+msgstr "Se deben especificar tanto Escuchar dirección como Relé a."
 
 #: modules/luci-base/htdocs/luci-static/resources/network.js:2995
 #: modules/luci-compat/luasrc/model/network.lua:1421
@@ -4845,9 +4848,8 @@ msgid "Line State"
 msgstr "Estado de línea"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:20
-#, fuzzy
 msgid "Line Uptime"
-msgstr "Tiempo de actividad de la línea"
+msgstr "Tiempo de actividad de línea"
 
 #: protocols/luci-proto-bonding/htdocs/luci-static/resources/protocol/bonding.js:125
 msgid "Link Aggregation (Channel Bonding)"
@@ -4922,7 +4924,7 @@ msgstr "Lista de resolutores ascendentes a los que reenviar consultas."
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:176
 msgid "Listen Port"
-msgstr "Puerto de Escucha"
+msgstr "Puerto de escucha"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:375
 msgid "Listen address"
@@ -9792,7 +9794,7 @@ msgstr "Subir archivo…"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
 msgid "Upload has been cancelled"
-msgstr "La carga ha sido cancelada"
+msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2796
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4248
@@ -10960,8 +10962,6 @@ msgid ""
 "valid network device name between 1 and 15 characters not containing \":\", "
 "\"/\", \"%\" or spaces"
 msgstr ""
-"nombre de dispositivo de red válido entre 1 y 15 caracteres que no contenga "
-"\":\", \"/\", \"%\" o espacios"
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:433
 msgid "valid network device name, not \".\" or \"..\""
@@ -11034,10 +11034,9 @@ msgstr "sí"
 msgid "« Back"
 msgstr "« Volver"
 
-#~ msgid "List of IP sets to populate with the specified domain IPs."
-#~ msgstr ""
-#~ "Lista de conjuntos de IP para completar con las IP de dominio "
-#~ "especificadas."
+msgid "List of IP sets to populate with the specified domain IPs."
+msgstr ""
+"Lista de conjuntos de IP para completar con las IP de dominio especificadas."
 
-#~ msgid "List of domains to force to an IP address."
-#~ msgstr "Lista de dominios para forzar a una dirección IP."
+msgid "List of domains to force to an IP address."
+msgstr "Lista de dominios para forzar a una dirección IP."

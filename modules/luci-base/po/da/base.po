@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-08-10 08:05+0000\n"
+"PO-Revision-Date: 2023-04-24 17:51+0000\n"
 "Last-Translator: drax red <drax@outlook.dk>\n"
 "Language-Team: Danish <https://hosted.weblate.org/projects/openwrt/luci/da/"
 ">\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 4.18-dev\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:649
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -3816,7 +3816,7 @@ msgstr "IP-type"
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:178
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/routes.js:204
 msgid "IP address"
-msgstr "IP Address"
+msgstr "IP-adresse"
 
 #: modules/luci-base/htdocs/luci-static/resources/network.js:10
 #: modules/luci-compat/luasrc/model/network.lua:28
@@ -9641,7 +9641,7 @@ msgstr "Upload fil…"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
 msgid "Upload has been cancelled"
-msgstr "Upload er blevet annulleret"
+msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2796
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:4248
@@ -10797,8 +10797,6 @@ msgid ""
 "valid network device name between 1 and 15 characters not containing \":\", "
 "\"/\", \"%\" or spaces"
 msgstr ""
-"gyldigt netværksenhedsnavn mellem 1 og 15 tegn, der ikke indeholder \":\", "
-"\"/\", \"%\" eller mellemrum"
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:433
 msgid "valid network device name, not \".\" or \"..\""
@@ -10871,8 +10869,8 @@ msgstr "ja"
 msgid "« Back"
 msgstr "« Tilbage"
 
-#~ msgid "List of IP sets to populate with the specified domain IPs."
-#~ msgstr "Liste over IP-sæt, der skal udfyldes med de angivne domæne-IP'er."
+msgid "List of IP sets to populate with the specified domain IPs."
+msgstr "Liste over IP-sæt, der skal udfyldes med de angivne domæne-IP'er."
 
-#~ msgid "List of domains to force to an IP address."
-#~ msgstr "Liste over domæner, der skal tvinges til en IP-adresse."
+msgid "List of domains to force to an IP address."
+msgstr "Liste over domæner, der skal tvinges til en IP-adresse."
