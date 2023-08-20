@@ -131,6 +131,7 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 	local normal_list = {}
 	local balancing_list = {}
 	local shunt_list = {}
+	local iface_list = {}
 	for k, v in pairs(nodes_table) do
 		if v.node_type == "normal" then
 			normal_list[#normal_list + 1] = v
@@ -140,6 +141,9 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 		end
 		if v.protocol and v.protocol == "_shunt" then
 			shunt_list[#shunt_list + 1] = v
+		end
+		if v.protocol and v.protocol == "_iface" then
+			iface_list[#iface_list + 1] = v
 		end
 	end
 
@@ -155,7 +159,7 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 	end
 	if #normal_list > 0 then
 		for k, v in pairs(shunt_list) do
-			local vid = v.id:sub(1, 8)
+			local vid = v.id
 			-- shunt node type, V2ray or Xray
 			local type = s:taboption("Main", ListValue, vid .. "-type", translate("Type"))
 			if has_v2ray then
@@ -177,6 +181,9 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 			o = s:taboption("Main", Value, vid .. "-main_node", string.format('<a style="color:red">%s</a>', translate("Preproxy Node")), translate("Set the node to be used as a pre-proxy. Each rule (including <code>Default</code>) has a separate switch that controls whether this rule uses the pre-proxy or not."))
 			o:depends(vid .. "-preproxy_enabled", "1")
 			for k1, v1 in pairs(balancing_list) do
+				o:value(v1.id, v1.remark)
+			end
+			for k1, v1 in pairs(iface_list) do
 				o:value(v1.id, v1.remark)
 			end
 			for k1, v1 in pairs(normal_list) do
@@ -216,6 +223,9 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 					for k1, v1 in pairs(balancing_list) do
 						o:value(v1.id, v1.remark)
 					end
+					for k1, v1 in pairs(iface_list) do
+						o:value(v1.id, v1.remark)
+					end
 					for k1, v1 in pairs(normal_list) do
 						o:value(v1.id, v1.remark)
 						pt:depends({ [node_option] = v1.id, [vid .. "-preproxy_enabled"] = "1" })
@@ -231,6 +241,9 @@ if (has_v2ray or has_xray) and #nodes_table > 0 then
 			o:value("_direct", translate("Direct Connection"))
 			o:value("_blackhole", translate("Blackhole"))
 			for k1, v1 in pairs(balancing_list) do
+				o:value(v1.id, v1.remark)
+			end
+			for k1, v1 in pairs(iface_list) do
 				o:value(v1.id, v1.remark)
 			end
 			for k1, v1 in pairs(normal_list) do
@@ -400,7 +413,7 @@ end
 o = s:taboption("DNS", Button, "clear_ipset", translate("Clear IPSET"), translate("Try this feature if the rule modification does not take effect."))
 o.inputstyle = "remove"
 function o.write(e, e)
-	luci.sys.call("[ -n \"$(nft list sets 2>/dev/null | grep \"gfwlist\")\" ] && sh /usr/share/" .. appname .. "/nftables.sh flush_nftset || sh /usr/share/" .. appname .. "/iptables.sh flush_ipset > /dev/null 2>&1 &")
+	luci.sys.call("[ -n \"$(nft list sets 2>/dev/null | grep \"passwall_\")\" ] && sh /usr/share/" .. appname .. "/nftables.sh flush_nftset || sh /usr/share/" .. appname .. "/iptables.sh flush_ipset > /dev/null 2>&1 &")
 	luci.http.redirect(api.url("log"))
 end
 
@@ -512,7 +525,7 @@ s.anonymous = true
 s.addremove = true
 s.template = "cbi/tblsection"
 function s.create(e, t)
-	TypedSection.create(e, api.gen_uuid())
+	TypedSection.create(e, api.gen_short_uuid())
 end
 
 o = s:option(DummyValue, "status", translate("Status"))

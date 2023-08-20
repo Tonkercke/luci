@@ -26,35 +26,22 @@ function vmess_vless()
 					}
 				}
 			}
-		},
-		packetEncoding = server.packet_encoding or nil
+		}
 	}
 end
 function trojan_shadowsocks()
 	outbound_settings = {
-		plugin = ((server.v2ray_protocol == "shadowsocks") and server.plugin ~= "none" and server.plugin) or (server.v2ray_protocol == "shadowsocksr" and "shadowsocksr") or nil,
-		pluginOpts = (server.v2ray_protocol == "shadowsocks") and server.plugin_opts or nil,
-		pluginArgs = (server.v2ray_protocol == "shadowsocksr") and {
-			"--protocol=" .. server.protocol,
-			"--protocol-param=" .. (server.protocol_param or ""),
-			"--obfs=" .. server.obfs,
-			"--obfs-param=" .. (server.obfs_param or "")
-		} or nil,
 		servers = {
 			{
 				address = server.server,
 				port = tonumber(server.server_port),
 				password = server.password,
-				method = ((server.v2ray_protocol == "shadowsocks") and server.encrypt_method_ss) or ((server.v2ray_protocol == "shadowsocksr") and server.encrypt_method) or nil,
+				method = ((server.v2ray_protocol == "shadowsocks") and server.encrypt_method_ss) or nil,
 				uot = (server.v2ray_protocol == "shadowsocks") and (server.uot == '1') or nil,
 				ivCheck = (server.v2ray_protocol == "shadowsocks") and (server.ivCheck == '1') or nil,
 			}
 		}
 	}
-
-	if server.v2ray_protocol == "shadowsocksr" then
-		server.v2ray_protocol = "shadowsocks"
-	end
 end
 function socks_http()
 	outbound_settings = {
@@ -106,9 +93,6 @@ function outbound:handleIndex(index)
 			trojan_shadowsocks()
 		end,
 		shadowsocks = function()
-			trojan_shadowsocks()
-		end,
-		shadowsocksr = function()
 			trojan_shadowsocks()
 		end,
 		socks = function()
@@ -224,7 +208,6 @@ local Xray = {
 			grpcSettings = (server.transport == "grpc") and {
 				-- grpc
 				serviceName = server.serviceName or "",
-				mode = (server.grpc_mode ~= "gun") and server.grpc_mode or nil,
 				multiMode = (server.grpc_mode == "multi") and true or false,
 				idle_timeout = tonumber(server.idle_timeout) or nil,
 				health_check_timeout = tonumber(server.health_check_timeout) or nil,
@@ -235,8 +218,7 @@ local Xray = {
 		mux = (server.mux == "1" and server.transport ~= "grpc") and {
 			-- mux
 			enabled = true,
-			concurrency = tonumber(server.concurrency),
-			packetEncoding = (server.v2ray_protocol == "vmess" or server.v2ray_protocol == "vless") and server.packet_encoding or nil
+			concurrency = tonumber(server.concurrency)
 		} or nil
 	} or nil
 }
@@ -320,26 +302,32 @@ local hysteria = {
 	recv_window_conn = tonumber(server.recv_window_conn),
 	recv_window = tonumber(server.recv_window),
 	disable_mtu_discovery = (server.disable_mtu_discovery == "1") and true or false,
-	fast_open = (server.fast_open == "1") and true or false
+	fast_open = (server.fast_open == "1") and true or false,
+	lazy_start = (server.lazy_start == "1") and true or false
 }
 local tuic = {
 	relay = {
-		server = server.server,
-		port = tonumber(server.server_port),
-		token = server.password,
-
+		server = server.server .. ":" .. server.server_port,
+		ip = server.tuic_ip,
+		uuid = server.tuic_uuid,
+		password = server.tuic_passwd,
 		certificates = server.certificate and { server.certpath } or nil,
 		udp_relay_mode = server.udp_relay_mode,
-		congestion_controller = server.congestion_controller,
-		heartbeat_interval = tonumber(server.heartbeat_interval),
+		congestion_control = server.congestion_control,
+		heartbeat = server.heartbeat and server.heartbeat .. "s" or nil,
+		timeout = server.timeout and server.timeout .. "s" or nil,
+		gc_interval = server.gc_interval and server.gc_interval .. "s" or nil,
+		gc_lifetime = server.gc_lifetime and server.gc_lifetime .. "s" or nil,
 		alpn = server.tls_alpn,
-		disable_sni = (server.disable_sni == "1"),
-		reduce_rtt = (server.reduce_rtt == "1"),
-		max_udp_relay_packet_size = tonumber(server.max_udp_relay_packet_size)
-	},
+		disable_sni = (server.disable_sni == "1") and true or false,
+		zero_rtt_handshake = (server.zero_rtt_handshake == "1") and true or false,
+		send_window = tonumber(server.send_window),
+		receive_window = tonumber(server.receive_window)
+        },
 	["local"] = {
-		port = tonumber(local_port),
-		ip = "0.0.0.0"
+		server = "0.0.0.0:" .. tonumber(local_port),
+		--dual_stack = (server.tuic_dual_stack == "1") and true or false,
+		max_packet_size = tonumber(server.tuic_max_package_size)
 	}
 }
 local config = {}
