@@ -27,13 +27,13 @@ return view.extend({
 	render: function (result) {
 		let m, s, o;
 
-		m = new form.Map('banip', 'banIP', _('Configuration of the banIP package to ban incoming and outgoing ip addresses/subnets via sets in nftables. \
+		m = new form.Map('banip', 'banIP', _('Configuration of the banIP package to ban incoming and outgoing IPs via named nftables Sets. \
 			For further information <a href="https://github.com/openwrt/packages/blob/master/net/banip/files/README.md" target="_blank" rel="noreferrer noopener" >check the online documentation</a>'));
 
 		/*
 			poll runtime information
 		*/
-		let buttons, rtRes, infStat, infVer, infElements, infFeeds, infDevices, infSubnets, infSystem, nftInfos, runInfos, infFlags, last_run
+		let buttons, rtRes, infStat, infVer, infElements, infFeeds, infDevices, infUplink, infSystem, nftInfos, runInfos, infFlags, last_run
 
 		pollData: poll.add(function () {
 			return L.resolveDefault(fs.stat('/var/run/banip.lock')).then(function (stat) {
@@ -69,8 +69,8 @@ return view.extend({
 									rtRes.activeFeeds = rtRes[i].match(/^\s+\+\sactive_feeds\s+\:\s+(.*)$/)[1];
 								} else if (rtRes[i].match(/^\s+\+\sactive_devices\s+\:\s+(.*)$/)) {
 									rtRes.activeDevices = rtRes[i].match(/^\s+\+\sactive_devices\s+\:\s+(.*)$/)[1];
-								} else if (rtRes[i].match(/^\s+\+\sactive_subnets\s+\:\s+(.*)$/)) {
-									rtRes.activeSubnets = rtRes[i].match(/^\s+\+\sactive_subnets\s+\:\s+(.*)$/)[1];
+								} else if (rtRes[i].match(/^\s+\+\sactive_uplink\s+\:\s+(.*)$/)) {
+									rtRes.activeUplink = rtRes[i].match(/^\s+\+\sactive_uplink\s+\:\s+(.*)$/)[1];
 								} else if (rtRes[i].match(/^\s+\+\snft_info\s+\:\s+(.*)$/)) {
 									rtRes.nftInfo = rtRes[i].match(/^\s+\+\snft_info\s+\:\s+(.*)$/)[1];
 								} else if (rtRes[i].match(/^\s+\+\srun_info\s+\:\s+(.*)$/)) {
@@ -105,9 +105,9 @@ return view.extend({
 							if (infDevices) {
 								infDevices.textContent = rtRes.activeDevices || '-';
 							}
-							infSubnets = document.getElementById('subnets');
-							if (infSubnets) {
-								infSubnets.textContent = rtRes.activeSubnets || '-';
+							infUplink = document.getElementById('uplink');
+							if (infUplink) {
+								infUplink.textContent = rtRes.activeUplink || '-';
 							}
 							nftInfos = document.getElementById('nft');
 							if (nftInfos) {
@@ -172,8 +172,8 @@ return view.extend({
 					E('div', { 'class': 'cbi-value-field', 'id': 'devices', 'style': 'color:#37c' }, '-')
 				]),
 				E('div', { 'class': 'cbi-value' }, [
-					E('label', { 'class': 'cbi-value-title', 'style': 'padding-top:0rem' }, _('Active Subnets')),
-					E('div', { 'class': 'cbi-value-field', 'id': 'subnets', 'style': 'color:#37c' }, '-')
+					E('label', { 'class': 'cbi-value-title', 'style': 'padding-top:0rem' }, _('Active Uplink')),
+					E('div', { 'class': 'cbi-value-field', 'id': 'uplink', 'style': 'color:#37c' }, '-')
 				]),
 				E('div', { 'class': 'cbi-value' }, [
 					E('label', { 'class': 'cbi-value-title', 'style': 'padding-top:0rem' }, _('NFT Information')),
@@ -238,7 +238,7 @@ return view.extend({
 		s.tab('adv_chain', _('Chain/Set Settings'));
 		s.tab('adv_log', _('Log Settings'));
 		s.tab('adv_email', _('E-Mail Settings'));
-		s.tab('feeds', _('Blocklist Feeds'));
+		s.tab('feeds', _('Feed Selection'));
 
 		/*
 			general settings tab
@@ -318,20 +318,17 @@ return view.extend({
 		o.optional = true;
 		o.rmempty = true;
 
-		o = s.taboption('general', form.Flag, 'ban_deduplicate', _('Deduplicate IPs'), _('Deduplicate IP addresses across all active sets and and tidy up the local blocklist.'));
-		o.default = 1
-		o.rmempty = false;
+		o = s.taboption('general', form.ListValue, 'ban_fetchretry', _('Download Retries'), _('Number of download attempts in case of an error (not supported by uclient-fetch).'));
+		o.value('1', _('1'));
+		o.value('3', _('3'));
+		o.value('5', _('5 (default)'));
+		o.value('10', _('10'));
+		o.value('20', _('20'));
+		o.optional = true;
+		o.rmempty = true;
 
-		o = s.taboption('general', form.Flag, 'ban_loginput', _('Log WAN-Input'), _('Log suspicious incoming WAN packets (dropped).'));
-		o.default = 1
-		o.rmempty = false;
-
-		o = s.taboption('general', form.Flag, 'ban_logforwardwan', _('Log WAN-Forward'), _('Log suspicious forwarded WAN packets (dropped).'));
-		o.default = 1
-		o.rmempty = false;
-
-		o = s.taboption('general', form.Flag, 'ban_logforwardlan', _('Log LAN-Forward'), _('Log suspicious forwarded LAN packets (rejected).'));
-		o.rmempty = false;
+		o = s.taboption('general', form.Flag, 'ban_fetchinsecure', _('Download Insecure'), _('Don\'t check SSL server certificates during download.'));
+		o.rmempty = true;
 
 		/*
 			additional settings tab
@@ -349,7 +346,7 @@ return view.extend({
 		o.optional = true;
 		o.rmempty = true;
 
-		o = s.taboption('advanced', form.ListValue, 'ban_filelimit', _('Max Open Files'), _('Increase the maximal number of open files, e.g. to handle the amount of temporary split files while loading the sets.'));
+		o = s.taboption('advanced', form.ListValue, 'ban_filelimit', _('Max Open Files'), _('Increase the maximal number of open files, e.g. to handle the amount of temporary split files while loading the Sets.'));
 		o.value('512', _('512'));
 		o.value('1024', _('1024 (default)'));
 		o.value('2048', _('2048'));
@@ -366,7 +363,7 @@ return view.extend({
 		o.optional = true;
 		o.rmempty = true;
 
-		o = s.taboption('advanced', form.ListValue, 'ban_splitsize', _('Set Split Size'), _('Split external set loading after every n members to save RAM.'));
+		o = s.taboption('advanced', form.ListValue, 'ban_splitsize', _('Set Split Size'), _('Split external Set loading after every n members to save RAM.'));
 		o.value('256');
 		o.value('512');
 		o.value('1024');
@@ -387,12 +384,13 @@ return view.extend({
 		o.placeholder = '/tmp/banIP-report';
 		o.rmempty = true;
 
+		o = s.taboption('advanced', form.Flag, 'ban_deduplicate', _('Deduplicate IPs'), _('Deduplicate IP addresses across all active Sets and tidy up the local blocklist.'));
+		o.default = 1
+		o.rmempty = false;
+
 		o = s.taboption('advanced', form.Flag, 'ban_reportelements', _('Report Elements'), _('List Set elements in the status and report, disable this to reduce the CPU load.'));
 		o.default = 1
 		o.optional = true;
-
-		o = s.taboption('advanced', form.Flag, 'ban_fetchinsecure', _('Download Insecure'), _('Don\'t check SSL server certificates during download.'));
-		o.rmempty = true;
 
 		/*
 			advanced chain/set settings tab
@@ -413,6 +411,20 @@ return view.extend({
 		o.value('-200', _('-200 (default)'));
 		o.value('-300', _('-300'));
 		o.value('-400', _('-400'));
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('adv_chain', widgets.DeviceSelect, 'ban_vlanallow', _('Allow VLAN Forwads'), _('Always allow certain VLAN forwards.'));
+		o.unspecified = true;
+		o.multiple = true;
+		o.nocreate = true;
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('adv_chain', widgets.DeviceSelect, 'ban_vlanblock', _('Block VLAN Forwads'), _('Always block certain VLAN forwards.'));
+		o.unspecified = true;
+		o.multiple = true;
+		o.nocreate = true;
 		o.optional = true;
 		o.rmempty = true;
 
@@ -461,15 +473,6 @@ return view.extend({
 			o.rmempty = true;
 		}
 
-		o = s.taboption('adv_chain', form.ListValue, 'ban_nftexpiry', _('Blocklist Expiry'), _('Expiry time for auto added blocklist set members.'));
-		o.value('10s');
-		o.value('1m');
-		o.value('5m');
-		o.value('1h');
-		o.value('2h');
-		o.optional = true;
-		o.rmempty = true;
-
 		/*
 			advanced log settings tab
 		*/
@@ -488,6 +491,17 @@ return view.extend({
 		o.value('debug', _('debug'));
 		o.optional = true;
 		o.rmempty = true;
+
+		o = s.taboption('adv_log', form.Flag, 'ban_loginput', _('Log WAN-Input'), _('Log suspicious incoming WAN packets (dropped).'));
+		o.default = 1
+		o.rmempty = false;
+
+		o = s.taboption('adv_log', form.Flag, 'ban_logforwardwan', _('Log WAN-Forward'), _('Log suspicious forwarded WAN packets (dropped).'));
+		o.default = 1
+		o.rmempty = false;
+
+		o = s.taboption('adv_log', form.Flag, 'ban_logforwardlan', _('Log LAN-Forward'), _('Log suspicious forwarded LAN packets (rejected).'));
+		o.rmempty = false;
 
 		o = s.taboption('adv_log', form.ListValue, 'ban_loglimit', _('Log Limit'), _('Parse only the last stated number of log entries for suspicious events. To disable the log monitor at all set it to \'0\'.'));
 		o.value('0', _('0 (disable)'));
@@ -536,14 +550,14 @@ return view.extend({
 		o.rmempty = true;
 
 		/*
-			blocklist feeds tab
+			feeds tab
 		*/
 		o = s.taboption('feeds', form.DummyValue, '_sub');
 		o.rawhtml = true;
-		o.default = '<em><b>' + _('List of supported and fully pre-configured banIP feeds.') + '</b></em>';
+		o.default = '<em><b>' + _('External blocklist feeds') + '</b></em>';
 
 		if (feeds) {
-			o = s.taboption('feeds', form.MultiValue, 'ban_feed', _('Feed Selection'));
+			o = s.taboption('feeds', form.MultiValue, 'ban_feed', _('Blocklist Feed Selection'));
 			for (let i = 0; i < Object.keys(feeds).length; i++) {
 				feed = Object.keys(feeds)[i].trim();
 				descr = feeds[feed].descr.trim() || '-';
@@ -553,9 +567,6 @@ return view.extend({
 			o.rmempty = true;
 		}
 
-		/*
-			prepare country data
-		*/
 		let code, country, countries = [];
 		if (result[2]) {
 			countries = result[2].trim().split('\n');
@@ -575,13 +586,57 @@ return view.extend({
 		o.optional = true;
 		o.rmempty = true;
 
-		o = s.taboption('feeds', form.Flag, 'ban_autoallowlist', _('Auto Allowlist'), _('Automatically transfers uplink IPs to the banIP allowlist.'));
+		o = s.taboption('feeds', form.DummyValue, '_feeds');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em><b>' + _('External allowlist feeds') + '</b></em>';
+
+		o = s.taboption('feeds', form.DynamicList, 'ban_allowurl', _('Allowlist Feed Selection'));
+		o.optional = true;
+		o.rmempty = true;
+		o.validate = function (section_id, value) {
+			if (!value) {
+				return true;
+			}
+			if (!value.match(/^(http:\/\/|https:\/\/)[A-Za-z0-9\/\.\-_\?\&\+=:~#]+$/)) {
+				return _('Protocol/URL format not supported');
+			}
+			return true;
+		}
+
+		o = s.taboption('feeds', form.DummyValue, '_feeds');
+		o.rawhtml = true;
+		o.default = '<hr style="width: 200px; height: 1px;" /><em><b>' + _('Local feed settings') + '</b></em>';
+
+		o = s.taboption('feeds', form.Flag, 'ban_autoallowlist', _('Auto Allowlist'), _('Automatically add resolved domains and uplink IPs to the local banIP allowlist.'));
 		o.default = 1
 		o.rmempty = false;
 
-		o = s.taboption('feeds', form.Flag, 'ban_autoblocklist', _('Auto Blocklist'), _('Automatically transfers suspicious IPs to the banIP blocklist.'));
+		o = s.taboption('feeds', form.ListValue, 'ban_autoallowuplink', _('Auto Allow Uplink'), _('Limit the uplink autoallow function.'));
+		o.depends('ban_autoallowlist', '1');
+		o.value('disable', _('Disable'));
+		o.value('subnet', _('Subnet (default)'));
+		o.value('ip', _('IP'));
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('feeds', form.Flag, 'ban_autoblocklist', _('Auto Blocklist'), _('Automatically add resolved domains and suspicious IPs to the local banIP blocklist.'));
 		o.default = 1
 		o.rmempty = false;
+
+		o = s.taboption('feeds', form.Flag, 'ban_autoblocksubnet', _('Auto Block Subnet'), _('Automatically add entire subnets to the blocklist Set based on an additional RDAP request with the suspicious IP.'));
+		o.default = 0
+		o.optional = true;
+		o.rmempty = true;
+
+		o = s.taboption('feeds', form.ListValue, 'ban_nftexpiry', _('Blocklist Set Expiry'), _('Expiry time for auto added blocklist Set members.'));
+		o.value('10s');
+		o.value('1m');
+		o.value('5m');
+		o.value('1h');
+		o.value('2h');
+		o.value('1d');
+		o.optional = true;
+		o.rmempty = true;
 
 		o = s.taboption('feeds', form.Flag, 'ban_allowlistonly', _('Allowlist Only'), _('Restrict the internet access from/to a small number of secure IPs.'));
 		o.rmempty = false;

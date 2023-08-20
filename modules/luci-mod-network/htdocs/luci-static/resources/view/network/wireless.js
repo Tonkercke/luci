@@ -264,28 +264,6 @@ function network_updown(id, map, ev) {
 	});
 }
 
-function change_mac(id, ev) {
-	var radio = uci.get('wireless', id, 'device'),
-		disabled = (uci.get('wireless', id, 'disabled') == '1') ||
-		(uci.get('wireless', radio, 'disabled') == '1');
-
-	var wifiname = uci.get('wireless', id, 'ssid');
-	var args = ['/etc/config/scp/ch_mac.sh', ':', id ];
-
-	if (disabled || (id == 'all')) {
-		return fs.exec('sh', args).then(function(res) {
-			var psout = document.querySelector('.pseudo-output');
-			psout.style.display = '';
-			dom.content(psout, E('pre', [ res.stdout || '', res.stderr || '' ]));
-		}).catch(function(err) {
-			ui.addNotification(null, E('p', [ err ]))
-		});
-	} else {
-		ui.addNotification(null, E('p', {}, _('First, Please disable network') + ' "' + wifiname + '"'));
-		return '';
-	}
-}
-
 function next_free_sid(offset) {
 	var sid = 'wifinet' + offset;
 
@@ -912,10 +890,6 @@ return view.extend({
 				var isDisabled = (inst.get('disabled') == '1' ||
 					uci.get('wireless', inst.getWifiDeviceName(), 'disabled') == '1');
 
-				if (isDisabled && (uci.get('wireless', section_id, 'mode') == 'sta')) {
-					var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
-				}
-
 				btns = [
 					E('button', {
 						'class': 'cbi-button cbi-button-neutral enable-disable',
@@ -931,12 +905,7 @@ return view.extend({
 						'class': 'cbi-button cbi-button-negative remove',
 						'title': _('Delete this network'),
 						'click': ui.createHandlerFn(this, 'handleRemove', section_id)
-					}, _('Remove')),
-					E('button', {
-						'class': 'cbi-button cbi-button-neutral',
-						'title': _('Change MAC and Hostname'),
-						'click': ui.createHandlerFn(this, change_mac, section_id)
-					}, _('Pseudo'))
+					}, _('Remove'))
 				];
 			}
 
@@ -2296,29 +2265,7 @@ return view.extend({
 
 			cbi_update_table(table, [], E('em', { 'class': 'spinning' }, _('Collecting data...')))
 
-			var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
-
-			var psbtns = E('div', {'style': isPseudo ? 'padding-right:0px' : 'display:none' },
-				E('table', { 'class': 'table cbi-section-table' }, [
-					E('tr', { 'class': 'tr table-titles' }, [
-						E('td', { 'class': 'td cbi-value-field' }),
-						E('td', { 'class': 'td middle cbi-section-actions', 'width':'25%' },
-							E('div', {},
-								E('button', {
-									'class': 'cbi-button cbi-button-neutral fade-in',
-									'title': _('Change the mac and hostname of all wifinet'),
-									'click': ui.createHandlerFn(this, change_mac, 'all')
-								}, _('Pseudo all wifinet'))
-							)
-						)
-					]),
-					E('tr', { 'class': 'tr table-titles' },
-						E('td', { 'class': 'td cbi-value-field pseudo-output', 'colspan':'2', 'style': 'display:none' })
-					)
-				])
-			);
-
-			return E([ psbtns, nodes, E('h3', _('Associated Stations')), table ]);
+			return E([ nodes, E('h3', _('Associated Stations')), table ]);
 		}, this, m));
 	}
 });
