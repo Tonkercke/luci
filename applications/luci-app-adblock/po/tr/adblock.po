@@ -18,7 +18,6 @@ msgstr "Eylem"
 msgid "Active Sources"
 msgstr "Etkin Kaynaklar"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Reklam Engelleyici"
@@ -226,7 +225,6 @@ msgid "DNS Instance"
 msgstr "DNS Örneği"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNS Raporu"
@@ -295,12 +293,10 @@ msgstr "E-Posta Gönderen Adresi"
 msgid "E-Mail Topic"
 msgstr "E-Posta Konusu"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Karalisteyi Düzenle"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Beyazlisteyi Düzenle"
@@ -479,7 +475,6 @@ msgstr ""
 "Desteklenen ve tam olarak önceden yapılandırılmış indirme yardımcı "
 "programlarının listesi."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Günlük Kayıtlarını Göster"
@@ -504,7 +499,6 @@ msgstr "Sorgu sonuçları yok!"
 msgid "No adblock related logs yet!"
 msgstr "Henüz adblock ile ilgili kayıt yok!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Genel bakış"

@@ -10,26 +10,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.4-dev\n"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:57
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:113
 msgid "5 Minute"
 msgstr "5分"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:21
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:40
 msgid "Cancel"
 msgstr "キャンセル"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:130
+msgid "Clear data for all interfaces"
+msgstr ""
 
 #: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:27
 msgid "Configuration"
 msgstr "設定"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:59
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:78
+msgid "Could not load graph, no data available:"
+msgstr ""
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:115
 msgid "Daily"
 msgstr "毎日"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:26
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:82
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:59
 msgid "Delete"
 msgstr "削除"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:34
+msgid "Delete data for ALL interfaces"
+msgstr ""
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:15
 msgid "Delete interface <em>%h</em>"
@@ -47,7 +61,7 @@ msgstr "LuCIアプリのvnstat2へのアクセスを許可"
 msgid "Graphs"
 msgstr "グラフ"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:58
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:114
 msgid "Hourly"
 msgstr "毎時"
 
@@ -59,7 +73,7 @@ msgstr "インターフェース"
 msgid "Interfaces"
 msgstr "インターフェース"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:15
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:71
 msgid "Loading graphs…"
 msgstr "グラフを読み込み中…"
 
@@ -67,11 +81,11 @@ msgstr "グラフを読み込み中…"
 msgid "Monitor interfaces"
 msgstr "監視するインターフェース"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:60
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:116
 msgid "Monthly"
 msgstr "毎月"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:62
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:118
 msgid ""
 "No monitored interfaces have been found. Go to the configuration to enable "
 "monitoring for one or more interfaces."
@@ -83,9 +97,15 @@ msgstr ""
 msgid "No unconfigured interfaces found in database."
 msgstr "データベースに未構成のインターフェースが見つかりません。"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:55
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:111
 msgid "Summary"
 msgstr "要約"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:35
+msgid ""
+"The data will be removed from the database permanently. This cannot be "
+"undone."
+msgstr ""
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:16
 msgid ""
@@ -110,15 +130,23 @@ msgstr ""
 "これらのインターフェースはvnStatのデータベースに存在しますが、上記では構成さ"
 "れていません。"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:56
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:112
 msgid "Top"
 msgstr "トップ"
+
+#: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:3
+msgid "Traffic Monitor"
+msgstr ""
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:102
 msgid "Unconfigured interfaces"
 msgstr "未構成のインターフェース"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:61
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:108
+msgid "Warning: The service is not running, graphs will not be updated!"
+msgstr ""
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:117
 msgid "Yearly"
 msgstr "毎年"
 
@@ -126,13 +154,9 @@ msgstr "毎年"
 msgid "vnStat"
 msgstr "vnStat"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:53
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:106
 msgid "vnStat Graphs"
 msgstr "vnStatグラフ"
-
-#: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:3
-msgid "vnStat Traffic Monitor"
-msgstr "vnStatトラフィックモニター"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:43
 msgid ""

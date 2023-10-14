@@ -10,26 +10,40 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 4.12-dev\n"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:57
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:113
 msgid "5 Minute"
 msgstr "5 분"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:21
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:40
 msgid "Cancel"
 msgstr "취소"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:130
+msgid "Clear data for all interfaces"
+msgstr "모든 인터페이스의 데이터 지우기"
 
 #: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:27
 msgid "Configuration"
 msgstr "설정"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:59
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:78
+msgid "Could not load graph, no data available:"
+msgstr "데이터가 없어 그래프를 로드할 수 없습니다. :"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:115
 msgid "Daily"
 msgstr "매일"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:26
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:82
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:59
 msgid "Delete"
 msgstr "삭제"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:34
+msgid "Delete data for ALL interfaces"
+msgstr "모든 인터페이스에 대한 데이터 삭제"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:15
 msgid "Delete interface <em>%h</em>"
@@ -47,7 +61,7 @@ msgstr "LuCI 앱 vnstat2에 대한 액세스 권한 부여"
 msgid "Graphs"
 msgstr "그래프"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:58
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:114
 msgid "Hourly"
 msgstr "매시간"
 
@@ -59,7 +73,7 @@ msgstr "인터페이스"
 msgid "Interfaces"
 msgstr "인터페이스"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:15
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:71
 msgid "Loading graphs…"
 msgstr "그래프 로드 중…"
 
@@ -67,11 +81,11 @@ msgstr "그래프 로드 중…"
 msgid "Monitor interfaces"
 msgstr "모니터 인터페이스"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:60
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:116
 msgid "Monthly"
 msgstr "매달"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:62
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:118
 msgid ""
 "No monitored interfaces have been found. Go to the configuration to enable "
 "monitoring for one or more interfaces."
@@ -83,9 +97,16 @@ msgstr ""
 msgid "No unconfigured interfaces found in database."
 msgstr "데이터베이스에 구성되지 않은 인터페이스가 없습니다."
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:55
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:111
 msgid "Summary"
 msgstr "요약"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:35
+msgid ""
+"The data will be removed from the database permanently. This cannot be "
+"undone."
+msgstr ""
+"데이터는 데이터베이스에서 영구적으로 제거됩니다. 실행 후 취소 할 수 없습니다."
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:16
 msgid ""
@@ -108,15 +129,23 @@ msgid ""
 msgstr ""
 "이러한 인터페이스는 vnStat 데이터베이스에 있지만 위에서 구성되지 않았습니다."
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:56
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:112
 msgid "Top"
 msgstr "최고"
+
+#: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:3
+msgid "Traffic Monitor"
+msgstr "트래픽 모니터"
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:102
 msgid "Unconfigured interfaces"
 msgstr "구성되지 않은 인터페이스"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:61
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:108
+msgid "Warning: The service is not running, graphs will not be updated!"
+msgstr "경고: 서비스가 실행되고 있지 않으며 그래프가 업데이트되지 않습니다!"
+
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:117
 msgid "Yearly"
 msgstr "매년"
 
@@ -124,13 +153,9 @@ msgstr "매년"
 msgid "vnStat"
 msgstr "vnStat"
 
-#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:53
+#: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/graphs.js:106
 msgid "vnStat Graphs"
 msgstr "vnStat 그래프"
-
-#: applications/luci-app-vnstat2/root/usr/share/luci/menu.d/luci-app-vnstat2.json:3
-msgid "vnStat Traffic Monitor"
-msgstr ""
 
 #: applications/luci-app-vnstat2/htdocs/luci-static/resources/view/vnstat2/config.js:43
 msgid ""

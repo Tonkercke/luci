@@ -21,7 +21,6 @@ msgstr "アクション"
 msgid "Active Sources"
 msgstr "アクティブなソース"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Adblock"
@@ -219,7 +218,6 @@ msgid "DNS Instance"
 msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNSレポート"
@@ -288,12 +286,10 @@ msgstr "Eメール送信者アドレス"
 msgid "E-Mail Topic"
 msgstr "Eメールトピック"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "ブラックリストの編集"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "ホワイトリストの編集"
@@ -462,7 +458,6 @@ msgstr ""
 msgid "List of supported and fully pre-configured download utilities."
 msgstr "サポートされ、かつ設定済のダウンロード ユーティリティの一覧です。"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "ログビュー"
@@ -485,7 +480,6 @@ msgstr "検索結果がありません！"
 msgid "No adblock related logs yet!"
 msgstr "まだadblolck関連のログがありません！"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "概要"

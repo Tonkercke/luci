@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-12-13 23:53+0000\n"
+"PO-Revision-Date: 2023-09-17 17:51+0000\n"
 "Last-Translator: Kristoffer Grundström <swedishsailfishosuser@tutanota.com>\n"
 "Language-Team: Swedish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock/sv/>\n"
@@ -8,7 +8,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.10-dev\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:272
 msgid "Action"
@@ -18,7 +18,6 @@ msgstr "Åtgärd"
 msgid "Active Sources"
 msgstr "Aktiva källor"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Adblock"
@@ -219,7 +218,6 @@ msgid "DNS Instance"
 msgstr "DNS-instans"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNS-rapport"
@@ -250,7 +248,7 @@ msgstr "Domäner"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:407
 msgid "Don't check SSL server certificates during download."
-msgstr ""
+msgstr "Kontrollera inte serverns SSL-certifikat under hämtning."
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:407
 msgid "Download Insecure"
@@ -278,7 +276,7 @@ msgstr "E-postprofil"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:364
 msgid "E-Mail Receiver Address"
-msgstr "E-postmottagaradress"
+msgstr "Mottagarens e-postadress"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:515
 msgid "E-Mail Sender Address"
@@ -288,12 +286,10 @@ msgstr "Avsändaradress för e-post"
 msgid "E-Mail Topic"
 msgstr "E-postämne"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Redigera svartlista"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Redigera vitlista"
@@ -462,7 +458,6 @@ msgstr ""
 msgid "List of supported and fully pre-configured download utilities."
 msgstr "Lista över stödda och helt förkonfigurerade nedladdningsverktyg."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Logutsikt"
@@ -485,7 +480,6 @@ msgstr "Inga frågeresultat!"
 msgid "No adblock related logs yet!"
 msgstr "Inga annonsblockerinsrelaterade loggar ännu!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Överblick"

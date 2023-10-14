@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-ddns 2.4.0-1\n"
 "POT-Creation-Date: 2016-01-30 11:07+0100\n"
-"PO-Revision-Date: 2023-08-03 09:37+0000\n"
-"Last-Translator: random r <epsilin@yopmail.com>\n"
+"PO-Revision-Date: 2023-09-10 12:33+0000\n"
+"Last-Translator: Claudio Mezzasalma <claudio.mezzasalma@gmail.com>\n"
 "Language-Team: Italian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsddns/it/>\n"
 "Language: it\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 5.0-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:432
 msgid "\"../\" not allowed in path for Security Reason."
@@ -635,7 +635,7 @@ msgstr "Sostituisci [PASSWORD] nell'URL di aggiornamento (URL codificato)"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:744
 msgid "Replaces [USERNAME] in Update-URL (URL-encoded)"
-msgstr "Sostituisci [NOME UTENTE] nell'URL di aggiornamento (URL codificato)"
+msgstr "Sostituisci [USERNAME] nell'URL di aggiornamento (URL codificato)"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:290
 msgid "Restart DDns"
@@ -942,20 +942,3 @@ msgstr "secondi"
 msgid "to run HTTPS without verification of server certificates (insecure)"
 msgstr ""
 "per eseguire HTTPS senza la verifica dei certificati del server (insicuro)"
-
-#~ msgid "Interval unit to force updates send to DDNS Provider"
-#~ msgstr ""
-#~ "Unità dell'intervallo per l'invio forzato di aggiornamento al provider "
-#~ "DDNS"
-
-#~ msgid "On Error the script will retry the failed action after given time"
-#~ msgstr ""
-#~ "In caso di errore lo script riproverà l'azione fallita dopo il tempo dato"
-
-#~ msgid "On Error the script will stop execution after given number of retrys"
-#~ msgstr ""
-#~ "In caso di errori lo script fermerà l'esecuzione dopo il numero di "
-#~ "tentativi dati"
-
-#~ msgid "The default setting of '0' will retry infinite."
-#~ msgstr "L'opzione di default '0' riproverà all'infinito."

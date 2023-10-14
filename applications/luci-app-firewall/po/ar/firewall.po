@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-03-30 17:00+0200\n"
-"PO-Revision-Date: 2021-03-07 14:36+0000\n"
-"Last-Translator: Said Zakaria <said.zakaria@gmail.com>\n"
+"PO-Revision-Date: 2023-09-18 15:45+0000\n"
+"Last-Translator: David Rapaň <david@rapan.cz>\n"
 "Language-Team: Arabic <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsfirewall/ar/>\n"
 "Language: ar\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
-"X-Generator: Weblate 4.5.1\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:48
 msgid ""
@@ -93,7 +93,7 @@ msgid ""
 "<var data-tooltip=\"MARK\">%{set_mark?Assign:XOR}</var> firewall mark "
 "<var>%{set_mark?:%{set_xmark}}</var>"
 msgstr ""
-"علامة جدار الحماية  <var data-tooltip=\"MARK\">%{set_mark?Assign:XOR}</var> "
+"علامة جدار الحماية <var data-tooltip=\"MARK\">%{set_mark?Assign:XOR}</var> "
 "<var>%{set_mark?:%{set_xmark}}</var>"
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:90
@@ -377,7 +377,7 @@ msgstr "عنوان IP خارجي"
 msgid "External port"
 msgstr "منفذ خارجي"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:339
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:345
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:466
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:338
 msgid "Extra arguments"
@@ -708,7 +708,7 @@ msgstr ""
 "تطابق حركة المرور المعاد توجيهها الناشئة من منفذ المصدر المحدد أو نطاق "
 "المنفذ."
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:316
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:322
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:442
 msgid "Match helper"
 msgstr "مساعد المطابقة"
@@ -725,7 +725,7 @@ msgstr ""
 msgid "Match mark"
 msgstr "علامة المطابقة"
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:316
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:322
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:442
 msgid "Match traffic using the specified connection tracking helper."
 msgstr "تطابق حركة المرور باستخدام مساعد تتبع الاتصال المحدد."
@@ -840,7 +840,7 @@ msgid ""
 "optional.<br />*Note: datatype <code>set</code> is unsupported in fw4."
 msgstr ""
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:340
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:346
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:467
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/snats.js:339
 msgid "Passes additional arguments to iptables. Use with care!"
@@ -899,6 +899,10 @@ msgstr "إعادة توجيه حركة المرور الواردة المتطا�
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/ipsets.js:115
 msgid "Refer To External Set"
+msgstr ""
+
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:316
+msgid "Reflection zones"
 msgstr ""
 
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:89
@@ -1172,7 +1176,7 @@ msgid ""
 "to the set.<br />Max: 2147483 seconds."
 msgstr ""
 
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:331
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:337
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:457
 msgid "Unknown or not installed conntrack helper \"%s\""
 msgstr "مساعد conntrack غير معروف أو غير مثبت \" %s\""
@@ -1282,6 +1286,12 @@ msgstr "المنطقة=> تَوجِيه"
 msgid "Zones"
 msgstr "المناطق"
 
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:316
+msgid ""
+"Zones from which reflection rules shall be created. If unset, only the "
+"destination zone is used."
+msgstr ""
+
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:411
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:70
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/zones.js:153
@@ -1293,7 +1303,7 @@ msgstr "قبول"
 #: applications/luci-app-firewall/htdocs/luci-static/resources/tools/firewall.js:484
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:266
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:297
-#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:318
+#: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/forwards.js:324
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:388
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:403
 #: applications/luci-app-firewall/htdocs/luci-static/resources/view/firewall/rules.js:437

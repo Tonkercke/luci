@@ -21,7 +21,6 @@ msgstr "Azione"
 msgid "Active Sources"
 msgstr "Fonti attive"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Blocco pubblicità"
@@ -230,7 +229,6 @@ msgid "DNS Instance"
 msgstr "Istanza DNS"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "Report del DNS"
@@ -299,12 +297,10 @@ msgstr "Indirizzo e-mail mittente"
 msgid "E-Mail Topic"
 msgstr "Oggetto e-mail"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Modifica lista nera"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Modifica lista bianca"
@@ -478,7 +474,6 @@ msgid "List of supported and fully pre-configured download utilities."
 msgstr ""
 "Elenco delle utilità di download supportate e completamente preconfigurate."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Vista dei log"
@@ -503,7 +498,6 @@ msgstr "Nessun risultato di ricerca!"
 msgid "No adblock related logs yet!"
 msgstr "Ancora nessun log relativo al blocco pubblicità!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Riepilogo"

@@ -1,14 +1,14 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-02-13 12:12+0000\n"
-"Last-Translator: ssantos <ssantos@web.de>\n"
+"PO-Revision-Date: 2023-08-20 12:46+0000\n"
+"Last-Translator: Felix Baumann <felix.bau@gmx.de>\n"
 "Language-Team: German <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock/de/>\n"
 "Language: de\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:272
 msgid "Action"
@@ -18,7 +18,6 @@ msgstr "Aktion"
 msgid "Active Sources"
 msgstr "Aktive Quellen"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Werbeblocker"
@@ -59,15 +58,15 @@ msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:301
 msgid "Advanced DNS Settings"
-msgstr "Fortgeschrittene DNS Einstellungen"
+msgstr "Erweiterte DNS Einstellungen"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:303
 msgid "Advanced E-Mail Settings"
-msgstr "Fortgeschrittene E-Mail Einstellungen"
+msgstr "Erweiterte E-Mail Einstellungen"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:302
 msgid "Advanced Report Settings"
-msgstr "Fortgeschrittene Berichtseinstellungen"
+msgstr "Erweiterte Berichtseinstellungen"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:464
 msgid "Allow Local Client IPs"
@@ -225,7 +224,6 @@ msgid "DNS Instance"
 msgstr "DNS-Instanz"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNS-Report"
@@ -294,12 +292,10 @@ msgstr "E-Mail Absenderadresse"
 msgid "E-Mail Topic"
 msgstr "E-Mail-Thema"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Blockierliste bearbeiten"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Positivliste bearbeiten"
@@ -474,7 +470,6 @@ msgstr ""
 "Liste der unterstützten und vollständig vorkonfigurierten Download-"
 "Hilfsprogramme."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Protokollansicht"
@@ -499,7 +494,6 @@ msgstr "Keine Abfrageergebnisse!"
 msgid "No adblock related logs yet!"
 msgstr "Aktuell noch keine Adblock-Logs vorhanden!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Übersicht"

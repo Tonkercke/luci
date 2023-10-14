@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-ddns 2.4.0-1\n"
 "POT-Creation-Date: 2016-01-30 11:07+0100\n"
-"PO-Revision-Date: 2023-03-05 14:10+0000\n"
+"PO-Revision-Date: 2023-09-10 09:27+0000\n"
 "Last-Translator: Franco Castillo <castillofrancodamian@gmail.com>\n"
 "Language-Team: Spanish <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsddns/es/>\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 5.0.1-dev\n"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:432
 msgid "\"../\" not allowed in path for Security Reason."
@@ -24,7 +24,7 @@ msgstr "Añadir nuevos servicios..."
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:608
 msgid "Advanced Settings"
-msgstr "Configuración avanzada"
+msgstr "Ajustes avanzados"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:401
 msgid "Allow non-public IP's"
@@ -949,21 +949,3 @@ msgstr "Segundos"
 msgid "to run HTTPS without verification of server certificates (insecure)"
 msgstr ""
 "Para ejecutar HTTPS sin verificación de certificados de servidor (inseguro)"
-
-#~ msgid "Interval unit to force updates send to DDNS Provider"
-#~ msgstr ""
-#~ "Unidad de intervalo para forzar el envío de actualizaciones al proveedor "
-#~ "de DDNS"
-
-#~ msgid "On Error the script will retry the failed action after given time"
-#~ msgstr ""
-#~ "En caso de error, el script volverá a intentar la acción fallida después "
-#~ "de un tiempo determinado"
-
-#~ msgid "On Error the script will stop execution after given number of retrys"
-#~ msgstr ""
-#~ "En caso de error, el script detendrá la ejecución después de un número "
-#~ "dado de reintentos"
-
-#~ msgid "The default setting of '0' will retry infinite."
-#~ msgstr "La configuración predeterminada de '0' reintentará infinito."

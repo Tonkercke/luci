@@ -27,7 +27,6 @@ LUCI_LANG.cs=Čeština (Czech)
 LUCI_LANG.da=Dansk (Danish)
 LUCI_LANG.de=Deutsch (German)
 LUCI_LANG.el=Ελληνικά (Greek)
-LUCI_LANG.en=English
 LUCI_LANG.es=Español (Spanish)
 LUCI_LANG.fi=Suomi (Finnish)
 LUCI_LANG.fr=Français (French)
@@ -37,6 +36,7 @@ LUCI_LANG.hu=Magyar (Hungarian)
 LUCI_LANG.it=Italiano (Italian)
 LUCI_LANG.ja=日本語 (Japanese)
 LUCI_LANG.ko=한국어 (Korean)
+LUCI_LANG.lt=Lietuvių (Lithuanian)
 LUCI_LANG.mr=Marāṭhī (Marathi)
 LUCI_LANG.ms=Bahasa Melayu (Malay)
 LUCI_LANG.nb_NO=Norsk (Norwegian)
@@ -73,6 +73,7 @@ LUCI_LC_ALIAS.zh_Hant=zh-tw
 HTDOCS = /www
 LUA_LIBRARYDIR = /usr/lib/lua
 LUCI_LIBRARYDIR = $(LUA_LIBRARYDIR)/luci
+UCODE_LIBRARYDIR = /usr/share/ucode/luci
 
 
 # 1: everything expect po subdir or only po subdir
@@ -137,6 +138,12 @@ include $(INCLUDE_DIR)/package.mk
 LUCI_SUBMENU_DEFAULT=$(if $(LUCI_MENU.$(LUCI_TYPE)),$(LUCI_MENU.$(LUCI_TYPE)),$(LUCI_MENU.app))
 LUCI_SUBMENU=$(if $(LUCI_SUBMENU_FORCED),$(LUCI_SUBMENU_FORCED),$(LUCI_SUBMENU_DEFAULT))
 
+ifneq ($(wildcard ${CURDIR}/luasrc/*),)
+ ifneq ($(filter-out luci-lib-base luci-lua-runtime,$(PKG_NAME)),)
+  LUCI_DEPENDS += +luci-lua-runtime
+ endif
+endif
+
 define Package/$(PKG_NAME)
   SECTION:=$(LUCI_SECTION)
   CATEGORY:=$(LUCI_CATEGORY)
@@ -160,7 +167,7 @@ ifneq ($(LUCI_DESCRIPTION),)
 endif
 
 define Build/Prepare
-	for d in luasrc htdocs root src; do \
+	for d in luasrc ucode htdocs root src; do \
 	  if [ -d ./$$$$d ]; then \
 	    mkdir -p $(PKG_BUILD_DIR)/$$$$d; \
 		$(CP) ./$$$$d/* $(PKG_BUILD_DIR)/$$$$d/; \
@@ -192,6 +199,11 @@ define Package/$(PKG_NAME)/install
 	$(FIND) $(1)$(LUCI_LIBRARYDIR)/ -type f -name '*.luadoc' | $(XARGS) rm
 	$(if $(CONFIG_LUCI_SRCDIET),$(call SrcDiet,$(1)$(LUCI_LIBRARYDIR)/),true)
 	$(call SubstituteVersion,$(1)$(LUCI_LIBRARYDIR)/)
+ endif
+ ifneq ($(wildcard ${CURDIR}/ucode),)
+	  $(INSTALL_DIR) $(1)$(UCODE_LIBRARYDIR)
+	  cp -pR $(PKG_BUILD_DIR)/ucode/* $(1)$(UCODE_LIBRARYDIR)/
+	  $(call SubstituteVersion,$(1)$(UCODE_LIBRARYDIR)/)
  endif
  ifneq ($(wildcard ${CURDIR}/htdocs),)
 	$(INSTALL_DIR) $(1)$(HTDOCS)
@@ -264,6 +276,11 @@ define SubstituteVersion
 	$(FIND) $(1) -type f -name '*.htm' | while read src; do \
 		$(SED) 's/<%# *\([^ ]*\)PKG_VERSION *%>/\1$(if $(PKG_VERSION),$(PKG_VERSION),$(PKG_SRC_VERSION))/g' \
 		    -e 's/"\(<%= *\(media\|resource\) *%>[^"]*\.\(js\|css\)\)"/"\1?v=$(if $(PKG_VERSION),$(PKG_VERSION),$(PKG_SRC_VERSION))"/g' \
+			"$$$$src"; \
+	done; \
+	$(FIND) $(1) -type f -name '*.ut' | while read src; do \
+		$(SED) 's/{# *\([^ ]*\)PKG_VERSION *#}/\1$(if $(PKG_VERSION),$(PKG_VERSION),$(PKG_SRC_VERSION))/g' \
+		    -e 's/"\({{ *\(media\|resource\) *}}[^"]*\.\(js\|css\)\)"/"\1?v=$(if $(PKG_VERSION),$(PKG_VERSION),$(PKG_SRC_VERSION))"/g' \
 			"$$$$src"; \
 	done
 endef

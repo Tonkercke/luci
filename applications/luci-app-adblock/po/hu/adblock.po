@@ -1,16 +1,17 @@
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2022-01-17 21:55+0000\n"
-"Last-Translator: KinteLiX <superh552@gmail.com>\n"
+"PO-Revision-Date: 2023-10-06 08:29+0000\n"
+"Last-Translator: Norbert Szentner <upd6la1j@duck.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsadblock/hu/>\n"
 "Language: hu\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.11-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/dnsreport.js:272
+#, fuzzy
 msgid "Action"
 msgstr "Művelet"
 
@@ -18,7 +19,6 @@ msgstr "Művelet"
 msgid "Active Sources"
 msgstr "Aktív források"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Reklámblokkoló"
@@ -210,7 +210,6 @@ msgid "DNS Instance"
 msgstr ""
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNS riport"
@@ -282,12 +281,10 @@ msgstr "E-Mail küldő cím"
 msgid "E-Mail Topic"
 msgstr "E-Mail téma"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Feketelista szerkesztése"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Fehérlista szerkesztése"
@@ -447,7 +444,6 @@ msgid "List of supported and fully pre-configured download utilities."
 msgstr ""
 "A támogatott és teljesen előre beállított letöltési segédprogramok listája."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Log nézet"
@@ -470,7 +466,6 @@ msgstr "Nincs a keresésnek megfelelő elem!"
 msgid "No adblock related logs yet!"
 msgstr "Még nincsenek adblock-os naplók!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Áttekintés"

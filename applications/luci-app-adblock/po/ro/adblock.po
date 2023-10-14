@@ -19,7 +19,6 @@ msgstr "Acțiune"
 msgid "Active Sources"
 msgstr "Surse active"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "Adblock"
@@ -228,7 +227,6 @@ msgid "DNS Instance"
 msgstr "Instanța DNS"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "Raport DNS"
@@ -297,12 +295,10 @@ msgstr "Adresa expeditorului de e-mail"
 msgid "E-Mail Topic"
 msgstr "Subiect E-Mail"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "Editare listă neagră"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "Editare listă albă"
@@ -478,7 +474,6 @@ msgstr ""
 msgid "List of supported and fully pre-configured download utilities."
 msgstr "Lista utilităților de descărcare acceptate și complet pre-configurate."
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "Vizualizare jurnal"
@@ -503,7 +498,6 @@ msgstr "Nu există rezultate de căutare!"
 msgid "No adblock related logs yet!"
 msgstr "Nu există încă jurnale adblock!"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "Prezentare generală"

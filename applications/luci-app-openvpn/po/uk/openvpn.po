@@ -101,7 +101,7 @@ msgstr "Змінити пріоритет процесу"
 msgid "Change to directory before initialization"
 msgstr "Перейти до каталогу перед ініціалізацією"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:776
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:780
 msgid "Check peer certificate against a CRL"
 msgstr "Перевірити peer-сертифікат у CRL"
 
@@ -186,7 +186,7 @@ msgstr "Насправді не виконувати ifconfig"
 msgid "Don't add routes automatically"
 msgstr "Не додавати маршрути автоматично"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:760
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:764
 msgid "Don't cache --askpass or --auth-user-pass passwords"
 msgstr "Не кешувати --askpass або --auth-user-pass паролі"
 
@@ -263,6 +263,13 @@ msgstr "Увімкнено"
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:752
 msgid "Encrypt and authenticate all control channel packets with the key"
 msgstr "Шифрувати та аутентифікувати ключем всі пакети каналу управління"
+
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:756
+msgid ""
+"Encrypt and authenticate all control channel packets with the key, version 2."
+msgstr ""
+"Шифрувати та аутентифікувати всі пакети каналу управління за допомогою "
+"ключа, версія 2."
 
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:622
 msgid "Encryption cipher for packets"
@@ -388,7 +395,7 @@ msgstr "Кількість рядків для історії журналу"
 msgid "OVPN configuration file upload"
 msgstr "Завантаження файлу конфігурації OVPN"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:764
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:768
 msgid "Only accept connections from given X509 name"
 msgstr "Приймати з’єднання лише від вказаного X509 імені"
 
@@ -512,11 +519,11 @@ msgstr "Повторно узгодити ключ каналу даних че�
 msgid "Replay protection sliding window size"
 msgstr "Захист від повторного відтворення - розмір плаваючого вікна"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:768
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:772
 msgid "Require explicit designation on certificate"
 msgstr "Вимагати чіткого зазначення на сертифікаті"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:772
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:776
 msgid "Require explicit key usage on certificate"
 msgstr "Вимагати явного використання ключа в сертифікаті"
 
@@ -524,7 +531,7 @@ msgstr "Вимагати явного використання ключа в с�
 msgid "Restart after remote ping timeout"
 msgstr "Перезапустити після тайм-ауту ping віддаленого вузла"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:796
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:800
 msgid "Restrict the allowed ciphers to be negotiated"
 msgstr "Обмежте дозволені шифри для узгодження"
 
@@ -752,16 +759,16 @@ msgid ""
 "configuration."
 msgstr "Файл конфігурації OVPN (%s) не знайдено, перевірте ваші налаштування."
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:784
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:788
 msgid "The highest supported TLS version"
 msgstr "Найвища підтримувана версія TLS"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:788
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:792
 #: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-basic.lua:69
 msgid "The key direction for 'tls-auth' and 'secret' options"
 msgstr "Задати ключ для параметрів 'tls-auth' і 'secret'"
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:780
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:784
 msgid "The lowest supported TLS version"
 msgstr "Найнижча підтримувана версія TLS"
 
@@ -773,7 +780,7 @@ msgstr ""
 "Розмір файлу конфігурації OVPN (%s) занадто великий для онлайн-редагування в "
 "LuCI (&ge; 100 KB)."
 
-#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:792
+#: applications/luci-app-openvpn/luasrc/model/cbi/openvpn-advanced.lua:796
 msgid "This completely disables cipher negotiation"
 msgstr "Це повністю вимикає узгодження шифру"
 

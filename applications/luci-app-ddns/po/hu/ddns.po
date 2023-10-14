@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: luci-app-ddns 2.4.0-1\n"
 "POT-Creation-Date: 2016-01-30 11:07+0100\n"
-"PO-Revision-Date: 2022-12-14 00:53+0000\n"
-"Last-Translator: Gajdos Tamás <gajdipajti@gmail.com>\n"
+"PO-Revision-Date: 2023-10-06 08:29+0000\n"
+"Last-Translator: Norbert Szentner <upd6la1j@duck.com>\n"
 "Language-Team: Hungarian <https://hosted.weblate.org/projects/openwrt/"
 "luciapplicationsddns/hu/>\n"
 "Language: hu\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 4.15-dev\n"
+"X-Generator: Weblate 5.1-dev\n"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:432
 msgid "\"../\" not allowed in path for Security Reason."
@@ -23,6 +23,7 @@ msgid "Add new services..."
 msgstr "Új szolgáltatások hozzáadása…"
 
 #: applications/luci-app-ddns/htdocs/luci-static/resources/view/ddns/overview.js:608
+#, fuzzy
 msgid "Advanced Settings"
 msgstr "Haladó Beállítások"
 
@@ -947,21 +948,3 @@ msgid "to run HTTPS without verification of server certificates (insecure)"
 msgstr ""
 "HTTPS futtatásához a kiszolgáló tanúsítványainak ellenőrzése nélkül (nem "
 "biztonságos)"
-
-#~ msgid "Interval unit to force updates send to DDNS Provider"
-#~ msgstr ""
-#~ "Időköz mértékegysége a DDNS-szolgáltatónak küldött frissítések "
-#~ "kényszerítéséhez"
-
-#~ msgid "On Error the script will retry the failed action after given time"
-#~ msgstr ""
-#~ "Hiba esetén a parancsfájl újrapróbálja a sikertelen műveletet a megadott "
-#~ "idő után"
-
-#~ msgid "On Error the script will stop execution after given number of retrys"
-#~ msgstr ""
-#~ "Hiba esetén a parancsfájl leállítja a végrehajtást a megadott "
-#~ "újrapróbálkozások száma után"
-
-#~ msgid "The default setting of '0' will retry infinite."
-#~ msgstr "Az alapértelmezett „0” beállítás végtelenszer fog újrapróbálkozni."

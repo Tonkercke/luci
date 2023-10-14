@@ -24,7 +24,6 @@ msgstr "動作"
 msgid "Active Sources"
 msgstr "使用中的來源"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:6
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:3
 msgid "Adblock"
 msgstr "廣告攔截"
@@ -221,7 +220,6 @@ msgid "DNS Instance"
 msgstr "DNS 實例"
 
 #: applications/luci-app-adblock/htdocs/luci-static/resources/view/adblock/overview.js:356
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:8
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:27
 msgid "DNS Report"
 msgstr "DNS 報告"
@@ -290,12 +288,10 @@ msgstr "電郵寄件人位址"
 msgid "E-Mail Topic"
 msgstr "電郵主旨"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:9
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:35
 msgid "Edit Blacklist"
 msgstr "編輯黑名單"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:10
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:43
 msgid "Edit Whitelist"
 msgstr "編輯白名單"
@@ -462,7 +458,6 @@ msgstr ""
 msgid "List of supported and fully pre-configured download utilities."
 msgstr "支援的下載工具清單（完全預先配置）。"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:11
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:51
 msgid "Log View"
 msgstr "日誌檢視"
@@ -485,7 +480,6 @@ msgstr "查詢結果為空！"
 msgid "No adblock related logs yet!"
 msgstr "尚無與 Adblock 相關的日誌！"
 
-#: applications/luci-app-adblock/luasrc/controller/adblock.lua:7
 #: applications/luci-app-adblock/root/usr/share/luci/menu.d/luci-app-adblock.json:19
 msgid "Overview"
 msgstr "概覽"
