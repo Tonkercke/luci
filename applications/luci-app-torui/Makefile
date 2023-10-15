@@ -6,7 +6,7 @@ PKG_RELEASE:=0
 
 LUCI_TITLE:=Luci Tor UI
 LUCI_PKGARCH:=all
-LUCI_DEPENDS:=+tor +wget-ssl +tor-geoip
+LUCI_DEPENDS:=+tor +wget-ssl
 
 define Package/$(PKG_NAME)/conffiles
 /etc/config/torui
