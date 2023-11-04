@@ -1,22 +1,17 @@
 <script type="text/javascript">//<![CDATA[
-XHR.poll(1, '<%=url([[admin]], [[nas]], [[filebrowser]], [[status]])%>', null,
+XHR.poll(3, '<%=url([[admin]], [[services]], [[filebrowser]], [[status]])%>', null,
 	function(x, data) {
 		var tb = document.getElementById('filebrowser_status');
 		if (data && tb) {
 			if (data.running) {
-				var links = '<font color=green>Filebrowser <%:运行中%></font><input class="cbi-button mar-10" type="button" value="<%:打开管理界面%>" onclick="openwebui();" />';
-				tb.innerHTML = links;
+				tb.innerHTML = '<em style=\"color:green\"><b><%:File Browser%> <%:RUNNING%></b></em>' + "<input class=\"cbi-button-reload mar-10\" type=\"button\" value=\" <%:Enter interface%> \" onclick=\"window.open('//" + window.location.hostname + ":" + <%=luci.sys.exec("uci -q get filebrowser.@global[0].port"):gsub("^%s*(.-)%s*$", "%1")%> + "/')\"/>";
 			} else {
-				tb.innerHTML = '<font color=red>Filebrowser <%:未运行%></font>';
+				tb.innerHTML = '<em style=\"color:red\"><b><%:File Browser%> <%:NOT RUNNING%></b></em>';
 			}
 		}
 	}
 );
 
-function openwebui(){
-	var url = window.location.host+":<%=luci.sys.exec("uci -q get filebrowser.config.port"):gsub("^%s*(.-)%s*$", "%1")%>";
-	window.open('http://'+url,'target','');
-};
 //]]>
 </script>
 <style>.mar-10 {margin-left: 50px; margin-right: 10px;}</style>
