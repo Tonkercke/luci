@@ -49,19 +49,19 @@ msgstr "%s 在多個 VLAN 中未選！"
 msgid "First, Please disable network"
 msgstr "首先，請關閉網絡"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:939
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:930
 msgid "Change MAC and Hostname"
 msgstr "更改物理地址和主機名"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:941
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:909
 msgid "Pseudo"
 msgstr "僞裝"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2208
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2307
 msgid "Change the mac and hostname of all wifinet"
 msgstr "更改所有無線網絡的物理地址和主機名"
 
-#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2210
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2309
 msgid "Pseudo all wifinet"
 msgstr "偽裝所有無線網絡"
 
