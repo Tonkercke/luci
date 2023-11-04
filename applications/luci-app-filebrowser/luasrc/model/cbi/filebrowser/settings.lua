@@ -1,10 +1,8 @@
-m = Map("filebrowser")
-m.title = translate("File Browser")
-m.description = translate("File explorer is software that creates your own cloud that you can install on a server, point it to a path, and then access your files through a beautiful web interface. You have many features available!")
+m = Map("filebrowser", translate("FileBrowser"), translate(
+            "File explorer is software that creates your own cloud that you can install on a server, point it to a path, and then access your files through a beautiful web interface. You have many features available!"))
+m:append(Template("filebrowser/status"))
 
-m:section(SimpleSection).template = "filebrowser/filebrowser_status"
-
-s = m:section(TypedSection, "global")
+s = m:section(TypedSection, "global", translate("Global Settings"))
 s.anonymous = true
 s.addremove = false
 
@@ -38,9 +36,17 @@ o.default = ""
 o = s:option(Value, "ssl_key", translate("SSL key"))
 o.default = ""
 
-o = s:option(Value, "root_path", translate("Root path"))
-o.description = translate("Point to a path to access your files in the web interface, default is /")
-o.default = "/"
+o = s:option(Value, "root_path", translate("Root path"), translate(
+                 "Point to a path to access your files in the web interface, default is /root"))
+o.default = "/root"
 o.rmempty = false
+
+o = s:option(Value, "executable_directory", translate("Executable directory"),
+             translate(
+                 "The file size is large, requiring at least 32M space. It is recommended to insert a usb flash drive or hard disk, or use it in the tmp directory<br />For example, /mnt/sda1<br />For example, /tmp"))
+o.default = "/tmp"
+o.rmempty = false
+
+m:append(Template("filebrowser/log"))
 
 return m

@@ -8,5 +8,6 @@ config global
 	option ssl_cert ''
 	option ssl_key ''
 	option root_path '/'
+	option executable_directory '/usr/bin/'
 	option enable '0'
 
