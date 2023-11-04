@@ -24,11 +24,11 @@ local brtag ="<br />"
 
 -- [VARS INITIALIZATION] ------------------------------------------------------
 -- Detect TOR
-local torui = luci.util.exec("/usr/bin/which torrc")
+local torui = luci.util.exec("/usr/bin/which tor")
 
 if torui ~= "" then
-	local torPid = luci.util.exec("/usr/bin/pgrep torrc")
-	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??torrc 2>/dev/null")
+	local torPid = luci.util.exec("/usr/bin/pgrep tor")
+	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
 	if torPid ~= "" then
 		torStatus = bold .. fontgreen .. translate("Tor is Running") .. endfont..
 		" " .. translate("show PID") .. " " .. torPid .. endbold
