@@ -1,16 +1,12 @@
-# Copyright (C) 2018-2020 Lienol <lawlienol@gmail.com>
+# SPDX-License-Identifier: Apache-2.0
 #
-# This is free software, licensed under the Apache License, Version 2.0 .
-#
-# Improve by xiaozhuai <xiaozhuai7@gmail.com>
-#
+# Copyright (C) 2023 ImmortalWrt.org
 
 include $(TOPDIR)/rules.mk
 
-LUCI_TITLE:=LuCI support for FileBrowser
-LUCI_DEPENDS:=+filebrowser
+LUCI_TITLE:=LuCI app for FileBrowser
 LUCI_PKGARCH:=all
-
+LUCI_DEPENDS:=+filebrowser
 
 include $(TOPDIR)/feeds/luci/luci.mk
 
