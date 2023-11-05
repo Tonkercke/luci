@@ -1,6 +1,6 @@
 m = Map("filebrowser", translate("FileBrowser"), translate(
             "File explorer is software that creates your own cloud that you can install on a server, point it to a path, and then access your files through a beautiful web interface. You have many features available!"))
-m:append(Template("filebrowser/status"))
+m:section(SimpleSection).template = "filebrowser/filebrowser_status"
 
 s = m:section(TypedSection, "global", translate("Global Settings"))
 s.anonymous = true
