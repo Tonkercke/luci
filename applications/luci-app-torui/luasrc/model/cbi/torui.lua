@@ -13,8 +13,8 @@ local torrcSampleConfig = 'User tor\n' ..
 						  'GeoIPExcludeUnknown 1\n' ..
 						  'ExcludeNodes {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
 						  'ExcludeExitNodes  {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
-						  'EntryNodes {us},{de},{gb},{nl},{ca},{se},{au}\n' ..
 						  'StrictNodes 1\n' ..
+						  'EntryNodes {us},{de},{gb},{nl},{ca},{se},{au}\n' ..
 						  'MiddleNodes {us},{de},{gb},{nl},{ca},{se}\n' ..
 						  'ExitNodes {us},{de},{nl},{ca},{gb},{se}\n' ..
 						  'StrictExitNodes 1'
@@ -34,14 +34,6 @@ local torui = luci.util.exec("/usr/bin/which tor")
 if torui ~= "" then
 	local torPid = luci.util.exec("/usr/bin/pgrep -x tor")
 	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
-
-	-- Split the output into lines and keep only the first line (the main Tor process PID)
-	local torPid = ""
-	for line in torPids:gmatch("[^\r\n]+") do
-        	torPid = line
-       		break -- Only keep the first line
-	end
-
 	if torPid ~= "" then
 		torStatus = bold .. fontgreen .. translate("Tor is Running") .. endfont..
 		" " .. translate("show PID") .. " " .. torPid .. endbold
