@@ -32,7 +32,7 @@ local brtag ="<br />"
 local torui = luci.util.exec("/usr/bin/which tor")
 
 if torui ~= "" then
-	local torPid = luci.util.exec("ps | grep '[t]or'")
+	local torPid = luci.util.exec("ps | grep '[t]orrc'")
 	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
 	if torPid ~= "" then
 		torPid = torPid:match("(%d+)")
