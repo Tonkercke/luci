@@ -13,8 +13,10 @@ local torrcSampleConfig = 'User tor\n' ..
 						  'GeoIPExcludeUnknown 1\n' ..
 						  'ExcludeNodes {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
 						  'ExcludeExitNodes  {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
-						  'StrictNodes 1'
-						  'ExitNodes {us},{de},{nl},{ca},{gb},{se}'
+						  'EntryNodes {us},{de},{gb},{nl},{ca},{se},{au}\n' ..
+						  'StrictNodes 1\n' ..
+						  'MiddleNodes {us},{de},{gb},{nl},{ca},{se}\n' ..
+						  'ExitNodes {us},{de},{nl},{ca},{gb},{se}\n' ..
 						  'StrictExitNodes 1'
 
 local fontred = "<font color=\"red\">"
