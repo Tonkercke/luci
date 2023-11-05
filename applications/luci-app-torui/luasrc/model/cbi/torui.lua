@@ -27,8 +27,16 @@ local brtag ="<br />"
 local torui = luci.util.exec("/usr/bin/which tor")
 
 if torui ~= "" then
-	local torPid = luci.util.exec("/usr/bin/pgrep tor")
+	local torPid = luci.util.exec("/usr/bin/pgrep -x tor")
 	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
+
+	-- Split the output into lines and keep only the first line (the main Tor process PID)
+	local torPid = ""
+	for line in torPids:gmatch("[^\r\n]+") do
+        	torPid = line
+       		break -- Only keep the first line
+	end
+
 	if torPid ~= "" then
 		torStatus = bold .. fontgreen .. translate("Tor is Running") .. endfont..
 		" " .. translate("show PID") .. " " .. torPid .. endbold
