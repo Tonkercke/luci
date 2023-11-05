@@ -8,11 +8,14 @@ local torrcSampleConfig = 'User tor\n' ..
 						  'HttpsProxy 127.0.0.1:3090\n' ..
 						  'SocksPort 0.0.0.0:9150\n' ..
 						  'DataDirectory /var/lib/tor\n' ..
+						  'GeoIPFile /usr/share/tor/geoip\n' ..
 						  'GeoIPv6File /usr/share/tor/geoip6\n' ..
 						  'GeoIPExcludeUnknown 1\n' ..
 						  'ExcludeNodes {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
 						  'ExcludeExitNodes  {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
 						  'StrictNodes 1'
+						  'ExitNodes {us},{de},{nl},{ca},{gb},{se}'
+						  'StrictExitNodes 1'
 
 local fontred = "<font color=\"red\">"
 local fontgreen = "<font color=\"green\">"
