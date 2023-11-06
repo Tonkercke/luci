@@ -264,6 +264,28 @@ function network_updown(id, map, ev) {
 	});
 }
 
+function change_mac(id, ev) {
+	var radio = uci.get('wireless', id, 'device'),
+		disabled = (uci.get('wireless', id, 'disabled') == '1') ||
+		(uci.get('wireless', radio, 'disabled') == '1');
+
+	var wifiname = uci.get('wireless', id, 'ssid');
+	var args = ['/etc/config/scp/ch_mac.sh', ':', id ];
+
+	if (disabled || (id == 'all')) {
+		return fs.exec('sh', args).then(function(res) {
+			var psout = document.querySelector('.pseudo-output');
+			psout.style.display = '';
+			dom.content(psout, E('pre', [ res.stdout || '', res.stderr || '' ]));
+		}).catch(function(err) {
+			ui.addNotification(null, E('p', [ err ]))
+		});
+	} else {
+		ui.addNotification(null, E('p', {}, _('First, Please disable network') + ' "' + wifiname + '"'));
+		return '';
+	}
+}
+
 function next_free_sid(offset) {
 	var sid = 'wifinet' + offset;
 
@@ -314,15 +336,23 @@ var CBIWifiFrequencyValue = form.Value.extend({
 			this.channels = {
 				'2g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
 				'5g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
-				'6g': L.hasSystemFeature('hostapd', 'acs') ? [ 'auto', 'auto', true ] : [],
+				'6g': [],
 				'60g': []
 			};
 
 			for (var i = 0; i < data[1].length; i++) {
-				if (!data[1][i].band)
-					continue;
+				var band;
 
-				var band = '%dg'.format(data[1][i].band);
+				if (data[1][i].mhz >= 2412 && data[1][i].mhz <= 2484)
+					band = '2g';
+				else if (data[1][i].mhz >= 5160 && data[1][i].mhz <= 5885)
+					band = '5g';
+				else if (data[1][i].mhz >= 5925 && data[1][i].mhz <= 7125)
+					band = '6g';
+				else if (data[1][i].mhz >= 58320 && data[1][i].mhz <= 69120)
+					band = '60g';
+				else
+					continue;
 
 				this.channels[band].push(
 					data[1][i].channel,
@@ -335,10 +365,10 @@ var CBIWifiFrequencyValue = form.Value.extend({
 				.reduce(function(o, v) { o[v] = true; return o }, {});
 
 			this.modes = [
-				'', 'Legacy', hwmodelist.a || hwmodelist.b || hwmodelist.g,
+				'', 'Legacy', true,
 				'n', 'N', hwmodelist.n,
-				'ac', 'AC', L.hasSystemFeature('hostapd', '11ac') && hwmodelist.ac,
-				'ax', 'AX', L.hasSystemFeature('hostapd', '11ax') && hwmodelist.ax
+				'ac', 'AC', hwmodelist.ac,
+				'ax', 'AX', hwmodelist.ax
 			];
 
 			var htmodelist = L.toArray(data[0] ? data[0].getHTModes() : null)
@@ -379,8 +409,7 @@ var CBIWifiFrequencyValue = form.Value.extend({
 				],
 				'ax': [
 					'2g', '2.4 GHz', this.channels['2g'].length > 3,
-					'5g', '5 GHz', this.channels['5g'].length > 3,
-					'6g', '6 GHz', this.channels['6g'].length > 3
+					'5g', '5 GHz', this.channels['5g'].length > 3
 				]
 			};
 		}, this));
@@ -883,6 +912,10 @@ return view.extend({
 				var isDisabled = (inst.get('disabled') == '1' ||
 					uci.get('wireless', inst.getWifiDeviceName(), 'disabled') == '1');
 
+				if (isDisabled && (uci.get('wireless', section_id, 'mode') == 'sta')) {
+					var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
+				}
+
 				btns = [
 					E('button', {
 						'class': 'cbi-button cbi-button-neutral enable-disable',
@@ -898,7 +931,12 @@ return view.extend({
 						'class': 'cbi-button cbi-button-negative remove',
 						'title': _('Delete this network'),
 						'click': ui.createHandlerFn(this, 'handleRemove', section_id)
-					}, _('Remove'))
+					}, _('Remove')),
+					E('button', {
+						'class': 'cbi-button cbi-button-neutral',
+						'title': _('Change MAC and Hostname'),
+						'click': ui.createHandlerFn(this, change_mac, section_id)
+					}, _('Pseudo'))
 				];
 			}
 
@@ -1143,7 +1181,7 @@ return view.extend({
 
 					/* https://w1.fi/cgit/hostap/commit/?id=34f7c699a6bcb5c45f82ceb6743354ad79296078  */
 					/* multicast_to_unicast https://github.com/openwrt/openwrt/commit/7babb978ad9d7fc29acb1ff86afb1eb343af303a */
-					o = ss.taboption('advanced', form.Flag, 'multicast_to_unicast_all', _('Multi To Unicast'), _('ARP, IPv4 and IPv6 (even 802.1Q) with multicast destination MACs are unicast to the STA MAC address. Note: This is not Directed Multicast Service (DMS) in 802.11v. Note: might break receiver STA multicast expectations.'));
+					o = ss.taboption('advanced', form.Flag, 'multicast_to_unicast', _('Multi To Unicast'), _('ARP, IPv4 and IPv6 (even 802.1Q) with multicast destination MACs are unicast to the STA MAC address. Note: This is not Directed Multicast Service (DMS) in 802.11v. Note: might break receiver STA multicast expectations.'));
 					o.rmempty = true;
 
 					o = ss.taboption('advanced', form.Flag, 'isolate', _('Isolate Clients'), _('Prevents client-to-client communication'));
@@ -1157,11 +1195,10 @@ return view.extend({
 					if (/^radio\d+\.network/.test(o.placeholder))
 						o.placeholder = '';
 
-					var macaddr = uci.get('wireless', radioNet.getName(), 'macaddr');
 					o = ss.taboption('advanced', form.Value, 'macaddr', _('MAC address'), _('Override default MAC address - the range of usable addresses might be limited by the driver'));
-					o.value('', _('driver default (%s)').format(!macaddr ? radioNet.getActiveBSSID() : _('no override')));
-					o.value('random', _('randomly generated'));
-					o.datatype = "or('random',macaddr)";
+					o.optional = true;
+					o.placeholder = radioNet.getActiveBSSID();
+					o.datatype = 'macaddr';
 
 					o = ss.taboption('advanced', form.Flag, 'short_preamble', _('Short Preamble'));
 					o.default = o.enabled;
@@ -1480,10 +1517,6 @@ return view.extend({
 				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa', 'wpa2', 'wpa3', 'wpa3-mixed'] });
 				o.rmempty = true;
 				o.password = true;
-
-				//WPA(1) has only WPA IE. Only >= WPA2 has RSN IE Preauth frames.
-				o = ss.taboption('encryption', form.Flag, 'rsn_preauth', _('RSN Preauth'), _('Robust Security Network (RSN): Allow roaming preauth for WPA2-EAP networks (and advertise it in WLAN beacons). Only works if the specified network interface is a bridge. Shortens the time-critical reassociation process.'));
-				add_dependency_permutations(o, { mode: ['ap', 'ap-wds'], encryption: ['wpa2', 'wpa3', 'wpa3-mixed'] });
 
 
 				o = ss.taboption('encryption', form.Value, '_wpa_key', _('Key'));
@@ -2263,9 +2296,29 @@ return view.extend({
 
 			cbi_update_table(table, [], E('em', { 'class': 'spinning' }, _('Collecting data...')))
 
-			return E([ nodes, E('h3', _('Associated Stations')), table ]);
-		}, this, m));
-	},
+			var isPseudo = (uci.get('network', 'globals', 'Pseudo') == '1');
 
-	handleReset: null
+			var psbtns = E('div', {'style': isPseudo ? 'padding-right:0px' : 'display:none' },
+				E('table', { 'class': 'table cbi-section-table' }, [
+					E('tr', { 'class': 'tr table-titles' }, [
+						E('td', { 'class': 'td cbi-value-field' }),
+						E('td', { 'class': 'td middle cbi-section-actions', 'width':'25%' },
+							E('div', {},
+								E('button', {
+									'class': 'cbi-button cbi-button-neutral fade-in',
+									'title': _('Change the mac and hostname of all wifinet'),
+									'click': ui.createHandlerFn(this, change_mac, 'all')
+								}, _('Pseudo all wifinet'))
+							)
+						)
+					]),
+					E('tr', { 'class': 'tr table-titles' },
+						E('td', { 'class': 'td cbi-value-field pseudo-output', 'colspan':'2', 'style': 'display:none' })
+					)
+				])
+			);
+
+			return E([ psbtns, nodes, E('h3', _('Associated Stations')), table ]);
+		}, this, m));
+	}
 });
