@@ -78,7 +78,7 @@
 	},
 
 	"admin/logout": {
-		"title": "Log out",
+		"title": "Logout",
 		"order": 999,
 		"action": {
 			"type": "function",
