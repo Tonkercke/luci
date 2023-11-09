@@ -5,7 +5,7 @@ local torrc = "/etc/tor/torrc"
 local makeTorConfigButtonPressed = false
 local torrcSampleConfig = 'User tor\n' ..
 						  'Log notice syslog\n' ..
-						  'Socks5Proxy 127.0.0.1:1070\n' ..
+						  'HttpsProxy 127.0.0.1:3090\n' ..
 						  'SocksPort 0.0.0.0:9150\n' ..
 						  'DataDirectory /var/lib/tor\n' ..
 						  'GeoIPFile /usr/share/tor/geoip\n' ..
