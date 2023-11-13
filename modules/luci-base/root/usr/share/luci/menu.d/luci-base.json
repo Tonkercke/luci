@@ -33,7 +33,7 @@
 	},
 
 	"admin/services": {
-		"title": "Services",
+		"title": "services",
 		"order": 40,
 		"action": {
 			"type": "firstchild",

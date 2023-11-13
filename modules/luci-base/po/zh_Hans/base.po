@@ -8026,7 +8026,7 @@ msgid "Service Type"
 msgstr "服务类型"
 
 #: modules/luci-base/root/usr/share/luci/menu.d/luci-base.json:36
-msgid "Services"
+msgid "services"
 msgstr "服务"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2664
