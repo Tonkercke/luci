@@ -2,11 +2,11 @@
 	"luci-app-cloudflarespeedtest": {
 		"description": "Grant UCI access for luci-app-cloudflarespeedtest",
 		"read": {
-			"uci": [ "cloudflarespeedtest" ]
+			"uci": [ "cloudflarespeedtest" ],
 			"script": ["/usr/bin/cloudflarespeedtest/cloudflarespeedtest.sh"]
 		},
 		"write": {
-			"uci": [ "cloudflarespeedtest" ]
+			"uci": [ "cloudflarespeedtest" ],
 			"script": ["/usr/bin/cloudflarespeedtest/cloudflarespeedtest.sh"]
 		}
 	}
