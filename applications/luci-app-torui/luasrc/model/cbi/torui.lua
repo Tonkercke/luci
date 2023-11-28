@@ -8,11 +8,16 @@ local torrcSampleConfig = 'User tor\n' ..
 						  'HttpsProxy 127.0.0.1:3090\n' ..
 						  'SocksPort 0.0.0.0:9150\n' ..
 						  'DataDirectory /var/lib/tor\n' ..
+						  'GeoIPFile /usr/share/tor/geoip\n' ..
 						  'GeoIPv6File /usr/share/tor/geoip6\n' ..
 						  'GeoIPExcludeUnknown 1\n' ..
 						  'ExcludeNodes {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
 						  'ExcludeExitNodes  {cn},{hk},{mo},{sg},{th},{pk},{by},{ru},{ir},{vn},{ph},{my},{cu},{cl},{ci},{cr},{ee},{es},{gr},{il},{kz},{kw},{lk},{lt},{lv},{kp},{sy},{cu},{tw},{st},{ve},{eg},{kh},{la},{mm},{tr},{ua},{ye},{tk},{br},{pa},{lu},{do},{bf},{in},{id},{sv},{va},{??}\n' ..
-						  'StrictNodes 1'
+						  'StrictNodes 1\n' ..
+						  'EntryNodes {us},{de},{gb},{nl},{ca},{se},{au}\n' ..
+						  'MiddleNodes {us},{de},{gb},{nl},{ca},{se}\n' ..
+						  'ExitNodes {us},{de},{nl},{ca},{gb},{se}\n' ..
+						  'StrictExitNodes 1'
 
 local fontred = "<font color=\"red\">"
 local fontgreen = "<font color=\"green\">"
@@ -27,17 +32,18 @@ local brtag ="<br />"
 local torui = luci.util.exec("/usr/bin/which tor")
 
 if torui ~= "" then
-	local torPid = luci.util.exec("/usr/bin/pgrep tor")
+	local torPid = luci.util.exec("ps | grep '[t]orrc'")
 	torServiceStatus = luci.util.exec("/bin/ls /etc/rc.d/S??tor 2>/dev/null")
 	if torPid ~= "" then
+		torPid = torPid:match("(%d+)")
 		torStatus = bold .. fontgreen .. translate("Tor is Running") .. endfont..
 		" " .. translate("show PID") .. " " .. torPid .. endbold
 	else
 		torStatus = bold .. fontred .. translate("Tor not Running") .. endfont .. endbold
 	end
-else
-	torStatus = bold .. fontred .. translate("Tor not Installed") .. endfont .. endbold
-end
+	else
+		torStatus = bold .. fontred .. translate("Tor not Installed") .. endfont .. endbold
+	end
 -- Detect TOR END
 -------------------------------------------------------------------------------
 
