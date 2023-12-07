@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"PO-Revision-Date: 2023-04-12 19:53+0000\n"
-"Last-Translator: CakesTwix <cakestwix1@gmail.com>\n"
+"PO-Revision-Date: 2023-08-08 11:43+0000\n"
+"Last-Translator: Vladdrako <vladdrako007@gmail.com>\n"
 "Language-Team: Ukrainian <https://hosted.weblate.org/projects/openwrt/luci/"
 "uk/>\n"
 "Language: uk\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
-"X-Generator: Weblate 4.17-dev\n"
+"X-Generator: Weblate 5.0-dev\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:649
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -26,7 +26,7 @@ msgstr "%.1f дБ"
 msgid "%d Bit"
 msgstr "%d біт"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4089
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4096
 msgid "%d invalid field(s)"
 msgstr "%d неприпустимі поля"
 
@@ -182,37 +182,48 @@ msgid "802.11r Fast Transition"
 msgstr "Швидкий перехід 802.11r"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1189
+#, fuzzy
 msgid "802.11v: BSS Max Idle. Units: seconds."
-msgstr ""
+msgstr "802.11v: Максимальний період бездіяльності BSS. Одиниці: секунди."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1651
 msgid "802.11v: Basic Service Set (BSS) transition management."
-msgstr ""
+msgstr "802.11v: керування переходом базового набору послуг (BSS)."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1640
+#, fuzzy
 msgid "802.11v: Local Time Zone Advertisement in management frames."
-msgstr ""
+msgstr "802.11v: Оголошення місцевого часового поясу в кадрах керування."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1655
+#, fuzzy
 msgid ""
 "802.11v: Proxy ARP enables non-AP STA to remain in power-save for longer."
 msgstr ""
+"802.11v: Проксі-ARP дозволяє не-AP STA, довше залишатися в режимі "
+"енергозбереження."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1631
 msgid "802.11v: Time Advertisement in management frames."
-msgstr ""
+msgstr "802.11v: оголошення часу в кадрах керування."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1644
+#, fuzzy
 msgid ""
 "802.11v: Wireless Network Management (WNM) Sleep Mode (extended sleep mode "
 "for stations)."
 msgstr ""
+"802.11v: режим сну керування бездротовою мережею (Wireless Network "
+"Management (WNM)) (розширений режим сну для станцій)."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1648
+#, fuzzy
 msgid ""
 "802.11v: Wireless Network Management (WNM) Sleep Mode Fixes: Prevents "
 "reinstallation attacks."
 msgstr ""
+"802.11v: Виправлення режиму сну керування бездротовою мережею (Wireless "
+"Network Management (WNM)): запобігає атакам повторної інсталяції."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1798
 msgid "802.11w Association SA Query maximum timeout"
@@ -298,6 +309,8 @@ msgid ""
 "<code>/example.com/#</code> returns NULL addresses (<code>0.0.0.0</code> and "
 "<code>::</code>) for example.com and its subdomains."
 msgstr ""
+"<code>/example.com/#</code> повертає NULL адреси (<code>0.0.0.0</code> і "
+"<code>::</code>) для example.com і його субдоменів."
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:87
 msgctxt "nft relational \">\" operator expression"
@@ -419,6 +432,10 @@ msgid ""
 "to the STA MAC address. Note: This is not Directed Multicast Service (DMS) "
 "in 802.11v. Note: might break receiver STA multicast expectations."
 msgstr ""
+"ARP, IPv4 і IPv6 (навіть 802.1Q) з MAC-адресами призначення багатоадресної "
+"адреси одноадресно передаються на MAC-адресу STA. Примітка: це не Directed "
+"Multicast Service (DMS) у 802.11v. Примітка: може порушити очікування "
+"багатоадресної розсилки STA приймача."
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1531
 msgid "ATM (Asynchronous Transfer Mode)"
@@ -654,7 +671,7 @@ msgstr "Тип адреси"
 
 #: protocols/luci-proto-wireguard/htdocs/luci-static/resources/protocol/wireguard.js:284
 msgid "Address setting is invalid"
-msgstr ""
+msgstr "Налаштування адреси неправильне"
 
 #: protocols/luci-proto-relay/htdocs/luci-static/resources/protocol/relay.js:151
 msgid "Address to access local relay bridge"
@@ -974,7 +991,7 @@ msgid "Apply DHCP Options to this net. (Empty = all clients)."
 msgstr ""
 "Застосувати параметри DHCP до цієї мережі. (якщо порожньо = усі клієнти)."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4705
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4712
 msgid "Apply and keep settings"
 msgstr "Застосувати та зберегти налаштування"
 
@@ -982,21 +999,21 @@ msgstr "Застосувати та зберегти налаштування"
 msgid "Apply backup?"
 msgstr "Застосувати резервну копію?"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4731
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4738
 msgid "Apply request failed with status <code>%h</code>"
 msgstr "Сталася помилка запиту на застосування зі статусом <code>%h</code>"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2175
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4448
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4568
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4455
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4575
 msgid "Apply unchecked"
 msgstr "Застосувати без перевірки"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4701
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4708
 msgid "Apply with revert after connectivity loss"
-msgstr ""
+msgstr "Застосувати з поверненням після втрати з’єднання"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4641
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4648
 msgid "Applying configuration changes… %ds"
 msgstr "Очікування на застосування конфігурації… %d c"
 
@@ -1126,7 +1143,7 @@ msgstr "Автомонтування своп"
 
 #: protocols/luci-proto-autoip/htdocs/luci-static/resources/protocol/autoip.js:6
 msgid "Avahi IPv4LL"
-msgstr ""
+msgstr "Avahi IPv4LL"
 
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/mounts.js:193
 msgid "Available"
@@ -1159,8 +1176,9 @@ msgid "BR / DMR / AFTR"
 msgstr "BR / DMR / AFTR"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1651
+#, fuzzy
 msgid "BSS Transition"
-msgstr ""
+msgstr "Перехід BSS"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:158
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:182
@@ -1345,7 +1363,7 @@ msgid "Broadcast policy (broadcast, 3)"
 msgstr "Політика широкомовності (broadcast, 3)"
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2868
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4199
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
 msgid "Browse…"
 msgstr "Огляд…"
 
@@ -1394,8 +1412,8 @@ msgstr ""
 "маршрутизації."
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2956
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4208
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4697
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4215
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4704
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:14
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:52
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:188
@@ -1511,11 +1529,11 @@ msgctxt "Yet unknown nftables chain hook"
 msgid "Chain hook \"%h\""
 msgstr "Хук ланцюга \"%h\""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4428
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
 msgid "Changes"
 msgstr "Зміни"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4767
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4774
 msgid "Changes have been reverted."
 msgstr "Зміни було скасовано."
 
@@ -1618,7 +1636,7 @@ msgstr "Клієнт"
 msgid "Client ID to send when requesting DHCP"
 msgstr "Ідентифікатор клієнта для відправки при запиті DHCP"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4445
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4452
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:167
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:173
 msgid "Close"
@@ -1690,7 +1708,7 @@ msgstr "Обчислити вихідну контрольну суму (нео�
 msgid "Config File"
 msgstr "Файл конфігурації"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4428
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
 msgid "Configuration"
 msgstr "Конфігурація"
@@ -1699,11 +1717,11 @@ msgstr "Конфігурація"
 msgid "Configuration Export"
 msgstr "Експорт конфігурації"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4616
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4623
 msgid "Configuration changes applied."
 msgstr "Зміни конфігурації застосовано."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4554
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4561
 msgid "Configuration changes have been rolled back!"
 msgstr "Зміни конфігурації було скасовано!"
 
@@ -1794,7 +1812,7 @@ msgstr "З'єднання втрачено"
 msgid "Connections"
 msgstr "Підключення"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4690
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4697
 msgid "Connectivity change"
 msgstr "Зміна підключення"
 
@@ -1845,7 +1863,7 @@ msgctxt "Chain policy: accept"
 msgid "Continue processing unmatched packets"
 msgstr "Продовжити обробку невідповідних пакетів"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4590
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4597
 msgid ""
 "Could not regain access to the device after applying the configuration "
 "changes. You might need to reconnect if you modified network related "
@@ -2230,7 +2248,7 @@ msgstr "Пристрій відсутній"
 msgid "Device type"
 msgstr "Тип пристрою"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4589
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4596
 msgid "Device unreachable!"
 msgstr "Пристрій недосяжний!"
 
@@ -2341,8 +2359,8 @@ msgstr "Дисковий простір"
 #: modules/luci-base/htdocs/luci-static/resources/form.js:611
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3022
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3269
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3707
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4560
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3714
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4567
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1866
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:358
 msgid "Dismiss"
@@ -3108,7 +3126,7 @@ msgstr "Не вдалося змінити системний пароль."
 msgid "Failed to configure modem"
 msgstr "Не вдалося налаштувати модем"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4548
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4555
 msgid "Failed to confirm apply within %ds, waiting for rollback…"
 msgstr "Не вдалося підтвердити застосування на протязі %d с, очікуємо відкату…"
 
@@ -4171,7 +4189,7 @@ msgstr ""
 "Якщо обрано, монтувати пристрій за міткою його розділу замість фіксованого "
 "вузла пристрою"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4692
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4699
 msgid ""
 "If the IP address used to access LuCI changes, a <strong>manual reconnect to "
 "the new IP</strong> is required within %d seconds to confirm the settings, "
@@ -4786,7 +4804,7 @@ msgstr ""
 msgid "Legacy rules detected"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4430
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4437
 msgid "Legend:"
 msgstr "Легенда:"
 
@@ -5572,7 +5590,7 @@ msgid "NTP server candidates"
 msgstr "Сервери NTP – кандидати для синхронізації"
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:2618
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4185
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4192
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:27
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1121
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:68
@@ -6093,11 +6111,11 @@ msgstr "Параметр \"%s\" містить неприпустиме знач
 msgid "Option \"%s\" must not be empty."
 msgstr "Параметр \"%s\" не може бути порожнім."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4437
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4444
 msgid "Option changed"
 msgstr "Опцію змінено"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4439
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4446
 msgid "Option removed"
 msgstr "Опцію видалено"
 
@@ -6690,7 +6708,7 @@ msgstr "пакетів"
 msgid "Please enter your username and password."
 msgstr "Введіть ім'я користувача і пароль."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4168
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4175
 msgid "Please select the file to upload."
 msgstr "Виберіть файл для відвантаження."
 
@@ -7404,19 +7422,19 @@ msgstr "Показати/приховати пароль"
 msgid "Reverse path filter"
 msgstr "Фільтр зворотного шляху"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4459
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4466
 msgid "Revert"
 msgstr "Скасувати"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4564
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4571
 msgid "Revert changes"
 msgstr "Скасувати зміни"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4776
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4783
 msgid "Revert request failed with status <code>%h</code>"
 msgstr "Помилка запиту на скасування зі статусом <code>%h</code>"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4756
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4763
 msgid "Reverting configuration…"
 msgstr "Відкат конфігурації…"
 
@@ -7639,7 +7657,7 @@ msgid "Save"
 msgstr "Зберегти"
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2174
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4447
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4454
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:22
 msgid "Save & Apply"
 msgstr "Зберегти і застосувати"
@@ -7665,11 +7683,11 @@ msgstr "Сканувати"
 msgid "Scheduled Tasks"
 msgstr "Заплановані завдання"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4433
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4440
 msgid "Section added"
 msgstr "Секцію додано"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4442
 msgid "Section removed"
 msgstr "Секцію видалено"
 
@@ -7897,7 +7915,7 @@ msgstr "Частота оновлення сигналу"
 msgid "Signal:"
 msgstr "Сигнал:"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4186
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4193
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:222
 msgid "Size"
 msgstr "Розмір"
@@ -8412,7 +8430,7 @@ msgstr "Стартовий пріоритет"
 msgid "Start refresh"
 msgstr "Запустити оновлення"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4679
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4686
 msgid "Starting configuration apply…"
 msgstr "Розпочато застосування конфігурації…"
 
@@ -8844,7 +8862,7 @@ msgstr ""
 "Під час приєднання до прихованої бездротової мережі потрібно вручну вказати "
 "правильний SSID"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4555
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4562
 msgid ""
 "The device could not be reached within %d seconds after applying the pending "
 "changes, which caused the configuration to be rolled back for safety "
@@ -9014,7 +9032,7 @@ msgstr ""
 "title=\"Router Advertisement\">RA</abbr>. Максимальне значення – 255 "
 "стрибків."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4691
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4698
 msgid ""
 "The network access to this device could be interrupted by changing settings "
 "of the \"%h\" interface."
@@ -9179,7 +9197,7 @@ msgstr ""
 msgid "There are no active leases"
 msgstr "Немає жодних активних оренд"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4723
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4730
 msgid "There are no changes to apply"
 msgstr "Немає жодних змін до застосування"
 
@@ -9623,7 +9641,7 @@ msgstr "Демонтувати"
 msgid "Unnamed key"
 msgstr "Ключ без назви"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4373
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4380
 msgid "Unsaved Changes"
 msgstr "Незбережені зміни"
 
@@ -9666,7 +9684,7 @@ msgstr "Вгору"
 msgid "Up Delay"
 msgstr "Затримка підняття"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4260
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4267
 msgid "Upload"
 msgstr "Завантажити"
 
@@ -9690,17 +9708,17 @@ msgstr "Відвантажити файл"
 msgid "Upload file…"
 msgstr "Відвантажити файл…"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4213
 msgid "Upload has been cancelled"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2796
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4248
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4255
 msgid "Upload request failed: %s"
 msgstr "Не вдалося виконати запит на відвантаження: %s"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4167
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4221
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4174
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4228
 msgid "Uploading file…"
 msgstr "Відвантаження файлу…"
 
@@ -10925,8 +10943,8 @@ msgstr "так"
 msgid "« Back"
 msgstr "« Назад"
 
-msgid "List of IP sets to populate with the specified domain IPs."
-msgstr "Список IP-наборів для заповнення вказаними IP-адресами доменів."
+#~ msgid "List of IP sets to populate with the specified domain IPs."
+#~ msgstr "Список IP-наборів для заповнення вказаними IP-адресами доменів."
 
-msgid "List of domains to force to an IP address."
-msgstr "Список доменів для примусового перетворення у IP-адреси."
+#~ msgid "List of domains to force to an IP address."
+#~ msgstr "Список доменів для примусового перетворення у IP-адреси."

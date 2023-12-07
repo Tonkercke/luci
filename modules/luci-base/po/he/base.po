@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"PO-Revision-Date: 2023-03-11 13:38+0000\n"
+"PO-Revision-Date: 2023-09-18 21:37+0000\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew <https://hosted.weblate.org/projects/openwrt/luci/he/"
 ">\n"
@@ -10,7 +10,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Weblate 4.16.2-dev\n"
+"X-Generator: Weblate 5.0.2\n"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:649
 msgctxt "Yet unknown nftables table family (\"family\" table \"name\")"
@@ -25,7 +25,7 @@ msgstr "%.1f דציבל"
 msgid "%d Bit"
 msgstr "%d סיביות"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4089
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4096
 msgid "%d invalid field(s)"
 msgstr "%d שדות שגויים"
 
@@ -420,9 +420,8 @@ msgstr "ATM מזהה ערוץ וירטואלי (VCI)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1585
 #: protocols/luci-proto-ppp/htdocs/luci-static/resources/protocol/pppoa.js:70
-#, fuzzy
 msgid "ATM Virtual Path Identifier (VPI)"
-msgstr "מזהה נתיבים ווירטואליים של ATM  (VPI)"
+msgstr "מזהה נתיבים וירטואליים של ATM‏ (VPI)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1552
 msgid ""
@@ -938,7 +937,7 @@ msgstr "כל תחום"
 msgid "Apply DHCP Options to this net. (Empty = all clients)."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4705
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4712
 msgid "Apply and keep settings"
 msgstr ""
 
@@ -946,21 +945,21 @@ msgstr ""
 msgid "Apply backup?"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4731
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4738
 msgid "Apply request failed with status <code>%h</code>"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2175
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4448
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4568
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4455
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4575
 msgid "Apply unchecked"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4701
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4708
 msgid "Apply with revert after connectivity loss"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4641
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4648
 msgid "Applying configuration changes… %ds"
 msgstr ""
 
@@ -1294,7 +1293,7 @@ msgid "Broadcast policy (broadcast, 3)"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2868
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4199
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
 msgid "Browse…"
 msgstr ""
 
@@ -1340,8 +1339,8 @@ msgid ""
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2956
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4208
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4697
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4215
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4704
 #: modules/luci-compat/luasrc/view/cbi/delegator.htm:14
 #: modules/luci-compat/luasrc/view/cbi/simpleform.htm:52
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:188
@@ -1447,11 +1446,11 @@ msgctxt "Yet unknown nftables chain hook"
 msgid "Chain hook \"%h\""
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4428
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
 msgid "Changes"
 msgstr "שינויים"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4767
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4774
 msgid "Changes have been reverted."
 msgstr ""
 
@@ -1544,7 +1543,7 @@ msgstr ""
 msgid "Client ID to send when requesting DHCP"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4445
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4452
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:167
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/sshkeys.js:173
 msgid "Close"
@@ -1589,7 +1588,7 @@ msgstr ""
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:73
 msgid "Comment"
-msgstr ""
+msgstr "תגובה"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1812
 msgid ""
@@ -1610,7 +1609,7 @@ msgstr ""
 msgid "Config File"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4428
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:454
 msgid "Configuration"
 msgstr "הגדרות"
@@ -1619,11 +1618,11 @@ msgstr "הגדרות"
 msgid "Configuration Export"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4616
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4623
 msgid "Configuration changes applied."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4554
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4561
 msgid "Configuration changes have been rolled back!"
 msgstr ""
 
@@ -1702,7 +1701,7 @@ msgstr ""
 msgid "Connections"
 msgstr "חיבורים"
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4690
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4697
 msgid "Connectivity change"
 msgstr ""
 
@@ -1736,7 +1735,7 @@ msgstr ""
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:132
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:269
 msgid "Continue"
-msgstr ""
+msgstr "המשך"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:97
 msgctxt "nft jump action"
@@ -1752,7 +1751,7 @@ msgctxt "Chain policy: accept"
 msgid "Continue processing unmatched packets"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4590
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4597
 msgid ""
 "Could not regain access to the device after applying the configuration "
 "changes. You might need to reconnect if you modified network related "
@@ -2062,7 +2061,7 @@ msgstr ""
 
 #: protocols/luci-proto-vxlan/htdocs/luci-static/resources/protocol/vxlan.js:48
 msgid "Destination port"
-msgstr ""
+msgstr "פתחת היעד"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:46
 msgctxt "nft ip dport"
@@ -2072,7 +2071,7 @@ msgstr ""
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:59
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:165
 msgid "Destination zone"
-msgstr ""
+msgstr "אזור היעד"
 
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:67
 #: modules/luci-base/htdocs/luci-static/resources/tools/widgets.js:192
@@ -2106,7 +2105,7 @@ msgstr ""
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:495
 msgid "Device name"
-msgstr ""
+msgstr "שם המכשיר"
 
 #: protocols/luci-proto-modemmanager/htdocs/luci-static/resources/protocol/modemmanager.js:45
 msgid "Device not managed by ModemManager."
@@ -2120,7 +2119,7 @@ msgstr ""
 msgid "Device type"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4589
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4596
 msgid "Device unreachable!"
 msgstr ""
 
@@ -2227,8 +2226,8 @@ msgstr ""
 #: modules/luci-base/htdocs/luci-static/resources/form.js:611
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3022
 #: modules/luci-base/htdocs/luci-static/resources/form.js:3269
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:3707
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4560
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:3714
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4567
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:1866
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:358
 msgid "Dismiss"
@@ -2955,7 +2954,7 @@ msgstr ""
 msgid "Failed to configure modem"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4548
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4555
 msgid "Failed to confirm apply within %ds, waiting for rollback…"
 msgstr ""
 
@@ -3974,7 +3973,7 @@ msgid ""
 "device node"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4692
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4699
 msgid ""
 "If the IP address used to access LuCI changes, a <strong>manual reconnect to "
 "the new IP</strong> is required within %d seconds to confirm the settings, "
@@ -4553,7 +4552,7 @@ msgstr ""
 msgid "Legacy rules detected"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4430
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4437
 msgid "Legend:"
 msgstr ""
 
@@ -5286,7 +5285,7 @@ msgid "NTP server candidates"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/form.js:2618
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4185
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4192
 #: modules/luci-compat/luasrc/view/cbi/tblsection.htm:27
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/interfaces.js:1121
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/leds.js:68
@@ -5789,11 +5788,11 @@ msgstr ""
 msgid "Option \"%s\" must not be empty."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4437
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4444
 msgid "Option changed"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4439
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4446
 msgid "Option removed"
 msgstr ""
 
@@ -6354,20 +6353,20 @@ msgstr ""
 
 #: modules/luci-base/luasrc/view/sysauth.htm:19
 msgid "Please enter your username and password."
-msgstr "אנא הזן את שם המשתמש והסיסמה שלך:"
+msgstr "נא למלא את שם המשתמש והסיסמה שלך."
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4168
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4175
 msgid "Please select the file to upload."
-msgstr ""
+msgstr "נא לבחור את הקובץ להעלאה."
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/iptables.js:54
 msgid "Policy"
-msgstr ""
+msgstr "מדיניות"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/nftables.js:594
 msgctxt "Chain hook policy"
 msgid "Policy: <strong>%h</strong> (%h)"
-msgstr ""
+msgstr "מדיניות: <strong>%h</strong>‏ (%h)"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:655
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/dropbear.js:21
@@ -6376,15 +6375,15 @@ msgstr "פתחה"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/tools/network.js:770
 msgid "Port isolation"
-msgstr ""
+msgstr "בידוד פתחות"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/switch.js:278
 msgid "Port status:"
-msgstr ""
+msgstr "מצב פתחה:"
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:516
 msgid "Potential negation of: %s"
-msgstr ""
+msgstr "ניגוד אפשרי מול: %s"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/50_dsl.js:38
 msgid "Power Management Mode"
@@ -6396,11 +6395,11 @@ msgstr ""
 
 #: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:78
 msgid "Prefer LTE"
-msgstr ""
+msgstr "להעדיף LTE"
 
 #: protocols/luci-proto-ncm/htdocs/luci-static/resources/protocol/ncm.js:79
 msgid "Prefer UMTS"
-msgstr ""
+msgstr "להעדיף UMTS"
 
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/30_network.js:33
 msgid "Prefix Delegated"
@@ -7045,19 +7044,19 @@ msgstr ""
 msgid "Reverse path filter"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4459
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4466
 msgid "Revert"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4564
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4571
 msgid "Revert changes"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4776
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4783
 msgid "Revert request failed with status <code>%h</code>"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4756
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4763
 msgid "Reverting configuration…"
 msgstr ""
 
@@ -7266,7 +7265,7 @@ msgid "Save"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/luci.js:2174
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4447
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4454
 #: modules/luci-compat/luasrc/view/cbi/footer.htm:22
 msgid "Save & Apply"
 msgstr ""
@@ -7292,11 +7291,11 @@ msgstr ""
 msgid "Scheduled Tasks"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4433
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4440
 msgid "Section added"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4435
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4442
 msgid "Section removed"
 msgstr ""
 
@@ -7504,7 +7503,7 @@ msgstr ""
 msgid "Signal:"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4186
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4193
 #: modules/luci-mod-system/htdocs/luci-static/resources/view/system/flash.js:222
 msgid "Size"
 msgstr ""
@@ -7925,7 +7924,7 @@ msgstr ""
 msgid "Start refresh"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4679
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4686
 msgid "Starting configuration apply…"
 msgstr ""
 
@@ -8330,7 +8329,7 @@ msgid ""
 "network"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4555
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4562
 msgid ""
 "The device could not be reached within %d seconds after applying the pending "
 "changes, which caused the configuration to be rolled back for safety "
@@ -8472,7 +8471,7 @@ msgid ""
 "abbr> messages. Maximum is 255 hops."
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4691
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4698
 msgid ""
 "The network access to this device could be interrupted by changing settings "
 "of the \"%h\" interface."
@@ -8607,7 +8606,7 @@ msgstr ""
 msgid "There are no active leases"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4723
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4730
 msgid "There are no changes to apply"
 msgstr ""
 
@@ -9019,7 +9018,7 @@ msgstr ""
 msgid "Unnamed key"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4373
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4380
 msgid "Unsaved Changes"
 msgstr ""
 
@@ -9062,7 +9061,7 @@ msgstr ""
 msgid "Up Delay"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4260
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4267
 msgid "Upload"
 msgstr ""
 
@@ -9085,17 +9084,17 @@ msgstr ""
 msgid "Upload file…"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4206
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4213
 msgid "Upload has been cancelled"
 msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/ui.js:2796
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4248
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4255
 msgid "Upload request failed: %s"
 msgstr ""
 
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4167
-#: modules/luci-base/htdocs/luci-static/resources/ui.js:4221
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4174
+#: modules/luci-base/htdocs/luci-static/resources/ui.js:4228
 msgid "Uploading file…"
 msgstr ""
 
@@ -10024,11 +10023,11 @@ msgstr ""
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:583
 msgid "unique value"
-msgstr ""
+msgstr "ערך יחודי"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:592
 msgid "unknown"
-msgstr ""
+msgstr "לא ידוע"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:537
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:871
@@ -10053,7 +10052,7 @@ msgstr "לא מוגדר"
 
 #: modules/luci-compat/luasrc/view/cbi/network_netlist.htm:71
 msgid "unspecified -or- create:"
-msgstr "לא מוגדר -או- יצר"
+msgstr "לא מוגדר -או- ליצור:"
 
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/switch.js:352
 msgid "untagged"
@@ -10063,11 +10062,11 @@ msgstr "לא מתויג"
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:177
 #: modules/luci-mod-network/htdocs/luci-static/resources/view/network/dhcp.js:188
 msgid "valid IP address"
-msgstr ""
+msgstr "כתובת IP תקפה"
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:257
 msgid "valid IP address or prefix"
-msgstr ""
+msgstr "כתובת או קידומת IP תקפה"
 
 #: modules/luci-base/htdocs/luci-static/resources/validation.js:294
 msgid "valid IPv4 CIDR"
