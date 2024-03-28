@@ -43,6 +43,26 @@ msgstr "%s 在多个 VLAN 中均未标记！"
 msgid "%s means \"the address of the system running dnsmasq\"."
 msgstr "%s 表示 “运行 dnsmasq 系统的地址”。"
 
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:284
+msgid "First, Please disable network"
+msgstr "首先，请关闭网络"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:937
+msgid "Change MAC and Hostname"
+msgstr "更改物理地址和主机名"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:939
+msgid "Pseudo"
+msgstr "伪装"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2340
+msgid "Change the mac and hostname of all wifinet"
+msgstr "更改所有无线网络的物理地址和主机名"
+
+#: modules/luci-mod-network/htdocs/luci-static/resources/view/network/wireless.js:2342
+msgid "Pseudo all wifinet"
+msgstr "伪装所有无线网络"
+
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/bandwidth.js:296
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/connections.js:405
 #: modules/luci-mod-status/htdocs/luci-static/resources/view/status/load.js:272
